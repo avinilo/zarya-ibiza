@@ -8,7 +8,7 @@ import { Metadata } from 'next'
 // Configuración base del sitio
 export const SITE_CONFIG = {
   name: 'Mantexia',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://mantexia.com',
+  url: getBaseUrl(),
   description: 'Servicios integrales de mantenimiento industrial en Valencia',
   locale: 'es_ES',
   type: 'website',
@@ -21,6 +21,22 @@ export const SITE_CONFIG = {
     'Valencia',
     'servicios industriales'
   ]
+}
+
+// Función para detectar URL base automáticamente
+function getBaseUrl(): string {
+  // 1. Prioridad: Variable de entorno explícita
+  if (process.env.NEXT_PUBLIC_SITE_URL) {
+    return process.env.NEXT_PUBLIC_SITE_URL
+  }
+  
+  // 2. Vercel: Usar VERCEL_URL automáticamente
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`
+  }
+  
+  // 3. Fallback: URL de producción
+  return 'https://mantexia.com'
 }
 
 // Tipos para configuración SEO

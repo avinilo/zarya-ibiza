@@ -198,8 +198,8 @@ export const SEO_PAGES: Record<string, SEOConfig> = {
       type: 'website',
       images: [{
         url: '/og-image.png',
-        width: 500,
-        height: 126,
+        width: 1200,
+        height: 630,
         alt: 'Mantexia empresa Valencia'
       }]
     },
@@ -232,8 +232,8 @@ export const SEO_PAGES: Record<string, SEOConfig> = {
       type: 'website',
       images: [{
         url: '/og-image.png',
-        width: 500,
-        height: 126,
+        width: 1200,
+        height: 630,
         alt: 'Casos éxito Mantexia Valencia'
       }]
     },

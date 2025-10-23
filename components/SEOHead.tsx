@@ -39,8 +39,23 @@ export default function SEOHead({
   const finalDescription = description || SITE_CONFIG.description
   const finalOgImage = ogImage || '/og-image.png'
   
-  // Usar URL base desde variables de entorno o fallback
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || SITE_CONFIG.url
+  // Detectar URL base automáticamente según el entorno
+  const getBaseUrl = () => {
+    // 1. Prioridad: Variable de entorno explícita
+    if (process.env.NEXT_PUBLIC_SITE_URL) {
+      return process.env.NEXT_PUBLIC_SITE_URL
+    }
+    
+    // 2. Vercel: Usar VERCEL_URL automáticamente
+    if (process.env.VERCEL_URL) {
+      return `https://${process.env.VERCEL_URL}`
+    }
+    
+    // 3. Fallback: URL de producción
+    return SITE_CONFIG.url
+  }
+  
+  const baseUrl = getBaseUrl()
 
   // Configurar robots
   const robotsContent = [

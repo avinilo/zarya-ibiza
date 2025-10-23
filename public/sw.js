@@ -1,0 +1,236 @@
+// Service Worker para Mantexia - Cache estratégico
+// Implementación cuidadosa para mejorar performance sin romper funcionalidad
+
+const CACHE_NAME = 'mantexia-v1'
+const STATIC_CACHE = 'mantexia-static-v1'
+const RUNTIME_CACHE = 'mantexia-runtime-v1'
+
+// URLs críticas para cachear
+const CRITICAL_URLS = [
+  '/',
+  '/mano-obra',
+  '/gestion-documental',
+  '/gestora-mantenimientos',
+  '/sobre-nosotros',
+  '/casos-exito',
+  '/preguntas-frecuentes'
+]
+
+// Recursos estáticos para cachear
+const STATIC_RESOURCES = [
+  '/favicon.ico',
+  '/apple-touch-icon.png',
+  '/og-image.png',
+  '/MANTEXIA__solo_nombre_-2-removebg-preview-e1749230794480.png',
+  '/Nosotros-11.png'
+]
+
+// Instalación del Service Worker
+self.addEventListener('install', event => {
+  console.log('🔧 Service Worker: Instalando...')
+  
+  event.waitUntil(
+    Promise.all([
+      // Cache de páginas críticas
+      caches.open(CACHE_NAME).then(cache => {
+        console.log('📦 Service Worker: Cacheando páginas críticas')
+        return cache.addAll(CRITICAL_URLS)
+      }),
+      // Cache de recursos estáticos
+      caches.open(STATIC_CACHE).then(cache => {
+        console.log('🖼️ Service Worker: Cacheando recursos estáticos')
+        return cache.addAll(STATIC_RESOURCES)
+      })
+    ]).then(() => {
+      console.log('✅ Service Worker: Instalación completada')
+      // Forzar activación inmediata
+      return self.skipWaiting()
+    }).catch(error => {
+      console.error('❌ Service Worker: Error en instalación:', error)
+    })
+  )
+})
+
+// Activación del Service Worker
+self.addEventListener('activate', event => {
+  console.log('🚀 Service Worker: Activando...')
+  
+  event.waitUntil(
+    Promise.all([
+      // Limpiar caches antiguos
+      caches.keys().then(cacheNames => {
+        return Promise.all(
+          cacheNames.map(cacheName => {
+            if (cacheName !== CACHE_NAME && 
+                cacheName !== STATIC_CACHE && 
+                cacheName !== RUNTIME_CACHE) {
+              console.log('🗑️ Service Worker: Eliminando cache antiguo:', cacheName)
+              return caches.delete(cacheName)
+            }
+          })
+        )
+      }),
+      // Tomar control de todas las pestañas
+      self.clients.claim()
+    ]).then(() => {
+      console.log('✅ Service Worker: Activación completada')
+    }).catch(error => {
+      console.error('❌ Service Worker: Error en activación:', error)
+    })
+  )
+})
+
+// Estrategia de fetch
+self.addEventListener('fetch', event => {
+  const { request } = event
+  const url = new URL(request.url)
+  
+  // Solo manejar requests del mismo origen
+  if (url.origin !== location.origin) {
+    return
+  }
+  
+  // Estrategia según tipo de recurso
+  if (request.destination === 'document') {
+    // Network First para páginas HTML
+    event.respondWith(networkFirstStrategy(request))
+  } else if (request.destination === 'image') {
+    // Cache First para imágenes
+    event.respondWith(cacheFirstStrategy(request, STATIC_CACHE))
+  } else if (request.url.includes('/_next/static/')) {
+    // Cache First para assets de Next.js
+    event.respondWith(cacheFirstStrategy(request, STATIC_CACHE))
+  } else if (request.url.includes('/api/')) {
+    // Network Only para APIs
+    event.respondWith(networkOnlyStrategy(request))
+  } else {
+    // Stale While Revalidate para otros recursos
+    event.respondWith(staleWhileRevalidateStrategy(request))
+  }
+})
+
+// Estrategia Network First
+async function networkFirstStrategy(request) {
+  try {
+    // Intentar red primero
+    const networkResponse = await fetch(request)
+    
+    if (networkResponse.ok) {
+      // Cachear respuesta exitosa
+      const cache = await caches.open(CACHE_NAME)
+      cache.put(request, networkResponse.clone())
+    }
+    
+    return networkResponse
+  } catch (error) {
+    console.log('🌐 Service Worker: Red falló, buscando en cache:', request.url)
+    
+    // Si falla la red, buscar en cache
+    const cachedResponse = await caches.match(request)
+    
+    if (cachedResponse) {
+      return cachedResponse
+    }
+    
+    // Si no hay cache, devolver página offline básica
+    if (request.destination === 'document') {
+      return new Response(
+        `<!DOCTYPE html>
+        <html>
+        <head>
+          <title>Mantexia - Sin conexión</title>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <style>
+            body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+            .offline { color: #666; }
+          </style>
+        </head>
+        <body>
+          <div class="offline">
+            <h1>Sin conexión a internet</h1>
+            <p>Por favor, verifica tu conexión e intenta nuevamente.</p>
+            <button onclick="window.location.reload()">Reintentar</button>
+          </div>
+        </body>
+        </html>`,
+        {
+          status: 200,
+          headers: { 'Content-Type': 'text/html' }
+        }
+      )
+    }
+    
+    throw error
+  }
+}
+
+// Estrategia Cache First
+async function cacheFirstStrategy(request, cacheName = STATIC_CACHE) {
+  try {
+    // Buscar en cache primero
+    const cachedResponse = await caches.match(request)
+    
+    if (cachedResponse) {
+      return cachedResponse
+    }
+    
+    // Si no está en cache, buscar en red
+    const networkResponse = await fetch(request)
+    
+    if (networkResponse.ok) {
+      // Cachear para futuras requests
+      const cache = await caches.open(cacheName)
+      cache.put(request, networkResponse.clone())
+    }
+    
+    return networkResponse
+  } catch (error) {
+    console.error('❌ Service Worker: Error en Cache First:', error)
+    throw error
+  }
+}
+
+// Estrategia Network Only
+async function networkOnlyStrategy(request) {
+  try {
+    return await fetch(request)
+  } catch (error) {
+    console.error('❌ Service Worker: Error en Network Only:', error)
+    throw error
+  }
+}
+
+// Estrategia Stale While Revalidate
+async function staleWhileRevalidateStrategy(request) {
+  const cache = await caches.open(RUNTIME_CACHE)
+  const cachedResponse = await cache.match(request)
+  
+  // Fetch en background para actualizar cache
+  const fetchPromise = fetch(request).then(networkResponse => {
+    if (networkResponse.ok) {
+      cache.put(request, networkResponse.clone())
+    }
+    return networkResponse
+  }).catch(error => {
+    console.log('🌐 Service Worker: Error en background fetch:', error)
+  })
+  
+  // Devolver cache inmediatamente si existe, sino esperar network
+  return cachedResponse || fetchPromise
+}
+
+// Manejo de mensajes desde la aplicación
+self.addEventListener('message', event => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    console.log('⏭️ Service Worker: Saltando espera por mensaje de la app')
+    self.skipWaiting()
+  }
+  
+  if (event.data && event.data.type === 'GET_VERSION') {
+    event.ports[0].postMessage({ version: CACHE_NAME })
+  }
+})
+
+// Log de inicio
+console.log('🚀 Service Worker de Mantexia cargado correctamente')

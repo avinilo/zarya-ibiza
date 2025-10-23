@@ -1,0 +1,85 @@
+# Robots.txt optimizado para Mantexia
+# Configuración avanzada de crawling
+
+# Permitir acceso completo a todos los bots principales
+User-agent: *
+Allow: /
+
+# Configuraciones específicas para Googlebot
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Configuraciones específicas para Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# Configuraciones específicas para otros bots importantes
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 3
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+# Bloquear directorios técnicos y archivos sensibles
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.well-known/
+Disallow: /tmp/
+Disallow: /cache/
+Disallow: /logs/
+
+# Bloquear archivos específicos
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.txt$
+Disallow: /package.json
+Disallow: /tsconfig.json
+Disallow: /next.config.js
+
+# Permitir acceso a recursos importantes
+Allow: /sitemap.xml
+Allow: /sitemap-*.xml
+Allow: /favicon.ico
+Allow: /robots.txt
+Allow: /manifest.json
+
+# Bloquear bots maliciosos y scrapers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MegaIndex
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+# Referencias a sitemaps
+Sitemap: https://mantexia.com/sitemap.xml
+Sitemap: https://mantexia.com/sitemap-pages.xml
+Sitemap: https://mantexia.com/sitemap-services.xml
+
+# Host preferido (evitar contenido duplicado)
+Host: mantexia.com

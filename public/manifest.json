@@ -1,0 +1,37 @@
+{
+  "name": "Mantexia - Soluciones Integrales para Obras y Fábricas",
+  "short_name": "Mantexia",
+  "description": "Mano de obra, gestora de mantenimientos y gestión documental para obras y fábricas en Valencia",
+  "background_color": "#FFE8F1",
+  "theme_color": "#ED0B63",
+  "lang": "es",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/cropped-favicon-1-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/cropped-favicon-1-270x270.png",
+      "sizes": "270x270",
+      "type": "image/png"
+    }
+  ]
+}

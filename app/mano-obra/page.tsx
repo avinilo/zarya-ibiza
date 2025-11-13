@@ -61,7 +61,7 @@ export default function ManoObraPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(serviceSchemas.manoObra),
+          __html: JSON.stringify(serviceSchemas.limpiezaIndustrial),
         }}
       />
       

@@ -37,7 +37,7 @@ export default function GestoraMantenimientosPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(serviceSchemas.gestora),
+          __html: JSON.stringify(serviceSchemas.limpiezaComunidades),
         }}
       />
       

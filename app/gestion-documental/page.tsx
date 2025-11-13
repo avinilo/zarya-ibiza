@@ -54,7 +54,7 @@ export default function GestionDocumentalPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(serviceSchemas.documental),
+          __html: JSON.stringify(serviceSchemas.limpiezaOficinas),
         }}
       />
       

@@ -1,7 +1,5 @@
 {
- "name": "Smart Clean - Servicios de Limpieza Valencia",
- "short_name": "Smart Clean",
- "description": "Servicios profesionales de limpieza para oficinas, comunidades e instalaciones industriales en Valencia",
+ "name": "App",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
@@ -39,10 +37,5 @@
    "type": "image\/png",
    "density": "4.0"
   }
- ],
- "theme_color": "#2563eb",
- "background_color": "#2563eb",
- "display": "standalone",
- "start_url": "/",
- "scope": "/"
+ ]
 }

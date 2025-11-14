@@ -1,217 +1,187 @@
-import { Shield, FileText, Eye, Lock, Users, Database } from 'lucide-react'
-import Image from 'next/image'
+import type { Metadata } from 'next'
 
-export default function PoliticaPrivacidadPage() {
-  return (
-    <>
-      {/* Hero Section */}
-      <section className="hero-smartclean overflow-hidden relative -mt-20 pt-20">
-        <div className="absolute inset-0 smartclean-overlay"></div>
-        <div className="absolute inset-0 opacity-20">
-          <Image
-            src="https://images.unsplash.com/photo-1581403341630-a6e0b0f5c0c4?w=1920&h=1080&fit=crop&auto=format"
-            alt="Protección de datos - Smart Clean"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-        <div className="container-custom relative z-10 py-32 md:py-40 lg:py-48">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 animate-scale-in">
-              <Shield className="w-10 h-10" />
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-bounce-in">Política de Privacidad</h1>
-            <p className="text-2xl mb-4 animate-fade-in animate-delay-300">Protección y tratamiento de datos personales</p>
-            <p className="text-xl text-white/90 animate-slide-up animate-delay-500">
-              En Smart Clean respetamos su privacidad y protegemos sus datos personales
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Content Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <div className="prose prose-lg max-w-none">
-              
-              <div className="bg-smartclean-light border-l-4 border-smartclean-primary p-6 mb-8 rounded-r-lg animate-scale-in animate-delay-200">
-                <div className="flex items-start gap-3">
-                  <FileText className="w-6 h-6 text-smartclean-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold mb-2 text-smartclean-secondary">Información general</h3>
-                    <p className="text-gray-700">
-                      Esta política de privacidad describe cómo Smart Clean recopila, utiliza y protege la información personal que usted nos proporciona a través de nuestro sitio web y servicios.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-8">
-                <div className="bg-gray-50 rounded-xl p-6 animate-slide-up animate-delay-400">
-                  <div className="flex items-start gap-3 mb-4">
-                    <Users className="w-6 h-6 text-smartclean-primary flex-shrink-0 mt-1" />
-                    <h2 className="text-2xl font-bold text-smartclean-secondary">Responsable del tratamiento</h2>
-                  </div>
-                  <div className="text-gray-700">
-                    <p className="mb-2"><strong>Empresa:</strong> Smart Clean</p>
-                    <p className="mb-2"><strong>Dirección:</strong> Av. Angelino Soler, 2, bajo 3, 46290 Alcàsser, Valencia</p>
-                    <p className="mb-2"><strong>Email:</strong> info@limpiezassmartclean.com</p>
-                    <p><strong>Teléfono:</strong> 663 423 034</p>
-                  </div>
-                </div>
-
-                <div className="bg-gray-50 rounded-xl p-6 animate-slide-up animate-delay-600">
-                  <div className="flex items-start gap-3 mb-4">
-                    <Database className="w-6 h-6 text-smartclean-primary flex-shrink-0 mt-1" />
-                    <h2 className="text-2xl font-bold text-smartclean-secondary">Datos que recopilamos</h2>
-                  </div>
-                  <div className="text-gray-700">
-                    <p className="mb-4">Recopilamos los siguientes tipos de información:</p>
-                    <ul className="space-y-2 ml-4">
-                      <li>• <strong>Datos de contacto:</strong> Nombre, email, teléfono y dirección cuando nos contacta</li>
-                      <li>• <strong>Datos profesionales:</strong> Información sobre su empresa y necesidades de servicio</li>
-                      <li>• <strong>Datos de navegación:</strong> Información sobre cómo utiliza nuestro sitio web mediante cookies</li>
-                      <li>• <strong>Datos analíticos:</strong> Información de uso del sitio web a través de Google Analytics</li>
-                      <li>• <strong>Datos de tracking:</strong> Información de comportamiento para mejorar la experiencia de usuario</li>
-                      <li>• <strong>Currículums:</strong> Información profesional cuando solicita empleo</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="bg-gray-50 rounded-xl p-6 animate-slide-up animate-delay-800">
-                  <div className="flex items-start gap-3 mb-4">
-                    <Eye className="w-6 h-6 text-smartclean-primary flex-shrink-0 mt-1" />
-                    <h2 className="text-2xl font-bold text-smartclean-secondary">Finalidad del tratamiento</h2>
-                  </div>
-                  <div className="text-gray-700">
-                    <p className="mb-4">Utilizamos sus datos para:</p>
-                    <ul className="space-y-2 ml-4">
-                      <li>• Responder a sus consultas y solicitudes de información</li>
-                      <li>• Proporcionar nuestros servicios de limpieza profesional</li>
-                      <li>• Gestionar procesos de selección de personal</li>
-                      <li>• Enviar información comercial (solo con su consentimiento)</li>
-                      <li>• Cumplir con obligaciones legales y contractuales</li>
-                      <li>• Analizar el uso del sitio web mediante Google Analytics</li>
-                      <li>• Realizar seguimiento de comportamiento para mejorar la experiencia</li>
-                      <li>• Mejorar nuestros servicios y experiencia de usuario</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="bg-gray-50 rounded-xl p-6 animate-slide-up animate-delay-1000">
-                  <div className="flex items-start gap-3 mb-4">
-                    <Lock className="w-6 h-6 text-smartclean-primary flex-shrink-0 mt-1" />
-                    <h2 className="text-2xl font-bold text-smartclean-secondary">Base legal</h2>
-                  </div>
-                  <div className="text-gray-700">
-                    <p className="mb-4">El tratamiento de sus datos se basa en:</p>
-                    <ul className="space-y-2 ml-4">
-                      <li>• <strong>Consentimiento:</strong> Para comunicaciones comerciales</li>
-                      <li>• <strong>Ejecución contractual:</strong> Para prestar nuestros servicios</li>
-                      <li>• <strong>Interés legítimo:</strong> Para mejorar nuestros servicios</li>
-                      <li>• <strong>Cumplimiento legal:</strong> Para obligaciones fiscales y laborales</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="bg-gray-50 rounded-xl p-6 animate-slide-up animate-delay-1200">
-                  <div className="flex items-start gap-3 mb-4">
-                    <Shield className="w-6 h-6 text-smartclean-primary flex-shrink-0 mt-1" />
-                    <h2 className="text-2xl font-bold text-smartclean-secondary">Conservación de datos</h2>
-                  </div>
-                  <div className="text-gray-700">
-                    <p className="mb-4">Conservamos sus datos durante:</p>
-                    <ul className="space-y-2 ml-4">
-                      <li>• <strong>Datos de contacto:</strong> Hasta que solicite su eliminación</li>
-                      <li>• <strong>Datos contractuales:</strong> Durante la vigencia del contrato y 6 años adicionales</li>
-                      <li>• <strong>Currículums:</strong> 2 años desde la última comunicación</li>
-                      <li>• <strong>Datos de navegación:</strong> Máximo 2 años</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="bg-gray-50 rounded-xl p-6 animate-slide-up animate-delay-1400">
-                  <div className="flex items-start gap-3 mb-4">
-                    <Users className="w-6 h-6 text-smartclean-primary flex-shrink-0 mt-1" />
-                    <h2 className="text-2xl font-bold text-smartclean-secondary">Sus derechos</h2>
-                  </div>
-                  <div className="text-gray-700">
-                    <p className="mb-4">Usted tiene derecho a:</p>
-                    <ul className="space-y-2 ml-4">
-                      <li>• <strong>Acceso:</strong> Conocer qué datos tenemos sobre usted</li>
-                      <li>• <strong>Rectificación:</strong> Corregir datos inexactos</li>
-                      <li>• <strong>Supresión:</strong> Solicitar la eliminación de sus datos</li>
-                      <li>• <strong>Limitación:</strong> Restringir el tratamiento</li>
-                      <li>• <strong>Portabilidad:</strong> Recibir sus datos en formato estructurado</li>
-                      <li>• <strong>Oposición:</strong> Oponerse al tratamiento</li>
-                    </ul>
-                    <p className="mt-4">Para ejercer estos derechos, contacte con nosotros en: <strong>info@limpiezassmartclean.com</strong></p>
-                  </div>
-                </div>
-
-                <div className="bg-gray-50 rounded-xl p-6 animate-slide-up animate-delay-1600">
-                  <div className="flex items-start gap-3 mb-4">
-                    <Database className="w-6 h-6 text-smartclean-primary flex-shrink-0 mt-1" />
-                    <h2 className="text-2xl font-bold text-smartclean-secondary">Cookies</h2>
-                  </div>
-                  <div className="text-gray-700">
-                    <p className="mb-4">Utilizamos diferentes tipos de cookies:</p>
-                    <ul className="space-y-2 ml-4">
-                      <li>• <strong>Cookies técnicas:</strong> Necesarias para el funcionamiento del sitio web</li>
-                      <li>• <strong>Cookies analíticas:</strong> Google Analytics para analizar el tráfico y uso del sitio</li>
-                      <li>• <strong>Cookies de tracking:</strong> Para seguimiento de comportamiento y mejora de la experiencia</li>
-                      <li>• <strong>Cookies de preferencias:</strong> Para recordar sus configuraciones</li>
-                    </ul>
-                    <p className="mt-4">Puede gestionar sus preferencias de cookies a través del banner de cookies que aparece en su primera visita. También puede configurar su navegador para rechazar cookies, aunque esto puede afectar la funcionalidad del sitio.</p>
-                  </div>
-                </div>
-
-                <div className="bg-gray-50 rounded-xl p-6 animate-slide-up animate-delay-1800">
-                  <div className="flex items-start gap-3 mb-4">
-                    <Lock className="w-6 h-6 text-smartclean-primary flex-shrink-0 mt-1" />
-                    <h2 className="text-2xl font-bold text-smartclean-secondary">Seguridad</h2>
-                  </div>
-                  <div className="text-gray-700">
-                    <p>Implementamos medidas técnicas y organizativas apropiadas para proteger sus datos personales contra acceso no autorizado, alteración, divulgación o destrucción.</p>
-                  </div>
-                </div>
-
-                <div className="bg-gray-50 rounded-xl p-6 animate-slide-up animate-delay-2000">
-                  <div className="flex items-start gap-3 mb-4">
-                    <FileText className="w-6 h-6 text-smartclean-primary flex-shrink-0 mt-1" />
-                    <h2 className="text-2xl font-bold text-smartclean-secondary">Modificaciones</h2>
-                  </div>
-                  <div className="text-gray-700">
-                    <p>Nos reservamos el derecho a modificar esta política de privacidad. Los cambios serán publicados en esta página con la fecha de actualización correspondiente.</p>
-                  </div>
-                </div>
-
-              <div className="bg-smartclean-light border border-smartclean-primary/20 rounded-xl p-6 animate-scale-in animate-delay-2200">
-                  <div className="flex items-start gap-3 mb-4">
-                    <Shield className="w-6 h-6 text-smartclean-primary flex-shrink-0 mt-1" />
-                    <h2 className="text-2xl font-bold text-smartclean-secondary">Contacto</h2>
-                  </div>
-                  <div className="text-gray-700">
-                    <p className="mb-4">Para cualquier consulta sobre esta política de privacidad o el tratamiento de sus datos, puede contactarnos:</p>
-                    <ul className="space-y-2">
-                      <li><strong>Email:</strong> info@limpiezassmartclean.com</li>
-                      <li><strong>Teléfono:</strong> 663 423 034</li>
-                      <li><strong>Dirección:</strong> Av. Angelino Soler, 2, bajo 3, 46290 Alcàsser, Valencia</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="text-center text-gray-600 text-sm animate-fade-in animate-delay-2400">
-                  <p>Última actualización: 15 de enero de 2025</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
-  )
+export const metadata: Metadata = {
+  title: 'Política de Privacidad - First Class Sensations',
+  description: 'Política de privacidad y protección de datos de First Class Sensations en Valencia',
+  robots: {
+    index: false,
+    follow: false,
+  },
 }
 
+export default function PoliticaPrivacidad() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 py-16">
+      <div className="container-custom mx-auto px-4 max-w-4xl">
+        <div className="bg-white rounded-lg shadow-lg p-8">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+            Política de Privacidad
+          </h1>
+          
+          <div className="prose prose-lg max-w-none">
+            <p className="text-gray-600 mb-6">
+              <strong>Última actualización:</strong> 15 de enero de 2024
+            </p>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Información General</h2>
+              <p className="text-gray-700 mb-4">
+                En First Class Sensations, con domicilio en Valencia, España, nos comprometemos a proteger su privacidad y 
+                garantizar la seguridad de sus datos personales. Esta política describe cómo recopilamos, utilizamos y 
+                protegemos su información.
+              </p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. Datos que Recopilamos</h2>
+              <p className="text-gray-700 mb-4">
+                Podemos recopilar los siguientes tipos de información:
+              </p>
+              <ul className="list-disc pl-6 text-gray-700 mb-4 space-y-2">
+                <li>Información de contacto (nombre, email, teléfono)</li>
+                <li>Información sobre servicios solicitados</li>
+                <li>Datos de ubicación para servicios en Valencia y alrededores</li>
+                <li>Información técnica sobre su visita al sitio web (cookies, IP)</li>
+              </ul>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">3. Cómo Utilizamos sus Datos</h2>
+              <p className="text-gray-700 mb-4">
+                Utilizamos su información personal para:
+              </p>
+              <ul className="list-disc pl-6 text-gray-700 mb-4 space-y-2">
+                <li>Proporcionar y gestionar nuestros servicios premium</li>
+                <li>Responder a sus consultas y solicitudes</li>
+                <li>Mejorar nuestros servicios y experiencia del cliente</li>
+                <li>Cumplir con obligaciones legales y reglamentarias</li>
+              </ul>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">4. Base Legal para el Procesamiento</h2>
+              <p className="text-gray-700 mb-4">
+                Procesamos sus datos personales basándonos en:
+              </p>
+              <ul className="list-disc pl-6 text-gray-700 mb-4 space-y-2">
+                <li>Su consentimiento para servicios específicos</li>
+                <li>El cumplimiento de un contrato de servicios</li>
+                <li>Obligaciones legales aplicables</li>
+                <li>Nuestros intereses legítimos en mejorar nuestros servicios</li>
+              </ul>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">5. Compartición de Datos</h2>
+              <p className="text-gray-700 mb-4">
+                No vendemos, alquilamos ni compartimos su información personal con terceros para fines comerciales. 
+                Solo compartimos datos cuando:
+              </p>
+              <ul className="list-disc pl-6 text-gray-700 mb-4 space-y-2">
+                <li>Es necesario para proporcionar nuestros servicios (proveedores de confianza)</li>
+                <li>Estamos legalmente obligados a hacerlo</li>
+                <li>Con su consentimiento expreso</li>
+              </ul>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">6. Seguridad de los Datos</h2>
+              <p className="text-gray-700 mb-4">
+                Implementamos medidas de seguridad técnicas y organizativas apropiadas para proteger sus datos personales 
+                contra acceso no autorizado, alteración, divulgación o destrucción.
+              </p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">7. Sus Derechos</h2>
+              <p className="text-gray-700 mb-4">
+                Bajo el Reglamento General de Protección de Datos (GDPR), usted tiene derecho a:
+              </p>
+              <ul className="list-disc pl-6 text-gray-700 mb-4 space-y-2">
+                <li>Acceder a sus datos personales</li>
+                <li>Rectificar datos inexactos</li>
+                <li>Solicitar la eliminación de sus datos</li>
+                <li>Oponerse al procesamiento de sus datos</li>
+                <li>Solicitar la portabilidad de sus datos</li>
+                <li>Retirar su consentimiento en cualquier momento</li>
+              </ul>
+              <p className="text-gray-700 mb-4">
+                Para ejercer estos derechos, contáctenos en: info@firstclassensations.com
+              </p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">8. Conservación de Datos</h2>
+              <p className="text-gray-700 mb-4">
+                Conservamos sus datos personales solo durante el tiempo necesario para los fines establecidos en esta política, 
+                o según lo requieran las leyes aplicables. Cuando ya no sean necesarios, los eliminamos de forma segura.
+              </p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">9. Cookies</h2>
+              <p className="text-gray-700 mb-4">
+                Utilizamos cookies para mejorar la experiencia del usuario. Las cookies técnicas son esenciales para el 
+                funcionamiento del sitio, mientras que las cookies analíticas nos ayudan a mejorar nuestros servicios. 
+                Puede gestionar sus preferencias de cookies a través de nuestro banner de cookies.
+              </p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">10. Cambios en esta Política</h2>
+              <p className="text-gray-700 mb-4">
+                Podemos actualizar esta política de privacidad ocasionalmente. Le notificaremos sobre cambios significativos 
+                y publicaremos la versión actualizada en esta página. Le recomendamos revisar periódicamente esta política.
+              </p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">11. Contacto</h2>
+              <p className="text-gray-700 mb-4">
+                Si tiene preguntas sobre esta política de privacidad o sobre el tratamiento de sus datos personales, 
+                contáctenos:
+              </p>
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <p className="text-gray-700 mb-2">
+                  <strong>First Class Sensations</strong>
+                </p>
+                <p className="text-gray-700 mb-2">
+                  Email: info@firstclassensations.com
+                </p>
+                <p className="text-gray-700 mb-2">
+                  Teléfono: +34 600 887 755
+                </p>
+                <p className="text-gray-700">
+                  Ubicación: Valencia, España
+                </p>
+              </div>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">12. Autoridad de Control</h2>
+              <p className="text-gray-700 mb-4">
+                Tiene derecho a presentar una reclamación ante la autoridad de control competente si considera que 
+                el tratamiento de sus datos personales no cumple con la legislación aplicable.
+              </p>
+              <p className="text-gray-700">
+                Autoridad de Protección de Datos (AEPD) - España<br />
+                <a href="https://www.aepd.es" className="text-blue-600 hover:text-blue-800 underline">
+                  https://www.aepd.es
+                </a>
+              </p>
+            </section>
+          </div>
+
+          <div className="mt-8 pt-8 border-t border-gray-200 text-center">
+            <a 
+              href="/" 
+              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200 hover-lift"
+            >
+              Volver al inicio
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}

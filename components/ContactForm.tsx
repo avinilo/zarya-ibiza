@@ -3,17 +3,21 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Send, CheckCircle } from 'lucide-react'
+import { useLanguage } from '@/hooks/useLanguage'
 
 type FormData = {
-  name: string
+  fullName: string
   email: string
   phone: string
-  company: string
-  service: string
-  message: string
+  dates: string
+  people: string
+  budget: string
+  services: string
+  message?: string
 }
 
 export default function ContactForm() {
+  const { t } = useLanguage()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
   const [error, setError] = useState('')
@@ -59,9 +63,9 @@ export default function ContactForm() {
   if (isSuccess) {
     return (
       <div className="text-center py-8">
-        <CheckCircle className="w-16 h-16 text-smartclean-primary mx-auto mb-4" />
-        <h3 className="text-2xl font-bold mb-2 text-smartclean-secondary">¡Gracias por contactar!</h3>
-        <p className="text-gray-600">En unos minutos le daremos respuesta...</p>
+        <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
+        <h3 className="text-2xl font-bold mb-2 text-white">¡Gracias por contactar!</h3>
+        <p className="text-gray-300">Te responderemos en unos minutos...</p>
       </div>
     )
   }
@@ -74,28 +78,28 @@ export default function ContactForm() {
       aria-label="Formulario de contacto"
     >
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-smartclean-secondary mb-1">
-          Nombre *
+        <label htmlFor="fullName" className="block text-sm font-medium text-gray-300 mb-1">
+          {t('form.fullName')}
         </label>
         <input
           type="text"
-          id="name"
-          {...register('name', { required: 'Este campo es obligatorio' })}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-smartclean-primary focus:border-smartclean-primary transition-colors"
+          id="fullName"
+          {...register('fullName', { required: 'Este campo es obligatorio' })}
+          className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white transition-colors"
           aria-required="true"
-          aria-invalid={errors.name ? 'true' : 'false'}
-          aria-describedby={errors.name ? 'name-error' : undefined}
+          aria-invalid={errors.fullName ? 'true' : 'false'}
+          aria-describedby={errors.fullName ? 'fullname-error' : undefined}
         />
-        {errors.name && (
-          <p id="name-error" className="text-red-500 text-sm mt-1" role="alert" aria-live="polite">
-            {errors.name.message}
+        {errors.fullName && (
+          <p id="fullname-error" className="text-red-400 text-sm mt-1" role="alert" aria-live="polite">
+            {errors.fullName.message}
           </p>
         )}
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-smartclean-secondary mb-1">
-          Correo electrónico *
+        <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
+          {t('form.email')}
         </label>
         <input
           type="email"
@@ -107,100 +111,138 @@ export default function ContactForm() {
               message: 'Email inválido',
             },
           })}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-smartclean-primary focus:border-smartclean-primary transition-colors"
+          className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white transition-colors"
           aria-required="true"
           aria-invalid={errors.email ? 'true' : 'false'}
           aria-describedby={errors.email ? 'email-error' : undefined}
           autoComplete="email"
         />
         {errors.email && (
-          <p id="email-error" className="text-red-500 text-sm mt-1" role="alert" aria-live="polite">
+          <p id="email-error" className="text-red-400 text-sm mt-1" role="alert" aria-live="polite">
             {errors.email.message}
           </p>
         )}
       </div>
 
       <div>
-        <label htmlFor="phone" className="block text-sm font-medium text-smartclean-secondary mb-1">
-          Número de teléfono *
+        <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-1">
+          {t('form.phone')}
         </label>
         <input
           type="tel"
           id="phone"
           {...register('phone', { required: 'Este campo es obligatorio' })}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-smartclean-primary focus:border-smartclean-primary transition-colors"
+          className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white transition-colors"
           aria-required="true"
           aria-invalid={errors.phone ? 'true' : 'false'}
           aria-describedby={errors.phone ? 'phone-error' : undefined}
           autoComplete="tel"
         />
         {errors.phone && (
-          <p id="phone-error" className="text-red-500 text-sm mt-1" role="alert" aria-live="polite">
+          <p id="phone-error" className="text-red-400 text-sm mt-1" role="alert" aria-live="polite">
             {errors.phone.message}
           </p>
         )}
       </div>
 
       <div>
-        <label htmlFor="company" className="block text-sm font-medium text-smartclean-secondary mb-1">
-          Empresa *
+        <label htmlFor="dates" className="block text-sm font-medium text-gray-300 mb-1">
+          {t('form.dates')}
         </label>
         <input
           type="text"
-          id="company"
-          {...register('company', { required: 'Este campo es obligatorio' })}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-smartclean-primary focus:border-smartclean-primary transition-colors"
+          id="dates"
+          {...register('dates', { required: 'Este campo es obligatorio' })}
+          placeholder={t('form.dates.placeholder')}
+          className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white transition-colors"
           aria-required="true"
-          aria-invalid={errors.company ? 'true' : 'false'}
-          aria-describedby={errors.company ? 'company-error' : undefined}
-          autoComplete="organization"
+          aria-invalid={errors.dates ? 'true' : 'false'}
+          aria-describedby={errors.dates ? 'dates-error' : undefined}
         />
-        {errors.company && (
-          <p id="company-error" className="text-red-500 text-sm mt-1" role="alert" aria-live="polite">
-            {errors.company.message}
+        {errors.dates && (
+          <p id="dates-error" className="text-red-400 text-sm mt-1" role="alert" aria-live="polite">
+            {errors.dates.message}
           </p>
         )}
       </div>
 
       <div>
-        <label htmlFor="service" className="block text-sm font-medium text-smartclean-secondary mb-1">
-          Elige un servicio *
+        <label htmlFor="people" className="block text-sm font-medium text-gray-300 mb-1">
+          {t('form.people')}
         </label>
-        <select
-          id="service"
-          {...register('service', { required: 'Este campo es obligatorio' })}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-smartclean-primary focus:border-smartclean-primary transition-colors"
+        <input
+          type="text"
+          id="people"
+          {...register('people', { required: 'Este campo es obligatorio' })}
+          placeholder={t('form.people.placeholder')}
+          className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white transition-colors"
           aria-required="true"
-          aria-invalid={errors.service ? 'true' : 'false'}
-          aria-describedby={errors.service ? 'service-error' : undefined}
-        >
-          <option value="">— Selecciona la opción —</option>
-          <option value="Limpieza de Oficinas">Limpieza de Oficinas</option>
-          <option value="Limpieza de Comunidades">Limpieza de Comunidades</option>
-          <option value="Limpieza Industrial">Limpieza Industrial</option>
-        </select>
-        {errors.service && (
-          <p id="service-error" className="text-red-500 text-sm mt-1" role="alert" aria-live="polite">
-            {errors.service.message}
+          aria-invalid={errors.people ? 'true' : 'false'}
+          aria-describedby={errors.people ? 'people-error' : undefined}
+        />
+        {errors.people && (
+          <p id="people-error" className="text-red-400 text-sm mt-1" role="alert" aria-live="polite">
+            {errors.people.message}
           </p>
         )}
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-smartclean-secondary mb-1">
-          Mensaje *
+        <label htmlFor="budget" className="block text-sm font-medium text-gray-300 mb-1">
+          {t('form.budget')}
+        </label>
+        <input
+          type="text"
+          id="budget"
+          {...register('budget', { required: 'Este campo es obligatorio' })}
+          placeholder={t('form.budget.placeholder')}
+          className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white transition-colors"
+          aria-required="true"
+          aria-invalid={errors.budget ? 'true' : 'false'}
+          aria-describedby={errors.budget ? 'budget-error' : undefined}
+        />
+        {errors.budget && (
+          <p id="budget-error" className="text-red-400 text-sm mt-1" role="alert" aria-live="polite">
+            {errors.budget.message}
+          </p>
+        )}
+      </div>
+
+      <div>
+        <label htmlFor="services" className="block text-sm font-medium text-gray-300 mb-1">
+          {t('form.services')}
+        </label>
+        <textarea
+          id="services"
+          rows={3}
+          {...register('services', { required: 'Este campo es obligatorio' })}
+          placeholder={t('form.services.placeholder')}
+          className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white transition-colors resize-none"
+          aria-required="true"
+          aria-invalid={errors.services ? 'true' : 'false'}
+          aria-describedby={errors.services ? 'services-error' : undefined}
+        ></textarea>
+        {errors.services && (
+          <p id="services-error" className="text-red-400 text-sm mt-1" role="alert" aria-live="polite">
+            {errors.services.message}
+          </p>
+        )}
+      </div>
+
+      <div>
+        <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">
+          Mensaje adicional (opcional)
         </label>
         <textarea
           id="message"
-          rows={4}
-          {...register('message', { required: 'Este campo es obligatorio' })}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-smartclean-primary focus:border-smartclean-primary transition-colors resize-none"
-          aria-required="true"
+          rows={3}
+          {...register('message')}
+          className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white transition-colors resize-none"
           aria-invalid={errors.message ? 'true' : 'false'}
           aria-describedby={errors.message ? 'message-error' : undefined}
         ></textarea>
         {errors.message && (
-          <p id="message-error" className="text-red-500 text-sm mt-1" role="alert" aria-live="polite">
+          <p id="message-error" className="text-red-400 text-sm mt-1" role="alert" aria-live="polite">
             {errors.message.message}
           </p>
         )}
@@ -208,7 +250,7 @@ export default function ContactForm() {
 
       {error && (
         <div 
-          className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg"
+          className="bg-red-900/20 border border-red-800 text-red-300 px-4 py-3 rounded-lg"
           role="alert"
           aria-live="assertive"
         >
@@ -219,7 +261,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full btn-smartclean-primary flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 disabled:cursor-not-allowed"
         aria-describedby={isSubmitting ? 'submit-status' : undefined}
       >
         {isSubmitting ? (
@@ -230,7 +272,7 @@ export default function ContactForm() {
         ) : (
           <>
             <Send className="w-5 h-5" aria-hidden="true" />
-            Contactar
+            {t('form.submit')}
           </>
         )}
       </button>

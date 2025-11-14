@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import './animations.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import dynamic from 'next/dynamic'
@@ -13,7 +14,7 @@ import {
 } from '@/lib/structured-data'
 import { GA_TRACKING_ID } from '@/lib/gtag'
 import PerformanceOptimizer, { CriticalResourcesPreloader } from '@/components/PerformanceOptimizer'
-import { CookieBanner, ChatBot } from '@/components/ClientComponents'
+import { CookieBanner, WhatsAppBubble } from '@/components/ClientComponents'
 import ScrollRestoration from '@/components/ScrollRestoration'
 
 const inter = Inter({ 
@@ -24,13 +25,13 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Smart Clean - Servicios Profesionales de Limpieza Valencia',
-  description: 'Servicios profesionales de limpieza para oficinas, comunidades e instalaciones industriales en Valencia y alrededores',
-  keywords: 'smart clean, limpieza, oficinas, comunidades, limpieza industrial, valencia, benaguasil, servicios de limpieza',
-  authors: [{ name: 'Smart Clean' }],
-  creator: 'Smart Clean',
-  publisher: 'Smart Clean',
-  applicationName: 'Smart Clean',
+  title: 'First Class Sensations - Servicios Premium en Valencia',
+  description: 'Servicios exclusivos y experiencias de primera clase en Valencia y alrededores. Especialistas en servicios premium con atención personalizada y calidad excepcional.',
+  keywords: 'servicios premium valencia, experiencias exclusivas, servicios de lujo valencia, atención personalizada, first class sensations',
+  authors: [{ name: 'First Class Sensations' }],
+  creator: 'First Class Sensations',
+  publisher: 'First Class Sensations',
+  applicationName: 'First Class Sensations',
   referrer: 'origin-when-cross-origin',
 
   formatDetection: {
@@ -59,18 +60,18 @@ export const metadata: Metadata = {
     }),
   },
   category: 'business',
-  classification: 'Servicios industriales',
+  classification: 'Premium services and experiences',
   openGraph: {
-    title: 'Smart Clean - Servicios Profesionales de Limpieza Valencia',
-    description: 'Servicios profesionales de limpieza para oficinas, comunidades e instalaciones industriales en Valencia y alrededores',
-    url: 'https://limpiezassmartclean.com',
-    siteName: 'Smart Clean',
+    title: 'First Class Sensations - Servicios Premium en Valencia',
+    description: 'Servicios exclusivos y experiencias de primera clase en Valencia y alrededores. Especialistas en servicios premium con atención personalizada.',
+    url: 'https://firstclassensations.com',
+    siteName: 'First Class Sensations',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Smart Clean - Servicios Profesionales de Limpieza Valencia',
+        alt: 'First Class Sensations - Servicios Premium en Valencia',
       },
     ],
     locale: 'es_ES',
@@ -78,10 +79,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Smart Clean - Servicios Profesionales de Limpieza Valencia',
-    description: 'Servicios profesionales de limpieza para oficinas, comunidades e instalaciones industriales en Valencia y alrededores',
+    title: 'First Class Sensations - Servicios Premium en Valencia',
+    description: 'Servicios exclusivos y experiencias de primera clase en Valencia y alrededores',
     images: ['/og-image.png'],
-    creator: '@smartcleanvlc',
+    creator: '@firstclassvlc',
   },
   robots: {
     index: true,
@@ -109,7 +110,7 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
-    title: 'Smart Clean',
+    title: 'Smart Clean Valencia',
     statusBarStyle: 'default',
   },
 }
@@ -160,12 +161,12 @@ export default function RootLayout({
         
         {/* Meta tags específicos para redes sociales */}
         <meta property="fb:app_id" content={process.env.NEXT_PUBLIC_FACEBOOK_APP_ID || ''} />
-        <meta name="twitter:site" content="@smartcleanvlc" />
-        <meta name="twitter:creator" content="@smartcleanvlc" />
+        <meta name="twitter:site" content="@firstclassvlc" />
+        <meta name="twitter:creator" content="@firstclassvlc" />
         
         {/* Meta tags para LinkedIn */}
-        <meta property="og:site_name" content="Smart Clean" />
-        <meta property="article:publisher" content="https://www.linkedin.com/company/smart-clean-valencia" />
+        <meta property="og:site_name" content="First Class Sensations" />
+        <meta property="article:publisher" content="https://www.linkedin.com/company/first-class-sensations" />
         
         {/* Meta tags para WhatsApp */}
         <meta property="og:image:type" content="image/png" />
@@ -177,12 +178,12 @@ export default function RootLayout({
         <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="bingbot" content="index, follow" />
         
-        {/* Geo-targeting para Valencia */}
-        <meta name="geo.region" content="ES-V" />
-        <meta name="geo.placename" content="Valencia, España" />
-        <meta name="geo.position" content="39.4699;-0.3763" />
-        <meta name="ICBM" content="39.4699, -0.3763" />
-        <meta name="DC.title" content="Smart Clean - Servicios de Limpieza Valencia" />
+        {/* Geo-targeting para Ibiza */}
+        <meta name="geo.region" content="ES-IB" />
+        <meta name="geo.placename" content="Ibiza, España" />
+        <meta name="geo.position" content="38.9067;1.4206" />
+        <meta name="ICBM" content="38.9067, 1.4206" />
+        <meta name="DC.title" content="First Class Sensations - Servicios Premium en Valencia" />
         
         {/* Meta tags adicionales para SEO */}
         <meta name="theme-color" content="#2563eb" />
@@ -191,7 +192,7 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="Smart Clean" />
+        <meta name="apple-mobile-web-app-title" content="First Class Sensations" />
         
         {/* Favicon y Apple Touch Icons */}
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
@@ -287,7 +288,7 @@ export default function RootLayout({
           </main>
           <Footer />
           <CookieBanner />
-          <ChatBot />
+          <WhatsAppBubble />
         </PerformanceOptimizer>
       </body>
     </html>

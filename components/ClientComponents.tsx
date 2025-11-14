@@ -8,7 +8,7 @@ export const CookieBanner = dynamic(() => import('@/components/CookieBanner'), {
   loading: () => null
 })
 
-export const ChatBot = dynamic(() => import('@/components/ChatBot'), {
+export const WhatsAppBubble = dynamic(() => import('@/components/WhatsAppBubble'), {
   ssr: false,
   loading: () => null
 })

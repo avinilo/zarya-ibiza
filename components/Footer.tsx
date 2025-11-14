@@ -1,38 +1,54 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
+import { useLanguage } from '@/hooks/useLanguage'
+import { Phone, Mail, MapPin, Calendar, Star, Home, Car, Shield, Sparkles, Instagram } from 'lucide-react'
 
 export default function Footer() {
+  const { t } = useLanguage()
+
+  const services = [
+    { name: 'Servicios Premium', href: '#services', icon: Star },
+    { name: 'Experiencias Exclusivas', href: '#services', icon: Sparkles },
+    { name: 'Atención Personalizada', href: '#services', icon: Shield },
+    { name: 'Servicios a Medida', href: '#services', icon: Home },
+  ]
+
   return (
     <footer 
       id="footer"
-      className="bg-smartclean-secondary text-white relative overflow-hidden"
+      className="bg-gray-900 text-white relative overflow-hidden"
       role="contentinfo"
       aria-label="Información de contacto y enlaces del sitio"
     >
       {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-smartclean-secondary via-smartclean-secondary to-smartclean-primary/20"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900/20 to-gray-900"></div>
       
       <div className="container-custom py-12 relative z-10">
         <div className="grid md:grid-cols-5 gap-8">
           {/* Company Info */}
           <div className="md:col-span-2">
-            <Image
-              src="/logo.webp"
-              alt="Smart Clean - Servicios profesionales de limpieza"
-              width={180}
-              height={60}
-              className="h-12 w-auto mb-4 brightness-0 invert"
-              loading="lazy"
-            />
+            <div className="mb-4 flex items-center">
+              <img 
+                src="/logo1.png" 
+                alt="First Class Sensations" 
+                className="h-12 w-auto"
+                width="auto"
+                height="48"
+              />
+              <span className="ml-3 text-xl font-bold text-white">
+                First Class Sensations
+              </span>
+            </div>
             <p className="text-sm text-white/80 mb-4 leading-relaxed">
-              Servicios profesionales de limpieza para oficinas, comunidades e instalaciones industriales.
+              Servicios exclusivos y experiencias de primera clase en Valencia y alrededores. Especialistas en servicios premium con atención personalizada y calidad excepcional.
             </p>
             <div className="space-y-2">
               <p className="text-sm">
-                <strong className="text-smartclean-light">Dirección:</strong><br />
+                <strong className="text-blue-400">Ubicación:</strong><br />
                 <span className="text-white/90">
-                  Calle Josep Meliá Pigmalión 21 C 5<br />
-                  46180 Benaguasil
+                  Valencia, España
                 </span>
               </p>
             </div>
@@ -40,91 +56,87 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-smartclean-light font-semibold text-lg mb-4">Servicios</h3>
+            <h3 className="text-blue-400 font-semibold text-lg mb-4">Servicios</h3>
             <nav aria-label="Enlaces de servicios">
               <ul className="space-y-3">
-              <li>
-                <Link href="/gestion-documental" className="text-sm text-white/80 hover:text-smartclean-light transition-smooth flex items-center group hover-lift">
-                  <span className="w-2 h-2 bg-smartclean-primary rounded-full mr-2 group-hover:bg-smartclean-light transition-smooth"></span>
-                  Limpieza de Oficinas
-                </Link>
-              </li>
-              <li>
-                <Link href="/mano-obra" className="text-sm text-white/80 hover:text-smartclean-light transition-smooth flex items-center group hover-lift">
-                  <span className="w-2 h-2 bg-smartclean-primary rounded-full mr-2 group-hover:bg-smartclean-light transition-smooth"></span>
-                  Limpieza de Comunidades
-                </Link>
-              </li>
-              <li>
-                <Link href="/limpieza-industrial" className="text-sm text-white/80 hover:text-smartclean-light transition-smooth flex items-center group hover-lift">
-                  <span className="w-2 h-2 bg-smartclean-primary rounded-full mr-2 group-hover:bg-smartclean-light transition-smooth"></span>
-                  Limpieza Industrial
-                </Link>
-              </li>
+                {services.map((service) => {
+                  const Icon = service.icon
+                  return (
+                    <li key={service.name}>
+                      <Link
+                        href={service.href}
+                        className="text-sm text-white/80 hover:text-blue-400 transition-smooth flex items-center group hover-lift"
+                      >
+                        <Icon className="w-4 h-4 mr-2 text-blue-500 group-hover:text-blue-400 transition-smooth" />
+                        {service.name}
+                      </Link>
+                    </li>
+                  )
+                })}
               </ul>
             </nav>
           </div>
 
-          {/* Empresa */}
+          {/* Quick Links */}
           <div>
-            <h3 className="text-smartclean-light font-semibold text-lg mb-4">Empresa</h3>
-            <nav aria-label="Enlaces de empresa">
+            <h3 className="text-blue-400 font-semibold text-lg mb-4">Enlaces Rápidos</h3>
+            <nav aria-label="Enlaces rápidos">
               <ul className="space-y-3">
-              <li>
-                <Link href="/sobre-nosotros" className="text-sm text-white/80 hover:text-smartclean-light transition-smooth flex items-center group hover-lift">
-                  <span className="w-2 h-2 bg-smartclean-primary rounded-full mr-2 group-hover:bg-smartclean-light transition-smooth"></span>
-                  Sobre Nosotros
-                </Link>
-              </li>
-              <li>
-                <Link href="/casos-exito" className="text-sm text-white/80 hover:text-smartclean-light transition-smooth flex items-center group hover-lift">
-                  <span className="w-2 h-2 bg-smartclean-primary rounded-full mr-2 group-hover:bg-smartclean-light transition-smooth"></span>
-                  Casos de Éxito
-                </Link>
-              </li>
-              <li>
-                <Link href="/certificaciones" className="text-sm text-white/80 hover:text-smartclean-light transition-smooth flex items-center group hover-lift">
-                  <span className="w-2 h-2 bg-smartclean-primary rounded-full mr-2 group-hover:bg-smartclean-light transition-smooth"></span>
-                  Certificaciones
-                </Link>
-              </li>
-              <li>
-                <Link href="/preguntas-frecuentes" className="text-sm text-white/80 hover:text-smartclean-light transition-smooth flex items-center group hover-lift">
-                  <span className="w-2 h-2 bg-smartclean-primary rounded-full mr-2 group-hover:bg-smartclean-light transition-smooth"></span>
-                  Preguntas Frecuentes
-                </Link>
-              </li>
+                <li>
+                  <Link href="#services" className="text-sm text-white/80 hover:text-blue-400 transition-smooth flex items-center group hover-lift">
+                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 group-hover:bg-blue-400 transition-smooth"></span>
+                    Servicios
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#process" className="text-sm text-white/80 hover:text-blue-400 transition-smooth flex items-center group hover-lift">
+                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 group-hover:bg-blue-400 transition-smooth"></span>
+                    Proceso
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#about" className="text-sm text-white/80 hover:text-blue-400 transition-smooth flex items-center group hover-lift">
+                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 group-hover:bg-blue-400 transition-smooth"></span>
+                    Sobre Nosotros
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#contact" className="text-sm text-white/80 hover:text-blue-400 transition-smooth flex items-center group hover-lift">
+                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 group-hover:bg-blue-400 transition-smooth"></span>
+                    Contacto
+                  </Link>
+                </li>
               </ul>
             </nav>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="text-smartclean-light font-semibold text-lg mb-4">Contacto</h3>
+            <h3 className="text-blue-400 font-semibold text-lg mb-4">Contacto</h3>
             <ul className="space-y-3">
               <li>
-                <a href="tel:691616465" className="text-sm text-white/80 hover:text-smartclean-light transition-smooth flex items-center group hover-lift">
-                  <svg className="w-4 h-4 mr-2 text-smartclean-primary group-hover:text-smartclean-light transition-smooth" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                  691 616 465
+                <a href="https://wa.me/34600887755" className="text-sm text-white/80 hover:text-blue-400 transition-smooth flex items-center group hover-lift">
+                  <Phone className="w-4 h-4 mr-2 text-blue-500 group-hover:text-blue-400 transition-smooth" />
+                  +34 600 887 755
                 </a>
               </li>
               <li>
-                <a href="mailto:info@limpiezassmartclean.com" className="text-sm text-white/80 hover:text-smartclean-light transition-smooth flex items-center group hover-lift">
-                  <svg className="w-4 h-4 mr-2 text-smartclean-primary group-hover:text-smartclean-light transition-smooth" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  info@limpiezassmartclean.com
+                <a href="mailto:ivansanchezcamano@gmail.com" className="text-sm text-white/80 hover:text-blue-400 transition-smooth flex items-center group hover-lift">
+                  <Mail className="w-4 h-4 mr-2 text-blue-500 group-hover:text-blue-400 transition-smooth" />
+                  ivansanchezcamano@gmail.com
                 </a>
               </li>
               <li>
-                <Link href="/trabaja-con-nosotros" className="text-sm text-white/80 hover:text-smartclean-light transition-smooth flex items-center group hover-lift">
-                  <svg className="w-4 h-4 mr-2 text-smartclean-primary group-hover:text-smartclean-light transition-smooth" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                  Trabaja con nosotros
-                </Link>
+                <div className="text-sm text-white/80 flex items-center group">
+                  <MapPin className="w-4 h-4 mr-2 text-blue-500" />
+                  Valencia, España
+                </div>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/ivan_first_class_sensations.co/" className="text-sm text-white/80 hover:text-blue-400 transition-smooth flex items-center group hover-lift" target="_blank" rel="noopener noreferrer">
+                  <Instagram className="w-4 h-4 mr-2 text-blue-500 group-hover:text-blue-400 transition-smooth" />
+                  @ivan_first_class_sensations.co
+                </a>
               </li>
             </ul>
           </div>
@@ -133,11 +145,14 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-white/70">
-            © {new Date().getFullYear()} Smart Clean. Todos los derechos reservados.
+            © {new Date().getFullYear()} First Class Sensations. Todos los derechos reservados.
           </p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <Link href="/politica-privacidad" className="text-sm text-white/70 hover:text-smartclean-light transition-smooth hover-lift">
+            <Link href="/politica-privacidad" className="text-sm text-white/70 hover:text-blue-400 transition-smooth hover-lift">
               Política de Privacidad
+            </Link>
+            <Link href="/terminos-condiciones" className="text-sm text-white/70 hover:text-blue-400 transition-smooth hover-lift">
+              Términos y Condiciones
             </Link>
           </div>
         </div>

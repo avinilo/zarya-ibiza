@@ -53,7 +53,7 @@ export default function Header() {
        isHeaderVisible ? 'top-0' : '-top-20'
      } ${
        isScrolled || isMenuOpen
-        ? `bg-white shadow-lg ${isBorderVisible ? 'border-b border-smartclean-primary/20' : ''}` 
+        ? `bg-white shadow-lg ${isBorderVisible ? 'border-b border-firstclass-primary/20' : ''}` 
          : 'bg-transparent'
      }`}>
       <nav className="container-custom">
@@ -69,7 +69,7 @@ export default function Header() {
             />
             <span className={`ml-2 md:ml-3 text-[10px] sm:text-xs md:text-xl font-bold transition-smooth leading-tight ${
               isScrolled || isMenuOpen 
-                ? 'text-smartclean-secondary' 
+                ? 'text-firstclass-secondary' 
                 : 'text-white'
             }`}>
               First Class Sensations
@@ -82,13 +82,13 @@ export default function Header() {
               href="/"
               className={`font-medium transition-smooth relative group ${
                 isScrolled 
-                  ? 'text-smartclean-secondary hover:text-smartclean-primary' 
+                  ? 'text-firstclass-secondary hover:text-firstclass-primary' 
                   : 'text-white hover:text-white/80'
               }`}
             >
               {t('nav.home')}
               <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-smooth group-hover:w-full ${
-                isScrolled ? 'bg-smartclean-primary' : 'bg-white'
+                isScrolled ? 'bg-firstclass-primary' : 'bg-white'
               }`}></span>
             </Link>
 
@@ -97,13 +97,13 @@ export default function Header() {
               href="/#services"
               className={`font-medium transition-smooth relative group ${
                 isScrolled 
-                  ? 'text-smartclean-secondary hover:text-smartclean-primary' 
+                  ? 'text-firstclass-secondary hover:text-firstclass-primary' 
                   : 'text-white hover:text-white/80'
               }`}
             >
               {t('nav.services')}
               <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-smooth group-hover:w-full ${
-                isScrolled ? 'bg-smartclean-primary' : 'bg-white'
+                isScrolled ? 'bg-firstclass-primary' : 'bg-white'
               }`}></span>
             </Link>
 
@@ -112,13 +112,13 @@ export default function Header() {
               href="/#about"
               className={`font-medium transition-smooth relative group ${
                 isScrolled 
-                  ? 'text-smartclean-secondary hover:text-smartclean-primary' 
+                  ? 'text-firstclass-secondary hover:text-firstclass-primary' 
                   : 'text-white hover:text-white/80'
               }`}
             >
               {t('nav.about')}
               <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-smooth group-hover:w-full ${
-                isScrolled ? 'bg-smartclean-primary' : 'bg-white'
+                isScrolled ? 'bg-firstclass-primary' : 'bg-white'
               }`}></span>
             </Link>
 
@@ -126,13 +126,13 @@ export default function Header() {
               href="/#faq"
               className={`font-medium transition-smooth relative group ${
                 isScrolled 
-                  ? 'text-smartclean-secondary hover:text-smartclean-primary' 
+                  ? 'text-firstclass-secondary hover:text-firstclass-primary' 
                   : 'text-white hover:text-white/80'
               }`}
             >
               {t('nav.faq')}
               <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-smooth group-hover:w-full ${
-                isScrolled ? 'bg-smartclean-primary' : 'bg-white'
+                isScrolled ? 'bg-firstclass-primary' : 'bg-white'
               }`}></span>
             </Link>
 
@@ -140,13 +140,13 @@ export default function Header() {
               href="/#contact"
               className={`font-medium transition-smooth relative group ${
                 isScrolled 
-                  ? 'text-smartclean-secondary hover:text-smartclean-primary' 
+                  ? 'text-firstclass-secondary hover:text-firstclass-primary' 
                   : 'text-white hover:text-white/80'
               }`}
             >
               {t('nav.contact')}
               <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-smooth group-hover:w-full ${
-                isScrolled ? 'bg-smartclean-primary' : 'bg-white'
+                isScrolled ? 'bg-firstclass-primary' : 'bg-white'
               }`}></span>
             </Link>
           </nav>
@@ -154,7 +154,7 @@ export default function Header() {
           {/* CTA Button Desktop */}
           <div className="hidden lg:flex items-center gap-4">
             <LanguageSelector currentLanguage={language} onLanguageChange={changeLanguage} isScrolled={isScrolled} isMenuOpen={isMenuOpen} />
-            <a href="https://wa.me/34600887755" className="btn-smartclean-primary text-sm py-2 px-6 flex items-center gap-2 hover-lift">
+            <a href="https://wa.me/34600887755" className="btn-firstclass-primary text-sm py-2 px-6 flex items-center gap-2 hover-lift">
               <Phone className="w-4 h-4" />
               {t('hero.cta.whatsapp')}
             </a>
@@ -170,15 +170,15 @@ export default function Header() {
             {/* Mobile menu button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-lg hover:bg-smartclean-light/50 transition-smooth hover-scale"
+              className="p-2 rounded-lg hover:bg-firstclass-light/50 transition-smooth hover-scale"
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
               aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
             >
             {isMenuOpen ? (
-              <X className={`h-6 w-6 transition-smooth ${isScrolled || isMenuOpen ? 'text-smartclean-secondary' : 'text-white'}`} />
+              <X className={`h-6 w-6 transition-smooth ${isScrolled || isMenuOpen ? 'text-firstclass-secondary' : 'text-white'}`} />
             ) : (
-              <Menu className={`h-6 w-6 transition-smooth ${isScrolled || isMenuOpen ? 'text-smartclean-secondary' : 'text-white'}`} />
+              <Menu className={`h-6 w-6 transition-smooth ${isScrolled || isMenuOpen ? 'text-firstclass-secondary' : 'text-white'}`} />
             )}
           </button>
           </div>
@@ -188,7 +188,7 @@ export default function Header() {
         {isMenuOpen && (
           <div 
             id="mobile-menu"
-            className="lg:hidden fixed top-20 left-0 w-full bg-white shadow-lg border-t border-smartclean-primary/20 z-40 animate-slide-up max-h-[calc(100vh-5rem)] overflow-y-auto"
+            className="lg:hidden fixed top-20 left-0 w-full bg-white shadow-lg border-t border-firstclass-primary/20 z-40 animate-slide-up max-h-[calc(100vh-5rem)] overflow-y-auto"
             role="navigation"
             aria-label="Menú de navegación móvil"
           >
@@ -196,7 +196,7 @@ export default function Header() {
               <Link
                 href="/"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-smartclean-secondary hover:text-smartclean-primary font-medium transition-smooth px-4 py-2 rounded-lg hover:bg-smartclean-light/50 hover-lift"
+                className="text-firstclass-secondary hover:text-firstclass-primary font-medium transition-smooth px-4 py-2 rounded-lg hover:bg-firstclass-light/50 hover-lift"
               >
                 {t('nav.home')}
               </Link>
@@ -205,7 +205,7 @@ export default function Header() {
               <Link
                 href="/#services"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-smartclean-secondary hover:text-smartclean-primary font-medium transition-smooth px-4 py-2 rounded-lg hover:bg-smartclean-light/50 hover-lift"
+                className="text-firstclass-secondary hover:text-firstclass-primary font-medium transition-smooth px-4 py-2 rounded-lg hover:bg-firstclass-light/50 hover-lift"
               >
                 {t('nav.services')}
               </Link>
@@ -214,7 +214,7 @@ export default function Header() {
               <Link
                 href="/#about"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-smartclean-secondary hover:text-smartclean-primary font-medium transition-smooth px-4 py-2 rounded-lg hover:bg-smartclean-light/50 hover-lift"
+                className="text-firstclass-secondary hover:text-firstclass-primary font-medium transition-smooth px-4 py-2 rounded-lg hover:bg-firstclass-light/50 hover-lift"
               >
                 {t('nav.about')}
               </Link>
@@ -222,7 +222,7 @@ export default function Header() {
               <Link
                 href="/#services"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-smartclean-secondary hover:text-smartclean-primary font-medium transition-smooth px-4 py-2 rounded-lg hover:bg-smartclean-light/50 hover-lift"
+                className="text-firstclass-secondary hover:text-firstclass-primary font-medium transition-smooth px-4 py-2 rounded-lg hover:bg-firstclass-light/50 hover-lift"
               >
                 {t('nav.faq')}
               </Link>
@@ -230,14 +230,14 @@ export default function Header() {
               <Link
                 href="/#contact"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-smartclean-secondary hover:text-smartclean-primary font-medium transition-smooth px-4 py-2 rounded-lg hover:bg-smartclean-light/50 hover-lift"
+                className="text-firstclass-secondary hover:text-firstclass-primary font-medium transition-smooth px-4 py-2 rounded-lg hover:bg-firstclass-light/50 hover-lift"
               >
                 {t('nav.contact')}
               </Link>
 
               {/* WhatsApp Button */}
               <div className="px-4 pb-4">
-                <a href="https://wa.me/34600887755" className="btn-smartclean-primary text-sm py-3 px-6 flex items-center justify-center gap-2 hover-lift w-full">
+                <a href="https://wa.me/34672123456" className="btn-firstclass-primary text-sm py-3 px-6 flex items-center justify-center gap-2 hover-lift w-full">
                   <Phone className="w-4 h-4" />
                   {t('hero.cta.whatsapp')}
                 </a>

@@ -97,8 +97,8 @@ export default function SEOHead({
       
       {/* Twitter Cards */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@smartclean" />
-      <meta name="twitter:creator" content="@smartclean" />
+      <meta name="twitter:site" content="@firstclassibiza" />
+      <meta name="twitter:creator" content="@firstclassibiza" />
       <meta name="twitter:title" content={finalTitle} />
       <meta name="twitter:description" content={finalDescription} />
       <meta name="twitter:image" content={`${baseUrl}${finalOgImage}`} />
@@ -138,11 +138,11 @@ export default function SEOHead({
       <meta name="theme-color" content="#ffffff" />
       <meta name="msapplication-TileColor" content="#2563eb" />
       
-      {/* Geo tags para Valencia */}
-      <meta name="geo.region" content="ES-V" />
-      <meta name="geo.placename" content="Valencia" />
-      <meta name="geo.position" content="39.4699;-0.3763" />
-      <meta name="ICBM" content="39.4699, -0.3763" />
+      {/* Geo tags para Ibiza */}
+      <meta name="geo.region" content="ES-IB" />
+      <meta name="geo.placename" content="Ibiza" />
+      <meta name="geo.position" content="38.9067;1.4206" />
+      <meta name="ICBM" content="38.9067, 1.4206" />
       
       {/* Contenido adicional personalizado */}
       {children}

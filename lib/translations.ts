@@ -94,6 +94,59 @@ export const translations: Record<Language, Translation> = {
     'about.style': 'Estilo discreto, directo y eficaz. Sin intermediarios ni sorpresas.',
     'about.philosophy': 'La clave está en la planificación y en los detalles. Cada cliente es diferente, cada viaje es único.',
     
+    // Testimonials Section
+    'testimonials.title': 'Lo que dicen nuestros clientes',
+    'testimonials.subtitle': 'Personas reales, experiencias auténticas. Así vivieron Ibiza con nosotros.',
+    'testimonials.project': 'Proyecto',
+    
+    // Testimonial 1
+    'testimonials.t1.name': 'María García',
+    'testimonials.t1.position': 'Profesora',
+    'testimonials.t1.company': 'Ibiza',
+    'testimonials.t1.location': 'Playa d\'en Bossa, Ibiza',
+    'testimonials.t1.text': 'Increíble experiencia con First Class Sensations. Nos organizaron una escapada romántica perfecta: reserva en un restaurante con vistas al mar, coche de alquiler y hasta nos consiguieron entradas para un sunset en un beach club. Todo sin preocupaciones y con un trato excepcional.',
+    'testimonials.t1.project': 'Escapada Romántica',
+    
+    // Testimonial 2
+    'testimonials.t2.name': 'Carlos y Ana',
+    'testimonials.t2.position': 'Pareja jubilada',
+    'testimonials.t2.company': 'Madrid',
+    'testimonials.t2.location': 'Puerto de San Miguel, Ibiza',
+    'testimonials.t2.text': 'No sabíamos por dónde empezar para visitar Ibiza y First Class Sensations nos creó un itinerario perfecto adaptado a nuestro ritmo. Visitamos calas escondidas, mercados locales y disfrutamos de la gastronomía típica. Se portaron fenomenal con nosotros.',
+    'testimonials.t2.project': 'Vacaciones tranquilas',
+    
+    // Testimonial 3
+    'testimonials.t3.name': 'Lucía Fernández',
+    'testimonials.t3.position': 'Estudiante universitaria',
+    'testimonials.t3.company': 'Barcelona',
+    'testimonials.t3.location': 'Cala Vadella, Ibiza',
+    'testimonials.t3.text': 'Fui con mis amigas y la experiencia fue inolvidable. Nos consiguieron un apartamento genial cerca de la playa, nos organizaron una excursión en barco por calas secretas y hasta nos reservaron en un restaurante de moda. Todo super económico y sin complicaciones.',
+    'testimonials.t3.project': 'Viaje con amigas',
+    
+    // Testimonial 4
+    'testimonials.t4.name': 'José Antonio Ruiz',
+    'testimonials.t4.position': 'Autónomo',
+    'testimonials.t4.company': 'Sevilla',
+    'testimonials.t4.location': 'Es Canar, Ibiza',
+    'testimonials.t4.text': 'Quería sorprender a mi familia y fue un acierto total. Los niños disfrutaron como locos con las actividades que nos organizaron: snorkel, paddle surf y un día de barco. Mi mujer y yo pudimos relajarnos sabiendo que todo estaba controlado. Repetiremos seguro.',
+    'testimonials.t4.project': 'Vacaciones en familia',
+    
+    // Testimonial 5
+    'testimonials.t5.name': 'Sofía y Miguel',
+    'testimonials.t5.position': 'Pareja de 30 años',
+    'testimonials.t5.company': 'Bilbao',
+    'testimonials.t5.location': 'Santa Gertrudis, Ibiza',
+    'testimonials.t5.text': 'Llevamos 2 años viniendo a Ibiza con First Class Sensations y siempre nos sorprenden con algo nuevo. Este año descubrimos un restaurante escondido en el interior que era una joya. Se nota que conocen la isla perfectamente y se adaptan a lo que buscas.',
+    'testimonials.t5.project': 'Descubrimiento local',
+    
+    // Testimonial 6
+    'testimonials.t6.name': 'Rosa Martínez',
+    'testimonials.t6.position': 'Enfermera',
+    'testimonials.t6.company': 'Málaga',
+    'testimonials.t6.location': 'Cala Llonga, Ibiza',
+    'testimonials.t6.text': 'Profesionales de confianza que hacen que todo sea fácil. Me organizaron una escapada de fin de semana con mi hermana: nos recogieron en el aeropuerto, nos llevaron a un spa rural, cena en un restaurante típico y tiempo para shopping en las tiendas locales. Todo perfecto.',
+    'testimonials.t6.project': 'Escapada de chicas',
+    
     // Contact Section
     'contact.title': 'Contacto',
     'contact.subtitle': 'Un chat de WhatsApp para coordinar todo. Contestamos en menos de una hora.',
@@ -144,7 +197,7 @@ export const translations: Record<Language, Translation> = {
     'footer.services.custom': 'Servicios a Medida',
     'footer.quickLinks': 'Enlaces Rápidos',
     'footer.aboutUs': 'Sobre Nosotros',
-    'footer.location': 'Valencia, España',
+    'footer.location': 'Ibiza, España',
     'footer.privacy': 'Política de Privacidad',
     'footer.terms': 'Términos y Condiciones',
     'footer.ariaLabel': 'Información de contacto y enlaces del sitio',
@@ -276,6 +329,59 @@ export const translations: Record<Language, Translation> = {
     'about.style': 'Discreet, direct and efficient style. No intermediaries or surprises.',
     'about.philosophy': 'The key is in planning and details. Each client is different, each trip is unique.',
     
+    // Testimonials Section
+    'testimonials.title': 'What our clients say',
+    'testimonials.subtitle': 'Real people, authentic experiences. This is how they lived Ibiza with us.',
+    'testimonials.project': 'Project',
+    
+    // Testimonial 1
+    'testimonials.t1.name': 'Sarah Thompson',
+    'testimonials.t1.position': 'Marketing Director',
+    'testimonials.t1.company': 'London',
+    'testimonials.t1.location': 'Playa d\'en Bossa, Ibiza',
+    'testimonials.t1.text': 'Incredible experience with First Class Sensations. They organized a perfect romantic getaway: reservation at a seaside restaurant, rental car, and even got us tickets for a sunset at a beach club. Everything without worries and with exceptional service.',
+    'testimonials.t1.project': 'Romantic Getaway',
+    
+    // Testimonial 2
+    'testimonials.t2.name': 'Robert and Helen',
+    'testimonials.t2.position': 'Retired Couple',
+    'testimonials.t2.company': 'Manchester',
+    'testimonials.t2.location': 'Puerto de San Miguel, Ibiza',
+    'testimonials.t2.text': 'We didn\'t know where to start to visit Ibiza and First Class Sensations created a perfect itinerary adapted to our pace. We visited hidden coves, local markets and enjoyed the typical gastronomy. They were phenomenal with us.',
+    'testimonials.t2.project': 'Peaceful Holidays',
+    
+    // Testimonial 3
+    'testimonials.t3.name': 'Emma Wilson',
+    'testimonials.t3.position': 'University Student',
+    'testimonials.t3.company': 'Brighton',
+    'testimonials.t3.location': 'Cala Vadella, Ibiza',
+    'testimonials.t3.text': 'I went with my friends and the experience was unforgettable. They got us a great apartment near the beach, organized a boat excursion to secret coves, and even booked us at a trendy restaurant. All super affordable and without complications.',
+    'testimonials.t3.project': 'Girls Trip',
+    
+    // Testimonial 4
+    'testimonials.t4.name': 'James Mitchell',
+    'testimonials.t4.position': 'Business Owner',
+    'testimonials.t4.company': 'Liverpool',
+    'testimonials.t4.location': 'Es Canar, Ibiza',
+    'testimonials.t4.text': 'I wanted to surprise my family and it was a total success. The kids went crazy with the activities they organized for us: snorkeling, paddle surfing and a day on a boat. My wife and I were able to relax knowing that everything was under control. We will definitely repeat.',
+    'testimonials.t4.project': 'Family Vacation',
+    
+    // Testimonial 5
+    'testimonials.t5.name': 'Sophie and Michael',
+    'testimonials.t5.position': 'Couple in their 30s',
+    'testimonials.t5.company': 'Bristol',
+    'testimonials.t5.location': 'Santa Gertrudis, Ibiza',
+    'testimonials.t5.text': 'We have been coming to Ibiza with First Class Sensations for 2 years and they always surprise us with something new. This year we discovered a hidden restaurant in the interior that was a gem. You can tell they know the island perfectly and adapt to what you are looking for.',
+    'testimonials.t5.project': 'Local Discovery',
+    
+    // Testimonial 6
+    'testimonials.t6.name': 'Rose Martinez',
+    'testimonials.t6.position': 'Nurse',
+    'testimonials.t6.company': 'Birmingham',
+    'testimonials.t6.location': 'Cala Llonga, Ibiza',
+    'testimonials.t6.text': 'Trustworthy professionals who make everything easy. They organized a weekend getaway for me with my sister: they picked us up at the airport, took us to a rural spa, dinner at a typical restaurant and time for shopping at local stores. Everything perfect.',
+    'testimonials.t6.project': 'Girls Weekend',
+    
     // Contact Section
     'contact.title': 'Contact',
     'contact.subtitle': 'One WhatsApp chat to coordinate everything. We respond in less than an hour.',
@@ -326,7 +432,7 @@ export const translations: Record<Language, Translation> = {
     'footer.services.custom': 'Custom Services',
     'footer.quickLinks': 'Quick Links',
     'footer.aboutUs': 'About Us',
-    'footer.location': 'Valencia, Spain',
+    'footer.location': 'Ibiza, Spain',
     'footer.privacy': 'Privacy Policy',
     'footer.terms': 'Terms and Conditions',
     'footer.ariaLabel': 'Contact information and site links',
@@ -452,6 +558,59 @@ export const translations: Record<Language, Translation> = {
     'about.style': 'Стиль дискретный, прямой и эффективный. Без посредников и сюрпризов.',
     'about.philosophy': 'Ключ в планировании и деталях. Каждый клиент разный, каждое путешествие уникально.',
     
+    // Testimonials Section
+    'testimonials.title': 'Что говорят наши клиенты',
+    'testimonials.subtitle': 'Реальные люди, подлинные впечатления. Так они жили Ибицей с нами.',
+    'testimonials.project': 'Проект',
+    
+    // Testimonial 1
+    'testimonials.t1.name': 'Мария Иванова',
+    'testimonials.t1.position': 'Учительница',
+    'testimonials.t1.company': 'Ибица',
+    'testimonials.t1.location': 'Плайя д\'ен Босса, Ибица',
+    'testimonials.t1.text': 'Невероятный опыт с First Class Sensations. Они организовали идеальный романтический уикенд: бронирование в ресторане с видом на море, аренда автомобиля и даже достали билеты на закат в пляжном клубе. Всё без забот и с исключительным обслуживанием.',
+    'testimonials.t1.project': 'Романтический Уикенд',
+    
+    // Testimonial 2
+    'testimonials.t2.name': 'Александр и Елена',
+    'testimonials.t2.position': 'Пенсионеры',
+    'testimonials.t2.company': 'Москва',
+    'testimonials.t2.location': 'Пуэрто де Сан Мигель, Ибица',
+    'testimonials.t2.text': 'Мы не знали, с чего начать знакомство с Ибицей, и First Class Sensations создали идеальный маршрут, адаптированный к нашему темпу. Мы посетили скрытые бухты, местные рынки и наслаждались типичной гастрономией. Они были феноменальны с нами.',
+    'testimonials.t2.project': 'Спокойный Отдых',
+    
+    // Testimonial 3
+    'testimonials.t3.name': 'Анна Петрова',
+    'testimonials.t3.position': 'Студентка',
+    'testimonials.t3.company': 'Санкт-Петербург',
+    'testimonials.t3.location': 'Кала Ваделла, Ибица',
+    'testimonials.t3.text': 'Я поехала с подругами, и опыт был незабываемым. Они достали нам отличную квартиру рядом с пляжем, организовали лодочную экскурсию по секретным бухтам и даже забронировали нас в модном ресторане. Всё супер доступно и без сложностей.',
+    'testimonials.t3.project': 'Поездка с Подругами',
+    
+    // Testimonial 4
+    'testimonials.t4.name': 'Дмитрий Смирнов',
+    'testimonials.t4.position': 'Предприниматель',
+    'testimonials.t4.company': 'Екатеринбург',
+    'testimonials.t4.location': 'Эс Канар, Ибица',
+    'testimonials.t4.text': 'Я хотел удивить свою семью, и это был полный успех. Дети сходили с ума от активностей, которые они для нас организовали: сноркелинг, паддл-серфинг и день на лодке. Моя жена и я могли расслабиться, зная, что всё под контролем. Обязательно повторим.',
+    'testimonials.t4.project': 'Семейный Отдых',
+    
+    // Testimonial 5
+    'testimonials.t5.name': 'София и Михаил',
+    'testimonials.t5.position': 'Пара 30-ти лет',
+    'testimonials.t5.company': 'Новосибирск',
+    'testimonials.t5.location': 'Санта Гертрудис, Ибица',
+    'testimonials.t5.text': 'Мы приезжаем на Ибицу с First Class Sensations уже 2 года, и они всегда удивляют нас чем-то новым. В этом году мы открыли скрытый ресторан внутри острова, который был настоящей жемчужиной. Видно, что они идеально знают остров и адаптируются к тому, что вы ищете.',
+    'testimonials.t5.project': 'Местные Открытия',
+    
+    // Testimonial 6
+    'testimonials.t6.name': 'Мария Кузнецова',
+    'testimonials.t6.position': 'Медсестра',
+    'testimonials.t6.company': 'Казань',
+    'testimonials.t6.location': 'Кала Льонга, Ибица',
+    'testimonials.t6.text': 'Надёжные профессионалы, которые делают всё легко. Они организовали для меня уикенд с сестрой: нас забрали в аэропорту, отвезли в загородный спа, ужин в типичном ресторане и время для шопинга в местных магазинах. Всё идеально.',
+    'testimonials.t6.project': 'Девичий Уикенд',
+    
     // Contact Section
     'contact.title': 'Контакт',
     'contact.subtitle': 'Один чат WhatsApp для координации всего. Мы отвечаем менее чем за час.',
@@ -502,7 +661,7 @@ export const translations: Record<Language, Translation> = {
     'footer.services.custom': 'Индивидуальные Услуги',
     'footer.quickLinks': 'Быстрые Ссылки',
     'footer.aboutUs': 'О Нас',
-    'footer.location': 'Валенсия, Испания',
+    'footer.location': 'Ибица, Испания',
     'footer.privacy': 'Политика Конфиденциальности',
     'footer.terms': 'Условия и Положения',
     'footer.ariaLabel': 'Контактная информация и ссылки сайта',

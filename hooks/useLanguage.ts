@@ -16,7 +16,7 @@ export function useLanguage() {
 
   useEffect(() => {
     // Load saved language from localStorage or default to Spanish
-    const savedLanguage = localStorage.getItem('zarya-language') as Language
+    const savedLanguage = localStorage.getItem('firstclass-language') as Language
     if (savedLanguage && ['es', 'en', 'ru'].includes(savedLanguage)) {
       setLanguage(savedLanguage)
       globalLanguage = savedLanguage
@@ -42,7 +42,7 @@ export function useLanguage() {
   const changeLanguage = useCallback((newLanguage: Language) => {
     setLanguage(newLanguage)
     globalLanguage = newLanguage
-    localStorage.setItem('zarya-language', newLanguage)
+    localStorage.setItem('firstclass-language', newLanguage)
     notifyListeners(newLanguage)
   }, [])
 

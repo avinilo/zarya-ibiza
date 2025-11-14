@@ -22,13 +22,13 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
         "@type": "ListItem",
         "position": 1,
         "name": "Inicio",
-        "item": "https://limpiezassmartclean.com"
+        "item": "https://firstclassensations.com"
       },
       ...items.map((item, index) => ({
         "@type": "ListItem",
         "position": index + 2,
         "name": item.name,
-        "item": item.href ? `https://limpiezassmartclean.com${item.href}` : undefined
+        "item": item.href ? `https://firstclassensations.com${item.href}` : undefined
       }))
     ]
   }
@@ -46,7 +46,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
       <nav className="flex items-center space-x-2 text-sm text-gray-600 mb-8" aria-label="Breadcrumb">
         <Link 
           href="/" 
-          className="flex items-center hover:text-smartclean-primary transition-colors"
+          className="flex items-center hover:text-firstclass-primary transition-colors"
           aria-label="Ir a la página principal"
         >
           <Home className="w-4 h-4" />
@@ -59,12 +59,12 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
             {item.href && index < items.length - 1 ? (
               <Link 
                 href={item.href} 
-                className="hover:text-smartclean-primary transition-colors"
+                className="hover:text-firstclass-primary transition-colors"
               >
                 {item.name}
               </Link>
             ) : (
-              <span className="text-smartclean-secondary font-medium" aria-current="page">
+              <span className="text-firstclass-secondary font-medium" aria-current="page">
                 {item.name}
               </span>
             )}

@@ -1,5 +1,5 @@
-// Configuración SEO para Smart Clean
-// Keywords principales y secundarias por página
+// Configuración SEO para First Class Sensations Ibiza
+// Keywords principales y secundarias por página para servicios concierge de lujo
 
 export interface SEOConfig {
   title: string
@@ -24,261 +24,319 @@ export interface SEOConfig {
   }
 }
 
-// Keywords principales de Smart Clean
+// Keywords principales de First Class Sensations
 export const MAIN_KEYWORDS = [
-  'mantenimiento Valencia',
-  'electricistas Valencia', 
-  'gestión documental',
-  'mano de obra especializada',
-  'mantenimiento integral',
-  'obras Valencia',
-  'fábricas Valencia'
+  'concierge Ibiza',
+  'servicios VIP Ibiza',
+  'yates privados Ibiza',
+  'beach clubs exclusivos',
+  'restaurantes Michelin Ibiza',
+  'transporte de lujo Ibiza',
+  'experiencias exclusivas Ibiza',
+  'servicios de lujo Formentera',
+  'luxury concierge services Spain',
+  'personal concierge Ibiza',
+  'premium lifestyle management',
+  'exclusive experiences Mediterranean',
+  'VIP services Balearic Islands',
+  'luxury lifestyle concierge',
+  'high-end personal services',
+  'bespoke travel experiences',
+  'private luxury services',
+  'concierge de luxe Espagne',
+  'servicios concierge lujo España',
+  'experiencias únicas Ibiza'
 ]
 
 // Configuración SEO por página
 export const SEO_PAGES: Record<string, SEOConfig> = {
   // Homepage
   home: {
-    title: 'Smart Clean - Servicios Profesionales de Limpieza en Valencia',
-    description: 'Servicios profesionales de limpieza para oficinas, comunidades, colegios e instalaciones industriales en Valencia. Limpieza integral con productos ecológicos y personal cualificado.',
+    title: 'First Class Sensations Ibiza - Servicios Concierge de Lujo | Experiencias VIP Exclusivas',
+    description: 'First Class Sensations: servicios concierge exclusivos en Ibiza y Formentera. Alquiler de yates privados, beach clubs VIP, restaurantes Michelin y transporte de lujo. Experiencias únicas e inolvidables en las Islas Baleares.',
     keywords: [
-      'limpieza Valencia',
-      'limpieza oficinas Valencia',
-      'limpieza comunidades',
-      'limpieza colegios',
-      'limpieza industrial',
-      'servicios limpieza Valencia',
-      'limpieza ecológica',
-      'empresa limpieza Valencia',
-      'limpieza integral',
-      'limpieza profesional'
+      'concierge Ibiza',
+      'servicios VIP Ibiza',
+      'yates privados Ibiza',
+      'beach clubs exclusivos Ibiza',
+      'restaurantes Michelin Ibiza',
+      'transporte de lujo Ibiza',
+      'First Class Sensations',
+      'experiencias de lujo Ibiza',
+      'servicios exclusivos Ibiza',
+      'concierge de lujo Formentera',
+      'luxury concierge services Ibiza',
+      'VIP experiences Balearic Islands',
+      'premium lifestyle concierge Spain',
+      'exclusive services Mediterranean',
+      'private yacht charter Ibiza',
+      'Michelin restaurants reservations',
+      'luxury beach clubs access',
+      'VIP transportation services',
+      'bespoke travel experiences Ibiza',
+      'high-end personal concierge'
     ],
     openGraph: {
-      title: 'Smart Clean - Servicios Profesionales de Limpieza en Valencia',
-      description: 'Servicios profesionales de limpieza para oficinas, comunidades e instalaciones industriales en Valencia.',
+      title: 'First Class Sensations Ibiza - Servicios Concierge de Lujo',
+      description: 'Servicios concierge exclusivos en Ibiza. Alquiler de yates privados, reservas en beach clubs VIP y restaurantes Michelin.',
       type: 'website',
       images: [{
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Smart Clean - Servicios de limpieza Valencia'
+        alt: 'First Class Sensations - Concierge de lujo en Ibiza'
       }]
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Smart Clean - Servicios Profesionales de Limpieza Valencia',
-      description: 'Servicios profesionales de limpieza para oficinas, comunidades e instalaciones industriales.',
+      title: 'First Class Sensations Ibiza - Servicios Concierge de Lujo',
+      description: 'Servicios concierge exclusivos en Ibiza. Alquiler de yates privados, reservas en beach clubs VIP y restaurantes Michelin.',
       images: ['/og-image.png']
     }
   },
 
-  // Limpieza de Oficinas
-  limpiezaOficinas: {
-    title: 'Limpieza de Oficinas Valencia - Servicios Profesionales | Smart Clean',
-    description: 'Servicios profesionales de limpieza de oficinas en Valencia. Limpieza diaria, mensual y servicios especiales. Productos ecológicos y personal cualificado.',
+  // Alquiler de Yates
+  alquilerYates: {
+    title: 'Alquiler de Yates Privados Ibiza - Experiencias Marítimas de Lujo | First Class Sensations',
+    description: 'Alquiler de yates de lujo con tripulación profesional en Ibiza. Excursiones privadas por Ibiza y Formentera con catering gourmet y servicios premium.',
     keywords: [
-      'limpieza oficinas Valencia',
-      'limpieza empresas',
-      'servicios limpieza oficinas',
-      'limpieza profesional oficinas',
-      'limpieza ecológica oficinas',
-      'empresa limpieza oficinas',
-      'limpieza mantenimiento oficinas',
-      'servicios limpieza Valencia',
-      'limpieza despachos',
-      'limpieza co working'
+      'alquiler yates Ibiza',
+      'yates privados Ibiza',
+      'charter yates Formentera',
+      'excursiones en yate Ibiza',
+      'yates de lujo Mediterráneo',
+      'alquiler barcos privados Ibiza',
+      'experiencias marítimas VIP',
+      'yate con tripulación Ibiza',
+      'catering gourmet yates',
+      'excursiones privadas mar'
     ],
     openGraph: {
-      title: 'Limpieza de Oficinas Valencia - Servicios Profesionales',
-      description: 'Servicios profesionales de limpieza de oficinas en Valencia. Productos ecológicos y personal cualificado.',
+      title: 'Alquiler de Yates Privados Ibiza - Experiencias Marítimas de Lujo',
+      description: 'Alquiler de yates de lujo con tripulación profesional en Ibiza. Excursiones privadas con catering gourmet.',
       type: 'website',
       images: [{
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Limpieza de oficinas Valencia'
+        alt: 'Alquiler de yates privados en Ibiza'
       }]
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Limpieza de Oficinas Valencia',
-      description: 'Servicios profesionales de limpieza con productos ecológicos.',
+      title: 'Alquiler de Yates Privados Ibiza',
+      description: 'Yates de lujo con tripulación profesional y catering gourmet.',
       images: ['/og-image.png']
     }
   },
 
-  // Limpieza de Comunidades
-  limpiezaComunidades: {
-    title: 'Limpieza de Comunidades Valencia - Servicios Integrales | Smart Clean',
-    description: 'Servicios integrales de limpieza de comunidades en Valencia. Limpieza de zonas comunes, escaleras, ascensores y servicios especiales. Presupuestos personalizados.',
+  // Beach Clubs VIP
+  beachClubsVIP: {
+    title: 'Beach Clubs Exclusivos Ibiza - Reservas VIP y Acceso Premium | First Class Sensations',
+    description: 'Reservas prioritarias en los mejores beach clubs exclusivos de Ibiza. Camas balinesas VIP, servicio de camareros y acceso garantizado a establecimientos premium.',
     keywords: [
-      'limpieza comunidades Valencia',
-      'limpieza zonas comunes',
-      'limpieza escaleras',
-      'limpieza ascensores',
-      'servicios limpieza comunidades',
-      'empresa limpieza comunidades',
-      'limpieza mantenimiento comunidades',
-      'limpieza portal',
-      'limpieza vecinos Valencia',
-      'servicios limpieza edificios'
+      'beach clubs exclusivos Ibiza',
+      'reservas VIP beach clubs',
+      'camas balinesas Ibiza',
+      'beach clubs premium Formentera',
+      'acceso VIP playas Ibiza',
+      'reservas beach clubs lujo',
+      'servicio de camareros privado',
+      'experiencias de playa VIP',
+      'beach clubs selección Ibiza',
+      'acceso garantizado beach clubs'
     ],
     openGraph: {
-      title: 'Limpieza de Comunidades Valencia - Servicios Integrales',
-      description: 'Servicios integrales de limpieza de comunidades en Valencia. Presupuestos personalizados.',
+      title: 'Beach Clubs Exclusivos Ibiza - Reservas VIP y Acceso Premium',
+      description: 'Reservas prioritarias en los mejores beach clubs exclusivos de Ibiza.',
       type: 'website',
       images: [{
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Limpieza de comunidades Valencia'
+        alt: 'Beach clubs exclusivos en Ibiza'
       }]
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Limpieza de Comunidades Valencia',
-      description: 'Servicios integrales de limpieza con presupuestos personalizados.',
+      title: 'Beach Clubs Exclusivos Ibiza',
+      description: 'Reservas VIP en establecimientos premium de playa.',
       images: ['/og-image.png']
     }
   },
 
-  // Limpieza Industrial
-  limpiezaIndustrial: {
-    title: 'Limpieza Industrial Valencia - Servicios Especializados | Smart Clean',
-    description: 'Servicios especializados de limpieza industrial en Valencia. Limpieza de naves, maquinaria, suelos industriales y zonas de producción. Servicios adaptados a tu sector.',
+  // Restaurantes Michelin
+  restaurantesMichelin: {
+    title: 'Restaurantes Michelin Ibiza - Reservas Exclusivas | First Class Sensations',
+    description: 'Reservas garantizadas en los mejores restaurantes Michelin de Ibiza. Menús degustación, maridaje y experiencias gastronómicas exclusivas.',
     keywords: [
-      'limpieza industrial Valencia',
-      'limpieza naves industriales',
-      'limpieza maquinaria industrial',
-      'limpieza suelos industriales',
-      'servicios limpieza industrial',
-      'empresa limpieza industrial',
-      'limpieza zonas producción',
-      'limpieza fábricas Valencia',
-      'limpieza talleres industriales',
-      'servicios limpieza sector industrial'
+      'restaurantes Michelin Ibiza',
+      'reservas restaurantes exclusivos',
+      'gastronomía de lujo Ibiza',
+      'menús degustación Formentera',
+      'restaurantes estrella Michelin',
+      'experiencias gastronómicas VIP',
+      'maridaje vinos premium',
+      'reservas garantizadas restaurantes',
+      'chef privado Ibiza',
+      'catering gourmet exclusivo'
     ],
     openGraph: {
-      title: 'Limpieza Industrial Valencia - Servicios Especializados',
-      description: 'Servicios especializados de limpieza industrial en Valencia. Servicios adaptados a tu sector.',
+      title: 'Restaurantes Michelin Ibiza - Reservas Exclusivas',
+      description: 'Reservas garantizadas en los mejores restaurantes Michelin con menús degustación.',
       type: 'website',
       images: [{
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Limpieza industrial Valencia'
+        alt: 'Restaurantes Michelin en Ibiza'
       }]
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Limpieza Industrial Valencia',
-      description: 'Servicios especializados de limpieza adaptados a tu sector.',
+      title: 'Restaurantes Michelin Ibiza',
+      description: 'Reservas exclusivas en establecimientos gastronómicos premium.',
+      images: ['/og-image.png']
+    }
+  },
+
+  // Transporte VIP
+  transporteVIP: {
+    title: 'Transporte VIP Ibiza - Helicópteros y Vehículos de Lujo | First Class Sensations',
+    description: 'Servicios de transporte VIP en Ibiza: helicópteros privados, vehículos de lujo con chofer y traslados exclusivos. Servicio 24/7 para clientes premium.',
+    keywords: [
+      'transporte VIP Ibiza',
+      'helicópteros privados Formentera',
+      'vehículos de lujo con chofer',
+      'traslados aeropuerto Ibiza',
+      'transporte ejecutivo premium',
+      'helicóptero privado Mediterráneo',
+      'servicio de chofer Ibiza',
+      'transporte 24/7 VIP',
+      'coches de lujo alquiler',
+      'traslados exclusivos islas'
+    ],
+    openGraph: {
+      title: 'Transporte VIP Ibiza - Helicópteros y Vehículos de Lujo',
+      description: 'Helicópteros privados, vehículos de lujo con chofer y traslados exclusivos.',
+      type: 'website',
+      images: [{
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Transporte VIP en Ibiza'
+      }]
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Transporte VIP Ibiza',
+      description: 'Helicópteros privados y vehículos de lujo con servicio 24/7.',
       images: ['/og-image.png']
     }
   },
 
   // Sobre Nosotros
   sobreNosotros: {
-    title: 'Sobre Nosotros - Smart Clean Valencia | Empresa de Limpieza Profesional',
-    description: 'Conoce Smart Clean, empresa líder en servicios de limpieza profesional en Valencia. Especialistas en limpieza de oficinas, comunidades, colegios e instalaciones industriales.',
+    title: 'Sobre Nosotros - First Class Sensations Ibiza | Concierge de Lujo',
+    description: 'Conoce First Class Sensations, empresa líder en servicios concierge de lujo en Ibiza. Más de 10 años de experiencia en experiencias exclusivas y atención VIP.',
     keywords: [
-      'empresa limpieza Valencia',
-      'Smart Clean Valencia',
-      'limpieza profesional Valencia',
-      'servicios limpieza empresa',
-      'limpieza oficinas Valencia',
-      'limpieza comunidades Valencia',
-      'empresa limpieza colegios',
-      'servicios limpieza industriales',
-      'empresa especializada limpieza'
+      'First Class Sensations',
+      'empresa concierge Ibiza',
+      'experiencias de lujo Ibiza',
+      'servicios VIP premium',
+      'concierge Ibiza experiencia',
+      'empresa de lujo Formentera',
+      'servicios exclusivos islas',
+      'First Class Sensations historia',
+      'equipo concierge profesional',
+      'experiencias inolvidables Ibiza'
     ],
     openGraph: {
-      title: 'Sobre Nosotros - Smart Clean Valencia',
-      description: 'Empresa líder en servicios de limpieza profesional en Valencia.',
+      title: 'Sobre Nosotros - First Class Sensations Ibiza',
+      description: 'Empresa líder en servicios concierge de lujo con más de 10 años de experiencia.',
       type: 'website',
       images: [{
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Smart Clean empresa Valencia'
+        alt: 'First Class Sensations - Empresa concierge de lujo'
       }]
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Sobre Nosotros - Smart Clean Valencia',
-      description: 'Empresa líder en servicios de limpieza profesional.',
+      title: 'Sobre Nosotros - First Class Sensations',
+      description: 'Más de 10 años de experiencia en experiencias exclusivas y atención VIP.',
       images: ['/og-image.png']
     }
   },
 
   // Casos de Éxito
   casosExito: {
-    title: 'Casos de Éxito - Proyectos Smart Clean Valencia | Servicios de Limpieza',
-    description: 'Descubre nuestros casos de éxito: limpieza de oficinas, comunidades, colegios e instalaciones industriales. Servicios de limpieza profesional en Valencia y alrededores.',
+    title: 'Casos de Éxito - Experiencias VIP First Class Sensations Ibiza',
+    description: 'Descubre nuestros casos de éxito: eventos corporativos exclusivos, fiestas privadas en villas espectaculares, experiencias gastronómicas únicas y servicios VIP inolvidables.',
     keywords: [
-      'casos éxito Smart Clean',
-      'limpieza oficinas Valencia',
-      'limpieza comunidades Valencia',
-      'limpieza colegios Valencia',
-      'servicios limpieza profesional',
-      'proyectos limpieza Valencia',
-      'clientes limpieza Valencia',
-      'referencias Smart Clean',
-      'trabajos limpieza realizados'
+      'casos éxito concierge Ibiza',
+      'eventos corporativos exclusivos',
+      'fiestas privadas villas Ibiza',
+      'experiencias VIP inolvidables',
+      'clientes First Class Sensations',
+      'testimonios concierge lujo',
+      'proyectos exclusivos Ibiza',
+      'eventos premium Formentera',
+      'experiencias personalizadas lujo',
+      'casos éxito servicios VIP'
     ],
     openGraph: {
-      title: 'Casos de Éxito - Proyectos Smart Clean Valencia',
-      description: 'Limpieza de oficinas, comunidades, colegios e instalaciones. Nuestros proyectos de éxito en Valencia.',
+      title: 'Casos de Éxito - Experiencias VIP First Class Sensations Ibiza',
+      description: 'Eventos corporativos exclusivos, fiestas privadas y experiencias gastronómicas únicas.',
       type: 'website',
       images: [{
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Casos éxito Smart Clean Valencia'
+        alt: 'Casos de éxito First Class Sensations'
       }]
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Casos de Éxito Smart Clean Valencia',
-      description: 'Limpieza de oficinas, comunidades y más proyectos de éxito.',
+      title: 'Casos de Éxito - Experiencias VIP',
+      description: 'Eventos corporativos exclusivos y experiencias inolvidables.',
+      images: ['/og-image.png']
+    }
+  },
+
+  // Contacto
+  contacto: {
+    title: 'Contacto - First Class Sensations Ibiza | Reservas y Presupuestos VIP',
+    description: 'Contacta con First Class Sensations para reservas y presupuestos de servicios concierge de lujo en Ibiza. Disponibles 24/7 para clientes VIP.',
+    keywords: [
+      'contacto First Class Sensations',
+      'reservas concierge Ibiza',
+      'presupuestos servicios VIP',
+      'teléfono First Class Sensations',
+      'email concierge Ibiza',
+      'reservas yates privados',
+      'contacto servicios lujo Formentera',
+      'atención 24/7 VIP',
+      'consultas experiencias exclusivas',
+      'First Class Sensations contacto'
+    ],
+    openGraph: {
+      title: 'Contacto - First Class Sensations Ibiza | Reservas y Presupuestos VIP',
+      description: 'Contacta para reservas y presupuestos de servicios concierge de lujo. Disponibles 24/7.',
+      type: 'website',
+      images: [{
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Contacto First Class Sensations Ibiza'
+      }]
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Contacto - First Class Sensations Ibiza',
+      description: 'Reservas y presupuestos de servicios concierge de lujo. Disponibles 24/7.',
       images: ['/og-image.png']
     }
   }
-}
-
-// Función para obtener configuración SEO de una página
-export function getSEOConfig(page: keyof typeof SEO_PAGES): SEOConfig {
-  return SEO_PAGES[page] || SEO_PAGES.home
-}
-
-// Keywords long-tail específicas por servicio
-export const LONG_TAIL_KEYWORDS = {
-  limpiezaOficinas: [
-    'limpieza oficinas diaria Valencia',
-    'servicios limpieza despachos Valencia',
-    'empresa limpieza oficinas profesional',
-    'limpieza ecológica empresas Valencia',
-    'limpieza mantenimiento oficinas'
-  ],
-  limpiezaComunidades: [
-    'limpieza comunidades vecinos Valencia',
-    'servicios limpieza escaleras ascensores',
-    'empresa limpieza zonas comunes Valencia',
-    'limpieza portal edificios Valencia',
-    'presupuestos limpieza comunidades'
-  ],
-  limpiezaIndustrial: [
-    'limpieza industrial naves Valencia',
-    'servicios limpieza maquinaria industrial',
-    'empresa limpieza talleres industriales',
-    'limpieza suelos industriales Valencia',
-    'limpieza zonas producción fábricas'
-  ]
-}
-
-// Meta robots por página
-export const ROBOTS_CONFIG = {
-  default: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
-  noindex: 'noindex, nofollow',
-  archive: 'index, follow, noarchive'
 }

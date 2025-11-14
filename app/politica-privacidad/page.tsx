@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Política de Privacidad - First Class Sensations',
-  description: 'Política de privacidad y protección de datos de First Class Sensations en Valencia',
+  description: 'Política de privacidad y protección de datos de First Class Sensations en Ibiza',
   robots: {
     index: false,
     follow: false,
@@ -27,7 +27,7 @@ export default function PoliticaPrivacidad() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Información General</h2>
               <p className="text-gray-700 mb-4">
-                En First Class Sensations, con domicilio en Valencia, España, nos comprometemos a proteger su privacidad y 
+                En First Class Sensations, con domicilio en Ibiza, España, nos comprometemos a proteger su privacidad y 
                 garantizar la seguridad de sus datos personales. Esta política describe cómo recopilamos, utilizamos y 
                 protegemos su información.
               </p>
@@ -41,7 +41,7 @@ export default function PoliticaPrivacidad() {
               <ul className="list-disc pl-6 text-gray-700 mb-4 space-y-2">
                 <li>Información de contacto (nombre, email, teléfono)</li>
                 <li>Información sobre servicios solicitados</li>
-                <li>Datos de ubicación para servicios en Valencia y alrededores</li>
+                <li>Datos de ubicación para servicios en Ibiza y Formentera</li>
                 <li>Información técnica sobre su visita al sitio web (cookies, IP)</li>
               </ul>
             </section>
@@ -153,7 +153,7 @@ export default function PoliticaPrivacidad() {
                   Teléfono: +34 600 887 755
                 </p>
                 <p className="text-gray-700">
-                  Ubicación: Valencia, España
+                  Ubicación: Ibiza, España
                 </p>
               </div>
             </section>

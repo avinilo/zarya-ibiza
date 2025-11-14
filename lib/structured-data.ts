@@ -1,96 +1,96 @@
-// Structured Data Schemas para SEO - Smart Clean
+// Structured Data Schemas para SEO - First Class Sensations
 // Implementación de Schema.org para mejorar la indexación y rich snippets
 
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Limpiezas Smart Clean Valencia",
-  "url": "https://limpiezassmartclean.com",
-  "logo": "https://limpiezassmartclean.com/og-image.png",
-  "description": "Servicios profesionales de limpieza en Valencia. Especialistas en limpieza de comunidades, oficinas, garajes y servicios integrales.",
+  "name": "First Class Sensations Ibiza",
+  "url": "https://firstclassensations.com",
+  "logo": "https://firstclassensations.com/og-image.png",
+  "description": "Servicios concierge de lujo en Ibiza. Especialistas en yates privados, beach clubs exclusivos, restaurantes Michelin y transporte VIP.",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Calle Josep Meliá Pigmalión 21 C 5",
-    "addressLocality": "Benaguasil",
-    "addressRegion": "Valencia",
-    "postalCode": "46180",
+    "streetAddress": "Marina Botafoch",
+    "addressLocality": "Ibiza",
+    "addressRegion": "Islas Baleares",
+    "postalCode": "07800",
     "addressCountry": "ES"
   },
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+34691616465",
+    "telephone": "+34672123456",
     "contactType": "customer service",
-    "email": "info@limpiezassmartclean.com",
+    "email": "concierge@firstclassensations.com",
     "availableLanguage": "Spanish"
   },
   "sameAs": [
-    "https://limpiezassmartclean.com"
+    "https://firstclassensations.com"
   ],
   "areaServed": {
     "@type": "Place",
-    "name": "Valencia, España"
+    "name": "Ibiza, España"
   }
 }
 
 export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Limpiezas Smart Clean Valencia",
-  "url": "https://limpiezassmartclean.com",
+  "name": "First Class Sensations Ibiza",
+  "url": "https://firstclassensations.com",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://limpiezassmartclean.com/search?q={search_term_string}",
+    "target": "https://firstclassensations.com/search?q={search_term_string}",
     "query-input": "required name=search_term_string"
   }
 }
 
 export const serviceSchemas = {
-  limpiezaOficinas: {
+  conciergeLujo: {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Limpieza de Oficinas",
-    "description": "Servicio profesional de limpieza de oficinas con productos ecológicos. Limpieza diaria, semanal o mensual adaptada a las necesidades de cada empresa.",
+    "name": "Servicios Concierge de Lujo",
+    "description": "Servicios concierge exclusivos en Ibiza. Alquiler de yates privados, reservas en beach clubs VIP, restaurantes Michelin y transporte de lujo.",
     "provider": {
       "@type": "Organization",
-      "name": "Smart Clean"
+      "name": "First Class Sensations"
     },
-    "areaServed": "Valencia, España",
-    "serviceType": "Limpieza de oficinas",
+    "areaServed": "Ibiza, España",
+    "serviceType": "Servicios concierge de lujo",
     "offers": {
       "@type": "Offer",
-      "description": "Limpieza profesional de oficinas con horarios flexibles"
+      "description": "Experiencias exclusivas personalizadas con atención VIP"
     }
   },
-  limpiezaComunidades: {
+  alquilerYates: {
     "@context": "https://schema.org", 
     "@type": "Service",
-    "name": "Limpieza de Comunidades",
-    "description": "Servicio integral de limpieza de comunidades. Limpieza de zonas comunes, escaleras, ascensores y espacios compartidos con productos profesionales.",
+    "name": "Alquiler de Yates Privados",
+    "description": "Alquiler de yates de lujo con tripulación profesional. Excursiones privadas por Ibiza y Formentera con catering gourmet y servicios premium.",
     "provider": {
       "@type": "Organization", 
-      "name": "Smart Clean"
+      "name": "First Class Sensations"
     },
-    "areaServed": "Valencia, España",
-    "serviceType": "Limpieza de comunidades",
+    "areaServed": "Ibiza y Formentera, España",
+    "serviceType": "Charter de yates",
     "offers": {
       "@type": "Offer",
-      "description": "Limpieza integral de comunidades con presupuestos personalizados"
+      "description": "Experiencias marítimas exclusivas con servicios completos"
     }
   },
-  limpiezaIndustrial: {
+  reservasVIP: {
     "@context": "https://schema.org",
     "@type": "Service", 
-    "name": "Limpieza Industrial",
-    "description": "Servicio especializado de limpieza industrial. Limpieza de naves, maquinaria, suelos industriales y zonas de producción con equipos y productos específicos.",
+    "name": "Reservas VIP Exclusivas",
+    "description": "Reservas prioritarias en beach clubs de lujo, restaurantes Michelin y establecimientos exclusivos de Ibiza. Acceso VIP garantizado.",
     "provider": {
       "@type": "Organization",
-      "name": "Smart Clean"
+      "name": "First Class Sensations"
     },
-    "areaServed": "Valencia, España", 
-    "serviceType": "Limpieza industrial",
+    "areaServed": "Ibiza, España", 
+    "serviceType": "Reservas y acceso VIP",
     "offers": {
       "@type": "Offer",
-      "description": "Limpieza industrial adaptada a cada sector"
+      "description": "Acceso exclusivo a los mejores establecimientos de Ibiza"
     }
   }
 }
@@ -98,31 +98,31 @@ export const serviceSchemas = {
 export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Smart Clean",
-  "image": "https://limpiezassmartclean.com/og-image.png",
-  "telephone": "+34691616465",
-  "email": "info@limpiezassmartclean.com",
+  "name": "First Class Sensations Ibiza",
+  "image": "https://firstclassensations.com/og-image.png",
+  "telephone": "+34672123456",
+  "email": "concierge@firstclassensations.com",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Calle Josep Meliá Pigmalión 21 C 5",
-    "addressLocality": "Benaguasil", 
-    "addressRegion": "Valencia",
-    "postalCode": "46180",
+    "streetAddress": "Marina Botafoch",
+    "addressLocality": "Ibiza", 
+    "addressRegion": "Islas Baleares",
+    "postalCode": "07800",
     "addressCountry": "ES"
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": "39.4699", // Coordenadas de Benaguasil
-    "longitude": "-0.3763"
+    "latitude": "38.9067", // Coordenadas de Ibiza
+    "longitude": "1.4206"
   },
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    "opens": "08:00",
-    "closes": "18:00"
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "opens": "09:00",
+    "closes": "21:00"
   },
-  "priceRange": "€€",
-  "areaServed": "Valencia"
+  "priceRange": "€€€€",
+  "areaServed": "Ibiza y Formentera"
 }
 
 export const faqSchema = {
@@ -131,42 +131,42 @@ export const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Qué servicios ofrece Smart Clean?",
+      "name": "¿Qué servicios ofrece First Class Sensations?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Smart Clean ofrece servicios profesionales de limpieza: limpieza de oficinas, limpieza de comunidades, limpieza industrial, limpieza de colegios, limpieza de cristales, y servicios especiales adaptados a cada necesidad."
+        "text": "First Class Sensations ofrece servicios concierge de lujo en Ibiza: alquiler de yates privados, reservas en beach clubs exclusivos, restaurantes Michelin, transporte VIP en helicóptero o vehículos de lujo, y organización integral de eventos privados."
       }
     },
     {
       "@type": "Question", 
-      "name": "¿Dónde está ubicada Smart Clean?",
+      "name": "¿Dónde está ubicada First Class Sensations?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Smart Clean está ubicada en Calle Josep Meliá Pigmalión 21 C 5, 46180 Benaguasil, Valencia. Prestamos servicios en toda la Comunidad Valenciana."
+        "text": "First Class Sensations está ubicada en Marina Botafoch, 07800 Ibiza, Islas Baleares. Prestamos servicios en toda Ibiza y Formentera."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Cuál es el horario de atención de Smart Clean?",
+      "name": "¿Cuál es el horario de atención de First Class Sensations?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nuestro horario de oficina es de lunes a viernes de 8:00 a 18:00. Para servicios de limpieza, adaptamos nuestros horarios a las necesidades de cada cliente."
+        "text": "Nuestro horario de oficina es de lunes a domingo de 9:00 a 21:00. Para servicios VIP, ofrecemos atención 24/7 para nuestros clientes exclusivos."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Qué tipo de empresas pueden usar los servicios de Smart Clean?",
+      "name": "¿Qué tipo de clientes atiende First Class Sensations?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nuestros servicios de limpieza están diseñados para todo tipo de empresas y comunidades: oficinas, comunidades de vecinos, colegios, instalaciones industriales, hoteles, restaurantes y negocios en general."
+        "text": "Nuestros servicios de concierge están diseñados para clientes exigentes: empresarios, celebridades, grupos privados, ejecutivos de alto nivel, y cualquier persona que busque experiencias exclusivas en Ibiza."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Cómo puedo contactar con Smart Clean?",
+      "name": "¿Cómo puedo contactar con First Class Sensations?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Puedes contactarnos por teléfono al +34 691 616 465, por email a info@limpiezassmartclean.com, o a través de nuestro formulario web."
+        "text": "Puedes contactarnos por teléfono al +34 672 123 456, por email a concierge@firstclassensations.com, o a través de nuestro formulario web."
       }
     }
   ]
@@ -183,7 +183,7 @@ export const createServiceSchema = (service: {
   "name": service.name,
   "description": service.description,
   "provider": organizationSchema,
-  "areaServed": "Valencia, España",
+  "areaServed": "Ibiza y Formentera, España",
   "serviceType": service.serviceType
 })
 

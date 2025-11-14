@@ -1,5 +1,5 @@
 /**
- * Utilidades avanzadas de SEO para Smart Clean
+ * Utilidades avanzadas de SEO para First Class Sensations
  * Incluye canonical URLs, hreflang, Open Graph avanzado y Schema.org adicionales
  */
 
@@ -7,19 +7,21 @@ import { Metadata } from 'next'
 
 // Configuración base del sitio
 export const SITE_CONFIG = {
-  name: 'Smart Clean',
+  name: 'First Class Sensations',
   url: getBaseUrl(),
-  description: 'Servicios profesionales de limpieza en Valencia: oficinas, comunidades e instalaciones industriales',
+  description: 'Servicios concierge de lujo en Ibiza: yates privados, beach clubs exclusivos, restaurantes Michelin y transporte VIP',
   locale: 'es_ES',
   type: 'website',
-  author: 'Smart Clean',
+  author: 'First Class Sensations',
   keywords: [
-    'limpieza profesional',
-    'limpieza oficinas',
-    'limpieza comunidades',
-    'limpieza industrial',
-    'Valencia',
-    'servicios de limpieza'
+    'concierge lujo Ibiza',
+    'yates privados',
+    'beach clubs exclusivos',
+    'restaurantes Michelin',
+    'transporte VIP',
+    'experiencias de lujo',
+    'Ibiza',
+    'servicios concierge'
   ]
 }
 
@@ -36,7 +38,7 @@ function getBaseUrl(): string {
   }
   
   // 3. Fallback: URL de producción
-  return 'https://limpiezassmartclean.com'
+  return 'https://firstclassensations.com'
 }
 
 // Tipos para configuración SEO
@@ -103,8 +105,8 @@ export function generateOpenGraph(config: SEOConfig): Metadata['openGraph'] {
 export function generateTwitterCard(config: SEOConfig): Metadata['twitter'] {
   return {
     card: config.twitterCard || 'summary_large_image',
-    site: '@smartcleanvlc',
-    creator: '@smartcleanvlc',
+    site: '@firstclassibiza',
+    creator: '@firstclassibiza',
     title: config.title,
     description: config.description,
     images: [config.ogImage || '/og-image.png']
@@ -164,6 +166,155 @@ export function generateBreadcrumbSchema(items: Array<{ name: string; url: strin
 }
 
 /**
+ * Schema.org para LocalBusiness (empresa de concierge de lujo)
+ */
+export function generateLocalBusinessSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'First Class Sensations',
+    description: 'Servicios concierge de lujo en Ibiza: yates privados, beach clubs exclusivos, restaurantes Michelin y transporte VIP',
+    url: SITE_CONFIG.url,
+    telephone: '+34-666-666-666',
+    email: 'info@firstclassensations.com',
+    priceRange: '€€€€',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Calle de la Virgen 1',
+      addressLocality: 'Ibiza',
+      addressRegion: 'Islas Baleares',
+      postalCode: '07800',
+      addressCountry: 'ES'
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 38.9067,
+      longitude: 1.4206
+    },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        opens: '00:00',
+        closes: '23:59'
+      }
+    ],
+    areaServed: [
+      {
+        '@type': 'City',
+        name: 'Ibiza'
+      },
+      {
+        '@type': 'City',
+        name: 'Formentera'
+      },
+      {
+        '@type': 'City',
+        name: 'Mallorca'
+      },
+      {
+        '@type': 'City',
+        name: 'Menorca'
+      }
+    ],
+    serviceType: [
+      'Concierge Services',
+      'Luxury Transportation',
+      'Yacht Charter',
+      'Restaurant Reservations',
+      'VIP Experiences'
+    ],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Servicios de Concierge de Lujo',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Alquiler de Yates Privados',
+            description: 'Yates de lujo con tripulación profesional en Ibiza y Formentera'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Beach Clubs Exclusivos',
+            description: 'Acceso VIP a los mejores beach clubs de Ibiza'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Restaurantes Michelin',
+            description: 'Reservas garantizadas en restaurantes Michelin'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Transporte VIP',
+            description: 'Helicópteros privados y vehículos de lujo con chofer'
+          }
+        }
+      ]
+    }
+  }
+}
+
+/**
+ * Schema.org para Organization (negocio de lujo)
+ */
+export function generateOrganizationSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'First Class Sensations',
+    description: 'Servicios concierge de lujo en Ibiza y Formentera',
+    url: SITE_CONFIG.url,
+    logo: `${SITE_CONFIG.url}/logo.png`,
+    image: `${SITE_CONFIG.url}/og-image.png`,
+    telephone: '+34-666-666-666',
+    email: 'info@firstclassensations.com',
+    sameAs: [
+      'https://www.instagram.com/firstclassensations',
+      'https://www.facebook.com/firstclassensations',
+      'https://www.linkedin.com/company/firstclassensations'
+    ],
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Calle de la Virgen 1',
+      addressLocality: 'Ibiza',
+      addressRegion: 'Islas Baleares',
+      postalCode: '07800',
+      addressCountry: 'ES'
+    },
+    foundingDate: '2014',
+    founder: {
+      '@type': 'Person',
+      name: 'Founder Name'
+    },
+    areaServed: [
+      {
+        '@type': 'City',
+        name: 'Ibiza'
+      },
+      {
+        '@type': 'City',
+        name: 'Formentera'
+      }
+    ],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Servicios de Concierge de Lujo'
+    }
+  }
+}
+
+/**
  * Schema.org para Service específico
  */
 export function generateServiceSchema(service: {
@@ -172,6 +323,8 @@ export function generateServiceSchema(service: {
   provider: string
   areaServed: string
   serviceType: string
+  priceRange?: string
+  availability?: string
 }) {
   return {
     '@context': 'https://schema.org',
@@ -188,6 +341,8 @@ export function generateServiceSchema(service: {
       name: service.areaServed
     },
     serviceType: service.serviceType,
+    priceRange: service.priceRange || '€€€€',
+    availability: service.availability || 'InStock',
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: `Catálogo de ${service.name}`,
@@ -280,28 +435,28 @@ export function generateStructuredDataScript(data: any | any[]): string {
  */
 export const PAGE_SEO_CONFIGS = {
   home: {
-    title: 'Smart Clean - Servicios Profesionales de Limpieza Valencia',
-    description: 'Servicios profesionales de limpieza en Valencia: oficinas, comunidades, colegios e instalaciones industriales. Productos ecológicos y personal cualificado.',
-    keywords: ['limpieza profesional Valencia', 'servicios limpieza', 'limpieza oficinas', 'limpieza comunidades', 'limpieza industrial'],
+    title: 'First Class Sensations - Experiencias de Lujo en Ibiza',
+    description: 'Servicios concierge de lujo en Ibiza: yates privados, beach clubs exclusivos, restaurantes Michelin y transporte VIP. Experiencias únicas e inolvidables.',
+    keywords: ['concierge lujo Ibiza', 'yates privados', 'beach clubs exclusivos', 'restaurantes Michelin', 'transporte VIP', 'experiencias de lujo'],
     ogType: 'website' as const,
     twitterCard: 'summary_large_image' as const
   },
-  'limpieza-oficinas': {
-    title: 'Limpieza de Oficinas Valencia | Smart Clean Profesional',
-    description: 'Servicios profesionales de limpieza de oficinas en Valencia. Limpieza diaria, mensual y servicios especiales. Productos ecológicos y personal cualificado.',
-    keywords: ['limpieza oficinas Valencia', 'servicios limpieza oficinas', 'limpieza profesional', 'limpieza ecológica'],
+  'yates-privados': {
+    title: 'Alquiler de Yates Privados Ibiza | First Class Sensations',
+    description: 'Alquiler de yates de lujo en Ibiza con tripulación profesional. Excursiones privadas por Ibiza y Formentera. Servicio concierge exclusivo.',
+    keywords: ['yates privados Ibiza', 'alquiler yates lujo', 'excursiones yate privado', 'Formentera yate'],
     ogType: 'service' as const
   },
-  'limpieza-comunidades': {
-    title: 'Limpieza de Comunidades Valencia | Smart Clean Integral',
-    description: 'Servicios integrales de limpieza de comunidades en Valencia. Limpieza de zonas comunes, escaleras, ascensores y servicios especiales.',
-    keywords: ['limpieza comunidades Valencia', 'limpieza zonas comunes', 'limpieza escaleras', 'servicios comunidades'],
+  'beach-clubs-exclusivos': {
+    title: 'Beach Clubs Exclusivos Ibiza | First Class Sensations VIP',
+    description: 'Acceso VIP a los mejores beach clubs de Ibiza. Reservas exclusivas, camas balinesas y servicio premium. Experiencias inolvidables.',
+    keywords: ['beach clubs exclusivos Ibiza', 'reservas VIP beach clubs', 'camas balinesas Ibiza', 'beach clubs lujo'],
     ogType: 'service' as const
   },
-  'limpieza-industrial': {
-    title: 'Limpieza Industrial Valencia | Smart Clean Especializada',
-    description: 'Servicios especializados de limpieza industrial en Valencia. Limpieza de naves, maquinaria, suelos industriales y zonas de producción.',
-    keywords: ['limpieza industrial Valencia', 'limpieza naves', 'limpieza maquinaria', 'servicios industriales'],
+  'restaurantes-michelin': {
+    title: 'Restaurantes Michelin Ibiza | First Class Sensations Gastronomía',
+    description: 'Reservas en los mejores restaurantes Michelin de Ibiza. Menús degustación exclusivos y maridaje. Chef privados en villa disponibles.',
+    keywords: ['restaurantes Michelin Ibiza', 'reservas restaurantes exclusivos', 'menú degustación Ibiza', 'chef privado villa'],
     ogType: 'service' as const
   }
 } as const

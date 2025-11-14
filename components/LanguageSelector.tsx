@@ -34,7 +34,7 @@ export default function LanguageSelector({ currentLanguage, onLanguageChange, is
         onClick={() => setIsOpen(!isOpen)}
         className={`flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium transition-colors duration-200 rounded-lg w-full md:w-auto ${
           isScrolled || isMenuOpen 
-            ? 'text-smartclean-secondary hover:text-smartclean-primary hover:bg-smartclean-secondary/10' 
+            ? 'text-firstclass-secondary hover:text-firstclass-primary hover:bg-firstclass-secondary/10' 
             : 'text-white hover:text-white/80 hover:bg-white/10'
         }`}
         aria-label="Select language"
@@ -50,7 +50,7 @@ export default function LanguageSelector({ currentLanguage, onLanguageChange, is
         />
         <span>{currentLang.name}</span>
         <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''} ${
-          isScrolled || isMenuOpen ? 'text-smartclean-secondary' : 'text-white'
+          isScrolled || isMenuOpen ? 'text-firstclass-secondary' : 'text-white'
         }`} />
       </button>
 

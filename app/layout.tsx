@@ -25,9 +25,9 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'First Class Sensations - Servicios Premium en Valencia',
-  description: 'Servicios exclusivos y experiencias de primera clase en Valencia y alrededores. Especialistas en servicios premium con atención personalizada y calidad excepcional.',
-  keywords: 'servicios premium valencia, experiencias exclusivas, servicios de lujo valencia, atención personalizada, first class sensations',
+  title: 'First Class Sensations Ibiza - Concierge de Lujo | Yates Privados, Beach Clubs VIP, Michelin',
+  description: 'First Class Sensations: servicios concierge exclusivos en Ibiza y Formentera. Alquiler de yates privados, acceso VIP a beach clubs, reservas en restaurantes Michelin y transporte de lujo. Experiencias únicas e inolvidables con atención personalizada 24/7.',
+  keywords: 'concierge Ibiza, yates privados Ibiza, beach clubs exclusivos, restaurantes Michelin Ibiza, transporte VIP Ibiza, servicios de lujo Formentera, First Class Sensations, experiencias VIP Baleares, concierge de lujo España, servicios premium Mediterráneo',
   authors: [{ name: 'First Class Sensations' }],
   creator: 'First Class Sensations',
   publisher: 'First Class Sensations',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://limpiezassmartclean.com'),
+  metadataBase: new URL('https://firstclassensations.com'),
   alternates: {
     canonical: '/',
   },
@@ -62,8 +62,8 @@ export const metadata: Metadata = {
   category: 'business',
   classification: 'Premium services and experiences',
   openGraph: {
-    title: 'First Class Sensations - Servicios Premium en Valencia',
-    description: 'Servicios exclusivos y experiencias de primera clase en Valencia y alrededores. Especialistas en servicios premium con atención personalizada.',
+    title: 'First Class Sensations Ibiza - Concierge de Lujo | Yates Privados, Beach Clubs VIP',
+    description: 'First Class Sensations: servicios concierge exclusivos en Ibiza y Formentera. Alquiler de yates privados, acceso VIP a beach clubs, reservas en restaurantes Michelin y transporte de lujo.',
     url: 'https://firstclassensations.com',
     siteName: 'First Class Sensations',
     images: [
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'First Class Sensations - Servicios Premium en Valencia',
+        alt: 'First Class Sensations - Concierge de lujo en Ibiza con yates privados y experiencias VIP',
       },
     ],
     locale: 'es_ES',
@@ -79,10 +79,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'First Class Sensations - Servicios Premium en Valencia',
-    description: 'Servicios exclusivos y experiencias de primera clase en Valencia y alrededores',
+    title: 'First Class Sensations Ibiza - Concierge de Lujo | Yates Privados, Beach Clubs VIP',
+    description: 'Servicios concierge exclusivos en Ibiza: yates privados, beach clubs VIP, restaurantes Michelin y transporte de lujo. Experiencias únicas.',
     images: ['/og-image.png'],
-    creator: '@firstclassvlc',
+    creator: '@firstclassibiza',
+    site: '@firstclassibiza',
   },
   robots: {
     index: true,
@@ -110,7 +111,7 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
-    title: 'Smart Clean Valencia',
+    title: 'First Class Sensations - Concierge de Lujo Ibiza',
     statusBarStyle: 'default',
   },
 }
@@ -183,7 +184,7 @@ export default function RootLayout({
         <meta name="geo.placename" content="Ibiza, España" />
         <meta name="geo.position" content="38.9067;1.4206" />
         <meta name="ICBM" content="38.9067, 1.4206" />
-        <meta name="DC.title" content="First Class Sensations - Servicios Premium en Valencia" />
+        <meta name="DC.title" content="First Class Sensations - Servicios Premium en Ibiza" />
         
         {/* Meta tags adicionales para SEO */}
         <meta name="theme-color" content="#2563eb" />

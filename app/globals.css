@@ -6,10 +6,10 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
-    --smartclean-primary: #2563eb;
-    --smartclean-secondary: #1d4ed8;
-    --smartclean-light: #dbeafe;
-    --smartclean-primary-rgb: 37, 99, 235;
+    --firstclass-primary: #9333ea;
+    --firstclass-secondary: #7c3aed;
+    --firstclass-light: #f3e8ff;
+    --firstclass-primary-rgb: 147, 51, 234;
     --gradient-hero: linear-gradient(135deg, #2563eb 0%, #FFFFFF 100%);
     --gradient-overlay: linear-gradient(135deg, rgba(37, 99, 235, 0.8) 0%, rgba(255, 255, 255, 0.2) 100%);
     
@@ -44,39 +44,39 @@
   }
 
   .btn-primary {
-    @apply bg-smartclean-primary text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 hover:bg-smartclean-secondary;
+    @apply bg-firstclass-primary text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 hover:bg-firstclass-secondary;
   }
 
   .btn-secondary {
-    @apply bg-smartclean-secondary text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 hover:bg-smartclean-primary;
+    @apply bg-firstclass-secondary text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 hover:bg-firstclass-primary;
   }
 
-  .btn-smartclean-primary {
-    @apply bg-smartclean-primary text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 hover:bg-smartclean-secondary;
+  .btn-firstclass-primary {
+    @apply bg-firstclass-primary text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 hover:bg-firstclass-secondary;
   }
 
   .section-padding {
     @apply py-16 md:py-24;
   }
 
-  .section-smartclean {
+  .section-firstclass {
     @apply py-16 md:py-24 relative;
   }
 
   .card-service {
-    @apply bg-white rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 border border-smartclean-light hover:border-smartclean-primary transform hover:-translate-y-1;
+    @apply bg-white rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 border border-firstclass-light hover:border-firstclass-primary transform hover:-translate-y-1;
   }
 
-  .card-smartclean {
-    @apply bg-white rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 border border-smartclean-light hover:border-smartclean-primary transform hover:-translate-y-1;
+  .card-firstclass {
+    @apply bg-white rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 border border-firstclass-light hover:border-firstclass-primary transform hover:-translate-y-1;
   }
 
-  .hero-smartclean {
+  .hero-firstclass {
     background: linear-gradient(135deg, #2563eb 0%, #FFFFFF 100%);
     @apply text-white relative overflow-hidden;
   }
 
-  .smartclean-overlay {
+  .firstclass-overlay {
     background: linear-gradient(135deg, rgba(37, 99, 235, 0.8) 0%, rgba(255, 255, 255, 0.2) 100%);
   }
 
@@ -324,7 +324,7 @@
   }
 
   .hover-glow:hover {
-    box-shadow: 0 0 20px rgba(var(--smartclean-primary-rgb), 0.3);
+    box-shadow: 0 0 20px rgba(var(--firstclass-primary-rgb), 0.3);
   }
 
   @keyframes slideInLeft {

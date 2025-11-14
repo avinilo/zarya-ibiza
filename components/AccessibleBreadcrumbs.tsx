@@ -26,7 +26,7 @@ export default function AccessibleBreadcrumbs({ items, className = '' }: Accessi
         <li>
           <Link 
             href="/" 
-            className="flex items-center hover:text-smartclean-primary transition-colors focus:outline-none focus:ring-2 focus:ring-smartclean-primary focus:ring-offset-2 rounded-sm"
+            className="flex items-center hover:text-firstclass-primary transition-colors focus:outline-none focus:ring-2 focus:ring-firstclass-primary focus:ring-offset-2 rounded-sm"
             aria-label="Ir a página de inicio"
           >
             <Home className="w-4 h-4" aria-hidden="true" />
@@ -40,7 +40,7 @@ export default function AccessibleBreadcrumbs({ items, className = '' }: Accessi
             
             {item.current ? (
               <span 
-                className="text-smartclean-secondary font-medium"
+                className="text-firstclass-secondary font-medium"
                 aria-current="page"
               >
                 {item.label}
@@ -48,7 +48,7 @@ export default function AccessibleBreadcrumbs({ items, className = '' }: Accessi
             ) : item.href ? (
               <Link 
                 href={item.href}
-                className="hover:text-smartclean-primary transition-colors focus:outline-none focus:ring-2 focus:ring-smartclean-primary focus:ring-offset-2 rounded-sm"
+                className="hover:text-firstclass-primary transition-colors focus:outline-none focus:ring-2 focus:ring-firstclass-primary focus:ring-offset-2 rounded-sm"
               >
                 {item.label}
               </Link>

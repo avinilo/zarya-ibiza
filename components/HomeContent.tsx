@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { Home, Calendar, Star, Car, Shield, Sparkles, CheckCircle, Phone, Mail, MapPin, Users, ChevronLeft, ChevronRight, Instagram } from 'lucide-react'
 import ContactForm from '@/components/ContactForm'
 import FAQ from '@/components/FAQ'
+import Testimonials from '@/components/Testimonials'
 import LanguageSelector from '@/components/LanguageSelector'
 import { useLanguage } from '@/hooks/useLanguage'
 
@@ -372,6 +373,9 @@ export default function HomeContent() {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <Testimonials />
 
       {/* FAQ Section */}
       <FAQ />

@@ -9,11 +9,6 @@ export interface FocusOptions {
   restoreFocus?: boolean;
 }
 
-export interface AnnouncementOptions {
-  priority?: 'polite' | 'assertive';
-  delay?: number;
-}
-
 export interface ContrastResult {
   ratio: number;
   level: 'AA' | 'AAA' | 'fail';
@@ -124,78 +119,6 @@ export class FocusManager {
         this.trapStack.splice(index, 1);
       }
     };
-  }
-}
-
-// Anuncios para Screen Readers
-export class ScreenReaderAnnouncer {
-  private static liveRegion: HTMLElement | null = null;
-
-  /**
-   * Inicializa la región live para anuncios
-   */
-  static init(): void {
-    if (this.liveRegion) return;
-
-    this.liveRegion = document.createElement('div');
-    this.liveRegion.setAttribute('aria-live', 'polite');
-    this.liveRegion.setAttribute('aria-atomic', 'true');
-    this.liveRegion.setAttribute('aria-relevant', 'text');
-    this.liveRegion.style.position = 'absolute';
-    this.liveRegion.style.left = '-10000px';
-    this.liveRegion.style.width = '1px';
-    this.liveRegion.style.height = '1px';
-    this.liveRegion.style.overflow = 'hidden';
-    
-    document.body.appendChild(this.liveRegion);
-  }
-
-  /**
-   * Anuncia un mensaje a los screen readers
-   */
-  static announce(message: string, options: AnnouncementOptions = {}): void {
-    if (!this.liveRegion) this.init();
-    if (!this.liveRegion) return;
-
-    const { priority = 'polite', delay = 100 } = options;
-    
-    // Cambiar la prioridad si es necesario
-    if (this.liveRegion.getAttribute('aria-live') !== priority) {
-      this.liveRegion.setAttribute('aria-live', priority);
-    }
-
-    // Limpiar y anunciar después de un pequeño delay
-    setTimeout(() => {
-      if (this.liveRegion) {
-        this.liveRegion.textContent = '';
-        setTimeout(() => {
-          if (this.liveRegion) {
-            this.liveRegion.textContent = message;
-          }
-        }, 10);
-      }
-    }, delay);
-  }
-
-  /**
-   * Anuncia cambios de página
-   */
-  static announcePageChange(pageTitle: string): void {
-    this.announce(`Navegando a ${pageTitle}`, { priority: 'assertive' });
-  }
-
-  /**
-   * Anuncia errores de formulario
-   */
-  static announceFormError(message: string): void {
-    this.announce(`Error: ${message}`, { priority: 'assertive' });
-  }
-
-  /**
-   * Anuncia éxito en formularios
-   */
-  static announceFormSuccess(message: string): void {
-    this.announce(`Éxito: ${message}`, { priority: 'polite' });
   }
 }
 
@@ -410,14 +333,12 @@ export class KeyboardUtils {
 
 // Inicialización automática
 if (typeof window !== 'undefined') {
-  // Inicializar el anunciador cuando el DOM esté listo
+  // Aplicar preferencias del usuario cuando el DOM esté listo
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
-      ScreenReaderAnnouncer.init();
       UserPreferences.applyPreferencesToBody();
     });
   } else {
-    ScreenReaderAnnouncer.init();
     UserPreferences.applyPreferencesToBody();
   }
 }

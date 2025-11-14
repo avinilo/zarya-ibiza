@@ -11,7 +11,7 @@ module.exports = {
         'xs': '475px',
       },
       colors: {
-        smartclean: {
+        firstclass: {
           primary: '#2563eb',
           secondary: '#1d4ed8',
           light: '#dbeafe',
@@ -40,9 +40,9 @@ module.exports = {
         },
       },
       backgroundImage: {
-        'smartclean-gradient': 'linear-gradient(135deg, #2563eb 0%, #FFFFFF 100%)',
-        'smartclean-radial': 'radial-gradient(circle, #2563eb 0%, #FFFFFF 70%)',
-        'smartclean-overlay': 'linear-gradient(135deg, rgba(37, 99, 235, 0.8) 0%, rgba(255, 255, 255, 0.2) 100%)',
+        'firstclass-gradient': 'linear-gradient(135deg, #2563eb 0%, #FFFFFF 100%)',
+        'firstclass-radial': 'radial-gradient(circle, #2563eb 0%, #FFFFFF 70%)',
+        'firstclass-overlay': 'linear-gradient(135deg, rgba(37, 99, 235, 0.8) 0%, rgba(255, 255, 255, 0.2) 100%)',
         'gradient-primary': 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
       },
       fontFamily: {

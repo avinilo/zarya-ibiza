@@ -1,9 +1,9 @@
 // Service Worker para Smart Clean - Cache estratégico
 // Implementación cuidadosa para mejorar performance sin romper funcionalidad
 
-const CACHE_NAME = 'smartclean-v1'
-const STATIC_CACHE = 'smartclean-static-v1'
-const RUNTIME_CACHE = 'smartclean-runtime-v1'
+const CACHE_NAME = 'firstclass-v1'
+const STATIC_CACHE = 'firstclass-static-v1'
+const RUNTIME_CACHE = 'firstclass-runtime-v1'
 
 // URLs críticas para cachear
 const CRITICAL_URLS = [

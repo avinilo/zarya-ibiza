@@ -129,7 +129,7 @@ export default function Footer() {
               <li>
                 <div className="text-sm text-white/80 flex items-center group">
                   <MapPin className="w-4 h-4 mr-2 text-blue-500" />
-                  Valencia, España
+                  Ibiza, España
                 </div>
               </li>
               <li>

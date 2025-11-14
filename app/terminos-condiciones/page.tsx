@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Términos y Condiciones - First Class Sensations',
-  description: 'Términos y condiciones de uso del sitio web y servicios de First Class Sensations en Valencia',
+  description: 'Términos y condiciones de uso del sitio web y servicios de First Class Sensations en Ibiza',
   robots: {
     index: false,
     follow: false,
@@ -36,7 +36,7 @@ export default function TerminosCondiciones() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. Servicios Ofrecidos</h2>
               <p className="text-gray-700 mb-4">
-                First Class Sensations ofrece servicios premium de concierge y experiencias exclusivas en Valencia 
+                First Class Sensations ofrece servicios premium de concierge y experiencias exclusivas en Ibiza 
                 y alrededores. Nuestros servicios incluyen, pero no se limitan a:
               </p>
               <ul className="list-disc pl-6 text-gray-700 mb-4 space-y-2">
@@ -139,7 +139,7 @@ export default function TerminosCondiciones() {
               <p className="text-gray-700 mb-4">
                 Estos Términos y Condiciones se regirán e interpretarán de acuerdo con las leyes de España. 
                 Cualquier disputa que surja en relación con estos términos estará sujeta a la jurisdicción 
-                exclusiva de los tribunales de Valencia, España.
+                exclusiva de los tribunales de Ibiza, España.
               </p>
             </section>
 
@@ -169,7 +169,7 @@ export default function TerminosCondiciones() {
                   Teléfono: +34 600 887 755
                 </p>
                 <p className="text-gray-700">
-                  Ubicación: Valencia, España
+                  Ubicación: Ibiza, España
                 </p>
               </div>
             </section>

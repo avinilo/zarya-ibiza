@@ -13,7 +13,7 @@ export default function Header() {
   const [isBorderVisible, setIsBorderVisible] = useState(false)
   const [isHeaderVisible, setIsHeaderVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
-  const { language, changeLanguage } = useLanguage()
+  const { language, changeLanguage, t } = useLanguage()
 
   // Detectar scroll para cambiar el estilo del header y dirección de scroll
   useEffect(() => {
@@ -86,7 +86,7 @@ export default function Header() {
                   : 'text-white hover:text-white/80'
               }`}
             >
-              Inicio
+              {t('nav.home')}
               <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-smooth group-hover:w-full ${
                 isScrolled ? 'bg-smartclean-primary' : 'bg-white'
               }`}></span>
@@ -101,7 +101,7 @@ export default function Header() {
                   : 'text-white hover:text-white/80'
               }`}
             >
-              Servicios
+              {t('nav.services')}
               <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-smooth group-hover:w-full ${
                 isScrolled ? 'bg-smartclean-primary' : 'bg-white'
               }`}></span>
@@ -116,7 +116,7 @@ export default function Header() {
                   : 'text-white hover:text-white/80'
               }`}
             >
-              Nosotros
+              {t('nav.about')}
               <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-smooth group-hover:w-full ${
                 isScrolled ? 'bg-smartclean-primary' : 'bg-white'
               }`}></span>
@@ -130,7 +130,7 @@ export default function Header() {
                   : 'text-white hover:text-white/80'
               }`}
             >
-              FAQ
+              {t('nav.faq')}
               <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-smooth group-hover:w-full ${
                 isScrolled ? 'bg-smartclean-primary' : 'bg-white'
               }`}></span>
@@ -144,7 +144,7 @@ export default function Header() {
                   : 'text-white hover:text-white/80'
               }`}
             >
-              Contacto
+              {t('nav.contact')}
               <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-smooth group-hover:w-full ${
                 isScrolled ? 'bg-smartclean-primary' : 'bg-white'
               }`}></span>
@@ -156,7 +156,7 @@ export default function Header() {
             <LanguageSelector currentLanguage={language} onLanguageChange={changeLanguage} isScrolled={isScrolled} isMenuOpen={isMenuOpen} />
             <a href="https://wa.me/34600887755" className="btn-smartclean-primary text-sm py-2 px-6 flex items-center gap-2 hover-lift">
               <Phone className="w-4 h-4" />
-              WhatsApp
+              {t('hero.cta.whatsapp')}
             </a>
           </div>
 
@@ -198,7 +198,7 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
                 className="text-smartclean-secondary hover:text-smartclean-primary font-medium transition-smooth px-4 py-2 rounded-lg hover:bg-smartclean-light/50 hover-lift"
               >
-                Inicio
+                {t('nav.home')}
               </Link>
 
               {/* Mobile Services Link */}
@@ -207,7 +207,7 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
                 className="text-smartclean-secondary hover:text-smartclean-primary font-medium transition-smooth px-4 py-2 rounded-lg hover:bg-smartclean-light/50 hover-lift"
               >
-                Servicios
+                {t('nav.services')}
               </Link>
 
               {/* Mobile Nosotros Link */}
@@ -216,7 +216,7 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
                 className="text-smartclean-secondary hover:text-smartclean-primary font-medium transition-smooth px-4 py-2 rounded-lg hover:bg-smartclean-light/50 hover-lift"
               >
-                Nosotros
+                {t('nav.about')}
               </Link>
 
               <Link
@@ -224,7 +224,7 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
                 className="text-smartclean-secondary hover:text-smartclean-primary font-medium transition-smooth px-4 py-2 rounded-lg hover:bg-smartclean-light/50 hover-lift"
               >
-                Preguntas Frecuentes
+                {t('nav.faq')}
               </Link>
 
               <Link
@@ -232,14 +232,14 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
                 className="text-smartclean-secondary hover:text-smartclean-primary font-medium transition-smooth px-4 py-2 rounded-lg hover:bg-smartclean-light/50 hover-lift"
               >
-                Contacto
+                {t('nav.contact')}
               </Link>
 
               {/* WhatsApp Button */}
               <div className="px-4 pb-4">
                 <a href="https://wa.me/34600887755" className="btn-smartclean-primary text-sm py-3 px-6 flex items-center justify-center gap-2 hover-lift w-full">
                   <Phone className="w-4 h-4" />
-                  WhatsApp
+                  {t('hero.cta.whatsapp')}
                 </a>
               </div>
             </div>

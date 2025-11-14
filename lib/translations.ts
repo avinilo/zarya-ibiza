@@ -7,10 +7,12 @@ export interface Translation {
 export const translations: Record<Language, Translation> = {
   es: {
     // Header
+    'nav.home': 'Inicio',
     'nav.services': 'Servicios',
     'nav.howWeWork': 'Cómo trabajamos',
     'nav.about': 'Sobre nosotros',
     'nav.contact': 'Contacto',
+    'nav.faq': 'FAQ',
     'nav.quickConsultation': 'Consulta rápida',
     
     // Hero
@@ -19,9 +21,9 @@ export const translations: Record<Language, Translation> = {
     'hero.description': 'Nos dedicamos a organizar vacaciones a medida: reservas de mesas VIP en clubs y restaurantes top, alquiler de villas, coches de lujo, furgonetas Mercedes V Class con licencia y conductor, acompañamientos de seguridad y organización de eventos privados en villas.',
     'hero.cta.plan': 'Planificar mi estancia',
     'hero.cta.whatsapp': 'WhatsApp',
-    
-
-
+    'hero.trust.available': 'Disponible 24/7',
+    'hero.trust.exclusive': 'Experiencias Exclusivas',
+    'hero.trust.personalized': 'Servicio Personalizado',
     
     // Services Section
     'services.title': 'Servicios',
@@ -58,7 +60,7 @@ export const translations: Record<Language, Translation> = {
     // Service 5
     'service5.title': 'Seguridad y acompañamiento',
     'service5.subtitle': 'Servicio de seguridad discreto y profesional para tu tranquilidad.',
-    'service5.feature1': 'Seguridad personal y de grupo.',
+    'service5.feature1': 'Seguridad personal y para grupos.',
     'service5.feature2': 'Coordinación con servicios locales.',
     'service5.feature3': 'Presencia discreta y profesional.',
     
@@ -77,7 +79,7 @@ export const translations: Record<Language, Translation> = {
     'process.step1.description': 'Fechas aproximadas, número de personas, tipo de viaje (amigos, familia, empresa) y nivel de presupuesto.',
     
     'process.step2.title': 'Te enviamos propuestas.',
-    'process.step2.description': 'Villas, mesas VIP, transporte, seguridad y eventos en villa, todo integrado en un solo plan.',
+    'process.step2.description': 'Villas, mesas VIP, transporte, seguridad y eventos en villa, todo integrado en un plan.',
     
     'process.step3.title': 'Confirmamos y coordinamos.',
     'process.step3.description': 'Cerramos reservas, coordinamos proveedores y estamos disponibles durante tu estancia para ajustes.',
@@ -87,54 +89,85 @@ export const translations: Record<Language, Translation> = {
     'about.subtitle': 'Concierge independiente con trato directo y discreto.',
     'about.description': 'First Class Sensations nace con una idea clara: ayudarte a vivir Ibiza al máximo sin perder tiempo coordinando reservas, cambios y detalles de última hora.',
     'about.feature1': 'Trabajamos con un número limitado de clientes para mantener un servicio muy personal, rápido y flexible.',
-    'about.location': 'Ibiza · Concierge Privado · Español, Inglés y Ruso.',
-    'about.clients': 'Clientes: grupos de amigos, parejas, familias y empresas.',
-    'about.style': 'Estilo: directo, cercano y discreto.',
-    'about.philosophy': 'No buscamos volumen, sino relaciones de confianza y resultados perfectos en cada viaje.',
+    'about.location': 'Ibiza · Concierge privado · Español, inglés y ruso.',
+    'about.clients': 'Atendemos a clientes exigentes que valoran el tiempo y buscan experiencias únicas.',
+    'about.style': 'Estilo discreto, directo y eficaz. Sin intermediarios ni sorpresas.',
+    'about.philosophy': 'La clave está en la planificación y en los detalles. Cada cliente es diferente, cada viaje es único.',
     
     // Contact Section
     'contact.title': 'Contacto',
-    'contact.subtitle': 'Cuéntanos tu idea y respondemos de forma personalizada. Puedes escribirnos por email, WhatsApp o usar el formulario. Siempre respondemos directamente, sin mensajes automáticos.',
+    'contact.subtitle': 'Un chat de WhatsApp para coordinar todo. Contestamos en menos de una hora.',
     'contact.email': 'Email',
     'contact.whatsapp': 'WhatsApp',
-    'contact.form.hint': 'Indica fechas aproximadas, número de personas y qué servicios te interesan (villas, mesas VIP, V Class, seguridad, eventos en villa…).',
+    'contact.location': 'Ubicación',
+    'contact.instagram': 'Instagram',
+    'contact.form.hint': 'O completa el formulario y te llamamos nosotros.',
     
     // Form Fields
-    'form.dates': 'Fechas Aproximadas',
-    'form.dates.placeholder': 'Ej. del 10 al 15 de agosto.',
-    'form.people': 'Personas',
-    'form.people.placeholder': 'Número total y tipo de grupo.',
-    'form.budget': 'Presupuesto',
-    'form.budget.placeholder': 'Rango aproximado para ajustar propuestas.',
-    'form.fullName': 'Nombre Completo *',
-    'form.email': 'Email *',
-    'form.phone': 'Teléfono / WhatsApp *',
-    'form.services': 'Qué te gustaría incluir',
-    'form.services.placeholder': 'Ej: villas, mesas VIP, V Class, seguridad, eventos en villa…',
-    'form.submit': 'Enviar Solicitud',
+    'form.name': 'Nombre',
+    'form.phone': 'Teléfono',
+    'form.email': 'Email',
+    'form.service': 'Servicio de interés',
+    'form.services': 'Servicio de interés',
+    'form.services.placeholder': 'Ej: Villa, transporte, reservas VIP, etc.',
+    'form.dates': 'Fechas aproximadas',
+    'form.dates.placeholder': 'Ej: 15-22 julio, agosto, etc.',
+    'form.people': 'Número de personas',
+    'form.people.placeholder': 'Ej: 6 personas, familia de 4, etc.',
+    'form.budget': 'Presupuesto aproximado',
+    'form.budget.placeholder': 'Ej: 5000€, 10000-15000€, etc.',
+    'form.message': 'Cuéntanos más sobre tu idea',
+    'form.submit': 'Enviar consulta',
+    'form.budget.economy': 'Económico',
+    'form.budget.mid': 'Medio',
+    'form.budget.high': 'Alto',
+    'form.budget.luxury': 'Lujo',
+    'form.service.any': 'Cualquiera',
+    'form.service.villa': 'Villa',
+    'form.service.transport': 'Transporte',
+    'form.service.vip': 'Reservas VIP',
+    'form.service.security': 'Seguridad',
+    'form.service.events': 'Eventos',
+    'form.service.full': 'Plan completo',
     
     // Footer
-    'footer.copyright': '© 2025 First Class Sensations. Todos los derechos reservados.',
-    'footer.tagline': 'Concierge Privado en Ibiza.',
+    'footer.tagline': 'Ibiza al máximo, sin complicaciones.',
+    'footer.description': 'Concierge privado en Ibiza. Experiencias únicas, servicio personalizado.',
+    'footer.contact': 'Contacto',
+    'footer.services': 'Servicios',
+    'footer.follow': 'Síguenos',
+    'footer.copyright': '© 2024 First Class Sensations. Todos los derechos reservados.',
+    
+    'footer.services.premium': 'Servicios Premium',
+    'footer.services.exclusive': 'Experiencias Exclusivas',
+    'footer.services.personalized': 'Atención Personalizada',
+    'footer.services.custom': 'Servicios a Medida',
+    'footer.quickLinks': 'Enlaces Rápidos',
+    'footer.aboutUs': 'Sobre Nosotros',
+    'footer.location': 'Valencia, España',
+    'footer.privacy': 'Política de Privacidad',
+    'footer.terms': 'Términos y Condiciones',
+    'footer.ariaLabel': 'Información de contacto y enlaces del sitio',
+    'footer.servicesNav': 'Enlaces de servicios',
+    'footer.quickNav': 'Enlaces rápidos',
     
     // Meta
-    'meta.description': 'Concierge privado en Ibiza. Vacaciones a medida y experiencias VIP: villas de lujo, mesas VIP, transporte de lujo, seguridad y eventos privados.',
-    'meta.keywords': 'concierge ibiza, villas de lujo ibiza, mesas vip ibiza, transporte de lujo ibiza, seguridad ibiza, eventos privados ibiza',
+    'meta.keywords': 'concierge Ibiza, vacaciones de lujo, villas privadas, reservas VIP, transporte de lujo, seguridad privada, eventos en villas',
+    'meta.author': 'First Class Sensations',
+    'meta.description': 'Concierge privado en Ibiza. Vacaciones a medida con villas de lujo, reservas VIP, transporte exclusivo y eventos privados.',
     
-    // FAQ Section
-    'faq.title': 'Preguntas Frecuentes',
-    'faq.subtitle': 'Resolvemos las dudas más comunes sobre nuestros servicios de concierge en Ibiza.',
-    'faq.moreQuestions': '¿Tienes más preguntas? Estamos aquí para ayudarte.',
-    'faq.whatsapp': 'WhatsApp +34 600 887 755',
+    // FAQ
+    'faq.title': 'Preguntas frecuentes',
+    'faq.subtitle': 'Todo lo que necesitas saber sobre nuestros servicios en Ibiza.',
     
-    'faq.q1': '¿Cuánto tiempo antes debo reservar?',
-    'faq.a1': 'Recomendamos contactar al menos 2-3 semanas antes para villas y servicios VIP. Para época alta (julio-agosto) y fechas especiales, mejor 1-2 meses de antelación.',
+    'faq.q1': '¿Qué hace especial a First Class Sensations?',
+    'faq.a1': 'Somos un servicio de concierge independiente en Ibiza con trato directo y sin intermediarios. Conocemos la isla perfectamente y trabajamos con proveedores de confianza. Nos especializamos en experiencias personalizadas y atendemos a un número limitado de clientes para garantizar un servicio excepcional.',
     
-    'faq.q2': '¿Trabajáis solo en Ibiza o también en Formentera?',
-    'faq.a2': 'Principalmente en Ibiza, pero podemos coordinar servicios en Formentera: yates, transporte y experiencias. Todo con la misma calidad y discreción.',
+    'faq.q2': '¿En qué zona trabajáis?',
+    'faq.a2': 'Trabajamos en toda Ibiza y Formentera. Desde las zonas más exclusivas como Jesús, Roca Llisa, Can Rimbau, Can Pep Simó, Can Furnet, Cap Martinet, Marina Botafoch, Talamanca, hasta villas más aisladas y privadas. También cubrimos Santa Eulalia, San Antonio y el resto de la isla.',
     
-    'faq.q3': '¿Qué incluye exactamente el servicio de concierge?',
-    'faq.a3': 'Coordinación completa: villas, VIP, transporte, seguridad, reservas, proveedores y soporte 24/7 durante tu estancia. Un solo contacto para todo.',
+    'faq.q3': '¿Cuánto tiempo antes debo reservar?',
+    'faq.a3': 'Para villas, al menos 2-3 meses en temporada alta (junio-septiembre). Para reservas VIP en clubs, mínimo 1-2 semanas. Para eventos privados, 1 mes. Para transporte y seguridad, con 1 semana es suficiente. Cuanto antes mejor, pero siempre intentamos solucionar urgencias.',
     
     'faq.q4': '¿Cómo se realiza el pago?',
     'faq.a4': '50% para confirmar reservas, 50% antes de la llegada. Aceptamos transferencia bancaria y tarjeta. Todos los pagos son seguros y con factura.',
@@ -149,14 +182,19 @@ export const translations: Record<Language, Translation> = {
     'faq.a7': 'Sí, DJ privado, chef, barra de cócteles, personal de servicio, decoración y coordinación completa. Respeto absoluto a la privacidad del cliente.',
     
     'faq.q8': '¿Qué nivel de presupuesto manejáis?',
-    'faq.a8': 'Trabajamos con diferentes rangos: desde experiencias selectas hasta ultra-lujo. Lo importante es la calidad y la experiencia, no solo el precio.'
+    'faq.a8': 'Trabajamos con diferentes rangos: desde experiencias selectas hasta ultra-lujo. Lo importante es la calidad y la experiencia, no solo el precio.',
+    
+    'faq.moreQuestions': '¿Más preguntas?',
+    'faq.whatsapp': 'Escríbenos por WhatsApp'
   },
   en: {
     // Header
+    'nav.home': 'Home',
     'nav.services': 'Services',
     'nav.howWeWork': 'How We Work',
     'nav.about': 'About Us',
     'nav.contact': 'Contact',
+    'nav.faq': 'FAQ',
     'nav.quickConsultation': 'Quick Consultation',
     
     // Hero
@@ -165,9 +203,9 @@ export const translations: Record<Language, Translation> = {
     'hero.description': 'We specialize in organizing tailor-made holidays: VIP table reservations in top clubs and restaurants, villa rentals, luxury cars, Mercedes V Class vans with license and driver, security escorts and organization of private events in villas.',
     'hero.cta.plan': 'Plan My Stay',
     'hero.cta.whatsapp': 'WhatsApp',
-    
-    // Quick Contact
-
+    'hero.trust.available': 'Available 24/7',
+    'hero.trust.exclusive': 'Exclusive Experiences',
+    'hero.trust.personalized': 'Personalized Service',
     
     // Services Section
     'services.title': 'Services',
@@ -234,75 +272,105 @@ export const translations: Record<Language, Translation> = {
     'about.description': 'First Class Sensations is born with a clear idea: to help you live Ibiza to the fullest without wasting time coordinating reservations, changes and last-minute details.',
     'about.feature1': 'We work with a limited number of clients to maintain a very personal, fast and flexible service.',
     'about.location': 'Ibiza · Private Concierge · Spanish, English and Russian.',
-    'about.clients': 'Clients: groups of friends, couples, families and companies.',
-    'about.style': 'Style: direct, close and discreet.',
-    'about.philosophy': 'We don\'t seek volume, but trust relationships and perfect results in every trip.',
+    'about.clients': 'We serve demanding clients who value time and seek unique experiences.',
+    'about.style': 'Discreet, direct and efficient style. No intermediaries or surprises.',
+    'about.philosophy': 'The key is in planning and details. Each client is different, each trip is unique.',
     
     // Contact Section
     'contact.title': 'Contact',
-    'contact.subtitle': 'Tell us your idea and we will respond in a personalized way. You can write to us by email, WhatsApp or use the form. We always respond directly, without automatic messages.',
+    'contact.subtitle': 'One WhatsApp chat to coordinate everything. We respond in less than an hour.',
     'contact.email': 'Email',
     'contact.whatsapp': 'WhatsApp',
-    'contact.form.hint': 'Indicate approximate dates, number of people and what services interest you (villas, VIP tables, V Class, security, villa events…).',
+    'contact.location': 'Location',
+    'contact.instagram': 'Instagram',
+    'contact.form.hint': 'Or complete the form and we will call you.',
     
     // Form Fields
-    'form.dates': 'Approximate Dates',
-    'form.dates.placeholder': 'Ex. from August 10 to 15.',
-    'form.people': 'People',
-    'form.people.placeholder': 'Total number and type of group.',
-    'form.budget': 'Budget',
-    'form.budget.placeholder': 'Approximate range to adjust proposals.',
-    'form.fullName': 'Full Name *',
-    'form.email': 'Email *',
-    'form.phone': 'Phone / WhatsApp *',
-    'form.services': 'What would you like to include',
-    'form.services.placeholder': 'Ex: villas, VIP tables, V Class, security, villa events…',
-    'form.submit': 'Send Request',
+    'form.name': 'Name',
+    'form.phone': 'Phone',
+    'form.email': 'Email',
+    'form.service': 'Service of interest',
+    'form.services': 'Service of interest',
+    'form.services.placeholder': 'Ex: Villa, transport, VIP reservations, etc.',
+    'form.dates': 'Approximate dates',
+    'form.dates.placeholder': 'Ex: July 15-22, August, etc.',
+    'form.people': 'Number of people',
+    'form.people.placeholder': 'Ex: 6 people, family of 4, etc.',
+    'form.budget': 'Approximate budget',
+    'form.budget.placeholder': 'Ex: €5000, €10000-15000, etc.',
+    'form.message': 'Tell us more about your idea',
+    'form.submit': 'Send inquiry',
+    'form.budget.economy': 'Economy',
+    'form.budget.mid': 'Mid-range',
+    'form.budget.high': 'High-end',
+    'form.budget.luxury': 'Luxury',
+    'form.service.any': 'Any',
+    'form.service.villa': 'Villa',
+    'form.service.transport': 'Transport',
+    'form.service.vip': 'VIP Reservations',
+    'form.service.security': 'Security',
+    'form.service.events': 'Events',
+    'form.service.full': 'Complete Plan',
     
     // Footer
-    'footer.copyright': '© 2025 First Class Sensations. All rights reserved.',
-    'footer.tagline': 'Private Concierge in Ibiza.',
+    'footer.tagline': 'Ibiza to the maximum, without complications.',
+    'footer.description': 'Private concierge in Ibiza. Unique experiences, personalized service.',
+    'footer.contact': 'Contact',
+    'footer.services': 'Services',
+    'footer.follow': 'Follow us',
+    'footer.copyright': '© 2024 First Class Sensations. All rights reserved.',
+    
+    'footer.services.premium': 'Premium Services',
+    'footer.services.exclusive': 'Exclusive Experiences',
+    'footer.services.personalized': 'Personalized Attention',
+    'footer.services.custom': 'Custom Services',
+    'footer.quickLinks': 'Quick Links',
+    'footer.aboutUs': 'About Us',
+    'footer.location': 'Valencia, Spain',
+    'footer.privacy': 'Privacy Policy',
+    'footer.terms': 'Terms and Conditions',
+    'footer.ariaLabel': 'Contact information and site links',
+    'footer.servicesNav': 'Services links',
+    'footer.quickNav': 'Quick links',
     
     // Meta
-    'meta.description': 'Private Concierge in Ibiza. Tailor-made holidays and VIP experiences: luxury villas, VIP tables, luxury transport, security and private events.',
-    'meta.keywords': 'concierge ibiza, luxury villas ibiza, vip tables ibiza, luxury transport ibiza, security ibiza, private events ibiza',
+    'meta.keywords': 'concierge Ibiza, luxury holidays, private villas, VIP reservations, luxury transport, private security, villa events',
+    'meta.author': 'First Class Sensations',
+    'meta.description': 'Private concierge in Ibiza. Tailor-made holidays with luxury villas, VIP reservations, exclusive transport and private events.',
     
-    // FAQ Section
+    // FAQ
     'faq.title': 'Frequently Asked Questions',
-    'faq.subtitle': 'We answer the most common questions about our concierge services in Ibiza.',
-    'faq.moreQuestions': 'Have more questions? We are here to help you.',
-    'faq.whatsapp': 'WhatsApp +34 600 887 755',
+    'faq.subtitle': 'Everything you need to know about our services in Ibiza.',
     
-    'faq.q1': 'How far in advance should I book?',
-    'faq.a1': 'We recommend contacting at least 2-3 weeks in advance for villas and VIP services. For high season (July-August) and special dates, better 1-2 months ahead.',
+    'faq.q1': 'What makes First Class Sensations special?',
+    'faq.a1': 'We are an independent concierge service in Ibiza with direct treatment and no intermediaries. We know the island perfectly and work with trusted suppliers. We specialize in personalized experiences and serve a limited number of clients to guarantee exceptional service.',
     
-    'faq.q2': 'Do you work only in Ibiza or also in Formentera?',
-    'faq.a2': 'Mainly in Ibiza, but we can coordinate services in Formentera: yachts, transport and experiences. All with the same quality and discretion.',
-    
-    'faq.q3': 'What exactly does the concierge service include?',
-    'faq.a3': 'Complete coordination: villas, VIP, transport, security, reservations, suppliers and 24/7 support during your stay. One contact for everything.',
-    
+    'faq.q2': 'What area do you work in?',
+    'faq.a2': 'We work throughout Ibiza and Formentera. From the most exclusive areas like Jesús, Roca Llisa, Can Rimbau, Can Pep Simó, Can Furnet, Cap Martinet, Marina Botafoch, Talamanca, to more isolated and private villas. We also cover Santa Eulalia, San Antonio and the rest of the island.',
+    'faq.q3': 'How far in advance should I book?',
+    'faq.a3': 'For villas, at least 2-3 months in high season (June-September). For VIP club reservations, minimum 1-2 weeks. For private events, 1 month. For transport and security, 1 week is enough. The sooner the better, but we always try to solve urgencies.',
     'faq.q4': 'How is payment made?',
     'faq.a4': '50% to confirm reservations, 50% before arrival. We accept bank transfer and card. All payments are secure and with invoice.',
-    
     'faq.q5': 'What if I need to cancel?',
     'faq.a5': 'Flexible policy: full refund up to 30 days before. Between 30-7 days: 50%. Less than 7 days: managed expenses. We always try to find solutions.',
-    
     'faq.q6': 'Do you speak Spanish, English and Russian?',
-    'faq.a6': 'Yes, we serve in Spanish, English and Russian. Direct communication without intermediaries, which speeds everything up and avoids misunderstandings.',
-    
+    'faq.a6': "Yes, we serve in Spanish, English and Russian. Direct communication without intermediaries, which speeds everything up and avoids misunderstandings.",
     'faq.q7': 'Can you organize private events at villas?',
     'faq.a7': 'Yes, private DJ, chef, cocktail bar, service staff, decoration and complete coordination. Absolute respect for client privacy.',
-    
     'faq.q8': 'What budget level do you handle?',
-    'faq.a8': 'We work with different ranges: from select experiences to ultra-luxury. What matters is quality and experience, not just price.'
+    'faq.a8': 'We work with different ranges: from select experiences to ultra-luxury. The important thing is quality and experience, not just price.',
+    
+    'faq.moreQuestions': 'More questions?',
+    'faq.whatsapp': 'Write to us on WhatsApp'
   },
   ru: {
     // Header
+    'nav.home': 'Главная',
     'nav.services': 'Услуги',
     'nav.howWeWork': 'Как мы работаем',
     'nav.about': 'О нас',
     'nav.contact': 'Контакт',
+    'nav.faq': 'FAQ',
     'nav.quickConsultation': 'Быстрая консультация',
     
     // Hero
@@ -311,31 +379,31 @@ export const translations: Record<Language, Translation> = {
     'hero.description': 'Мы специализируемся на организации индивидуальных каникул: VIP-бронирование столов в лучших клубах и ресторанах, аренда вилл, роскошные автомобили, микроавтобусы Mercedes V Class с лицензией и водителем, охранные сопровождения и организация частных мероприятий на виллах.',
     'hero.cta.plan': 'Спланировать мой отдых',
     'hero.cta.whatsapp': 'WhatsApp',
-    
-    // Quick Contact
-
+    'hero.trust.available': 'Доступен 24/7',
+    'hero.trust.exclusive': 'Эксклюзивные впечатления',
+    'hero.trust.personalized': 'Персонализированный сервис',
     
     // Services Section
     'services.title': 'Услуги',
-    'services.subtitle': 'Понятные услуги, разработанные для того, чтобы всё было быстро и просто. Мы берём на себя всю логистику, чтобы вам осталось только наслаждаться Ибицей.',
+    'services.subtitle': 'Понятные услуги, созданные для того, чтобы всё было быстро и просто. Мы занимаемся всей логистикой, чтобы вам осталось только наслаждаться Ибицей.',
     
     // Service 1
     'service1.title': 'Роскошные каникулы',
-    'service1.subtitle': 'Мы создаём индивидуальный план согласно датам, типу группы и стилю путешествия.',
-    'service1.feature1': 'Предложение ежедневного планирования (пляж, закат, ночь).',
-    'service1.feature2': 'Рекомендации согласно вашему профилю и бюджету.',
+    'service1.subtitle': 'Мы создаём персонализированный план в соответствии с вашими датами, типом группы и стилем путешествия.',
+    'service1.feature1': 'Ежедневное планирование (пляж, закат, ночь).',
+    'service1.feature2': 'Рекомендации в соответствии с вашим профилем и бюджетом.',
     'service1.feature3': 'Корректировки во время пребывания через WhatsApp.',
     
     // Service 2
     'service2.title': 'VIP-бронирование столов',
     'service2.subtitle': 'VIP-столы в лучших клубах и ресторанах Ибицы, скоординированные с вашим планом.',
-    'service2.feature1': 'Бронирования подтверждены до вашего прибытия.',
+    'service2.feature1': 'Бронирования подтверждаются до вашего прибытия.',
     'service2.feature2': 'Координация с транспортом и расписанием.',
     'service2.feature3': 'Приоритетный доступ и персонализированный сервис.',
     
     // Service 3
     'service3.title': 'Аренда вилл',
-    'service3.subtitle': 'Подбор премиум-вилл со всеми удобствами и услугами.',
+    'service3.subtitle': 'Подбор премиальных вилл со всеми удобствами и включёнными услугами.',
     'service3.feature1': 'Виллы с бассейном, безопасностью и обслуживанием.',
     'service3.feature2': 'Персонализированный заезд и консьерж 24/7.',
     'service3.feature3': 'Ежедневная уборка и обслуживание.',
@@ -358,93 +426,121 @@ export const translations: Record<Language, Translation> = {
     'service6.title': 'Частные мероприятия на виллах',
     'service6.subtitle': 'Организация эксклюзивных мероприятий: частные диджеи, шеф-повара, коктейль-бары.',
     'service6.feature1': 'Частный диджей, шеф-повар, коктейль-бар и оформление.',
-    'service6.feature2': 'Поддерживающий персонал и координация поставщиков.',
+    'service6.feature2': 'Обслуживающий персонал и координация поставщиков.',
     'service6.feature3': 'Абсолютное уважение к конфиденциальности клиента.',
     
     // Process Section
     'process.title': 'Процесс',
     'process.subtitle': 'Три шага, чтобы полностью организовать Ибицу. Один контакт, один чат и мы координируем остальное.',
     
-    'process.step1.title': 'Расскажите свою идею.',
+    'process.step1.title': 'Расскажите о вашей идее.',
     'process.step1.description': 'Приблизительные даты, количество людей, тип поездки (друзья, семья, компания) и уровень бюджета.',
     
     'process.step2.title': 'Мы отправляем вам предложения.',
-    'process.step2.description': 'Виллы, VIP-столы, транспорт, безопасность и мероприятия на вилле, всё вписано в один план.',
+    'process.step2.description': 'Виллы, VIP-столы, транспорт, безопасность и мероприятия на виллах, всё интегрировано в один план.',
     
     'process.step3.title': 'Мы подтверждаем и координируем.',
     'process.step3.description': 'Мы закрываем бронирования, координируем поставщиков и доступны во время вашего пребывания для корректировок.',
     
     // About Section
     'about.title': 'О First Class Sensations',
-    'about.subtitle': 'Независимый консьерж с прямым и дискретным обращением.',
-    'about.description': 'First Class Sensations рождается с чёткой идеей: помочь вам жить Ибицей на максимуме, не теряя время на координацию бронирований, изменений и деталей в последнюю минуту.',
+    'about.subtitle': 'Независимый консьерж с прямым и дискретным обслуживанием.',
+    'about.description': 'First Class Sensations родился с чёткой идеей: помочь вам жить Ибицей по максимуму, не теряя время на координацию бронирований, изменений и деталей в последнюю минуту.',
     'about.feature1': 'Мы работаем с ограниченным количеством клиентов, чтобы поддерживать очень персональный, быстрый и гибкий сервис.',
     'about.location': 'Ибица · Приватный консьерж · Испанский, английский и русский.',
-    'about.clients': 'Клиенты: группы друзей, пары, семьи и компании.',
-    'about.style': 'Стиль: прямой, близкий и дискретный.',
-    'about.philosophy': 'Мы не ищем объём, а доверительные отношения и идеальные результаты в каждой поездке.',
+    'about.clients': 'Мы обслуживаем требовательных клиентов, которые ценят время и ищут уникальные впечатления.',
+    'about.style': 'Стиль дискретный, прямой и эффективный. Без посредников и сюрпризов.',
+    'about.philosophy': 'Ключ в планировании и деталях. Каждый клиент разный, каждое путешествие уникально.',
     
     // Contact Section
     'contact.title': 'Контакт',
-    'contact.subtitle': 'Расскажите свою идею и мы ответим персонально. Вы можете написать нам по электронной почте, WhatsApp или использовать форму. Мы всегда отвечаем напрямую, без автоматических сообщений.',
+    'contact.subtitle': 'Один чат WhatsApp для координации всего. Мы отвечаем менее чем за час.',
     'contact.email': 'Email',
     'contact.whatsapp': 'WhatsApp',
-    'contact.form.hint': 'Укажите приблизительные даты, количество людей и какие услуги вас интересуют (виллы, VIP-столы, V Class, безопасность, мероприятия на вилле…).',
+    'contact.location': 'Расположение',
+    'contact.instagram': 'Instagram',
+    'contact.form.hint': 'Или заполните форму, и мы вам перезвоним.',
     
     // Form Fields
+    'form.name': 'Имя',
+    'form.phone': 'Телефон',
+    'form.email': 'Email',
+    'form.service': 'Интересующая услуга',
+    'form.services': 'Интересующая услуга',
+    'form.services.placeholder': 'Например: Вилла, транспорт, VIP-бронирование и т.д.',
     'form.dates': 'Приблизительные даты',
-    'form.dates.placeholder': 'Напр: с 10 по 15 августа.',
-    'form.people': 'Люди',
-    'form.people.placeholder': 'Общее количество и тип группы.',
-    'form.budget': 'Бюджет',
-    'form.budget.placeholder': 'Приблизительный диапазон для подбора предложений.',
-    'form.fullName': 'Полное имя *',
-    'form.email': 'Email *',
-    'form.phone': 'Телефон / WhatsApp *',
-    'form.services': 'Что бы вы хотели включить',
-    'form.services.placeholder': 'Напр: виллы, VIP-столы, V Class, безопасность, мероприятия на вилле…',
+    'form.dates.placeholder': 'Например: 15-22 июля, август и т.д.',
+    'form.people': 'Количество человек',
+    'form.people.placeholder': 'Например: 6 человек, семья из 4 и т.д.',
+    'form.budget': 'Приблизительный бюджет',
+    'form.budget.placeholder': 'Например: €5000, €10000-15000 и т.д.',
+    'form.message': 'Расскажите больше о вашей идее',
     'form.submit': 'Отправить запрос',
+    'form.budget.economy': 'Экономный',
+    'form.budget.mid': 'Средний',
+    'form.budget.high': 'Высокий',
+    'form.budget.luxury': 'Роскошный',
+    'form.service.any': 'Любой',
+    'form.service.villa': 'Вилла',
+    'form.service.transport': 'Транспорт',
+    'form.service.vip': 'VIP-бронирование',
+    'form.service.security': 'Безопасность',
+    'form.service.events': 'Мероприятия',
+    'form.service.full': 'Полный план',
     
     // Footer
-    'footer.copyright': '© 2025 First Class Sensations. Все права защищены.',
-    'footer.tagline': 'Приватный консьерж в Ибице.',
+    'footer.tagline': 'Ибица по максимуму, без осложнений.',
+    'footer.description': 'Приватный консьерж в Ибице. Уникальные впечатления, персонализированный сервис.',
+    'footer.contact': 'Контакт',
+    'footer.services': 'Услуги',
+    'footer.follow': 'Следите за нами',
+    'footer.copyright': '© 2024 First Class Sensations. Все права защищены.',
+    
+    'footer.services.premium': 'Премиальные Услуги',
+    'footer.services.exclusive': 'Эксклюзивные Впечатления',
+    'footer.services.personalized': 'Персонализированное Внимание',
+    'footer.services.custom': 'Индивидуальные Услуги',
+    'footer.quickLinks': 'Быстрые Ссылки',
+    'footer.aboutUs': 'О Нас',
+    'footer.location': 'Валенсия, Испания',
+    'footer.privacy': 'Политика Конфиденциальности',
+    'footer.terms': 'Условия и Положения',
+    'footer.ariaLabel': 'Контактная информация и ссылки сайта',
+    'footer.servicesNav': 'Ссылки услуг',
+    'footer.quickNav': 'Быстрые ссылки',
     
     // Meta
-    'meta.description': 'Приватный консьерж в Ибице. Индивидуальные каникулы и VIP-опыт: роскошные виллы, VIP-столы, роскошный транспорт, безопасность и частные мероприятия.',
-    'meta.keywords': 'консьерж ибица, роскошные виллы ибица, VIP столы ибица, роскошный транспорт ибица, безопасность ибица, частные мероприятия ибица',
+    'meta.keywords': 'консьерж Ибица, роскошные каникулы, частные виллы, VIP-бронирование, роскошный транспорт, частная безопасность, мероприятия на виллах',
+    'meta.author': 'First Class Sensations',
+    'meta.description': 'Приватный консьерж в Ибице. Индивидуальные каникулы с роскошными виллами, VIP-бронированием, эксклюзивным транспортом и частными мероприятиями.',
     
-    // FAQ Section
+    // FAQ
     'faq.title': 'Часто задаваемые вопросы',
-    'faq.subtitle': 'Мы отвечаем на самые распространенные вопросы о наших услугах консьержа в Ибице.',
-    'faq.moreQuestions': 'Есть ещё вопросы? Мы здесь, чтобы помочь вам.',
-    'faq.whatsapp': 'WhatsApp +34 600 887 755',
+    'faq.subtitle': 'Всё, что вам нужно знать о наших услугах в Ибице.',
     
-    'faq.q1': 'За сколько времени нужно бронировать?',
-    'faq.a1': 'Рекомендуем связаться минимум за 2-3 недели для вилл и VIP-услуг. Для высокого сезона (июль-август) и специальных дат лучше за 1-2 месяца.',
+    'faq.q1': 'Что делает First Class Sensations особенным?',
+    'faq.a1': 'Мы являемся независимым сервисом консьержа в Ибице с прямым обслуживанием и без посредников. Мы идеально знаем остров и работаем с проверенными поставщиками. Мы специализируемся на персонализированных впечатлениях и обслуживаем ограниченное количество клиентов, чтобы гарантировать исключительный сервис.',
     
-    'faq.q2': 'Вы работаете только в Ибице или также в Форментере?',
-    'faq.a2': 'В основном в Ибице, но можем координировать услуги в Форментере: яхты, транспорт и впечатления. Всё с тем же качеством и дискретностью.',
-    
-    'faq.q3': 'Что именно включает услуга консьержа?',
-    'faq.a3': 'Полная координация: виллы, VIP, транспорт, безопасность, бронирования, поставщики и поддержка 24/7 во время вашего пребывания. Один контакт для всего.',
-    
+    'faq.q2': 'В какой области вы работаете?',
+    'faq.a2': 'Мы работаем по всей Ибице и Форментере. От самых эксклюзивных районов, таких как Хесус, Рока Льиса, Кан Римбау, Кан Пеп Симо, Кан Фурнет, Кап Мартинет, Марина Ботафоч, Таламанка, до более изолированных и частных вилл. Мы также охватываем Санта Эулалия, Сан-Антонио и остальную часть острова.',
+    'faq.q3': 'За сколько времени нужно бронировать?',
+    'faq.a3': 'Для вилл - не менее 2-3 месяцев в высокий сезон (июнь-сентябрь). Для VIP-бронирования в клубах - минимум 1-2 недели. Для частных мероприятий - 1 месяц. Для транспорта и безопасности - 1 недели достаточно. Чем раньше, тем лучше, но мы всегда стараемся решать срочные вопросы.',
     'faq.q4': 'Как осуществляется оплата?',
-    'faq.a4': '50% для подтверждения бронирований, 50% до прибытия. Принимаем банковский перевод и карту. Все платежи безопасны и с выставлением счета.',
-    
+    'faq.a4': '50% для подтверждения бронирования, 50% до прибытия. Мы принимаем банковский перевод и карту. Все платежи безопасны и сопровождаются счетом.',
     'faq.q5': 'Что, если мне нужно отменить?',
-    'faq.a5': 'Гибкая политика: полный возврат до 30 дней. Между 30-7 днями: 50%. Менее 7 дней: управляемые расходы. Мы всегда стараемся найти решения.',
-    
+    'faq.a5': 'Гибкая политика: полный возврат до 30 дней до даты. Между 30-7 днями: 50%. Менее 7 дней: управляемые расходы. Мы всегда стараемся найти решения.',
     'faq.q6': 'Вы говорите по-испански, по-английски и по-русски?',
-    'faq.a6': 'Да, мы обслуживаем на испанском, английском и русском. Прямое общение без посредников, что ускоряет всё и избегает недоразумений.',
-    
+    'faq.a6': 'Да, мы обслуживаем на испанском, английском и русском языках. Прямое общение без посредников, что ускоряет всё и избавляет от недоразумений.',
     'faq.q7': 'Можете ли вы организовать частные мероприятия на виллах?',
-    'faq.a7': 'Да, частный DJ, шеф-повар, бар, обслуживающий персонал, декорации и полная координация. Абсолютное уважение к конфиденциальности клиента.',
+    'faq.a7': 'Да, частный диджей, шеф-повар, коктейль-бар, обслуживающий персонал, оформление и полная координация. Абсолютное уважение к конфиденциальности клиента.',
+    'faq.q8': 'С каким уровнем бюджета вы работаете?',
+    'faq.a8': 'Мы работаем с разными диапазонами: от избранных впечатлений до ультра-роскоши. Важно качество и опыт, а не только цена.',
     
-    'faq.q8': 'Какой уровень бюджета вы обслуживаете?',
-    'faq.a8': 'Мы работаем с разными диапазонами: от избранных впечатлений до ультра-роскоши. Важно качество и опыт, а не только цена.'
+    'faq.moreQuestions': 'Ещё вопросы?',
+    'faq.whatsapp': 'Напишите нам в WhatsApp'
   }
 }
 
 export const getTranslation = (key: string, language: Language): string => {
-  return translations[language][key] || translations.es[key] || key
+  return translations[language][key] || key
 }

@@ -60,12 +60,12 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center hover-scale" aria-label="First Class Sensations - Ir a página de inicio">
-            <img 
+            <Image 
               src="/logo1.png" 
               alt="First Class Sensations" 
+              width={48}
+              height={48}
               className="h-8 md:h-12 w-auto transition-smooth"
-              width="auto"
-              height="48"
             />
             <span className={`ml-2 md:ml-3 text-[10px] sm:text-xs md:text-xl font-bold transition-smooth leading-tight ${
               isScrolled || isMenuOpen 

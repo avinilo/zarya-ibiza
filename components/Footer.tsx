@@ -30,12 +30,12 @@ export default function Footer() {
           {/* Company Info */}
           <div className="md:col-span-2">
             <div className="mb-4 flex items-center">
-              <img 
+              <Image 
                 src="/logo1.png" 
                 alt="First Class Sensations" 
+                width={48}
+                height={48}
                 className="h-12 w-auto"
-                width="auto"
-                height="48"
               />
               <span className="ml-3 text-xl font-bold text-white">
                 First Class Sensations

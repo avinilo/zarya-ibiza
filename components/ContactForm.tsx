@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { Send, CheckCircle } from 'lucide-react'
 import { useLanguage } from '@/hooks/useLanguage'
@@ -21,6 +21,28 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
   const [error, setError] = useState('')
+
+  // Prevent autofill on problematic fields
+  useEffect(() => {
+    const datesInput = document.getElementById('dates') as HTMLInputElement
+    const peopleInput = document.getElementById('people') as HTMLInputElement
+    
+    if (datesInput) {
+      datesInput.setAttribute('autocomplete', 'new-field-dates')
+      datesInput.setAttribute('readonly', 'readonly')
+      setTimeout(() => {
+        datesInput.removeAttribute('readonly')
+      }, 100)
+    }
+    
+    if (peopleInput) {
+      peopleInput.setAttribute('autocomplete', 'new-field-people')
+      peopleInput.setAttribute('readonly', 'readonly')
+      setTimeout(() => {
+        peopleInput.removeAttribute('readonly')
+      }, 100)
+    }
+  }, [])
 
   const {
     register,
@@ -152,13 +174,20 @@ export default function ContactForm() {
         <input
           type="text"
           id="dates"
+          name="dates"
           {...register('dates', { required: t('form.errors.required') })}
           placeholder={t('form.dates.placeholder')}
           className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white transition-colors"
           aria-required="true"
           aria-invalid={errors.dates ? 'true' : 'false'}
           aria-describedby={errors.dates ? 'dates-error' : undefined}
-          autoComplete="off"
+          autoComplete="new-field-dates"
+          autoCorrect="off"
+          autoCapitalize="off"
+          spellCheck="false"
+          data-form-type="other"
+          inputMode="text"
+          role="textbox"
         />
         {errors.dates && (
           <p id="dates-error" className="text-red-400 text-sm mt-1" role="alert" aria-live="polite">
@@ -174,13 +203,20 @@ export default function ContactForm() {
         <input
           type="text"
           id="people"
+          name="people"
           {...register('people', { required: t('form.errors.required') })}
           placeholder={t('form.people.placeholder')}
           className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white transition-colors"
           aria-required="true"
           aria-invalid={errors.people ? 'true' : 'false'}
           aria-describedby={errors.people ? 'people-error' : undefined}
-          autoComplete="off"
+          autoComplete="new-field-people"
+          autoCorrect="off"
+          autoCapitalize="off"
+          spellCheck="false"
+          data-form-type="other"
+          inputMode="text"
+          role="textbox"
         />
         {errors.people && (
           <p id="people-error" className="text-red-400 text-sm mt-1" role="alert" aria-live="polite">

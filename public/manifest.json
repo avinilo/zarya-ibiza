@@ -1,5 +1,12 @@
 {
- "name": "App",
+ "name": "First Class Sensations Ibiza",
+ "short_name": "First Class",
+ "description": "Servicios concierge de lujo en Ibiza: yates privados, beach clubs VIP, restaurantes Michelin y transporte premium.",
+ "start_url": "/",
+ "display": "standalone",
+ "theme_color": "#2563eb",
+ "background_color": "#ffffff",
+ "orientation": "portrait-primary",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
@@ -37,5 +44,8 @@
    "type": "image\/png",
    "density": "4.0"
   }
- ]
+ ],
+ "categories": ["lifestyle", "travel", "business"],
+ "lang": "es-ES",
+ "scope": "/"
 }

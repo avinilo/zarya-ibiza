@@ -1,4 +1,4 @@
-// Service Worker para Smart Clean - Cache estratégico
+// Service Worker para First Class Sensations - Cache estratégico
 // Implementación cuidadosa para mejorar performance sin romper funcionalidad
 
 const CACHE_NAME = 'firstclass-v1'
@@ -8,9 +8,10 @@ const RUNTIME_CACHE = 'firstclass-runtime-v1'
 // URLs críticas para cachear
 const CRITICAL_URLS = [
   '/',
-  '/limpieza-oficinas',
-  '/limpieza-comunidades',
-  '/limpieza-industrial',
+  '/alquiler-yates',
+  '/beach-clubs-vip',
+  '/restaurantes-michelin',
+  '/transporte-vip',
   '/sobre-nosotros',
   '/casos-exito',
   '/preguntas-frecuentes'
@@ -21,8 +22,8 @@ const STATIC_RESOURCES = [
   '/favicon.ico',
   '/apple-touch-icon.png',
   '/og-image.png',
-  '/logo.webp',
-  '/Nosotros-11.png'
+  '/logo1.png',
+  '/logo.webp'
 ]
 
 // Instalación del Service Worker
@@ -138,16 +139,20 @@ async function networkFirstStrategy(request) {
         `<!DOCTYPE html>
         <html>
         <head>
-          <title>Smart Clean - Sin conexión</title>
+          <title>First Class Sensations - Sin conexión</title>
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1">
           <style>
-            body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-            .offline { color: #666; }
+            body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background: #f8fafc; }
+            .offline { color: #334155; max-width: 600px; margin: 0 auto; }
+            .logo { color: #2563eb; font-weight: bold; font-size: 24px; margin-bottom: 20px; }
+            button { background: #2563eb; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-size: 16px; }
+            button:hover { background: #1d4ed8; }
           </style>
         </head>
         <body>
           <div class="offline">
+            <div class="logo">First Class Sensations</div>
             <h1>Sin conexión a internet</h1>
             <p>Por favor, verifica tu conexión e intenta nuevamente.</p>
             <button onclick="window.location.reload()">Reintentar</button>
@@ -233,4 +238,4 @@ self.addEventListener('message', event => {
 })
 
 // Log de inicio
-console.log('🚀 Service Worker de Smart Clean cargado correctamente')
+console.log('🚀 Service Worker de First Class Sensations cargado correctamente')

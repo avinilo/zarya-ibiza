@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Home, Phone, Mail, ArrowLeft, Search, Wrench, FileText, Users } from 'lucide-react'
+import { Home, Phone, Mail, ArrowLeft, Search, Anchor, Utensils, Crown, Users } from 'lucide-react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import AccessibleBreadcrumbs from '@/components/AccessibleBreadcrumbs'
@@ -18,22 +18,22 @@ export default function NotFound() {
     {
       title: 'Yates Privados',
       description: 'Alquiler de yates de lujo con tripulación profesional',
-      href: '/mano-obra',
-      icon: Users,
+      href: '/alquiler-yates',
+      icon: Anchor,
       color: 'bg-blue-50 hover:bg-blue-100 border-blue-200'
     },
     {
       title: 'Beach Clubs Exclusivos',
       description: 'Acceso VIP a los mejores beach clubs de Ibiza',
-      href: '/yates-privados',
-      icon: Wrench,
+      href: '/beach-clubs-vip',
+      icon: Crown,
       color: 'bg-green-50 hover:bg-green-100 border-green-200'
     },
     {
       title: 'Restaurantes Michelin',
       description: 'Reservas en los mejores restaurantes Michelin',
-      href: '/gestion-documental',
-      icon: FileText,
+      href: '/restaurantes-michelin',
+      icon: Utensils,
       color: 'bg-purple-50 hover:bg-purple-100 border-purple-200'
     }
   ]
@@ -64,7 +64,7 @@ export default function NotFound() {
             {/* Logo */}
             <div className="mb-8">
               <Image
-                src="/logo.webp"
+                src="/logo1.png"
                 alt="First Class Sensations"
                 width={200}
                 height={67}

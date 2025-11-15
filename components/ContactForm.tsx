@@ -158,6 +158,7 @@ export default function ContactForm() {
           aria-required="true"
           aria-invalid={errors.dates ? 'true' : 'false'}
           aria-describedby={errors.dates ? 'dates-error' : undefined}
+          autoComplete="off"
         />
         {errors.dates && (
           <p id="dates-error" className="text-red-400 text-sm mt-1" role="alert" aria-live="polite">
@@ -179,6 +180,7 @@ export default function ContactForm() {
           aria-required="true"
           aria-invalid={errors.people ? 'true' : 'false'}
           aria-describedby={errors.people ? 'people-error' : undefined}
+          autoComplete="off"
         />
         {errors.people && (
           <p id="people-error" className="text-red-400 text-sm mt-1" role="alert" aria-live="polite">

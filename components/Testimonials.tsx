@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef, useMemo } from 'react'
+import { useState, useEffect, useRef, useMemo, useCallback } from 'react'
 import { Star, Quote } from 'lucide-react'
 import { useLanguage } from '@/hooks/useLanguage'
 
@@ -76,7 +76,7 @@ export default function Testimonials() {
   ], [t]) // Only re-create when language changes
   
   // Function to scroll to a specific testimonial card
-  const scrollToTestimonial = (index: number) => {
+  const scrollToTestimonial = useCallback((index: number) => {
     if (testimonialsContainerRef.current) {
       const container = testimonialsContainerRef.current
       const cardWidth = 320 // w-80 = 320px + gap
@@ -87,7 +87,7 @@ export default function Testimonials() {
       })
       setCurrentIndex(index)
     }
-  }
+  }, [])
 
   // Update current index on scroll
   const handleScroll = () => {

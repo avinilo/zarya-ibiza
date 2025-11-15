@@ -248,9 +248,10 @@ export const COUNTRIES_BY_LANGUAGE = {
 
 // Función para obtener el idioma basado en el país
 export function getLanguageByCountry(countryCode: string): LanguageCode {
-  for (const [language, countries] of Object.entries(COUNTRIES_BY_LANGUAGE)) {
+  const entries = Object.entries(COUNTRIES_BY_LANGUAGE) as [LanguageCode, readonly string[]][]
+  for (const [language, countries] of entries) {
     if (countries.includes(countryCode.toUpperCase())) {
-      return language as LanguageCode
+      return language
     }
   }
   return 'en' // Default to English for unknown countries

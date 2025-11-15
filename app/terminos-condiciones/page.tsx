@@ -1,10 +1,9 @@
-'use client'
-
 import Link from 'next/link'
-import { useLanguage } from '@/hooks/useLanguage'
+import { getLanguageFromHeaders, getTranslations } from '@/lib/language-utils'
 
-export default function TerminosCondiciones() {
-  const { t } = useLanguage()
+export default async function TerminosCondiciones() {
+  const lang = await getLanguageFromHeaders()
+  const t = getTranslations(lang)
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 py-16">
@@ -43,33 +42,19 @@ export default function TerminosCondiciones() {
               <p className="text-gray-700 mb-4">
                 {t('terms.section3.content')}
               </p>
-              <p className="text-gray-700 mb-4">
-                {t('terms.section3.prohibited')}
-              </p>
-              <ul className="list-disc pl-6 text-gray-700 mb-4 space-y-2">
-                {t('terms.section3.items').split('|').map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
             </section>
 
             <section className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">{t('terms.section4.title')}</h2>
               <p className="text-gray-700 mb-4">
-                {t('terms.section4.content1')}
-              </p>
-              <p className="text-gray-700 mb-4">
-                {t('terms.section4.content2')}
+                {t('terms.section4.content')}
               </p>
             </section>
 
             <section className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">{t('terms.section5.title')}</h2>
               <p className="text-gray-700 mb-4">
-                {t('terms.section5.content1')}
-              </p>
-              <p className="text-gray-700 mb-4">
-                {t('terms.section5.content2')}
+                {t('terms.section5.content')}
               </p>
             </section>
 
@@ -90,20 +75,14 @@ export default function TerminosCondiciones() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">{t('terms.section8.title')}</h2>
               <p className="text-gray-700 mb-4">
-                {t('terms.section8.content1')}
-              </p>
-              <p className="text-gray-700 mb-4">
-                {t('terms.section8.content2')}
+                {t('terms.section8.content')}
               </p>
             </section>
 
             <section className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">{t('terms.section9.title')}</h2>
               <p className="text-gray-700 mb-4">
-                {t('terms.section9.content1')}
-              </p>
-              <p className="text-gray-700 mb-4">
-                {t('terms.section9.content2')}
+                {t('terms.section9.content')}
               </p>
             </section>
 
@@ -126,20 +105,9 @@ export default function TerminosCondiciones() {
               <p className="text-gray-700 mb-4">
                 {t('terms.section12.content')}
               </p>
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <p className="text-gray-700 mb-2">
-                  <strong>{t('terms.company')}</strong>
-                </p>
-                <p className="text-gray-700 mb-2">
-                  {t('terms.email')}
-                </p>
-                <p className="text-gray-700 mb-2">
-                  {t('terms.phone')}
-                </p>
-                <p className="text-gray-700">
-                  {t('terms.location')}
-                </p>
-              </div>
+              <p className="text-gray-700">
+                {t('terms.section12.contact')}
+              </p>
             </section>
           </div>
 

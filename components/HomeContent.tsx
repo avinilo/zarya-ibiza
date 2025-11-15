@@ -382,7 +382,7 @@ export default function HomeContent() {
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-gray-900 text-white">
-        <div className="container-custom mx-auto px-4">
+        <div className="w-full px-4 sm:container-custom sm:mx-auto">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -393,9 +393,9 @@ export default function HomeContent() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-gray-800 rounded-xl p-8 mx-4 sm:mx-0">
-                <h3 className="text-2xl font-bold mb-6">{t('contact.title')}</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mb-12">
+              <div className="bg-gray-800 rounded-xl p-4 sm:p-6 md:p-8">
+                <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">{t('contact.title')}</h3>
                 
                 <div className="space-y-6">
                   <div className="flex items-start gap-3">
@@ -444,7 +444,7 @@ export default function HomeContent() {
                 </div>
               </div>
 
-              <div className="bg-gray-800 rounded-xl p-8 mx-4 sm:mx-0">
+              <div className="bg-gray-800 rounded-xl p-4 sm:p-6 md:p-8">
                 <ContactForm />
               </div>
             </div>

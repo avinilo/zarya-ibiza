@@ -1,10 +1,9 @@
-'use client'
-
 import Link from 'next/link'
-import { useLanguage } from '@/hooks/useLanguage'
+import { getLanguageFromHeaders, getTranslations } from '@/lib/language-utils'
 
-export default function PoliticaPrivacidad() {
-  const { t } = useLanguage()
+export default async function PoliticaPrivacidad() {
+  const lang = await getLanguageFromHeaders()
+  const t = getTranslations(lang)
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 py-16">

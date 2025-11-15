@@ -1,5 +1,5 @@
 /**
- * Utilidades de Accesibilidad para Smart Clean
+ * Utilidades de Accesibilidad para First Class Sensations
  * Funciones para mejorar la experiencia de usuarios con discapacidades
  */
 

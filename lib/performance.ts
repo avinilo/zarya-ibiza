@@ -1,4 +1,4 @@
-// Performance utilities for Smart Clean website
+// Performance utilities for First Class Sensations website
 // Utilidades de performance monitoring y optimización
 
 // Tipos para métricas de performance

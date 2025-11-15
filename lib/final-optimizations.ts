@@ -1,5 +1,5 @@
 /**
- * Final Performance Optimizations for Smart Clean
+ * Final Performance Optimizations for First Class Sensations
  * Utilities for advanced image optimization, lazy loading, and resource preloading
  */
 

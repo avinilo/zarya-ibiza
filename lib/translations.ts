@@ -157,6 +157,7 @@ export const translations: Record<Language, Translation> = {
     'contact.form.hint': 'O completa el formulario y te llamamos nosotros.',
     
     // Form Fields
+    'form.fullName': 'Nombre completo',
     'form.name': 'Nombre',
     'form.phone': 'Teléfono',
     'form.email': 'Email',
@@ -182,6 +183,15 @@ export const translations: Record<Language, Translation> = {
     'form.service.security': 'Seguridad',
     'form.service.events': 'Eventos',
     'form.service.full': 'Plan completo',
+    
+    // Form Errors
+    'form.errors.required': 'Este campo es obligatorio',
+    'form.errors.invalidEmail': 'Email inválido',
+    'form.errors.submitError': 'Error al enviar el mensaje',
+    'form.errors.generalError': 'Hubo un error al enviar el mensaje. Por favor, inténtelo de nuevo.',
+    'form.sending': 'Enviando...',
+    'form.success.title': '¡Gracias por contactar!',
+    'form.success.message': 'Te responderemos en unos minutos...',
     
     // Footer
     'footer.tagline': 'Ibiza al máximo, sin complicaciones.',
@@ -489,6 +499,7 @@ export const translations: Record<Language, Translation> = {
     'contact.form.hint': 'Or complete the form and we will call you.',
     
     // Form Fields
+    'form.fullName': 'Full Name',
     'form.name': 'Name',
     'form.phone': 'Phone',
     'form.email': 'Email',
@@ -514,6 +525,15 @@ export const translations: Record<Language, Translation> = {
     'form.service.security': 'Security',
     'form.service.events': 'Events',
     'form.service.full': 'Complete Plan',
+    
+    // Form Errors
+    'form.errors.required': 'This field is required',
+    'form.errors.invalidEmail': 'Invalid email',
+    'form.errors.submitError': 'Error sending message',
+    'form.errors.generalError': 'There was an error sending the message. Please try again.',
+    'form.sending': 'Sending...',
+    'form.success.title': 'Thank you for contacting us!',
+    'form.success.message': 'We will respond to you in a few minutes...',
     
     // Footer
     'footer.tagline': 'Ibiza to the maximum, without complications.',
@@ -815,6 +835,7 @@ export const translations: Record<Language, Translation> = {
     'contact.form.hint': 'Или заполните форму, и мы вам перезвоним.',
     
     // Form Fields
+    'form.fullName': 'Полное имя',
     'form.name': 'Имя',
     'form.phone': 'Телефон',
     'form.email': 'Email',
@@ -840,6 +861,15 @@ export const translations: Record<Language, Translation> = {
     'form.service.security': 'Безопасность',
     'form.service.events': 'Мероприятия',
     'form.service.full': 'Полный план',
+    
+    // Form Errors
+    'form.errors.required': 'Это поле обязательно',
+    'form.errors.invalidEmail': 'Неверный email',
+    'form.errors.submitError': 'Ошибка отправки сообщения',
+    'form.errors.generalError': 'Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте еще раз.',
+    'form.sending': 'Отправка...',
+    'form.success.title': 'Спасибо за обращение!',
+    'form.success.message': 'Мы ответим вам через несколько минут...',
     
     // Footer
     'footer.tagline': 'Ибица по максимуму, без осложнений.',

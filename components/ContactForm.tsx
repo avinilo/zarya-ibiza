@@ -43,7 +43,7 @@ export default function ContactForm() {
       })
 
       if (!response.ok) {
-        throw new Error('Error al enviar el mensaje')
+        throw new Error(t('form.errors.submitError'))
       }
 
       setIsSuccess(true)
@@ -54,7 +54,7 @@ export default function ContactForm() {
         setIsSuccess(false)
       }, 5000)
     } catch (err) {
-      setError('Hubo un error al enviar el mensaje. Por favor, inténtelo de nuevo.')
+      setError(t('form.errors.generalError'))
     } finally {
       setIsSubmitting(false)
     }
@@ -64,8 +64,8 @@ export default function ContactForm() {
     return (
       <div className="text-center py-8">
         <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-        <h3 className="text-2xl font-bold mb-2 text-white">¡Gracias por contactar!</h3>
-        <p className="text-gray-300">Te responderemos en unos minutos...</p>
+        <h3 className="text-2xl font-bold mb-2 text-white">{t('form.success.title')}</h3>
+        <p className="text-gray-300">{t('form.success.message')}</p>
       </div>
     )
   }
@@ -84,7 +84,7 @@ export default function ContactForm() {
         <input
           type="text"
           id="fullName"
-          {...register('fullName', { required: 'Este campo es obligatorio' })}
+          {...register('fullName', { required: t('form.errors.required') })}
           className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white transition-colors"
           aria-required="true"
           aria-invalid={errors.fullName ? 'true' : 'false'}
@@ -105,10 +105,10 @@ export default function ContactForm() {
           type="email"
           id="email"
           {...register('email', {
-            required: 'Este campo es obligatorio',
+            required: t('form.errors.required'),
             pattern: {
               value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-              message: 'Email inválido',
+              message: t('form.errors.invalidEmail'),
             },
           })}
           className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white transition-colors"
@@ -131,7 +131,7 @@ export default function ContactForm() {
         <input
           type="tel"
           id="phone"
-          {...register('phone', { required: 'Este campo es obligatorio' })}
+          {...register('phone', { required: t('form.errors.required') })}
           className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white transition-colors"
           aria-required="true"
           aria-invalid={errors.phone ? 'true' : 'false'}
@@ -152,7 +152,7 @@ export default function ContactForm() {
         <input
           type="text"
           id="dates"
-          {...register('dates', { required: 'Este campo es obligatorio' })}
+          {...register('dates', { required: t('form.errors.required') })}
           placeholder={t('form.dates.placeholder')}
           className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white transition-colors"
           aria-required="true"
@@ -173,7 +173,7 @@ export default function ContactForm() {
         <input
           type="text"
           id="people"
-          {...register('people', { required: 'Este campo es obligatorio' })}
+          {...register('people', { required: t('form.errors.required') })}
           placeholder={t('form.people.placeholder')}
           className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white transition-colors"
           aria-required="true"
@@ -194,7 +194,7 @@ export default function ContactForm() {
         <input
           type="text"
           id="budget"
-          {...register('budget', { required: 'Este campo es obligatorio' })}
+          {...register('budget', { required: t('form.errors.required') })}
           placeholder={t('form.budget.placeholder')}
           className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white transition-colors"
           aria-required="true"
@@ -215,7 +215,7 @@ export default function ContactForm() {
         <textarea
           id="services"
           rows={3}
-          {...register('services', { required: 'Este campo es obligatorio' })}
+          {...register('services', { required: t('form.errors.required') })}
           placeholder={t('form.services.placeholder')}
           className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white transition-colors resize-none"
           aria-required="true"
@@ -231,7 +231,7 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">
-          Mensaje adicional (opcional)
+          {t('form.message')}
         </label>
         <textarea
           id="message"
@@ -267,7 +267,7 @@ export default function ContactForm() {
         {isSubmitting ? (
           <>
             <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" aria-hidden="true"></div>
-            <span id="submit-status">Enviando...</span>
+            <span id="submit-status">{t('form.sending')}</span>
           </>
         ) : (
           <>

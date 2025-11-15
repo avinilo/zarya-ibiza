@@ -148,20 +148,20 @@ export default function Testimonials() {
 
   return (
     <section className="py-12 bg-gray-50">
-      <div className="container-custom mx-auto px-4 mb-8">
+      <div className="w-full px-4 sm:container-custom sm:mx-auto mb-8">
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             {t('testimonials.title')}
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
             {t('testimonials.subtitle')}
           </p>
         </div>
       </div>
 
-      <div className="px-4 md:px-8 mb-8">
+      <div className="w-full px-4 sm:container-custom sm:mx-auto mb-8">
       {/* Testimonials Container */}
-      <div className="md:overflow-hidden mx-8 md:mx-12">
+      <div className="md:overflow-hidden">
         {/* Mobile scrollable container */}
         <div 
           ref={testimonialsContainerRef}
@@ -175,29 +175,29 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}
-              className="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-firstclass-primary hover-lift flex-shrink-0 w-80 snap-center"
+              className="bg-white p-4 sm:p-6 md:p-8 rounded-2xl shadow-lg border-l-4 border-firstclass-primary hover-lift flex-shrink-0 w-80 snap-center"
             >
               {/* Quote Icon */}
-              <div className="w-12 h-12 bg-firstclass-light rounded-full flex items-center justify-center mb-6">
-                <Quote className="w-6 h-6 text-firstclass-secondary" />
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-firstclass-light rounded-full flex items-center justify-center mb-4 sm:mb-6">
+                <Quote className="w-5 h-5 sm:w-6 sm:h-6 text-firstclass-secondary" />
               </div>
               
               {/* Rating */}
-              <div className="flex items-center gap-1 mb-4">
+              <div className="flex items-center gap-1 mb-3 sm:mb-4">
                 {[...Array(testimonial.rating)].map((_, starIndex) => (
-                  <Star key={starIndex} className="w-4 h-4 fill-firstclass-primary text-firstclass-primary" />
+                  <Star key={starIndex} className="w-3 h-3 sm:w-4 sm:h-4 fill-firstclass-primary text-firstclass-primary" />
                 ))}
-                <span className="text-sm text-gray-500 ml-2">({testimonial.rating}/5)</span>
+                <span className="text-xs sm:text-sm text-gray-500 ml-2">({testimonial.rating}/5)</span>
               </div>
               
               {/* Testimonial Text */}
-              <p className="text-gray-700 mb-6 leading-relaxed italic">
+              <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6 leading-relaxed italic">
                 &ldquo;{testimonial.text}&rdquo;
               </p>
               
               {/* Project Info */}
-              <div className="mb-4 p-3 bg-firstclass-light rounded-lg">
-                <p className="text-sm font-semibold text-firstclass-secondary mb-1">
+              <div className="mb-3 sm:mb-4 p-2 sm:p-3 bg-firstclass-light rounded-lg">
+                <p className="text-xs sm:text-sm font-semibold text-firstclass-secondary mb-1">
                   {t('testimonials.project')}: {testimonial.project}
                 </p>
                 <p className="text-xs text-gray-600">
@@ -206,10 +206,10 @@ export default function Testimonials() {
               </div>
               
               {/* Author Info */}
-              <div className="border-t pt-4">
-                <h4 className="font-bold text-firstclass-secondary">{testimonial.name}</h4>
-                <p className="text-sm text-gray-600">{testimonial.position}</p>
-                <p className="text-sm font-semibold text-firstclass-primary">{testimonial.company}</p>
+              <div className="border-t pt-3 sm:pt-4">
+                <h4 className="font-bold text-firstclass-secondary text-sm sm:text-base">{testimonial.name}</h4>
+                <p className="text-xs sm:text-sm text-gray-600">{testimonial.position}</p>
+                <p className="text-xs sm:text-sm font-semibold text-firstclass-primary">{testimonial.company}</p>
               </div>
             </div>
           ))}
@@ -222,30 +222,30 @@ export default function Testimonials() {
             {visibleTestimonials.map((testimonial, index) => (
               <div 
                 key={index}
-                className="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-firstclass-primary hover-lift"
+                className="bg-white p-4 sm:p-6 md:p-8 rounded-2xl shadow-lg border-l-4 border-firstclass-primary hover-lift"
                 style={{ width: `calc(${100 / 3}% - ${4}rem / 3)` }} // Always 3 columns on PC
               >
                 {/* Quote Icon */}
-                <div className="w-12 h-12 bg-firstclass-light rounded-full flex items-center justify-center mb-6">
-                  <Quote className="w-6 h-6 text-firstclass-secondary" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-firstclass-light rounded-full flex items-center justify-center mb-4 sm:mb-6">
+                  <Quote className="w-5 h-5 sm:w-6 sm:h-6 text-firstclass-secondary" />
                 </div>
                 
                 {/* Rating */}
-                <div className="flex items-center gap-1 mb-4">
+                <div className="flex items-center gap-1 mb-3 sm:mb-4">
                   {[...Array(testimonial.rating)].map((_, starIndex) => (
-                    <Star key={starIndex} className="w-4 h-4 fill-firstclass-primary text-firstclass-primary" />
+                    <Star key={starIndex} className="w-3 h-3 sm:w-4 sm:h-4 fill-firstclass-primary text-firstclass-primary" />
                   ))}
-                  <span className="text-sm text-gray-500 ml-2">({testimonial.rating}/5)</span>
+                  <span className="text-xs sm:text-sm text-gray-500 ml-2">({testimonial.rating}/5)</span>
                 </div>
                 
                 {/* Testimonial Text */}
-                <p className="text-gray-700 mb-6 leading-relaxed italic">
+                <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6 leading-relaxed italic">
                   &ldquo;{testimonial.text}&rdquo;
                 </p>
                 
                 {/* Project Info */}
-                <div className="mb-4 p-3 bg-firstclass-light rounded-lg">
-                  <p className="text-sm font-semibold text-firstclass-secondary mb-1">
+                <div className="mb-3 sm:mb-4 p-2 sm:p-3 bg-firstclass-light rounded-lg">
+                  <p className="text-xs sm:text-sm font-semibold text-firstclass-secondary mb-1">
                     {t('testimonials.project')}: {testimonial.project}
                   </p>
                   <p className="text-xs text-gray-600">
@@ -254,10 +254,10 @@ export default function Testimonials() {
                 </div>
                 
                 {/* Author Info */}
-                <div className="border-t pt-4">
-                  <h4 className="font-bold text-firstclass-secondary">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-600">{testimonial.position}</p>
-                  <p className="text-sm font-semibold text-firstclass-primary">{testimonial.company}</p>
+                <div className="border-t pt-3 sm:pt-4">
+                  <h4 className="font-bold text-firstclass-secondary text-sm sm:text-base">{testimonial.name}</h4>
+                  <p className="text-xs sm:text-sm text-gray-600">{testimonial.position}</p>
+                  <p className="text-xs sm:text-sm font-semibold text-firstclass-primary">{testimonial.company}</p>
                 </div>
               </div>
             ))}

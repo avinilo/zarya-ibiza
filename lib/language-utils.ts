@@ -15,17 +15,26 @@ export async function getLanguageFromHeaders(): Promise<string> {
 
 export function getTranslations(lang: string = 'es') {
   return (key: string): string => {
-    const keys = key.split('.')
-    let result: any = translations[lang as keyof typeof translations]
-    
-    for (const k of keys) {
-      if (result && typeof result === 'object' && k in result) {
-        result = result[k]
-      } else {
-        return key // Retornar la clave si no se encuentra la traducción
+    try {
+      const translationSet = translations[lang as keyof typeof translations]
+      
+      if (!translationSet) {
+        console.warn(`Language '${lang}' not found, falling back to Spanish`)
+        const fallbackSet = translations['es']
+        return fallbackSet?.[key] || key
       }
+      
+      const result = translationSet[key]
+      
+      if (result === undefined) {
+        console.warn(`Translation key '${key}' not found in language '${lang}'`)
+        return key // Return the key if translation not found
+      }
+      
+      return result
+    } catch (error) {
+      console.error(`Error getting translation for key '${key}' in language '${lang}':`, error)
+      return key // Return the key as fallback
     }
-    
-    return typeof result === 'string' ? result : key
   }
 }

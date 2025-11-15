@@ -394,7 +394,7 @@ export default function HomeContent() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-gray-800 rounded-xl p-8">
+              <div className="bg-gray-800 rounded-xl p-8 mx-4 sm:mx-0">
                 <h3 className="text-2xl font-bold mb-6">{t('contact.title')}</h3>
                 
                 <div className="space-y-6">
@@ -444,7 +444,7 @@ export default function HomeContent() {
                 </div>
               </div>
 
-              <div className="bg-gray-800 rounded-xl p-8">
+              <div className="bg-gray-800 rounded-xl p-8 mx-4 sm:mx-0">
                 <ContactForm />
               </div>
             </div>

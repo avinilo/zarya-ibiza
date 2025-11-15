@@ -12,3 +12,8 @@ export const WhatsAppBubble = dynamic(() => import('@/components/WhatsAppBubble'
   ssr: false,
   loading: () => null
 })
+
+export const AutoLanguageIndicator = dynamic(() => import('@/components/AutoLanguageIndicator'), {
+  ssr: false,
+  loading: () => null
+})

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { Cookie, Settings, X, Shield, Eye, BarChart3 } from 'lucide-react'
 import Link from 'next/link'
+import { useLanguage } from '@/hooks/useLanguage'
 
 interface CookiePreferences {
   necessary: boolean
@@ -11,6 +12,7 @@ interface CookiePreferences {
 }
 
 export default function CookieBanner() {
+  const { t } = useLanguage()
   const [isVisible, setIsVisible] = useState(false)
   const [showSettings, setShowSettings] = useState(false)
   const [preferences, setPreferences] = useState<CookiePreferences>({
@@ -99,17 +101,15 @@ export default function CookieBanner() {
                 </div>
                 <div className="flex-1">
                   <h3 className="font-semibold text-firstclass-secondary mb-2">
-                    Utilizamos cookies para mejorar su experiencia
+                    {t('cookie.title')}
                   </h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Utilizamos cookies técnicas necesarias para el funcionamiento del sitio, 
-                    y cookies analíticas (Google Analytics) y de tracking para mejorar nuestros servicios. 
-                    Puede gestionar sus preferencias o consultar más información en nuestra{' '}
+                    {t('cookie.description')}{' '}
                     <Link 
                       href="/politica-privacidad" 
                       className="text-firstclass-primary hover:text-firstclass-secondary underline"
                     >
-                      política de privacidad
+                      {t('cookie.privacyPolicy')}
                     </Link>.
                   </p>
                 </div>
@@ -121,19 +121,19 @@ export default function CookieBanner() {
                   className="flex items-center justify-center gap-1 xs:gap-2 px-2 xs:px-3 sm:px-4 py-2 text-xs xs:text-sm border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors flex-1 sm:flex-none min-w-0"
                 >
                   <Settings className="w-3 h-3 xs:w-4 xs:h-4 flex-shrink-0" />
-                  <span className="truncate">Configurar</span>
+                  <span className="truncate">{t('cookie.configure')}</span>
                 </button>
                 <button
                   onClick={handleAcceptNecessary}
                   className="px-2 xs:px-3 sm:px-4 py-2 text-xs xs:text-sm border border-firstclass-primary text-firstclass-primary rounded-lg hover:bg-firstclass-light transition-colors flex-1 sm:flex-none min-w-0"
                 >
-                  <span className="truncate">Solo necesarias</span>
+                  <span className="truncate">{t('cookie.necessaryOnly')}</span>
                 </button>
                 <button
                   onClick={handleAcceptAll}
                   className="px-2 xs:px-3 sm:px-4 py-2 text-xs xs:text-sm bg-firstclass-primary text-white rounded-lg hover:bg-firstclass-secondary transition-colors flex-1 sm:flex-none min-w-0"
                 >
-                  <span className="truncate">Aceptar todas</span>
+                  <span className="truncate">{t('cookie.acceptAll')}</span>
                 </button>
               </div>
             </div>
@@ -142,7 +142,7 @@ export default function CookieBanner() {
             <div className="animate-fade-in">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold text-firstclass-secondary">
-                  Configuración de cookies
+                  {t('cookie.settingsTitle')}
                 </h3>
                 <button
                   onClick={() => setShowSettings(false)}
@@ -158,13 +158,13 @@ export default function CookieBanner() {
                   <Shield className="w-5 h-5 text-firstclass-primary flex-shrink-0 mt-1" />
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-2">
-                      <h4 className="font-medium text-firstclass-secondary">Cookies necesarias</h4>
+                      <h4 className="font-medium text-firstclass-secondary">{t('cookie.necessaryCookies')}</h4>
                       <div className="w-12 h-6 bg-firstclass-primary rounded-full flex items-center justify-end px-1">
                         <div className="w-4 h-4 bg-white rounded-full"></div>
                       </div>
                     </div>
                     <p className="text-sm text-gray-600">
-                      Estas cookies son esenciales para el funcionamiento del sitio web y no se pueden desactivar.
+                      {t('cookie.necessaryDescription')}
                     </p>
                   </div>
                 </div>
@@ -174,7 +174,7 @@ export default function CookieBanner() {
                   <BarChart3 className="w-5 h-5 text-firstclass-primary flex-shrink-0 mt-1" />
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-2">
-                      <h4 className="font-medium text-firstclass-secondary">Cookies analíticas</h4>
+                      <h4 className="font-medium text-firstclass-secondary">{t('cookie.analyticsCookies')}</h4>
                       <button
                         onClick={() => handlePreferenceChange('analytics')}
                         className={`w-12 h-6 rounded-full flex items-center px-1 transition-colors ${
@@ -187,7 +187,7 @@ export default function CookieBanner() {
                       </button>
                     </div>
                     <p className="text-sm text-gray-600">
-                      Google Analytics para analizar el uso del sitio web y mejorar nuestros servicios.
+                      {t('cookie.analyticsDescription')}
                     </p>
                   </div>
                 </div>
@@ -197,7 +197,7 @@ export default function CookieBanner() {
                   <Eye className="w-5 h-5 text-firstclass-primary flex-shrink-0 mt-1" />
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-2">
-                      <h4 className="font-medium text-firstclass-secondary">Cookies de seguimiento</h4>
+                      <h4 className="font-medium text-firstclass-secondary">{t('cookie.trackingCookies')}</h4>
                       <button
                         onClick={() => handlePreferenceChange('tracking')}
                         className={`w-12 h-6 rounded-full flex items-center px-1 transition-colors ${
@@ -210,7 +210,7 @@ export default function CookieBanner() {
                       </button>
                     </div>
                     <p className="text-sm text-gray-600">
-                      Seguimiento de comportamiento para personalizar y mejorar la experiencia de usuario.
+                      {t('cookie.trackingDescription')}
                     </p>
                   </div>
                 </div>
@@ -221,13 +221,13 @@ export default function CookieBanner() {
                   onClick={handleAcceptNecessary}
                   className="px-4 py-2 text-sm border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
                 >
-                  Solo necesarias
+                  {t('cookie.necessaryOnly')}
                 </button>
                 <button
                   onClick={handleSaveSettings}
                   className="px-4 py-2 text-sm bg-firstclass-primary text-white rounded-lg hover:bg-firstclass-secondary transition-colors"
                 >
-                  Guardar preferencias
+                  {t('cookie.savePreferences')}
                 </button>
               </div>
             </div>

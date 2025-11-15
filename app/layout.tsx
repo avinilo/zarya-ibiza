@@ -14,8 +14,9 @@ import {
 } from '@/lib/structured-data'
 import { GA_TRACKING_ID } from '@/lib/gtag'
 import PerformanceOptimizer, { CriticalResourcesPreloader } from '@/components/PerformanceOptimizer'
-import { CookieBanner, WhatsAppBubble } from '@/components/ClientComponents'
+import { CookieBanner, WhatsAppBubble, AutoLanguageIndicator } from '@/components/ClientComponents'
 import ScrollRestoration from '@/components/ScrollRestoration'
+import { generateMultilingualMetadata, SUPPORTED_LANGUAGES } from '@/lib/multilingual-seo'
 
 const inter = Inter({ 
   subsets: ['latin'], 
@@ -24,97 +25,7 @@ const inter = Inter({
   preload: true
 })
 
-export const metadata: Metadata = {
-  title: 'First Class Sensations Ibiza - Concierge de Lujo | Yates Privados, Beach Clubs VIP, Michelin',
-  description: 'First Class Sensations: servicios concierge exclusivos en Ibiza y Formentera. Alquiler de yates privados, acceso VIP a beach clubs, reservas en restaurantes Michelin y transporte de lujo. Experiencias únicas e inolvidables con atención personalizada 24/7.',
-  keywords: 'concierge Ibiza, yates privados Ibiza, beach clubs exclusivos, restaurantes Michelin Ibiza, transporte VIP Ibiza, servicios de lujo Formentera, First Class Sensations, experiencias VIP Baleares, concierge de lujo España, servicios premium Mediterráneo',
-  authors: [{ name: 'First Class Sensations' }],
-  creator: 'First Class Sensations',
-  publisher: 'First Class Sensations',
-  applicationName: 'First Class Sensations',
-  referrer: 'origin-when-cross-origin',
-
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL('https://firstclassensations.com'),
-  alternates: {
-    canonical: '/',
-  },
-  verification: {
-    ...(process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION && {
-      google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
-    }),
-    ...(process.env.NEXT_PUBLIC_YANDEX_VERIFICATION && {
-      yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION,
-    }),
-    ...(process.env.NEXT_PUBLIC_YAHOO_VERIFICATION && {
-      yahoo: process.env.NEXT_PUBLIC_YAHOO_VERIFICATION,
-    }),
-    ...(process.env.NEXT_PUBLIC_BING_VERIFICATION && {
-      other: {
-        'msvalidate.01': process.env.NEXT_PUBLIC_BING_VERIFICATION,
-      },
-    }),
-  },
-  category: 'business',
-  classification: 'Premium services and experiences',
-  openGraph: {
-    title: 'First Class Sensations Ibiza - Concierge de Lujo | Yates Privados, Beach Clubs VIP',
-    description: 'First Class Sensations: servicios concierge exclusivos en Ibiza y Formentera. Alquiler de yates privados, acceso VIP a beach clubs, reservas en restaurantes Michelin y transporte de lujo.',
-    url: 'https://firstclassensations.com',
-    siteName: 'First Class Sensations',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'First Class Sensations - Concierge de lujo en Ibiza con yates privados y experiencias VIP',
-      },
-    ],
-    locale: 'es_ES',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'First Class Sensations Ibiza - Concierge de Lujo | Yates Privados, Beach Clubs VIP',
-    description: 'Servicios concierge exclusivos en Ibiza: yates privados, beach clubs VIP, restaurantes Michelin y transporte de lujo. Experiencias únicas.',
-    images: ['/og-image.png'],
-    creator: '@firstclassibiza',
-    site: '@firstclassibiza',
-  },
-  robots: {
-    index: true,
-    follow: true,
-    nocache: false,
-    googleBot: {
-      index: true,
-      follow: true,
-      noimageindex: false,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  icons: {
-    icon: [
-      { url: '/favicon.ico' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/apple-icon-180x180.png', sizes: '180x180', type: 'image/png' },
-    ],
-  },
-  manifest: '/manifest.json',
-  appleWebApp: {
-    capable: true,
-    title: 'First Class Sensations - Concierge de Lujo Ibiza',
-    statusBarStyle: 'default',
-  },
-}
+export const metadata: Metadata = generateMultilingualMetadata('home', 'es')
 
 export default function RootLayout({
   children,
@@ -195,15 +106,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="First Class Sensations" />
         
-        {/* Favicon y Apple Touch Icons */}
-        <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
-        <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
-        <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
-        <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" />
-        <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png" />
-        <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png" />
-        <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png" />
-        <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png" />
+        {/* Favicon y Apple Touch Icons (Optimizado) */}
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png" />
         <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -290,6 +193,7 @@ export default function RootLayout({
           <Footer />
           <CookieBanner />
           <WhatsAppBubble />
+          <AutoLanguageIndicator />
         </PerformanceOptimizer>
       </body>
     </html>

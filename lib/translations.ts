@@ -238,7 +238,23 @@ export const translations: Record<Language, Translation> = {
     'faq.a8': 'Trabajamos con diferentes rangos: desde experiencias selectas hasta ultra-lujo. Lo importante es la calidad y la experiencia, no solo el precio.',
     
     'faq.moreQuestions': '¿Más preguntas?',
-    'faq.whatsapp': 'Escríbenos por WhatsApp'
+    'faq.whatsapp': 'Escríbenos por WhatsApp',
+    
+    // Cookie Banner
+    'cookie.title': 'Utilizamos cookies para mejorar su experiencia',
+    'cookie.description': 'Utilizamos cookies técnicas necesarias para el funcionamiento del sitio, y cookies analíticas (Google Analytics) y de tracking para mejorar nuestros servicios. Puede gestionar sus preferencias o consultar más información en nuestra',
+    'cookie.privacyPolicy': 'política de privacidad',
+    'cookie.configure': 'Configurar',
+    'cookie.necessaryOnly': 'Solo necesarias',
+    'cookie.acceptAll': 'Aceptar todas',
+    'cookie.settingsTitle': 'Configuración de cookies',
+    'cookie.necessaryCookies': 'Cookies necesarias',
+    'cookie.necessaryDescription': 'Estas cookies son esenciales para el funcionamiento del sitio web y no se pueden desactivar.',
+    'cookie.analyticsCookies': 'Cookies analíticas',
+    'cookie.analyticsDescription': 'Google Analytics para analizar el uso del sitio web y mejorar nuestros servicios.',
+    'cookie.trackingCookies': 'Cookies de seguimiento',
+    'cookie.trackingDescription': 'Seguimiento de comportamiento para personalizar y mejorar la experiencia de usuario.',
+    'cookie.savePreferences': 'Guardar preferencias'
   },
   en: {
     // Header
@@ -467,7 +483,23 @@ export const translations: Record<Language, Translation> = {
     'faq.a8': 'We work with different ranges: from select experiences to ultra-luxury. The important thing is quality and experience, not just price.',
     
     'faq.moreQuestions': 'More questions?',
-    'faq.whatsapp': 'Write to us on WhatsApp'
+    'faq.whatsapp': 'Write to us on WhatsApp',
+    
+    // Cookie Banner
+    'cookie.title': 'We use cookies to improve your experience',
+    'cookie.description': 'We use necessary technical cookies for the operation of the site, and analytical (Google Analytics) and tracking cookies to improve our services. You can manage your preferences or consult more information in our',
+    'cookie.privacyPolicy': 'privacy policy',
+    'cookie.configure': 'Configure',
+    'cookie.necessaryOnly': 'Only necessary',
+    'cookie.acceptAll': 'Accept all',
+    'cookie.settingsTitle': 'Cookie Settings',
+    'cookie.necessaryCookies': 'Necessary Cookies',
+    'cookie.necessaryDescription': 'These cookies are essential for the operation of the website and cannot be disabled.',
+    'cookie.analyticsCookies': 'Analytics Cookies',
+    'cookie.analyticsDescription': 'Google Analytics to analyze website usage and improve our services.',
+    'cookie.trackingCookies': 'Tracking Cookies',
+    'cookie.trackingDescription': 'Behavior tracking to personalize and improve the user experience.',
+    'cookie.savePreferences': 'Save preferences'
   },
   ru: {
     // Header

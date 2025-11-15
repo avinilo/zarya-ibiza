@@ -174,7 +174,6 @@ export default function ContactForm() {
         <input
           type="text"
           id="dates"
-          name="dates"
           {...register('dates', { required: t('form.errors.required') })}
           placeholder={t('form.dates.placeholder')}
           className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white transition-colors"
@@ -203,7 +202,6 @@ export default function ContactForm() {
         <input
           type="text"
           id="people"
-          name="people"
           {...register('people', { required: t('form.errors.required') })}
           placeholder={t('form.people.placeholder')}
           className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white transition-colors"

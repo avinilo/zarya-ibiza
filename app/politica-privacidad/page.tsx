@@ -1,173 +1,152 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
+'use client'
 
-export const metadata: Metadata = {
-  title: 'Política de Privacidad - First Class Sensations',
-  description: 'Política de privacidad y protección de datos de First Class Sensations en Ibiza',
-  robots: {
-    index: false,
-    follow: false,
-  },
-}
+import Link from 'next/link'
+import { useLanguage } from '@/hooks/useLanguage'
 
 export default function PoliticaPrivacidad() {
+  const { t } = useLanguage()
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 py-16">
       <div className="container-custom mx-auto px-4 max-w-4xl">
         <div className="bg-white rounded-lg shadow-lg p-8">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
-            Política de Privacidad
+            {t('privacy.title')}
           </h1>
           
           <div className="prose prose-lg max-w-none">
             <p className="text-gray-600 mb-6">
-              <strong>Última actualización:</strong> 15 de enero de 2024
+              <strong>{t('privacy.lastUpdated')}</strong>
             </p>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Información General</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">{t('privacy.section1.title')}</h2>
               <p className="text-gray-700 mb-4">
-                En First Class Sensations, con domicilio en Ibiza, España, nos comprometemos a proteger su privacidad y 
-                garantizar la seguridad de sus datos personales. Esta política describe cómo recopilamos, utilizamos y 
-                protegemos su información.
+                {t('privacy.section1.content')}
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. Datos que Recopilamos</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">{t('privacy.section2.title')}</h2>
               <p className="text-gray-700 mb-4">
-                Podemos recopilar los siguientes tipos de información:
+                {t('privacy.section2.content')}
               </p>
               <ul className="list-disc pl-6 text-gray-700 mb-4 space-y-2">
-                <li>Información de contacto (nombre, email, teléfono)</li>
-                <li>Información sobre servicios solicitados</li>
-                <li>Datos de ubicación para servicios en Ibiza y Formentera</li>
-                <li>Información técnica sobre su visita al sitio web (cookies, IP)</li>
+                {t('privacy.section2.items').split('|').map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
               </ul>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">3. Cómo Utilizamos sus Datos</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">{t('privacy.section3.title')}</h2>
               <p className="text-gray-700 mb-4">
-                Utilizamos su información personal para:
+                {t('privacy.section3.content')}
               </p>
               <ul className="list-disc pl-6 text-gray-700 mb-4 space-y-2">
-                <li>Proporcionar y gestionar nuestros servicios premium</li>
-                <li>Responder a sus consultas y solicitudes</li>
-                <li>Mejorar nuestros servicios y experiencia del cliente</li>
-                <li>Cumplir con obligaciones legales y reglamentarias</li>
+                {t('privacy.section3.items').split('|').map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
               </ul>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">4. Base Legal para el Procesamiento</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">{t('privacy.section4.title')}</h2>
               <p className="text-gray-700 mb-4">
-                Procesamos sus datos personales basándonos en:
+                {t('privacy.section4.content')}
               </p>
               <ul className="list-disc pl-6 text-gray-700 mb-4 space-y-2">
-                <li>Su consentimiento para servicios específicos</li>
-                <li>El cumplimiento de un contrato de servicios</li>
-                <li>Obligaciones legales aplicables</li>
-                <li>Nuestros intereses legítimos en mejorar nuestros servicios</li>
+                {t('privacy.section4.items').split('|').map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
               </ul>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">5. Compartición de Datos</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">{t('privacy.section5.title')}</h2>
               <p className="text-gray-700 mb-4">
-                No vendemos, alquilamos ni compartimos su información personal con terceros para fines comerciales. 
-                Solo compartimos datos cuando:
+                {t('privacy.section5.content')}
               </p>
               <ul className="list-disc pl-6 text-gray-700 mb-4 space-y-2">
-                <li>Es necesario para proporcionar nuestros servicios (proveedores de confianza)</li>
-                <li>Estamos legalmente obligados a hacerlo</li>
-                <li>Con su consentimiento expreso</li>
+                {t('privacy.section5.items').split('|').map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
               </ul>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">6. Seguridad de los Datos</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">{t('privacy.section6.title')}</h2>
               <p className="text-gray-700 mb-4">
-                Implementamos medidas de seguridad técnicas y organizativas apropiadas para proteger sus datos personales 
-                contra acceso no autorizado, alteración, divulgación o destrucción.
+                {t('privacy.section6.content')}
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">7. Sus Derechos</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">{t('privacy.section7.title')}</h2>
               <p className="text-gray-700 mb-4">
-                Bajo el Reglamento General de Protección de Datos (GDPR), usted tiene derecho a:
+                {t('privacy.section7.content')}
               </p>
               <ul className="list-disc pl-6 text-gray-700 mb-4 space-y-2">
-                <li>Acceder a sus datos personales</li>
-                <li>Rectificar datos inexactos</li>
-                <li>Solicitar la eliminación de sus datos</li>
-                <li>Oponerse al procesamiento de sus datos</li>
-                <li>Solicitar la portabilidad de sus datos</li>
-                <li>Retirar su consentimiento en cualquier momento</li>
+                {t('privacy.section7.items').split('|').map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
               </ul>
               <p className="text-gray-700 mb-4">
-                Para ejercer estos derechos, contáctenos en: info@firstclassensations.com
+                {t('privacy.section7.contact')}
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">8. Conservación de Datos</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">{t('privacy.section8.title')}</h2>
               <p className="text-gray-700 mb-4">
-                Conservamos sus datos personales solo durante el tiempo necesario para los fines establecidos en esta política, 
-                o según lo requieran las leyes aplicables. Cuando ya no sean necesarios, los eliminamos de forma segura.
+                {t('privacy.section8.content')}
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">9. Cookies</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">{t('privacy.section9.title')}</h2>
               <p className="text-gray-700 mb-4">
-                Utilizamos cookies para mejorar la experiencia del usuario. Las cookies técnicas son esenciales para el 
-                funcionamiento del sitio, mientras que las cookies analíticas nos ayudan a mejorar nuestros servicios. 
-                Puede gestionar sus preferencias de cookies a través de nuestro banner de cookies.
+                {t('privacy.section9.content')}
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">10. Cambios en esta Política</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">{t('privacy.section10.title')}</h2>
               <p className="text-gray-700 mb-4">
-                Podemos actualizar esta política de privacidad ocasionalmente. Le notificaremos sobre cambios significativos 
-                y publicaremos la versión actualizada en esta página. Le recomendamos revisar periódicamente esta política.
+                {t('privacy.section10.content')}
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">11. Contacto</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">{t('privacy.section11.title')}</h2>
               <p className="text-gray-700 mb-4">
-                Si tiene preguntas sobre esta política de privacidad o sobre el tratamiento de sus datos personales, 
-                contáctenos:
+                {t('privacy.section11.content')}
               </p>
               <div className="bg-gray-50 p-4 rounded-lg">
                 <p className="text-gray-700 mb-2">
-                  <strong>First Class Sensations</strong>
+                  <strong>{t('privacy.company')}</strong>
                 </p>
                 <p className="text-gray-700 mb-2">
-                  Email: info@firstclassensations.com
+                  {t('privacy.email')}
                 </p>
                 <p className="text-gray-700 mb-2">
-                  Teléfono: +34 600 887 755
+                  {t('privacy.phone')}
                 </p>
                 <p className="text-gray-700">
-                  Ubicación: Ibiza, España
+                  {t('privacy.location')}
                 </p>
               </div>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">12. Autoridad de Control</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">{t('privacy.section12.title')}</h2>
               <p className="text-gray-700 mb-4">
-                Tiene derecho a presentar una reclamación ante la autoridad de control competente si considera que 
-                el tratamiento de sus datos personales no cumple con la legislación aplicable.
+                {t('privacy.section12.content')}
               </p>
               <p className="text-gray-700">
-                Autoridad de Protección de Datos (AEPD) - España<br />
-                <a href="https://www.aepd.es" className="text-blue-600 hover:text-blue-800 underline">
-                  https://www.aepd.es
+                {t('privacy.section12.authority')}<br />
+                <a href={t('privacy.section12.link')} className="text-blue-600 hover:text-blue-800 underline">
+                  {t('privacy.section12.link')}
                 </a>
               </p>
             </section>
@@ -178,7 +157,7 @@ export default function PoliticaPrivacidad() {
               href="/" 
               className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200 hover-lift"
             >
-              Volver al inicio
+              {t('privacy.backToHome')}
             </Link>
           </div>
         </div>

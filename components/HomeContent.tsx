@@ -141,7 +141,7 @@ export default function HomeContent() {
         t('service2.feature2'),
         t('service2.feature3')
       ],
-      image: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=800&h=600&fit=crop&auto=format',
+      image: 'https://images.pexels.com/photos/34723813/pexels-photo-34723813.jpeg?w=800&h=600&fit=crop&auto=format',
       priority: 2
     },
     {
@@ -169,7 +169,7 @@ export default function HomeContent() {
         t('service4.feature2'),
         t('service4.feature3')
       ],
-      image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&h=600&fit=crop&auto=format',
+      image: 'https://images.pexels.com/photos/12989553/pexels-photo-12989553.jpeg?w=800&h=600&fit=crop&auto=format',
       priority: 4
     },
     {
@@ -183,7 +183,7 @@ export default function HomeContent() {
         t('service5.feature2'),
         t('service5.feature3')
       ],
-      image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop&auto=format',
+      image: 'https://media.istockphoto.com/id/1618446911/es/foto/radio-hombre-y-un-guardia-de-seguridad-u-oficial-de-seguridad-al-aire-libre-en-una-carretera.jpg?b=1&s=612x612&w=0&k=20&c=d_FxRZE8QJMDpfbCECHBTglNhe7GKM01wshkZ1Bx2uk=',
       priority: 5
     },
     {
@@ -197,7 +197,7 @@ export default function HomeContent() {
         t('service6.feature2'),
         t('service6.feature3')
       ],
-      image: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&h=600&fit=crop&auto=format',
+      image: 'https://images.pexels.com/photos/3171837/pexels-photo-3171837.jpeg?w=800&h=600&fit=crop&auto=format',
       priority: 6
     }
   ]

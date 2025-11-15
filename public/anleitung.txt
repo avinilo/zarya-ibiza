@@ -7,15 +7,7 @@ Sube todos los archivos de iconos a la carpeta public/ de tu proyecto Next.js
 ## 2) HTML Code Integration
 Inserta el siguiente código HTML entre las etiquetas <head> </head>:
 
-<!-- Apple Touch Icons -->
-<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<!-- Apple Touch Icons (Optimizado - Solo icono principal) -->
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
 
 <!-- Android Icons -->
@@ -27,12 +19,18 @@ Inserta el siguiente código HTML entre las etiquetas <head> </head>:
 <!-- Web App Manifest -->
 <link rel="manifest" href="/manifest.json">
 
-<!-- Microsoft Tiles -->
+<!-- Microsoft Tiles (Optimizado - Solo icono principal) -->
 <meta name="msapplication-TileColor" content="#2563eb">
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
-## 3) Verification
+## 3) Notas de Optimización
+Se han eliminado iconos redundantes para mejorar el rendimiento:
+- Solo se mantiene el Apple Touch Icon principal (180x180)
+- Solo se mantiene el Microsoft Tile principal (144x144)
+- Se conservan todos los favicones esenciales para desktop
+
+## 4) Verification
 Verifica que todos los iconos se cargan correctamente en:
 - iOS Safari (Apple Touch Icons)
 - Android Chrome (Manifest)

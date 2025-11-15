@@ -13,6 +13,7 @@ export const WhatsAppBubble = dynamic(() => import('@/components/WhatsAppBubble'
   loading: () => null
 })
 
+// AutoLanguageIndicator con dynamic import para evitar errores de hidratación
 export const AutoLanguageIndicator = dynamic(() => import('@/components/AutoLanguageIndicator'), {
   ssr: false,
   loading: () => null

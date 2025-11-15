@@ -2,19 +2,34 @@
 
 import { useEffect, useState } from 'react'
 import { Globe, X } from 'lucide-react'
-import { useLanguage } from '@/hooks/useLanguage'
-import { useSmartLanguageDetection, getCountryInfo } from '@/hooks/useSmartLanguageDetection'
-import { Language } from '@/lib/translations'
+
+const getLanguageName = (lang: string): string => {
+  const names: { [key: string]: string } = {
+    'es': 'Español',
+    'en': 'Inglés', 
+    'ru': 'Ruso'
+  }
+  return names[lang] || lang
+}
 
 export default function AutoLanguageIndicator() {
   const [isVisible, setIsVisible] = useState(false)
-  const { language: currentLanguage, changeLanguage, isAutoDetecting } = useLanguage()
-  const { language: detectedLanguage, isLoading, isDetected, country } = useSmartLanguageDetection()
+  const [detectedLang, setDetectedLang] = useState<string | null>(null)
 
   useEffect(() => {
-    // Mostrar el indicador si se detectó un idioma diferente del actual
-    if (!isLoading && isDetected && detectedLanguage !== currentLanguage && country) {
+    // Detección simple basada en el navegador
+    const browserLang = navigator.language.substring(0, 2)
+    const supportedLangs = ['es', 'en', 'ru']
+    const detected = supportedLangs.includes(browserLang) ? browserLang : 'en'
+    
+    // Obtener idioma actual del localStorage o usar 'es' por defecto
+    const currentLang = localStorage.getItem('language') || 'es'
+    
+    // Mostrar solo si el idioma detectado es diferente del actual
+    if (detected !== currentLang) {
+      setDetectedLang(detected)
       setIsVisible(true)
+      
       // Ocultar automáticamente después de 8 segundos
       const timer = setTimeout(() => {
         setIsVisible(false)
@@ -22,28 +37,12 @@ export default function AutoLanguageIndicator() {
       
       return () => clearTimeout(timer)
     }
-  }, [detectedLanguage, currentLanguage, isLoading, isDetected, country])
-
-  if (!isVisible || isLoading || !isDetected || !detectedLanguage || detectedLanguage === currentLanguage || !country) return null
-
-  const getCountryName = (code: string | null) => {
-    if (!code) return 'tu ubicación'
-    const info = getCountryInfo(code)
-    return info.name
-  }
-
-  const getLanguageName = (lang: string) => {
-    const names: { [key: string]: string } = {
-      'es': 'Español',
-      'en': 'Inglés',
-      'ru': 'Ruso'
-    }
-    return names[lang] || lang
-  }
+  }, [])
 
   const handleAccept = () => {
-    if (detectedLanguage) {
-      changeLanguage(detectedLanguage)
+    if (detectedLang) {
+      localStorage.setItem('language', detectedLang)
+      window.dispatchEvent(new CustomEvent('languageChange', { detail: detectedLang }))
     }
     setIsVisible(false)
   }
@@ -52,13 +51,15 @@ export default function AutoLanguageIndicator() {
     setIsVisible(false)
   }
 
+  if (!isVisible || !detectedLang) return null
+
   return (
     <div className="fixed top-20 left-4 z-40 bg-white/90 backdrop-blur-sm rounded-full shadow-lg border border-firstclass-primary/20 px-4 py-2 animate-fade-in">
       <div className="flex items-center space-x-3">
         <Globe className="w-4 h-4 text-firstclass-primary flex-shrink-0" />
         <div className="flex items-center space-x-2">
           <span className="text-xs text-firstclass-secondary font-medium">
-            ¿Ver en {getLanguageName(detectedLanguage)}?
+            ¿Ver en {getLanguageName(detectedLang)}?
           </span>
           <button
             onClick={handleAccept}

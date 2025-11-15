@@ -1,9 +1,9 @@
 // Service Worker para First Class Sensations - Cache estratégico
 // Implementación cuidadosa para mejorar performance sin romper funcionalidad
 
-const CACHE_NAME = 'firstclass-v1'
-const STATIC_CACHE = 'firstclass-static-v1'
-const RUNTIME_CACHE = 'firstclass-runtime-v1'
+const CACHE_NAME = 'firstclass-v2'
+const STATIC_CACHE = 'firstclass-static-v2'
+const RUNTIME_CACHE = 'firstclass-runtime-v2'
 
 // URLs críticas para cachear
 const CRITICAL_URLS = [
@@ -20,10 +20,15 @@ const CRITICAL_URLS = [
 // Recursos estáticos para cachear
 const STATIC_RESOURCES = [
   '/favicon.ico',
-  '/apple-touch-icon.png',
+  '/favicon-16x16.png',
+  '/favicon-32x32.png',
+  '/favicon-96x96.png',
+  '/apple-icon-180x180.png',
+  '/android-icon-192x192.png',
+  '/ms-icon-144x144.png',
   '/og-image.png',
   '/logo1.png',
-  '/logo.webp'
+  '/manifest.json'
 ]
 
 // Instalación del Service Worker

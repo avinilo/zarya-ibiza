@@ -6,7 +6,6 @@ import { Home, Phone, Mail, ArrowLeft, Search, Anchor, Utensils, Crown, Users } 
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import AccessibleBreadcrumbs from '@/components/AccessibleBreadcrumbs'
-import SEOHead from '@/components/SEOHead'
 
 export default function NotFound() {
   const breadcrumbItems = [
@@ -40,10 +39,6 @@ export default function NotFound() {
 
   return (
     <>
-      <SEOHead 
-        title="Página no encontrada - Error 404 | First Class Sensations"
-        description="La página que buscas no existe. Descubre nuestros servicios concierge premium en Ibiza."
-      />
       <Header />
       
       <main className="min-h-screen bg-gradient-to-br from-firstclass-light via-white to-firstclass-light/50">

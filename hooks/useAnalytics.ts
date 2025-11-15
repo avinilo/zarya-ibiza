@@ -1,24 +1,18 @@
 // Hook personalizado para tracking de eventos de Google Analytics
-import { useRouter } from 'next/router'
+import { usePathname, useSearchParams } from 'next/navigation'
 import { useEffect } from 'react'
 import { pageview } from '@/lib/gtag'
 
 export const useAnalytics = () => {
-  const router = useRouter()
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
 
   useEffect(() => {
-    const handleRouteChange = (url: string) => {
+    if (pathname) {
+      const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : '')
       pageview(url)
     }
-
-    // Registrar el evento de cambio de ruta
-    router.events.on('routeChangeComplete', handleRouteChange)
-    
-    // Limpiar el listener cuando el componente se desmonte
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange)
-    }
-  }, [router.events])
+  }, [pathname, searchParams])
 }
 
 // Hook para tracking de eventos específicos

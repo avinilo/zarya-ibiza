@@ -110,6 +110,27 @@ const nextConfig = {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=()',
           },
+          // HSTS - HTTP Strict Transport Security (6 meses)
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=15768000; includeSubDomains; preload',
+          },
+          // CSP - Content Security Policy
+          {
+            key: 'Content-Security-Policy',
+            value: [
+              "default-src 'self'",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://www.gstatic.com",
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+              "img-src 'self' data: https: http: https://images.unsplash.com https://media.istockphoto.com",
+              "font-src 'self' https://fonts.gstatic.com",
+              "connect-src 'self' https://www.google-analytics.com https://analytics.google.com",
+              "frame-src 'none'",
+              "object-src 'none'",
+              "base-uri 'self'",
+              "form-action 'self'",
+            ].join('; '),
+          },
           // Performance headers
           {
             key: 'X-DNS-Prefetch-Control',

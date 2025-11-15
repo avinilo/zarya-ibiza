@@ -4,7 +4,6 @@ import './globals.css'
 import './animations.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import dynamic from 'next/dynamic'
 import Script from 'next/script'
 import { 
   organizationSchema, 
@@ -14,9 +13,9 @@ import {
 } from '@/lib/structured-data'
 import { GA_TRACKING_ID } from '@/lib/gtag'
 import PerformanceOptimizer, { CriticalResourcesPreloader } from '@/components/PerformanceOptimizer'
-import { CookieBanner, WhatsAppBubble, AutoLanguageIndicator } from '@/components/ClientComponents'
 import ScrollRestoration from '@/components/ScrollRestoration'
 import { generateMultilingualMetadata, SUPPORTED_LANGUAGES } from '@/lib/multilingual-seo'
+import ClientComponentsWrapper from '@/components/ClientComponentsWrapper'
 
 const inter = Inter({ 
   subsets: ['latin'], 
@@ -191,9 +190,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
-          <CookieBanner />
-          <WhatsAppBubble />
-          <AutoLanguageIndicator />
+          <ClientComponentsWrapper />
         </PerformanceOptimizer>
       </body>
     </html>

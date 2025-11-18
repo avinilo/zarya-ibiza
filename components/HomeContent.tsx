@@ -390,7 +390,7 @@ export default function HomeContent() {
       <FAQ />
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gradient-to-br from-yellow-50 to-yellow-100">
+      <section id="contact" className="py-20 bg-gray-50">
         <div className="w-full px-4 sm:container-custom sm:mx-auto">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -403,7 +403,7 @@ export default function HomeContent() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mb-12">
-              <div className="bg-white rounded-xl p-4 sm:p-6 md:p-8 border-2 border-yellow-200 shadow-lg">
+              <div className="bg-white rounded-xl p-4 sm:p-6 md:p-8 border border-gray-200 shadow-lg">
                 <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 font-hero text-yellow-600">{t('contact.title')}</h3>
                 
                 <div className="space-y-6">
@@ -446,14 +446,14 @@ export default function HomeContent() {
                   </div>
                 </div>
 
-                <div className="mt-8 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                <div className="mt-8 p-4 bg-gray-50 rounded-lg border border-gray-200">
                   <p className="text-sm text-gray-700 mb-2">
                     {t('contact.form.hint')}
                   </p>
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl p-4 sm:p-6 md:p-8 border-2 border-yellow-200 shadow-lg">
+              <div className="bg-white rounded-xl p-4 sm:p-6 md:p-8 border border-gray-200 shadow-lg">
                 <ContactForm />
               </div>
             </div>

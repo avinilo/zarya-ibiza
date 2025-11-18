@@ -40,7 +40,7 @@ function HeroSection() {
         <h1 className="text-6xl md:text-7xl lg:text-8xl font-normal mb-4 leading-tight animate-slide-up font-hero" style={{textShadow: '0 2px 8px rgba(0,0,0,0.25)'}}>
           {t('hero.title')}
         </h1>
-        <p className="text-3xl md:text-4xl lg:text-5xl mb-8 font-light animate-slide-up animation-delay-200 font-hero" style={{textShadow: '0 2px 8px rgba(0,0,0,0.25)'}}>
+        <p className="text-3xl md:text-4xl lg:text-5xl mb-8 font-light animate-slide-up animation-delay-200 font-hero text-yellow-600" style={{textShadow: '0 2px 8px rgba(0,0,0,0.25)'}}>
           {t('hero.subtitle')}
         </p>
         <div className="flex justify-center animate-slide-up animation-delay-600 mb-8">
@@ -213,7 +213,7 @@ export default function HomeContent() {
         t('service9.feature2'),
         t('service9.feature3')
       ],
-      image: '/hero.webp',
+      image: '/shopping.webp',
       priority: 9
     }
   ]
@@ -394,7 +394,7 @@ export default function HomeContent() {
         <div className="w-full px-4 sm:container-custom sm:mx-auto">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 font-hero text-gray-900">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 font-hero text-yellow-600">
                 {t('contact.title')}
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">

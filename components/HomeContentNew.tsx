@@ -7,7 +7,7 @@ import { Home, Calendar, Star, Car, Shield, Sparkles, CheckCircle, Phone, Mail, 
 import ContactForm from '@/components/ContactForm'
 import FAQ from '@/components/FAQ'
 import Testimonials from '@/components/Testimonials'
-import LanguageSelector from '@/components/LanguageSelector'
+import LanguageSelector from '@/components/LanguageSelectorOptimized'
 import { useLanguage } from '@/hooks/useLanguageNew'
 import LanguageSuggestion from '@/components/LanguageSuggestion'
 

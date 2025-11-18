@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { Globe, X, Check } from 'lucide-react'
 import { useLanguage } from '@/hooks/useLanguageOptimized'
-import { Language, SUPPORTED_LANGUAGES } from '@/lib/i18n-config'
+import { SupportedLanguage, SUPPORTED_LANGUAGES } from '@/lib/i18n-config'
 
 interface LanguageSuggestionProps {
   delay?: number
@@ -15,7 +15,7 @@ export default function LanguageSuggestion({ delay = 2000, autoHide = 8000 }: La
   const { language: currentLang, changeLanguage, detectedLanguage } = useLanguage()
   
   // Verificar si ya se descartó esta sugerencia
-  const getDismissKey = (lang: Language) => `language-suggestion-dismissed-${lang}`
+  const getDismissKey = (lang: SupportedLanguage) => `language-suggestion-dismissed-${lang}`
   
   useEffect(() => {
     if (currentLang === detectedLanguage) {

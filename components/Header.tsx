@@ -149,7 +149,7 @@ export default function Header() {
 
           {/* CTA Button Desktop */}
           <div className="hidden lg:flex items-center gap-4">
-            <LanguageSelector currentLanguage={language} onLanguageChange={changeLanguage} isScrolled={isScrolled} isMenuOpen={isMenuOpen} />
+            <LanguageSelector isScrolled={isScrolled} isMenuOpen={isMenuOpen} />
             <a href="https://wa.me/34600887755" className="btn-firstclass-primary text-sm py-2 px-6 flex items-center gap-2 hover-lift">
               <Phone className="w-4 h-4" />
               {t('hero.cta.whatsapp')}
@@ -160,7 +160,7 @@ export default function Header() {
           <div className="lg:hidden flex items-center gap-3">
             {/* Mobile Language Selector - Always visible */}
             <div className="flex items-center">
-              <LanguageSelector currentLanguage={language} onLanguageChange={changeLanguage} isScrolled={isScrolled} isMenuOpen={isMenuOpen} />
+              <LanguageSelector isScrolled={isScrolled} isMenuOpen={isMenuOpen} />
             </div>
             
             {/* Mobile menu button */}

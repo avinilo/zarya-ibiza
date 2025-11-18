@@ -3,7 +3,7 @@
 import { useState, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Home, Calendar, Star, Car, Shield, Sparkles, CheckCircle, Phone, Mail, MapPin, Users, ChevronLeft, ChevronRight, Instagram } from 'lucide-react'
+import { Home, Calendar, Star, Car, Shield, Sparkles, CheckCircle, Phone, Mail, MapPin, Users, ChevronLeft, ChevronRight, Instagram, Anchor } from 'lucide-react'
 import ContactForm from '@/components/ContactForm'
 import FAQ from '@/components/FAQ'
 import Testimonials from '@/components/Testimonials'
@@ -101,7 +101,7 @@ export default function HomeContent() {
         t('service1.feature2'),
         t('service1.feature3')
       ],
-      image: 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=800&h=600&fit=crop&auto=format',
+      image: '/vacacioneslujo.webp',
       priority: 1
     },
     {
@@ -115,7 +115,7 @@ export default function HomeContent() {
         t('service2.feature2'),
         t('service2.feature3')
       ],
-      image: 'https://images.pexels.com/photos/34723813/pexels-photo-34723813.jpeg?w=800&h=600&fit=crop&auto=format',
+      image: '/mesas-vip.webp',
       priority: 2
     },
     {
@@ -129,11 +129,11 @@ export default function HomeContent() {
         t('service3.feature2'),
         t('service3.feature3')
       ],
-      image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop&auto=format',
+      image: '/villas.webp',
       priority: 3
     },
     {
-      id: 'luxury-cars',
+      id: 'vtc-vans',
       title: t('service4.title'),
       subtitle: t('service4.subtitle'),
       icon: Car,
@@ -143,8 +143,22 @@ export default function HomeContent() {
         t('service4.feature2'),
         t('service4.feature3')
       ],
-      image: 'https://images.pexels.com/photos/12989553/pexels-photo-12989553.jpeg?w=800&h=600&fit=crop&auto=format',
+      image: '/transporte.webp',
       priority: 4
+    },
+    {
+      id: 'luxury-cars',
+      title: t('service7.title'),
+      subtitle: t('service7.subtitle'),
+      icon: Car,
+      description: t('service7.feature1'),
+      features: [
+        t('service7.feature1'),
+        t('service7.feature2'),
+        t('service7.feature3')
+      ],
+      image: '/cocheslujo.webp',
+      priority: 7
     },
     {
       id: 'security',
@@ -157,7 +171,7 @@ export default function HomeContent() {
         t('service5.feature2'),
         t('service5.feature3')
       ],
-      image: 'https://media.istockphoto.com/id/1618446911/es/foto/radio-hombre-y-un-guardia-de-seguridad-u-oficial-de-seguridad-al-aire-libre-en-una-carretera.jpg?b=1&s=612x612&w=0&k=20&c=d_FxRZE8QJMDpfbCECHBTglNhe7GKM01wshkZ1Bx2uk=',
+      image: '/seguridad.webp',
       priority: 5
     },
     {
@@ -171,8 +185,36 @@ export default function HomeContent() {
         t('service6.feature2'),
         t('service6.feature3')
       ],
-      image: 'https://images.pexels.com/photos/3171837/pexels-photo-3171837.jpeg?w=800&h=600&fit=crop&auto=format',
+      image: '/fiestaprivada.webp',
       priority: 6
+    },
+    {
+      id: 'yacht-rental',
+      title: t('service8.title'),
+      subtitle: t('service8.subtitle'),
+      icon: Anchor,
+      description: t('service8.feature1'),
+      features: [
+        t('service8.feature1'),
+        t('service8.feature2'),
+        t('service8.feature3')
+      ],
+      image: '/yates.webp',
+      priority: 8
+    },
+    {
+      id: 'personal-shopping',
+      title: t('service9.title'),
+      subtitle: t('service9.subtitle'),
+      icon: Sparkles,
+      description: t('service9.feature1'),
+      features: [
+        t('service9.feature1'),
+        t('service9.feature2'),
+        t('service9.feature3')
+      ],
+      image: '/hero.webp',
+      priority: 9
     }
   ]
 
@@ -185,7 +227,7 @@ export default function HomeContent() {
       <section id="services" className="py-20 bg-white">
         <div className="container-custom mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 font-hero">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-yellow-600 font-hero">
               {t('services.title')}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -215,7 +257,6 @@ export default function HomeContent() {
                       loading="lazy"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                     <div className="absolute bottom-4 left-4 text-white">
                       <Icon className="w-8 h-8 mb-2" />
                       <h3 className="text-xl font-bold font-hero">{service.title}</h3>
@@ -257,7 +298,7 @@ export default function HomeContent() {
       <section id="process" className="py-20 bg-gray-50">
         <div className="container-custom mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 font-hero">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-yellow-600 font-hero">
               {t('process.title')}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -270,7 +311,7 @@ export default function HomeContent() {
               <div className="w-16 h-16 bg-yellow-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 font-hero">
                 01
               </div>
-              <h3 className="text-xl font-bold mb-4 text-gray-900 font-hero">{t('process.step1.title')}</h3>
+              <h3 className="text-xl font-bold mb-4 text-yellow-600 font-hero">{t('process.step1.title')}</h3>
               <p className="text-gray-600">
                 {t('process.step1.description')}
               </p>
@@ -280,7 +321,7 @@ export default function HomeContent() {
               <div className="w-16 h-16 bg-yellow-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 font-hero">
                 02
               </div>
-              <h3 className="text-xl font-bold mb-4 text-gray-900 font-hero">{t('process.step2.title')}</h3>
+              <h3 className="text-xl font-bold mb-4 text-yellow-600 font-hero">{t('process.step2.title')}</h3>
               <p className="text-gray-600">
                 {t('process.step2.description')}
               </p>
@@ -290,7 +331,7 @@ export default function HomeContent() {
               <div className="w-16 h-16 bg-yellow-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 font-hero">
                 03
               </div>
-              <h3 className="text-xl font-bold mb-4 text-gray-900 font-hero">{t('process.step3.title')}</h3>
+              <h3 className="text-xl font-bold mb-4 text-yellow-600 font-hero">{t('process.step3.title')}</h3>
               <p className="text-gray-600">
                 {t('process.step3.description')}
               </p>
@@ -304,22 +345,18 @@ export default function HomeContent() {
         <div className="container-custom mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 font-hero">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-yellow-600 font-hero">
                 {t('about.title')}
               </h2>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
                 <strong>{t('about.subtitle')}</strong>
               </p>
-              <p className="text-gray-700 mb-6">
-                {t('about.description')}
-              </p>
-              <p className="text-gray-700 mb-6">
-                {t('about.feature1')}
-              </p>
+              <div className="text-gray-700 mb-6" dangerouslySetInnerHTML={{ __html: t('about.description') }} />
+              <div className="text-gray-700 mb-6" dangerouslySetInnerHTML={{ __html: t('about.feature1') }} />
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <MapPin className="w-5 h-5 text-yellow-600" />
-                  <span className="text-gray-700">{t('about.location')}</span>
+                  <span className="text-gray-700" dangerouslySetInnerHTML={{ __html: t('about.location') }} />
                 </div>
                 <div className="flex items-center gap-3">
                   <Users className="w-5 h-5 text-yellow-600" />
@@ -327,21 +364,19 @@ export default function HomeContent() {
                 </div>
                 <div className="flex items-center gap-3">
                   <Sparkles className="w-5 h-5 text-yellow-600" />
-                  <span className="text-gray-700">{t('about.style')}</span>
+                  <span className="text-gray-700" dangerouslySetInnerHTML={{ __html: t('about.style') }} />
                 </div>
               </div>
-              <p className="text-gray-700 mt-6">
-                {t('about.philosophy')}
-              </p>
+              <div className="text-gray-700 mt-6" dangerouslySetInnerHTML={{ __html: t('about.philosophy') }} />
             </div>
-            <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=1200&h=800&fit=crop&auto=format"
-                alt="First Class Sensations"
-                fill
-                className="object-cover"
+                src="/team.webp"
+                alt="Nuestro equipo - First Class Sensations"
+                width={1200}
+                height={800}
+                className="rounded-2xl"
                 loading="lazy"
-                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -369,7 +404,7 @@ export default function HomeContent() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mb-12">
               <div className="bg-white rounded-xl p-4 sm:p-6 md:p-8 border-2 border-yellow-200 shadow-lg">
-                <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 font-hero text-gray-900">{t('contact.title')}</h3>
+                <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 font-hero text-yellow-600">{t('contact.title')}</h3>
                 
                 <div className="space-y-6">
                   <div className="flex items-start gap-3">

@@ -51,11 +51,31 @@ export const translations: Record<Language, Translation> = {
     'service3.feature3': 'Limpieza diaria y mantenimiento.',
     
     // Service 4
-    'service4.title': 'Transporte de lujo',
-    'service4.subtitle': 'Coches de alta gama, furgonetas Mercedes V Class con licencia y conductor.',
+    'service4.title': 'Furgonetas V Class con licencia VTC',
+    'service4.subtitle': 'Transporte profesional con conductor para grupos y familias.',
     'service4.feature1': 'Mercedes V Class con conductor profesional.',
-    'service4.feature2': 'Coches deportivos y SUVs de lujo.',
-    'service4.feature3': 'Recogida en aeropuerto y traslados.',
+    'service4.feature2': 'Licencia VTC oficial para transporte legal.',
+    'service4.feature3': 'Capacidad para hasta 7 pasajeros cómodamente.',
+    
+    'service7.title': 'Coches de lujo',
+    'service7.subtitle': 'Vehículos premium y deportivos de alta gama.',
+    'service7.feature1': 'Deportivos y SUVs de lujo disponibles.',
+    'service7.feature2': 'Recogida en aeropuerto y traslados privados.',
+    'service7.feature3': 'Flota exclusiva de última generación.',
+    
+    // Service 8 - Yacht Rental
+    'service8.title': 'Alquiler de yates',
+    'service8.subtitle': 'Experiencias náuticas exclusivas en las aguas de Ibiza.',
+    'service8.feature1': 'Yates de lujo con tripulación profesional.',
+    'service8.feature2': 'Rutas personalizadas por calas secretas.',
+    'service8.feature3': 'Catering a bordo y actividades acuáticas.',
+    
+    // Service 9 - Personal Shopping & Styling
+    'service9.title': 'Personal Shopping & Styling',
+    'service9.subtitle': 'Asesoría de imagen y compras exclusivas en Ibiza.',
+    'service9.feature1': 'Personal shopper profesional y asesor de estilo.',
+    'service9.feature2': 'Acceso a boutiques de lujo y diseñadores exclusivos.',
+    'service9.feature3': 'Sesiones de styling para ocasiones especiales.',
     
     // Service 5
     'service5.title': 'Seguridad y acompañamiento',
@@ -86,13 +106,13 @@ export const translations: Record<Language, Translation> = {
     
     // About Section
     'about.title': 'Sobre First Class Sensations',
-    'about.subtitle': 'Concierge independiente con trato directo y discreto.',
-    'about.description': 'First Class Sensations nace con una idea clara: ayudarte a vivir Ibiza al máximo sin perder tiempo coordinando reservas, cambios y detalles de última hora.',
-    'about.feature1': 'Trabajamos con un número limitado de clientes para mantener un servicio muy personal, rápido y flexible.',
-    'about.location': 'Ibiza · Concierge privado · Español, inglés y ruso.',
+    'about.subtitle': 'Equipo de concierge privado con trato directo y discreto.',
+    'about.description': 'Más de <strong class="text-yellow-600">dos décadas de experiencia</strong> en Ibiza dentro del sector nocturno, seguridad privada y atención a clientes VIP. Durante <strong class="text-yellow-600">13 años</strong> trabajamos como seguridad privada y acompañamiento de <strong class="text-yellow-600">DJ internacionales</strong>, accediendo a los entornos más exclusivos de la isla y construyendo una red de contactos privilegiada en <strong class="text-yellow-600">clubes, restaurantes, villas, barcos y servicios premium</strong>. Hoy ofrecemos gestión rápida, discreta y completamente personalizada de estancias a medida, coordinando reservas VIP, experiencias exclusivas, movilidad, villas y eventos privados.',
+    'about.feature1': 'Número limitado de clientes para garantizar <strong class="text-yellow-600">servicio exclusivo y personalizado</strong>.',
+    'about.location': 'Ibiza · Equipo de concierge privado · Español, inglés y ruso.',
     'about.clients': 'Atendemos a clientes exigentes que valoran el tiempo y buscan experiencias únicas.',
-    'about.style': 'Estilo discreto, directo y eficaz. Sin intermediarios ni sorpresas.',
-    'about.philosophy': 'La clave está en la planificación y en los detalles. Cada cliente es diferente, cada viaje es único.',
+    'about.style': '<strong class="text-yellow-600">Estilo discreto y directo</strong>. Sin intermediarios ni sorpresas.',
+    'about.philosophy': '<strong class="text-yellow-600">Planificación meticulosa y atención al detalle</strong>. Cada viaje es único.',
     
     // Testimonials Section
     'testimonials.title': 'Lo que dicen nuestros clientes',
@@ -195,7 +215,7 @@ export const translations: Record<Language, Translation> = {
     
     // Footer
     'footer.tagline': 'Ibiza al máximo, sin complicaciones.',
-    'footer.description': 'Concierge privado en Ibiza. Experiencias únicas, servicio personalizado.',
+    'footer.description': 'Equipo de concierge privado en Ibiza. Experiencias únicas, servicio personalizado.',
     'footer.contact': 'Contacto',
     'footer.services': 'Servicios',
     'footer.follow': 'Síguenos',
@@ -393,15 +413,34 @@ export const translations: Record<Language, Translation> = {
     'service3.feature3': 'Daily cleaning and maintenance.',
     
     // Service 4
-    'service4.title': 'Luxury Transport',
-    'service4.subtitle': 'High-end cars, Mercedes V Class vans with license and driver.',
+    'service4.title': 'V Class Vans with VTC License',
+    'service4.subtitle': 'Professional transport with driver for groups and families.',
     'service4.feature1': 'Mercedes V Class with professional driver.',
-    'service4.feature2': 'Sports cars and luxury SUVs.',
-    'service4.feature3': 'Airport pickup and transfers.',
+    'service4.feature2': 'Official VTC license for legal transport.',
+    'service4.feature3': 'Capacity for up to 7 passengers comfortably.',
+    
+    'service7.title': 'Luxury Cars',
+    'service7.subtitle': 'Premium and high-end sports vehicles.',
+    'service7.feature1': 'Sports cars and luxury SUVs available.',
+    'service7.feature2': 'Airport pickup and private transfers.',
+    'service7.feature3': 'Exclusive latest generation fleet.',
+    
+    // Service 8 - Yacht Rental
+    'service8.title': 'Yacht Rental',
+    'service8.subtitle': 'Exclusive nautical experiences in the waters of Ibiza.',
+    'service8.feature1': 'Luxury yachts with professional crew.',
+    'service8.feature2': 'Custom routes through secret coves.',
+    'service8.feature3': 'Onboard catering and water activities.',
+    
+    // Service 9 - Personal Shopping & Styling
+    'service9.title': 'Personal Shopping & Styling',
+    'service9.subtitle': 'Image consulting and exclusive shopping in Ibiza.',
+    'service9.feature1': 'Professional personal shopper and style advisor.',
+    'service9.feature2': 'Access to luxury boutiques and exclusive designers.',
+    'service9.feature3': 'Styling sessions for special occasions.',
     
     // Service 5
     'service5.title': 'Security and Escort',
-    'service5.subtitle': 'Discreet and professional security service for your peace of mind.',
     'service5.feature1': 'Personal and group security.',
     'service5.feature2': 'Coordination with local services.',
     'service5.feature3': 'Discreet and professional presence.',
@@ -428,13 +467,13 @@ export const translations: Record<Language, Translation> = {
     
     // About Section
     'about.title': 'About First Class Sensations',
-    'about.subtitle': 'Independent concierge with direct and discreet treatment.',
-    'about.description': 'First Class Sensations is born with a clear idea: to help you live Ibiza to the fullest without wasting time coordinating reservations, changes and last-minute details.',
-    'about.feature1': 'We work with a limited number of clients to maintain a very personal, fast and flexible service.',
-    'about.location': 'Ibiza · Private Concierge · Spanish, English and Russian.',
+    'about.subtitle': 'Private concierge team with direct and discreet treatment.',
+    'about.description': 'With <strong class="text-yellow-600">over two decades of experience</strong> in Ibiza in the nightlife sector, private security and VIP client service. For <strong class="text-yellow-600">13 years</strong> we worked as private security and escort for <strong class="text-yellow-600">international DJs</strong>, accessing the most exclusive environments on the island and building a privileged network of contacts in <strong class="text-yellow-600">clubs, restaurants, villas, boats and premium services</strong>. Today we offer fast, discreet and completely personalized management of tailor-made stays, coordinating VIP reservations, exclusive experiences, mobility, villas and private events.',
+    'about.feature1': 'Limited number of clients to guarantee <strong class="text-yellow-600">exclusive and personalized service</strong>.' ,
+    'about.location': 'Ibiza · Private Concierge Team · Spanish, English and Russian.',
     'about.clients': 'We serve demanding clients who value time and seek unique experiences.',
-    'about.style': 'Discreet, direct and efficient style. No intermediaries or surprises.',
-    'about.philosophy': 'The key is in planning and details. Each client is different, each trip is unique.',
+    'about.style': '<strong class="text-yellow-600">Discreet and direct style</strong>. No intermediaries or surprises.',
+    'about.philosophy': '<strong class="text-yellow-600">Meticulous planning and attention to detail</strong>. Each trip is unique.',
     
     // Testimonials Section
     'testimonials.title': 'What our clients say',
@@ -537,7 +576,7 @@ export const translations: Record<Language, Translation> = {
     
     // Footer
     'footer.tagline': 'Ibiza to the maximum, without complications.',
-    'footer.description': 'Private concierge in Ibiza. Unique experiences, personalized service.',
+    'footer.description': 'Private concierge team in Ibiza. Unique experiences, personalized service.',
     'footer.contact': 'Contact',
     'footer.services': 'Services',
     'footer.follow': 'Follow us',
@@ -729,15 +768,34 @@ export const translations: Record<Language, Translation> = {
     'service3.feature3': 'Ежедневная уборка и обслуживание.',
     
     // Service 4
-    'service4.title': 'Роскошный транспорт',
-    'service4.subtitle': 'Автомобили премиум-класса, микроавтобусы Mercedes V Class с лицензией и водителем.',
+    'service4.title': 'Микроавтобусы V Class с лицензией VTC',
+    'service4.subtitle': 'Профессиональный транспорт с водителем для групп и семей.',
     'service4.feature1': 'Mercedes V Class с профессиональным водителем.',
-    'service4.feature2': 'Спортивные автомобили и роскошные внедорожники.',
-    'service4.feature3': 'Встреча в аэропорту и трансферы.',
+    'service4.feature2': 'Официальная лицензия VTC для легального транспорта.',
+    'service4.feature3': 'Вместимость до 7 пассажиров с комфортом.',
+    
+    'service7.title': 'Роскошные автомобили',
+    'service7.subtitle': 'Премиальные и спортивные автомобили высокого класса.',
+    'service7.feature1': 'Спортивные автомобили и роскошные внедорожники.',
+    'service7.feature2': 'Встреча в аэропорту и частные трансферы.',
+    'service7.feature3': 'Эксклюзивный автопарк последнего поколения.',
+    
+    // Service 8 - Yacht Rental
+    'service8.title': 'Аренда яхт',
+    'service8.subtitle': 'Эксклюзивные морские приключения в водах Ибицы.',
+    'service8.feature1': 'Роскошные яхты с профессиональной командой.',
+    'service8.feature2': 'Индивидуальные маршруты по секретным бухтам.',
+    'service8.feature3': 'Кейтеринг на борту и водные развлечения.',
+    
+    // Service 9 - Personal Shopping & Styling
+    'service9.title': 'Персональный шопинг и стайлинг',
+    'service9.subtitle': 'Консультации по имиджу и эксклюзивный шопинг в Ибице.',
+    'service9.feature1': 'Профессиональный персональный шопер и стилист.',
+    'service9.feature2': 'Доступ к люксовым бутикам и эксклюзивным дизайнерам.',
+    'service9.feature3': 'Сессии стайлинга для особых случаев.',
     
     // Service 5
     'service5.title': 'Безопасность и сопровождение',
-    'service5.subtitle': 'Дискретная и профессиональная служба безопасности для вашего спокойствия.',
     'service5.feature1': 'Личная и групповая безопасность.',
     'service5.feature2': 'Координация с местными службами.',
     'service5.feature3': 'Дискретное и профессиональное присутствие.',
@@ -873,7 +931,7 @@ export const translations: Record<Language, Translation> = {
     
     // Footer
     'footer.tagline': 'Ибица по максимуму, без осложнений.',
-    'footer.description': 'Приватный консьерж в Ибице. Уникальные впечатления, персонализированный сервис.',
+    'footer.description': 'Команда частного консьержа на Ибице. Уникальные впечатления, персонализированный сервис.',
     'footer.contact': 'Контакт',
     'footer.services': 'Услуги',
     'footer.follow': 'Следите за нами',

@@ -150,7 +150,7 @@ export default function Testimonials() {
     <section className="py-12 bg-gray-50">
       <div className="w-full px-4 sm:container-custom sm:mx-auto mb-8">
         <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-hero">
+          <h2 className="text-4xl md:text-5xl font-bold text-yellow-600 mb-4 font-hero">
             {t('testimonials.title')}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">

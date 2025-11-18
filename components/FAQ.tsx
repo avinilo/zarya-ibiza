@@ -13,13 +13,13 @@ interface FAQItemProps {
 
 function FAQItem({ question, answer, isOpen, onClick }: FAQItemProps) {
   return (
-    <div className="border border-gray-200 rounded-lg mb-4 overflow-hidden">
+    <div className="border border-yellow-200 rounded-lg mb-4 overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow duration-200">
       <button
         onClick={onClick}
-        className="w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition-colors duration-200"
+        className="w-full flex justify-between items-center p-6 text-left hover:bg-yellow-50 transition-colors duration-200"
         aria-expanded={isOpen}
       >
-        <h3 className="text-lg font-semibold text-gray-900 pr-4">{question}</h3>
+        <h3 className="text-lg font-semibold text-yellow-700 pr-4">{question}</h3>
         <ChevronDown 
           className={`w-5 h-5 text-yellow-600 transition-transform duration-200 flex-shrink-0 ${
             isOpen ? 'rotate-180' : ''
@@ -86,10 +86,10 @@ export default function FAQ() {
   }
 
   return (
-    <section id="faq" className="py-20 bg-gray-50">
+    <section id="faq" className="py-20 bg-white">
       <div className="container-custom mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 font-hero">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-yellow-600 font-hero">
             {translate('faq.title')}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">

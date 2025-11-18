@@ -148,9 +148,9 @@ async function networkFirstStrategy(request) {
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1">
           <style>
-            body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background: #f8fafc; }
+            body { font-family: 'Montserrat', sans-serif; text-align: center; padding: 50px; background: #f8fafc; }
             .offline { color: #334155; max-width: 600px; margin: 0 auto; }
-            .logo { color: #2563eb; font-weight: bold; font-size: 24px; margin-bottom: 20px; }
+            .logo { color: #2563eb; font-weight: bold; font-size: 24px; margin-bottom: 20px; font-family: 'Playfair Display', serif; }
             button { background: #2563eb; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-size: 16px; }
             button:hover { background: #1d4ed8; }
           </style>

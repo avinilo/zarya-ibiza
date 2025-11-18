@@ -64,9 +64,9 @@ export async function POST(request: NextRequest) {
     const subject = subjectOptions[preferredLanguage as keyof typeof subjectOptions] || `Nueva consulta de ${name} - ${service}`
     
     const htmlContent = `
-      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+      <div style="font-family: 'Montserrat', sans-serif; max-width: 600px; margin: 0 auto;">
         <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; text-align: center; color: white;">
-          <h1 style="margin: 0; font-size: 24px;">First Class Sensations</h1>
+          <h1 style="margin: 0; font-size: 24px; font-family: 'Playfair Display', serif;">First Class Sensations</h1>
           <p style="margin: 10px 0 0 0; opacity: 0.9;">Nueva Consulta de Cliente</p>
         </div>
         
@@ -133,9 +133,9 @@ export async function POST(request: NextRequest) {
     const confirmationSubject = confirmationSubjectOptions[preferredLanguage as keyof typeof confirmationSubjectOptions] || 'Gracias por contactar First Class Sensations'
     
     const confirmationHtml = `
-      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+      <div style="font-family: 'Montserrat', sans-serif; max-width: 600px; margin: 0 auto;">
         <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; text-align: center; color: white;">
-          <h1 style="margin: 0; font-size: 24px;">First Class Sensations</h1>
+          <h1 style="margin: 0; font-size: 24px; font-family: 'Playfair Display', serif;">First Class Sensations</h1>
         </div>
         
         <div style="padding: 30px; background: #f8f9fa;">

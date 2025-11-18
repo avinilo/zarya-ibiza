@@ -19,21 +19,21 @@ export default function NotFound() {
       description: 'Alquiler de yates de lujo con tripulación profesional',
       href: '/alquiler-yates',
       icon: Anchor,
-      color: 'bg-blue-50 hover:bg-blue-100 border-blue-200'
+      color: 'bg-yellow-50 hover:bg-yellow-100 border-yellow-200'
     },
     {
       title: 'Beach Clubs Exclusivos',
       description: 'Acceso VIP a los mejores beach clubs de Ibiza',
       href: '/beach-clubs-vip',
       icon: Crown,
-      color: 'bg-green-50 hover:bg-green-100 border-green-200'
+      color: 'bg-yellow-50 hover:bg-yellow-100 border-yellow-200'
     },
     {
       title: 'Restaurantes Michelin',
       description: 'Reservas en los mejores restaurantes Michelin',
       href: '/restaurantes-michelin',
       icon: Utensils,
-      color: 'bg-purple-50 hover:bg-purple-100 border-purple-200'
+      color: 'bg-yellow-50 hover:bg-yellow-100 border-yellow-200'
     }
   ]
 
@@ -51,7 +51,7 @@ export default function NotFound() {
           <div className="max-w-4xl mx-auto text-center">
             {/* Error Number */}
             <div className="mb-8">
-              <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[12rem] font-bold text-firstclass-primary/20 leading-none select-none">
+              <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[12rem] font-bold text-firstclass-primary/20 leading-none select-none font-hero">
                 404
               </h1>
             </div>
@@ -70,7 +70,7 @@ export default function NotFound() {
 
             {/* Main Message */}
             <div className="mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-firstclass-secondary mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-firstclass-secondary mb-4 font-hero">
                 ¡Ups! Página no encontrada
               </h2>
               <p className="text-base sm:text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
@@ -111,7 +111,7 @@ export default function NotFound() {
 
             {/* Services Quick Links */}
             <div className="mb-16">
-              <h3 className="text-2xl font-bold text-firstclass-secondary mb-8">
+              <h3 className="text-2xl font-bold text-firstclass-secondary mb-8 font-hero">
                 Descubre nuestros servicios de lujo
               </h3>
               
@@ -158,21 +158,21 @@ export default function NotFound() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/sobre-nosotros"
-                  className="text-firstclass-primary hover:text-firstclass-secondary font-medium transition-colors"
+                  className="text-firstclass-primary hover:text-firstclass-secondary font-medium transition-colors font-body"
                 >
                   Conoce más sobre nosotros
                 </Link>
                 <span className="hidden sm:inline text-gray-300">|</span>
                 <Link
                   href="/preguntas-frecuentes"
-                  className="text-firstclass-primary hover:text-firstclass-secondary font-medium transition-colors"
+                  className="text-firstclass-primary hover:text-firstclass-secondary font-medium transition-colors font-body"
                 >
                   Preguntas frecuentes
                 </Link>
                 <span className="hidden sm:inline text-gray-300">|</span>
                 <Link
                   href="/casos-exito"
-                  className="text-firstclass-primary hover:text-firstclass-secondary font-medium transition-colors"
+                  className="text-firstclass-primary hover:text-firstclass-secondary font-medium transition-colors font-body"
                 >
                   Casos de éxito
                 </Link>
@@ -183,7 +183,7 @@ export default function NotFound() {
             <div className="mt-12">
               <button
                 onClick={() => window.history.back()}
-                className="inline-flex items-center gap-2 text-firstclass-primary hover:text-firstclass-secondary font-medium transition-colors"
+                className="inline-flex items-center gap-2 text-firstclass-primary hover:text-firstclass-secondary font-medium transition-colors font-body"
                 aria-label="Volver a la página anterior"
               >
                 <ArrowLeft className="w-4 h-4" />

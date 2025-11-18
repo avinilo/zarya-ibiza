@@ -2,8 +2,9 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { Language, getTranslation } from '@/lib/translations'
-import { useSmartLanguageDetection, getCountryInfo } from '@/hooks/useSmartLanguageDetection'
+import { useBrowserLanguageDetection } from './useBrowserLanguageDetection'
 
+// Estado global para compartir entre componentes
 let globalLanguage: Language = 'es'
 let listeners: Array<(lang: Language) => void> = []
 
@@ -15,47 +16,35 @@ export function useLanguage() {
   const [language, setLanguage] = useState<Language>('es')
   const [mounted, setMounted] = useState(false)
   const [hasAutoDetected, setHasAutoDetected] = useState(false)
-  const { language: detectedLanguage, isLoading, isDetected, country } = useSmartLanguageDetection()
+  const { language: detectedLanguage, isLoading } = useBrowserLanguageDetection()
 
   useEffect(() => {
-    // Load saved language from localStorage or detect automatically
+    // Cargar idioma guardado o usar el detectado
     const savedLanguage = localStorage.getItem('firstclass-language') as Language
     
     if (savedLanguage && ['es', 'en', 'ru'].includes(savedLanguage)) {
-      // Si el usuario ya ha seleccionado un idioma manualmente, usar ese
+      // Usuario ya seleccionó idioma manualmente
       setLanguage(savedLanguage)
       globalLanguage = savedLanguage
-      setHasAutoDetected(true) // Marcar como que ya tenemos un idioma establecido
-      setMounted(true)
-    } else if (!isLoading && isDetected && !hasAutoDetected) {
-      // Si no hay idioma guardado y la detección automática terminó, usar el detectado
-      setLanguage(detectedLanguage)
-      globalLanguage = detectedLanguage
-      // Guardar automáticamente el idioma detectado
-      localStorage.setItem('firstclass-language', detectedLanguage)
       setHasAutoDetected(true)
       setMounted(true)
     } else if (!isLoading && !hasAutoDetected) {
-      // Si la detección falló, usar el idioma del navegador
-      const browserLang = navigator.language?.toLowerCase().split('-')[0] === 'es' ? 'es' : 
-                         navigator.language?.toLowerCase().split('-')[0] === 'ru' ? 'ru' : 'en'
-      setLanguage(browserLang)
-      globalLanguage = browserLang
-      localStorage.setItem('firstclass-language', browserLang)
+      // Primera visita - usar idioma detectado
+      setLanguage(detectedLanguage)
+      globalLanguage = detectedLanguage
+      localStorage.setItem('firstclass-language', detectedLanguage)
       setHasAutoDetected(true)
       setMounted(true)
     } else if (isLoading) {
-      // Mientras se detecta la ubicación, usar el idioma del navegador como fallback
-      const browserLang = navigator.language?.toLowerCase().split('-')[0] === 'es' ? 'es' : 
-                         navigator.language?.toLowerCase().split('-')[0] === 'ru' ? 'ru' : 'en'
-      setLanguage(browserLang)
-      globalLanguage = browserLang
+      // Mientras carga, usar español como fallback
+      setLanguage('es')
+      globalLanguage = 'es'
       setMounted(true)
     }
-  }, [detectedLanguage, isLoading, hasAutoDetected, isDetected])
+  }, [detectedLanguage, isLoading, hasAutoDetected])
 
   useEffect(() => {
-    // Subscribe to global language changes
+    // Suscribirse a cambios globales de idioma
     const listener = (newLanguage: Language) => {
       setLanguage(newLanguage)
     }
@@ -73,13 +62,13 @@ export function useLanguage() {
     setLanguage(newLanguage)
     globalLanguage = newLanguage
     localStorage.setItem('firstclass-language', newLanguage)
-    setHasAutoDetected(true) // Marcar como que el usuario ha seleccionado manualmente
+    setHasAutoDetected(true)
     notifyListeners(newLanguage)
   }, [])
 
   const t = (key: string): string => {
     if (!mounted) {
-      // Return Spanish translation during SSR and initial client render
+      // Durante SSR y carga inicial, usar español
       return getTranslation(key, 'es')
     }
     return getTranslation(key, language)

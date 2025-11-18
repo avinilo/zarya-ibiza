@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Playfair_Display, Montserrat } from 'next/font/google'
 import './globals.css'
 import './animations.css'
 import Header from '@/components/Header'
@@ -20,6 +20,21 @@ import ClientComponentsWrapper from '@/components/ClientComponentsWrapper'
 const inter = Inter({ 
   subsets: ['latin'], 
   variable: '--font-inter',
+  display: 'swap',
+  preload: true
+})
+
+// Fuentes del hero para toda la web
+const playfairDisplay = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-playfair',
+  display: 'swap',
+  preload: true
+})
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  variable: '--font-montserrat',
   display: 'swap',
   preload: true
 })
@@ -55,6 +70,11 @@ export default function RootLayout({
         {/* Resource hints adicionales para optimización */}
         <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
         <link rel="dns-prefetch" href="//unpkg.com" />
+        
+        {/* Google Fonts - Playfair Display y Montserrat para el hero */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
         
         {/* Verificación de propietario de motores de búsqueda */}
         {process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION && (
@@ -144,7 +164,7 @@ export default function RootLayout({
            }}
          />
        </head>
-       <body className={`${inter.variable} font-sans antialiased`}>
+       <body className={`${inter.variable} ${playfairDisplay.variable} ${montserrat.variable} font-sans antialiased`}>
         {/* Google Analytics 4 Scripts */}
         {GA_TRACKING_ID && (
           <>

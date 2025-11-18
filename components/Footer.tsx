@@ -37,7 +37,7 @@ export default function Footer() {
                 height={48}
                 className="h-12 w-auto"
               />
-              <span className="ml-3 text-xl font-bold text-white">
+              <span className="ml-3 text-xl font-bold text-yellow-500 font-brand">
                 First Class Sensations
               </span>
             </div>
@@ -46,7 +46,7 @@ export default function Footer() {
             </p>
             <div className="space-y-2">
               <p className="text-sm">
-                <strong className="text-blue-400">{t('contact.location')}:</strong><br />
+                <strong className="text-yellow-400">{t('contact.location')}:</strong><br />
                 <span className="text-white/90">
                   {t('footer.location')}
                 </span>
@@ -56,7 +56,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-blue-400 font-semibold text-lg mb-4">{t('footer.services')}</h3>
+            <h3 className="text-yellow-400 font-semibold text-lg mb-4">{t('footer.services')}</h3>
             <nav aria-label={t('footer.servicesNav')}>
               <ul className="space-y-3">
                 {services.map((service) => {
@@ -65,9 +65,9 @@ export default function Footer() {
                     <li key={service.name}>
                       <Link
                         href={service.href}
-                        className="text-sm text-white/80 hover:text-blue-400 transition-smooth flex items-center group hover-lift"
+                        className="text-sm text-white/80 hover:text-yellow-400 transition-smooth flex items-center group hover-lift"
                       >
-                        <Icon className="w-4 h-4 mr-2 text-blue-500 group-hover:text-blue-400 transition-smooth" />
+                        <Icon className="w-4 h-4 mr-2 text-yellow-500 group-hover:text-yellow-400 transition-smooth" />
                         {service.name}
                       </Link>
                     </li>
@@ -79,30 +79,30 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-blue-400 font-semibold text-lg mb-4">{t('footer.quickLinks')}</h3>
+            <h3 className="text-yellow-400 font-semibold text-lg mb-4">{t('footer.quickLinks')}</h3>
             <nav aria-label={t('footer.quickNav')}>
               <ul className="space-y-3">
                 <li>
-                  <Link href="#services" className="text-sm text-white/80 hover:text-blue-400 transition-smooth flex items-center group hover-lift">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 group-hover:bg-blue-400 transition-smooth"></span>
+                  <Link href="#services" className="text-sm text-white/80 hover:text-yellow-400 transition-smooth flex items-center group hover-lift">
+                    <span className="w-2 h-2 bg-yellow-500 rounded-full mr-2 group-hover:bg-yellow-400 transition-smooth"></span>
                     {t('nav.services')}
                   </Link>
                 </li>
                 <li>
-                  <Link href="#process" className="text-sm text-white/80 hover:text-blue-400 transition-smooth flex items-center group hover-lift">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 group-hover:bg-blue-400 transition-smooth"></span>
+                  <Link href="#process" className="text-sm text-white/80 hover:text-yellow-400 transition-smooth flex items-center group hover-lift">
+                    <span className="w-2 h-2 bg-yellow-500 rounded-full mr-2 group-hover:bg-yellow-400 transition-smooth"></span>
                     {t('nav.howWeWork')}
                   </Link>
                 </li>
                 <li>
-                  <Link href="#about" className="text-sm text-white/80 hover:text-blue-400 transition-smooth flex items-center group hover-lift">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 group-hover:bg-blue-400 transition-smooth"></span>
+                  <Link href="#about" className="text-sm text-white/80 hover:text-yellow-400 transition-smooth flex items-center group hover-lift">
+                    <span className="w-2 h-2 bg-yellow-500 rounded-full mr-2 group-hover:bg-yellow-400 transition-smooth"></span>
                     {t('nav.about')}
                   </Link>
                 </li>
                 <li>
-                  <Link href="#contact" className="text-sm text-white/80 hover:text-blue-400 transition-smooth flex items-center group hover-lift">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 group-hover:bg-blue-400 transition-smooth"></span>
+                  <Link href="#contact" className="text-sm text-white/80 hover:text-yellow-400 transition-smooth flex items-center group hover-lift">
+                    <span className="w-2 h-2 bg-yellow-500 rounded-full mr-2 group-hover:bg-yellow-400 transition-smooth"></span>
                     {t('nav.contact')}
                   </Link>
                 </li>
@@ -112,29 +112,29 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-blue-400 font-semibold text-lg mb-4">{t('footer.contact')}</h3>
+            <h3 className="text-yellow-400 font-semibold text-lg mb-4">{t('footer.contact')}</h3>
             <ul className="space-y-3">
               <li>
-                <a href="https://wa.me/34600887755" className="text-sm text-white/80 hover:text-blue-400 transition-smooth flex items-center group hover-lift">
-                  <Phone className="w-4 h-4 mr-2 text-blue-500 group-hover:text-blue-400 transition-smooth" />
+                <a href="https://wa.me/34600887755" className="text-sm text-white/80 hover:text-yellow-400 transition-smooth flex items-center group hover-lift">
+                  <Phone className="w-4 h-4 mr-2 text-yellow-500 group-hover:text-yellow-400 transition-smooth" />
                   +34 600 887 755
                 </a>
               </li>
               <li>
-                <a href="mailto:ivansanchezcamano@gmail.com" className="text-sm text-white/80 hover:text-blue-400 transition-smooth flex items-center group hover-lift">
-                  <Mail className="w-4 h-4 mr-2 text-blue-500 group-hover:text-blue-400 transition-smooth" />
+                <a href="mailto:ivansanchezcamano@gmail.com" className="text-sm text-white/80 hover:text-yellow-400 transition-smooth flex items-center group hover-lift">
+                  <Mail className="w-4 h-4 mr-2 text-yellow-500 group-hover:text-yellow-400 transition-smooth" />
                   ivansanchezcamano@gmail.com
                 </a>
               </li>
               <li>
                 <div className="text-sm text-white/80 flex items-center group">
-                  <MapPin className="w-4 h-4 mr-2 text-blue-500" />
+                  <MapPin className="w-4 h-4 mr-2 text-yellow-500" />
                   Ibiza, España
                 </div>
               </li>
               <li>
-                <a href="https://www.instagram.com/ivan_first_class_sensations.co/" className="text-sm text-white/80 hover:text-blue-400 transition-smooth flex items-center group hover-lift" target="_blank" rel="noopener noreferrer">
-                  <Instagram className="w-4 h-4 mr-2 text-blue-500 group-hover:text-blue-400 transition-smooth" />
+                <a href="https://www.instagram.com/ivan_first_class_sensations.co/" className="text-sm text-white/80 hover:text-yellow-400 transition-smooth flex items-center group hover-lift" target="_blank" rel="noopener noreferrer">
+                  <Instagram className="w-4 h-4 mr-2 text-yellow-500 group-hover:text-yellow-400 transition-smooth" />
                   @ivan_first_class_sensations.co
                 </a>
               </li>
@@ -148,10 +148,10 @@ export default function Footer() {
             {t('footer.copyright').replace('2024', new Date().getFullYear().toString())}
           </p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <Link href="/politica-privacidad" className="text-sm text-white/70 hover:text-blue-400 transition-smooth hover-lift">
+            <Link href="/politica-privacidad" className="text-sm text-white/70 hover:text-yellow-400 transition-smooth hover-lift">
               {t('footer.privacy')}
             </Link>
-            <Link href="/terminos-condiciones" className="text-sm text-white/70 hover:text-blue-400 transition-smooth hover-lift">
+            <Link href="/terminos-condiciones" className="text-sm text-white/70 hover:text-yellow-400 transition-smooth hover-lift">
               {t('footer.terms')}
             </Link>
           </div>

@@ -7,15 +7,15 @@ export default async function TestTranslations() {
   return (
     <div className="min-h-screen bg-gray-100 p-8">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
-        <h1 className="text-3xl font-bold text-firstclass-primary mb-8">Test de Traducciones</h1>
+        <h1 className="text-3xl font-bold text-firstclass-primary mb-8 font-hero">Test de Traducciones</h1>
         
         <div className="space-y-4">
-          <div className="bg-blue-50 p-4 rounded-lg">
-            <h2 className="text-xl font-semibold text-firstclass-secondary mb-2">Idioma detectado: {lang}</h2>
+          <div className="bg-yellow-50 p-4 rounded-lg">
+            <h2 className="text-xl font-semibold text-firstclass-secondary mb-2 font-hero">Idioma detectado: {lang}</h2>
           </div>
           
-          <div className="bg-green-50 p-4 rounded-lg">
-            <h3 className="text-lg font-semibold text-firstclass-secondary mb-2">Prueba de traducción:</h3>
+          <div className="bg-yellow-50 p-4 rounded-lg">
+            <h3 className="text-lg font-semibold text-firstclass-secondary mb-2 font-hero">Prueba de traducción:</h3>
             <p className="text-gray-700 mb-2">
               <strong>privacy.title:</strong> {t('privacy.title')}
             </p>

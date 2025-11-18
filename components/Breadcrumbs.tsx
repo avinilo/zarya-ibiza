@@ -46,7 +46,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
       <nav className="flex items-center space-x-2 text-sm text-gray-600 mb-8" aria-label="Breadcrumb">
         <Link 
           href="/" 
-          className="flex items-center hover:text-firstclass-primary transition-colors"
+          className="flex items-center hover:text-yellow-600 transition-colors"
           aria-label="Ir a la página principal"
         >
           <Home className="w-4 h-4" />
@@ -59,12 +59,12 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
             {item.href && index < items.length - 1 ? (
               <Link 
                 href={item.href} 
-                className="hover:text-firstclass-primary transition-colors"
+                className="hover:text-yellow-600 transition-colors"
               >
                 {item.name}
               </Link>
             ) : (
-              <span className="text-firstclass-secondary font-medium" aria-current="page">
+              <span className="text-firstclass-secondary font-medium font-body" aria-current="page">
                 {item.name}
               </span>
             )}

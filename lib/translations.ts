@@ -16,10 +16,10 @@ export const translations: Record<Language, Translation> = {
     'nav.quickConsultation': 'Consulta rápida',
     
     // Hero
-    'hero.title': 'Concierge privado en Ibiza',
-    'hero.subtitle': 'Vacaciones a medida y experiencias VIP en Ibiza',
+    'hero.title': 'Ibiza sin límites',
+    'hero.subtitle': 'Tú solo disfruta',
     'hero.description': 'Nos dedicamos a organizar vacaciones a medida: reservas de mesas VIP en clubs y restaurantes top, alquiler de villas, coches de lujo, furgonetas Mercedes V Class con licencia y conductor, acompañamientos de seguridad y organización de eventos privados en villas.',
-    'hero.cta.plan': 'Planificar mi estancia',
+    'hero.cta.plan': 'SERVICIOS DE LUJO',
     'hero.cta.whatsapp': 'WhatsApp',
     'hero.trust.available': 'Disponible 24/7',
     'hero.trust.exclusive': 'Experiencias Exclusivas',
@@ -358,10 +358,10 @@ export const translations: Record<Language, Translation> = {
     'nav.quickConsultation': 'Quick Consultation',
     
     // Hero
-    'hero.title': 'Private Concierge in Ibiza',
-    'hero.subtitle': 'Tailor-made holidays and VIP experiences in Ibiza',
+    'hero.title': 'Ibiza without limits',
+    'hero.subtitle': 'You just enjoy',
     'hero.description': 'We specialize in organizing tailor-made holidays: VIP table reservations in top clubs and restaurants, villa rentals, luxury cars, Mercedes V Class vans with license and driver, security escorts and organization of private events in villas.',
-    'hero.cta.plan': 'Plan My Stay',
+    'hero.cta.plan': 'LUXURY SERVICES',
     'hero.cta.whatsapp': 'WhatsApp',
     'hero.trust.available': 'Available 24/7',
     'hero.trust.exclusive': 'Exclusive Experiences',
@@ -694,10 +694,10 @@ export const translations: Record<Language, Translation> = {
     'nav.quickConsultation': 'Быстрая консультация',
     
     // Hero
-    'hero.title': 'Приватный консьерж в Ибице',
-    'hero.subtitle': 'Индивидуальные каникулы и VIP-опыт в Ибице',
+    'hero.title': 'Ибица без ограничений',
+    'hero.subtitle': 'Ты просто наслаждайся',
     'hero.description': 'Мы специализируемся на организации индивидуальных каникул: VIP-бронирование столов в лучших клубах и ресторанах, аренда вилл, роскошные автомобили, микроавтобусы Mercedes V Class с лицензией и водителем, охранные сопровождения и организация частных мероприятий на виллах.',
-    'hero.cta.plan': 'Спланировать мой отдых',
+    'hero.cta.plan': 'РОСКОШНЫЕ УСЛУГИ',
     'hero.cta.whatsapp': 'WhatsApp',
     'hero.trust.available': 'Доступен 24/7',
     'hero.trust.exclusive': 'Эксклюзивные впечатления',

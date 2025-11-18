@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Menu, X, Phone } from 'lucide-react'
-import LanguageSelector from '@/components/LanguageSelector'
-import { useLanguage } from '@/hooks/useLanguage'
+import LanguageSelector from '@/components/LanguageSelectorOptimized'
+import { useLanguage } from '@/hooks/useLanguageOptimized'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -67,11 +67,7 @@ export default function Header() {
               height={48}
               className="h-8 md:h-12 w-auto transition-smooth"
             />
-            <span className={`ml-2 md:ml-3 text-[10px] sm:text-xs md:text-xl font-bold transition-smooth leading-tight ${
-              isScrolled || isMenuOpen 
-                ? 'text-firstclass-secondary' 
-                : 'text-white'
-            }`}>
+            <span className="ml-2 md:ml-3 text-[10px] sm:text-xs md:text-xl font-bold transition-smooth leading-tight font-brand text-yellow-500">
               First Class Sensations
             </span>
           </Link>
@@ -80,7 +76,7 @@ export default function Header() {
           <nav className="hidden lg:flex items-center space-x-8" role="navigation" aria-label="Navegación principal">
             <Link
               href="/"
-              className={`font-medium transition-smooth relative group ${
+              className={`font-medium transition-smooth relative group font-body ${
                 isScrolled 
                   ? 'text-firstclass-secondary hover:text-firstclass-primary' 
                   : 'text-white hover:text-white/80'
@@ -95,7 +91,7 @@ export default function Header() {
             {/* Services Link */}
             <Link
               href="/#services"
-              className={`font-medium transition-smooth relative group ${
+              className={`font-medium transition-smooth relative group font-body ${
                 isScrolled 
                   ? 'text-firstclass-secondary hover:text-firstclass-primary' 
                   : 'text-white hover:text-white/80'
@@ -110,7 +106,7 @@ export default function Header() {
             {/* Nosotros Link */}
             <Link
               href="/#about"
-              className={`font-medium transition-smooth relative group ${
+              className={`font-medium transition-smooth relative group font-body ${
                 isScrolled 
                   ? 'text-firstclass-secondary hover:text-firstclass-primary' 
                   : 'text-white hover:text-white/80'
@@ -124,7 +120,7 @@ export default function Header() {
 
             <Link
               href="/#faq"
-              className={`font-medium transition-smooth relative group ${
+              className={`font-medium transition-smooth relative group font-body ${
                 isScrolled 
                   ? 'text-firstclass-secondary hover:text-firstclass-primary' 
                   : 'text-white hover:text-white/80'
@@ -138,7 +134,7 @@ export default function Header() {
 
             <Link
               href="/#contact"
-              className={`font-medium transition-smooth relative group ${
+              className={`font-medium transition-smooth relative group font-body ${
                 isScrolled 
                   ? 'text-firstclass-secondary hover:text-firstclass-primary' 
                   : 'text-white hover:text-white/80'
@@ -196,7 +192,7 @@ export default function Header() {
               <Link
                 href="/"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-firstclass-secondary hover:text-firstclass-primary font-medium transition-smooth px-4 py-2 rounded-lg hover:bg-firstclass-light/50 hover-lift"
+                className="text-firstclass-secondary hover:text-firstclass-primary font-medium transition-smooth px-4 py-2 rounded-lg hover:bg-firstclass-light/50 hover-lift font-body"
               >
                 {t('nav.home')}
               </Link>

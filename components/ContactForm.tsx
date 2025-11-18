@@ -85,9 +85,9 @@ export default function ContactForm() {
   if (isSuccess) {
     return (
       <div className="text-center py-8">
-        <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-        <h3 className="text-2xl font-bold mb-2 text-white">{t('form.success.title')}</h3>
-        <p className="text-gray-300">{t('form.success.message')}</p>
+        <CheckCircle className="w-16 h-16 text-yellow-500 mx-auto mb-4" />
+        <h3 className="text-2xl font-bold mb-2 text-gray-900 font-hero">{t('form.success.title')}</h3>
+        <p className="text-gray-600">{t('form.success.message')}</p>
       </div>
     )
   }
@@ -100,27 +100,27 @@ export default function ContactForm() {
       aria-label="Formulario de contacto"
     >
       <div>
-        <label htmlFor="fullName" className="block text-sm font-medium text-gray-300 mb-1">
+        <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-1 font-body">
           {t('form.fullName')}
         </label>
         <input
           type="text"
           id="fullName"
           {...register('fullName', { required: t('form.errors.required') })}
-          className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white transition-colors"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 bg-white text-gray-900 transition-colors"
           aria-required="true"
           aria-invalid={errors.fullName ? 'true' : 'false'}
           aria-describedby={errors.fullName ? 'fullname-error' : undefined}
         />
         {errors.fullName && (
-          <p id="fullname-error" className="text-red-400 text-sm mt-1" role="alert" aria-live="polite">
+          <p id="fullname-error" className="text-red-500 text-sm mt-1" role="alert" aria-live="polite">
             {errors.fullName.message}
           </p>
         )}
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
+        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1 font-body">
           {t('form.email')}
         </label>
         <input
@@ -133,42 +133,42 @@ export default function ContactForm() {
               message: t('form.errors.invalidEmail'),
             },
           })}
-          className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white transition-colors"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 bg-white text-gray-900 transition-colors"
           aria-required="true"
           aria-invalid={errors.email ? 'true' : 'false'}
           aria-describedby={errors.email ? 'email-error' : undefined}
           autoComplete="email"
         />
         {errors.email && (
-          <p id="email-error" className="text-red-400 text-sm mt-1" role="alert" aria-live="polite">
+          <p id="email-error" className="text-red-500 text-sm mt-1" role="alert" aria-live="polite">
             {errors.email.message}
           </p>
         )}
       </div>
 
       <div>
-        <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-1">
+        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1 font-body">
           {t('form.phone')}
         </label>
         <input
           type="tel"
           id="phone"
           {...register('phone', { required: t('form.errors.required') })}
-          className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white transition-colors"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 bg-white text-gray-900 transition-colors"
           aria-required="true"
           aria-invalid={errors.phone ? 'true' : 'false'}
           aria-describedby={errors.phone ? 'phone-error' : undefined}
           autoComplete="tel"
         />
         {errors.phone && (
-          <p id="phone-error" className="text-red-400 text-sm mt-1" role="alert" aria-live="polite">
+          <p id="phone-error" className="text-red-500 text-sm mt-1" role="alert" aria-live="polite">
             {errors.phone.message}
           </p>
         )}
       </div>
 
       <div>
-        <label htmlFor="dates" className="block text-sm font-medium text-gray-300 mb-1">
+        <label htmlFor="dates" className="block text-sm font-medium text-gray-700 mb-1 font-body">
           {t('form.dates')}
         </label>
         <input
@@ -176,7 +176,7 @@ export default function ContactForm() {
           id="dates"
           {...register('dates', { required: t('form.errors.required') })}
           placeholder={t('form.dates.placeholder')}
-          className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white transition-colors"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 bg-white text-gray-900 transition-colors"
           aria-required="true"
           aria-invalid={errors.dates ? 'true' : 'false'}
           aria-describedby={errors.dates ? 'dates-error' : undefined}
@@ -189,14 +189,14 @@ export default function ContactForm() {
           role="textbox"
         />
         {errors.dates && (
-          <p id="dates-error" className="text-red-400 text-sm mt-1" role="alert" aria-live="polite">
+          <p id="dates-error" className="text-red-500 text-sm mt-1" role="alert" aria-live="polite">
             {errors.dates.message}
           </p>
         )}
       </div>
 
       <div>
-        <label htmlFor="people" className="block text-sm font-medium text-gray-300 mb-1">
+        <label htmlFor="people" className="block text-sm font-medium text-gray-700 mb-1 font-body">
           {t('form.people')}
         </label>
         <input
@@ -204,7 +204,7 @@ export default function ContactForm() {
           id="people"
           {...register('people', { required: t('form.errors.required') })}
           placeholder={t('form.people.placeholder')}
-          className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white transition-colors"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 bg-white text-gray-900 transition-colors"
           aria-required="true"
           aria-invalid={errors.people ? 'true' : 'false'}
           aria-describedby={errors.people ? 'people-error' : undefined}
@@ -217,14 +217,14 @@ export default function ContactForm() {
           role="textbox"
         />
         {errors.people && (
-          <p id="people-error" className="text-red-400 text-sm mt-1" role="alert" aria-live="polite">
+          <p id="people-error" className="text-red-500 text-sm mt-1" role="alert" aria-live="polite">
             {errors.people.message}
           </p>
         )}
       </div>
 
       <div>
-        <label htmlFor="budget" className="block text-sm font-medium text-gray-300 mb-1">
+        <label htmlFor="budget" className="block text-sm font-medium text-gray-700 mb-1 font-body">
           {t('form.budget')}
         </label>
         <input
@@ -232,20 +232,20 @@ export default function ContactForm() {
           id="budget"
           {...register('budget', { required: t('form.errors.required') })}
           placeholder={t('form.budget.placeholder')}
-          className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white transition-colors"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 bg-white text-gray-900 transition-colors"
           aria-required="true"
           aria-invalid={errors.budget ? 'true' : 'false'}
           aria-describedby={errors.budget ? 'budget-error' : undefined}
         />
         {errors.budget && (
-          <p id="budget-error" className="text-red-400 text-sm mt-1" role="alert" aria-live="polite">
+          <p id="budget-error" className="text-red-500 text-sm mt-1" role="alert" aria-live="polite">
             {errors.budget.message}
           </p>
         )}
       </div>
 
       <div>
-        <label htmlFor="services" className="block text-sm font-medium text-gray-300 mb-1">
+        <label htmlFor="services" className="block text-sm font-medium text-gray-700 mb-1 font-body">
           {t('form.services')}
         </label>
         <textarea
@@ -253,32 +253,32 @@ export default function ContactForm() {
           rows={3}
           {...register('services', { required: t('form.errors.required') })}
           placeholder={t('form.services.placeholder')}
-          className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white transition-colors resize-none"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 bg-white text-gray-900 transition-colors resize-none"
           aria-required="true"
           aria-invalid={errors.services ? 'true' : 'false'}
           aria-describedby={errors.services ? 'services-error' : undefined}
         ></textarea>
         {errors.services && (
-          <p id="services-error" className="text-red-400 text-sm mt-1" role="alert" aria-live="polite">
+          <p id="services-error" className="text-red-500 text-sm mt-1" role="alert" aria-live="polite">
             {errors.services.message}
           </p>
         )}
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">
+        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1 font-body">
           {t('form.message')}
         </label>
         <textarea
           id="message"
           rows={3}
           {...register('message')}
-          className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white transition-colors resize-none"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 bg-white text-gray-900 transition-colors resize-none"
           aria-invalid={errors.message ? 'true' : 'false'}
           aria-describedby={errors.message ? 'message-error' : undefined}
         ></textarea>
         {errors.message && (
-          <p id="message-error" className="text-red-400 text-sm mt-1" role="alert" aria-live="polite">
+          <p id="message-error" className="text-red-500 text-sm mt-1" role="alert" aria-live="polite">
             {errors.message.message}
           </p>
         )}
@@ -286,7 +286,7 @@ export default function ContactForm() {
 
       {error && (
         <div 
-          className="bg-red-900/20 border border-red-800 text-red-300 px-4 py-3 rounded-lg"
+          className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg"
           role="alert"
           aria-live="assertive"
         >
@@ -297,7 +297,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 disabled:cursor-not-allowed"
+        className="w-full bg-yellow-600 hover:bg-yellow-700 disabled:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 disabled:cursor-not-allowed"
         aria-describedby={isSubmitting ? 'submit-status' : undefined}
       >
         {isSubmitting ? (

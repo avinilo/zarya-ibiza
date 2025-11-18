@@ -115,7 +115,7 @@ export default function TerminosCondiciones() {
           <div className="mt-8 pt-8 border-t border-gray-200 text-center">
             <Link 
               href="/" 
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200 hover-lift"
+              className="inline-flex items-center px-6 py-3 bg-yellow-600 text-white font-medium rounded-lg hover:bg-yellow-700 transition-colors duration-200 hover-lift"
             >
               {t('terms.backToHome')}
             </Link>

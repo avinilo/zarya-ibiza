@@ -32,9 +32,9 @@ export default function LanguageSelector({ currentLanguage, onLanguageChange, is
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium transition-colors duration-200 rounded-lg w-full md:w-auto ${
+        className={`flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium transition-colors duration-200 rounded-lg w-full md:w-auto font-body ${
           isScrolled || isMenuOpen 
-            ? 'text-firstclass-secondary hover:text-firstclass-primary hover:bg-firstclass-secondary/10' 
+            ? 'text-yellow-700 hover:text-yellow-600 hover:bg-yellow-700/10' 
             : 'text-white hover:text-white/80 hover:bg-white/10'
         }`}
         aria-label="Select language"
@@ -69,7 +69,7 @@ export default function LanguageSelector({ currentLanguage, onLanguageChange, is
                   setIsOpen(false)
                 }}
                 className={`w-full flex items-center gap-3 px-4 py-3 text-sm text-left hover:bg-gray-50 transition-colors duration-200 ${
-                  currentLanguage === language.code ? 'bg-blue-50 text-blue-600' : 'text-gray-700'
+                  currentLanguage === language.code ? 'bg-yellow-50 text-yellow-600' : 'text-gray-700'
                 }`}
               >
                 <ReactCountryFlag
@@ -81,9 +81,9 @@ export default function LanguageSelector({ currentLanguage, onLanguageChange, is
                   }}
                   title={language.name}
                 />
-                <span className="font-medium">{language.name}</span>
+                <span className="font-medium font-body">{language.name}</span>
                 {currentLanguage === language.code && (
-                  <div className="ml-auto w-2 h-2 bg-blue-600 rounded-full"></div>
+                  <div className="ml-auto w-2 h-2 bg-yellow-600 rounded-full"></div>
                 )}
               </button>
             ))}

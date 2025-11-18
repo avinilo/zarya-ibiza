@@ -145,7 +145,7 @@ export default function PoliticaPrivacidad() {
               </p>
               <p className="text-gray-700">
                 {t('privacy.section12.authority')}<br />
-                <a href={t('privacy.section12.link')} className="text-blue-600 hover:text-blue-800 underline">
+                <a href={t('privacy.section12.link')} className="text-yellow-600 hover:text-yellow-800 underline">
                   {t('privacy.section12.link')}
                 </a>
               </p>
@@ -155,7 +155,7 @@ export default function PoliticaPrivacidad() {
           <div className="mt-8 pt-8 border-t border-gray-200 text-center">
             <Link 
               href="/" 
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200 hover-lift"
+              className="inline-flex items-center px-6 py-3 bg-yellow-600 text-white font-medium rounded-lg hover:bg-yellow-700 transition-colors duration-200 hover-lift"
             >
               {t('privacy.backToHome')}
             </Link>

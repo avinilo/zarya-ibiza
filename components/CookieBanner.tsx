@@ -96,18 +96,18 @@ export default function CookieBanner() {
             // Main banner
             <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4">
               <div className="flex items-start gap-3 flex-1">
-                <div className="w-10 h-10 bg-firstclass-light rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <Cookie className="w-5 h-5 text-firstclass-primary" />
+                <div className="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <Cookie className="w-5 h-5 text-yellow-600" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-semibold text-firstclass-secondary mb-2">
+                  <h3 className="font-semibold text-yellow-700 mb-2">
                     {t('cookie.title')}
                   </h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
                     {t('cookie.description')}{' '}
                     <Link 
                       href="/politica-privacidad" 
-                      className="text-firstclass-primary hover:text-firstclass-secondary underline"
+                      className="text-yellow-600 hover:text-yellow-700 underline"
                     >
                       {t('cookie.privacyPolicy')}
                     </Link>.
@@ -125,13 +125,13 @@ export default function CookieBanner() {
                 </button>
                 <button
                   onClick={handleAcceptNecessary}
-                  className="px-2 xs:px-3 sm:px-4 py-2 text-xs xs:text-sm border border-firstclass-primary text-firstclass-primary rounded-lg hover:bg-firstclass-light transition-colors flex-1 sm:flex-none min-w-0"
+                  className="px-2 xs:px-3 sm:px-4 py-2 text-xs xs:text-sm border border-yellow-600 text-yellow-600 rounded-lg hover:bg-yellow-100 transition-colors flex-1 sm:flex-none min-w-0"
                 >
                   <span className="truncate">{t('cookie.necessaryOnly')}</span>
                 </button>
                 <button
                   onClick={handleAcceptAll}
-                  className="px-2 xs:px-3 sm:px-4 py-2 text-xs xs:text-sm bg-firstclass-primary text-white rounded-lg hover:bg-firstclass-secondary transition-colors flex-1 sm:flex-none min-w-0"
+                  className="px-2 xs:px-3 sm:px-4 py-2 text-xs xs:text-sm bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 transition-colors flex-1 sm:flex-none min-w-0"
                 >
                   <span className="truncate">{t('cookie.acceptAll')}</span>
                 </button>
@@ -141,7 +141,7 @@ export default function CookieBanner() {
             // Settings panel
             <div className="animate-fade-in">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-firstclass-secondary">
+                <h3 className="text-lg font-semibold text-yellow-700">
                   {t('cookie.settingsTitle')}
                 </h3>
                 <button
@@ -155,11 +155,11 @@ export default function CookieBanner() {
               <div className="space-y-4 mb-6">
                 {/* Necessary Cookies */}
                 <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
-                  <Shield className="w-5 h-5 text-firstclass-primary flex-shrink-0 mt-1" />
+                  <Shield className="w-5 h-5 text-yellow-600 flex-shrink-0 mt-1" />
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-2">
-                      <h4 className="font-medium text-firstclass-secondary">{t('cookie.necessaryCookies')}</h4>
-                      <div className="w-12 h-6 bg-firstclass-primary rounded-full flex items-center justify-end px-1">
+                      <h4 className="font-medium text-yellow-700 font-hero">{t('cookie.necessaryCookies')}</h4>
+                      <div className="w-12 h-6 bg-yellow-600 rounded-full flex items-center justify-end px-1">
                         <div className="w-4 h-4 bg-white rounded-full"></div>
                       </div>
                     </div>
@@ -171,15 +171,15 @@ export default function CookieBanner() {
 
                 {/* Analytics Cookies */}
                 <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
-                  <BarChart3 className="w-5 h-5 text-firstclass-primary flex-shrink-0 mt-1" />
+                  <BarChart3 className="w-5 h-5 text-yellow-600 flex-shrink-0 mt-1" />
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-2">
-                      <h4 className="font-medium text-firstclass-secondary">{t('cookie.analyticsCookies')}</h4>
+                      <h4 className="font-medium text-yellow-700 font-hero">{t('cookie.analyticsCookies')}</h4>
                       <button
                         onClick={() => handlePreferenceChange('analytics')}
                         className={`w-12 h-6 rounded-full flex items-center px-1 transition-colors ${
                           preferences.analytics 
-                            ? 'bg-firstclass-primary justify-end' 
+                            ? 'bg-yellow-600 justify-end' 
                             : 'bg-gray-300 justify-start'
                         }`}
                       >
@@ -194,15 +194,15 @@ export default function CookieBanner() {
 
                 {/* Tracking Cookies */}
                 <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
-                  <Eye className="w-5 h-5 text-firstclass-primary flex-shrink-0 mt-1" />
+                  <Eye className="w-5 h-5 text-yellow-600 flex-shrink-0 mt-1" />
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-2">
-                      <h4 className="font-medium text-firstclass-secondary">{t('cookie.trackingCookies')}</h4>
+                      <h4 className="font-medium text-yellow-700 font-hero">{t('cookie.trackingCookies')}</h4>
                       <button
                         onClick={() => handlePreferenceChange('tracking')}
                         className={`w-12 h-6 rounded-full flex items-center px-1 transition-colors ${
                           preferences.tracking 
-                            ? 'bg-firstclass-primary justify-end' 
+                            ? 'bg-yellow-600 justify-end' 
                             : 'bg-gray-300 justify-start'
                         }`}
                       >
@@ -225,7 +225,7 @@ export default function CookieBanner() {
                 </button>
                 <button
                   onClick={handleSaveSettings}
-                  className="px-4 py-2 text-sm bg-firstclass-primary text-white rounded-lg hover:bg-firstclass-secondary transition-colors"
+                  className="px-4 py-2 text-sm bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 transition-colors"
                 >
                   {t('cookie.savePreferences')}
                 </button>

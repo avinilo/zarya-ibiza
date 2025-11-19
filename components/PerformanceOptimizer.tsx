@@ -107,8 +107,8 @@ export function CriticalResourcesPreloader() {
       // Using system fonts via Tailwind CSS instead
       
       // Critical images (logo, hero images)
-      '/logo.webp',
-      '/og-image.png',
+      '/logo1.png',
+      '/hero.webp',
       
       // Critical JavaScript chunks (if any)
       // '/js/critical.js'

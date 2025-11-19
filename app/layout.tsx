@@ -64,10 +64,6 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
         
-        {/* Preload de recursos críticos para Core Web Vitals */}
-        <link rel="preload" href="/logo.webp" as="image" fetchPriority="high" />
-        <link rel="preload" href="/og-image.png" as="image" fetchPriority="low" />
-        
         {/* Resource hints adicionales para optimización */}
         <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
         <link rel="dns-prefetch" href="//unpkg.com" />

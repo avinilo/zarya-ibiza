@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Playfair_Display, Montserrat } from 'next/font/google'
+import './globals.css'
+import './animations.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Script from 'next/script'
@@ -49,8 +51,8 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <head>
-        {/* CSS crítico inline para eliminar render-blocking */}
-        <CriticalCSS />
+        {/* CSS crítico inline solo en producción */}
+        {process.env.NODE_ENV === 'production' && <CriticalCSS />}
         
         {/* Preload crítico para Core Web Vitals - Solo recursos inmediatamente necesarios */}
         
@@ -159,8 +161,8 @@ export default function RootLayout({
          />
        </head>
        <body className={`${inter.variable} ${playfairDisplay.variable} ${montserrat.variable} font-sans antialiased`}>
-        {/* Cargador CSS asíncrono para optimización */}
-        <AsyncCSSLoader />
+        {/* Cargador CSS asíncrono solo en producción */}
+        {process.env.NODE_ENV === 'production' && <AsyncCSSLoader />}
         
         {/* Google Analytics 4 Scripts - Cargar solo después de interacción */}
         {GA_TRACKING_ID && (

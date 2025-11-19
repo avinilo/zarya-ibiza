@@ -52,8 +52,39 @@ export default function PerformanceOptimizer({
       resourcePreloading.preconnect(service, true);
     });
 
-    
+    // Optimize images on page load
+    const optimizeImages = () => {
+      const images = document.querySelectorAll('img[data-optimize]');
+      images.forEach((img) => {
+        const imageElement = img as HTMLImageElement;
+        
+        // Add loading="lazy" if not already present
+        if (!imageElement.loading) {
+          imageElement.loading = 'lazy';
+        }
+        
+        // Add decoding="async" for better performance
+        if (!imageElement.decoding) {
+          imageElement.decoding = 'async';
+        }
+        
+        // Add fetchpriority for above-the-fold images
+        if (imageElement.getBoundingClientRect().top < window.innerHeight) {
+          imageElement.fetchPriority = 'high';
+        }
+      });
+    };
+
+    // Run image optimization after DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', optimizeImages);
+    } else {
+      optimizeImages();
+    }
+
+    // Cleanup function
     return () => {
+      document.removeEventListener('DOMContentLoaded', optimizeImages);
     };
   }, [preloadResources, criticalCSS]);
 
@@ -107,8 +138,8 @@ export function CriticalResourcesPreloader() {
       // Using system fonts via Tailwind CSS instead
       
       // Critical images (logo, hero images)
-      '/logo1.png',
-      '/hero.webp',
+      '/logo.webp',
+      '/og-image.png',
       
       // Critical JavaScript chunks (if any)
       // '/js/critical.js'

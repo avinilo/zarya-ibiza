@@ -3,23 +3,10 @@
 import { useState, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import dynamic from 'next/dynamic'
-import { Home, Phone, Mail } from '@/components/OptimizedIcons'
-import { LazyIcon, Star, Car, Shield, Sparkles, CheckCircle, MapPin, Users, Instagram, Anchor } from '@/components/OptimizedIcons'
-
-// Dynamic imports para componentes no críticos
-const ContactForm = dynamic(() => import('@/components/ContactForm'), { 
-  ssr: true,
-  loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg" />
-})
-const FAQ = dynamic(() => import('@/components/FAQ'), { 
-  ssr: true,
-  loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg" />
-})
-const Testimonials = dynamic(() => import('@/components/Testimonials'), { 
-  ssr: true,
-  loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg" />
-})
+import { Home, Calendar, Star, Car, Shield, Sparkles, CheckCircle, Phone, Mail, MapPin, Users, ChevronLeft, ChevronRight, Instagram, Anchor } from 'lucide-react'
+import ContactForm from '@/components/ContactForm'
+import FAQ from '@/components/FAQ'
+import Testimonials from '@/components/Testimonials'
 import LanguageSelector from '@/components/LanguageSelectorOptimized'
 import { useLanguage } from '@/hooks/useLanguageOptimized'
 
@@ -40,7 +27,7 @@ function HeroSection() {
           loading="eager"
           sizes="100vw"
           fetchPriority="high"
-          quality={50}
+          quality={60}
         />
       </div>
       
@@ -270,8 +257,8 @@ export default function HomeContent() {
                       fill
                       className="object-cover"
                       loading="lazy"
-                      sizes="(max-width: 640px) 320px, (max-width: 768px) 480px, (max-width: 1024px) 50vw, 33vw"
-                      quality={50}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      quality={60}
                     />
                     <div className="absolute bottom-4 left-4 text-white">
                       <Icon className="w-8 h-8 mb-2" />
@@ -393,9 +380,8 @@ export default function HomeContent() {
                 height={400}
                 className="rounded-2xl"
                 loading="lazy"
-                sizes="(max-width: 640px) 320px, (max-width: 768px) 480px, (max-width: 1024px) 600px, 600px"
-                quality={50}
-                priority={false}
+                sizes="(min-width: 1024px) 600px, (min-width: 768px) 480px, 100vw"
+                quality={60}
               />
             </div>
           </div>

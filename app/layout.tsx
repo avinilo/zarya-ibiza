@@ -16,8 +16,6 @@ import PerformanceOptimizer, { CriticalResourcesPreloader } from '@/components/P
 import ScrollRestoration from '@/components/ScrollRestoration'
 import { generateMultilingualMetadata, SUPPORTED_LANGUAGES } from '@/lib/multilingual-seo'
 import ClientComponentsWrapper from '@/components/ClientComponentsWrapper'
-import CriticalCSS from '@/components/CriticalCSS'
-import AsyncCSSLoader from '@/components/AsyncCSSLoader'
 
 const inter = Inter({ 
   subsets: ['latin'], 
@@ -51,9 +49,6 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <head>
-        {/* CSS crítico inline solo en producción */}
-        {process.env.NODE_ENV === 'production' && <CriticalCSS />}
-        
         {/* Preload crítico para Core Web Vitals - Solo recursos inmediatamente necesarios */}
         
         {/* DNS prefetch y preconnect para recursos externos optimizados */}
@@ -63,6 +58,10 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
+        
+        {/* Preload de recursos críticos para Core Web Vitals */}
+        <link rel="preload" href="/logo.webp" as="image" fetchPriority="high" />
+        <link rel="preload" href="/og-image.png" as="image" fetchPriority="low" />
         
         {/* Resource hints adicionales para optimización */}
         <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
@@ -157,70 +156,40 @@ export default function RootLayout({
          />
        </head>
        <body className={`${inter.variable} ${playfairDisplay.variable} ${montserrat.variable} font-sans antialiased`}>
-        {/* Cargador CSS asíncrono solo en producción */}
-        {process.env.NODE_ENV === 'production' && <AsyncCSSLoader />}
-        
-        {/* Google Analytics 4 Scripts - Cargar solo después de interacción */}
+        {/* Google Analytics 4 Scripts */}
         {GA_TRACKING_ID && (
           <>
-            <Script id="google-analytics-init" strategy="afterInteractive">
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+              strategy="lazyOnload"
+            />
+            <Script id="google-analytics" strategy="lazyOnload">
               {`
-                // Cargar GA solo después de la primera interacción del usuario
-                let gaLoaded = false;
-                function loadGA() {
-                  if (gaLoaded) return;
-                  gaLoaded = true;
-                  
-                  var script = document.createElement('script');
-                  script.src = 'https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}';
-                  script.async = true;
-                  document.head.appendChild(script);
-                  
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-                  gtag('config', '${GA_TRACKING_ID}', {
-                    page_path: window.location.pathname,
-                    send_page_view: true
-                  });
-                }
-                
-                // Cargar en la primera interacción
-                document.addEventListener('click', loadGA, { once: true });
-                document.addEventListener('scroll', loadGA, { once: true });
-                document.addEventListener('touchstart', loadGA, { once: true });
-                
-                // Fallback: cargar después de 5 segundos
-                setTimeout(loadGA, 5000);
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_TRACKING_ID}', {
+                  page_path: window.location.pathname,
+                });
               `}
             </Script>
           </>
         )}
         
-        {/* Service Worker Registration - Cargar después de la interacción */}
+        {/* Service Worker Registration */}
         <Script id="sw-registration" strategy="afterInteractive">
           {`
-            // Registrar service worker después de la primera interacción
-            let swRegistered = false;
-            function registerSW() {
-              if (swRegistered || !('serviceWorker' in navigator)) return;
-              swRegistered = true;
-              
-              navigator.serviceWorker.register('/sw.js')
-                .then(function(registration) {
-                  console.log('✅ Service Worker registrado correctamente:', registration.scope);
-                })
-                .catch(function(error) {
-                  console.log('❌ Error al registrar Service Worker:', error);
-                });
+            if ('serviceWorker' in navigator) {
+              window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                  .then(function(registration) {
+                    console.log('✅ Service Worker registrado correctamente:', registration.scope);
+                  })
+                  .catch(function(error) {
+                    console.log('❌ Error al registrar Service Worker:', error);
+                  });
+              });
             }
-            
-            // Registrar en la primera interacción
-            document.addEventListener('click', registerSW, { once: true });
-            document.addEventListener('scroll', registerSW, { once: true });
-            
-            // Fallback: registrar después de 3 segundos
-            setTimeout(registerSW, 3000);
           `}
         </Script>
         

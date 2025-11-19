@@ -9,16 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "critters": "^0.0.23",
+    "framer-motion": "^10.18.0",
     "lucide-react": "^0.303.0",
     "next": "^15.0.3",
     "nodemailer": "^6.9.7",
     "react": "^18.2.0",
     "react-country-flag": "^3.1.0",
     "react-dom": "^18.2.0",
-    "react-hook-form": "^7.49.2"
+    "react-hook-form": "^7.49.2",
+    "web-vitals": "^5.1.0"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^15.0.3",
     "@types/node": "^20.10.6",
     "@types/nodemailer": "^6.4.14",
     "@types/react": "^18.2.46",
@@ -32,12 +34,12 @@
   },
   "browserslist": {
     "production": [
-      "chrome >= 105",
-      "safari >= 16",
-      "ios_saf >= 16",
-      "android >= 105",
-      "firefox >= 105",
-      "edge >= 105"
+      "chrome >= 100",
+      "safari >= 15",
+      "ios_saf >= 15",
+      "android >= 100",
+      "firefox >= 100",
+      "edge >= 100"
     ],
     "development": [
       "last 1 chrome version",

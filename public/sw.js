@@ -20,6 +20,13 @@ const CRITICAL_URLS = [
 // Recursos estáticos para cachear
 const STATIC_RESOURCES = [
   '/favicon.ico',
+  '/favicon-16x16.png',
+  '/favicon-32x32.png',
+  '/favicon-96x96.png',
+  '/apple-icon-180x180.png',
+  '/android-icon-192x192.png',
+  '/ms-icon-144x144.png',
+  '/og-image.png',
   '/logo1.png',
   '/manifest.json'
 ]
@@ -30,29 +37,15 @@ self.addEventListener('install', event => {
   
   event.waitUntil(
     Promise.all([
-      // Cache de páginas críticas con manejo de errores individual
+      // Cache de páginas críticas
       caches.open(CACHE_NAME).then(cache => {
         console.log('📦 Service Worker: Cacheando páginas críticas')
-        return Promise.allSettled(
-          CRITICAL_URLS.map(url => 
-            cache.add(url).catch(err => {
-              console.warn(`⚠️ Service Worker: Error cacheando página ${url}:`, err.message)
-              return Promise.resolve() // Continuar con el siguiente
-            })
-          )
-        )
+        return cache.addAll(CRITICAL_URLS)
       }),
-      // Cache de recursos estáticos con manejo de errores individual
+      // Cache de recursos estáticos
       caches.open(STATIC_CACHE).then(cache => {
         console.log('🖼️ Service Worker: Cacheando recursos estáticos')
-        return Promise.allSettled(
-          STATIC_RESOURCES.map(resource => 
-            cache.add(resource).catch(err => {
-              console.warn(`⚠️ Service Worker: Error cacheando recurso ${resource}:`, err.message)
-              return Promise.resolve() // Continuar con el siguiente
-            })
-          )
-        )
+        return cache.addAll(STATIC_RESOURCES)
       })
     ]).then(() => {
       console.log('✅ Service Worker: Instalación completada')

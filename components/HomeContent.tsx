@@ -26,6 +26,8 @@ function HeroSection() {
           priority
           loading="eager"
           sizes="100vw"
+          fetchPriority="high"
+          quality={60}
         />
       </div>
       
@@ -256,6 +258,7 @@ export default function HomeContent() {
                       className="object-cover"
                       loading="lazy"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      quality={60}
                     />
                     <div className="absolute bottom-4 left-4 text-white">
                       <Icon className="w-8 h-8 mb-2" />
@@ -373,10 +376,12 @@ export default function HomeContent() {
               <Image
                 src="/team.webp"
                 alt="Nuestro equipo - First Class Sensations"
-                width={1200}
-                height={800}
+                width={600}
+                height={400}
                 className="rounded-2xl"
                 loading="lazy"
+                sizes="(min-width: 1024px) 600px, (min-width: 768px) 480px, 100vw"
+                quality={60}
               />
             </div>
           </div>

@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Home, Phone, Mail, ArrowLeft, Search, Anchor, Utensils, Crown, Users } from 'lucide-react'
+import { Home, Phone, Mail, ArrowLeft, Search, Anchor, Utensils, Crown, Users } from '@/components/OptimizedIcons'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import AccessibleBreadcrumbs from '@/components/AccessibleBreadcrumbs'

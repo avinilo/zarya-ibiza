@@ -1,7 +1,5 @@
 import type { Metadata } from 'next'
 import { Inter, Playfair_Display, Montserrat } from 'next/font/google'
-import './globals.css'
-import './animations.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Script from 'next/script'
@@ -16,6 +14,8 @@ import PerformanceOptimizer, { CriticalResourcesPreloader } from '@/components/P
 import ScrollRestoration from '@/components/ScrollRestoration'
 import { generateMultilingualMetadata, SUPPORTED_LANGUAGES } from '@/lib/multilingual-seo'
 import ClientComponentsWrapper from '@/components/ClientComponentsWrapper'
+import CriticalCSS from '@/components/CriticalCSS'
+import AsyncCSSLoader from '@/components/AsyncCSSLoader'
 
 const inter = Inter({ 
   subsets: ['latin'], 
@@ -49,6 +49,9 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <head>
+        {/* CSS crítico inline para eliminar render-blocking */}
+        <CriticalCSS />
+        
         {/* Preload crítico para Core Web Vitals - Solo recursos inmediatamente necesarios */}
         
         {/* DNS prefetch y preconnect para recursos externos optimizados */}
@@ -156,6 +159,9 @@ export default function RootLayout({
          />
        </head>
        <body className={`${inter.variable} ${playfairDisplay.variable} ${montserrat.variable} font-sans antialiased`}>
+        {/* Cargador CSS asíncrono para optimización */}
+        <AsyncCSSLoader />
+        
         {/* Google Analytics 4 Scripts - Cargar solo después de interacción */}
         {GA_TRACKING_ID && (
           <>

@@ -91,8 +91,6 @@ export default function robots(): MetadataRoute.Robots {
     ],
     sitemap: [
       'https://firstclassensations.com/sitemap.xml',
-      'https://firstclassensations.com/sitemap-pages.xml',
-      'https://firstclassensations.com/sitemap-services.xml',
     ],
     host: 'https://firstclassensations.com',
   }

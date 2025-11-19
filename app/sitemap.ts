@@ -17,7 +17,7 @@ const PAGES_METADATA = [
     path: '',
     type: 'homepage',
     lastModified: new Date('2024-01-15'),
-    images: ['/og-image.png', '/hero-image.jpg']
+    images: ['/og-image.png']
   },
   {
     path: '/politica-privacidad',

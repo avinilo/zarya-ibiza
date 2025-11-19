@@ -197,15 +197,15 @@ export function generateMultilingualMetadata(
       },
     },
     
-    // Alternates
+    // Alternates - Solo canonical por ahora, sin hreflang hasta tener rutas /en /ru implementadas
     alternates: {
-      canonical: `${langConfig.url}/${page === 'home' ? '' : page}`,
-      languages: Object.fromEntries(
-        Object.entries(SUPPORTED_LANGUAGES).map(([code, config]) => [
-          code,
-          `${config.url}/${page === 'home' ? '' : page}`
-        ])
-      )
+      canonical: `${langConfig.url}/${page === 'home' ? '' : page}`
+      // languages: Object.fromEntries(
+      //   Object.entries(SUPPORTED_LANGUAGES).map(([code, config]) => [
+      //     code,
+      //     `${config.url}/${page === 'home' ? '' : page}`
+      //   ])
+      // )
     }
   }
 }

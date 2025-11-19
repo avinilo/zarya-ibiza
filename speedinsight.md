@@ -1,4 +1,5 @@
-73
+Diagnostica problemas de rendimiento
+97
 Rendimiento
 91
 Accesibilidad
@@ -6,17 +7,17 @@ Accesibilidad
 Prácticas recomendadas
 100
 SEO
-73
+97
 FCP
-+5
++10
 LCP
-+5
++24
 TBT
 +30
 CLS
 +25
 SI
-+9
++8
 Rendimiento
 Los valores son estimaciones y pueden variar. La puntuación del rendimiento se calcula directamente a partir de estas métricas.Ver calculadora.
 0–49
@@ -27,16 +28,16 @@ Final Screenshot
 Métricas
 Ampliar vista
 First Contentful Paint
-3,0 s
+0,9 s
 Renderizado del mayor elemento con contenido
-5,6 s
+2,1 s
 Total Blocking Time
-10 ms
+70 ms
 Cambios de diseño acumulados
 0
 Speed Index
-3,5 s
-Captured at 19 nov 2025, 1:16 CET
+3,9 s
+Captured at 19 nov 2025, 1:32 CET
 Moto G Power emulado with Lighthouse 13.0.1
 Sesión de una sola página
 Carga inicial de la página
@@ -63,30 +64,34 @@ TBT
 
 CLS
 Estadísticas
-Solicitudes que bloquean el renderizado Ahorro estimado de 1320 ms
+Solicitudes que bloquean el renderizado Ahorro estimado de 130 ms
 Las solicitudes están bloqueando el renderizado inicial de la página, lo que puede retrasar el LCP. Si se posponen o se insertan, estas solicitudes de red pueden salir de la ruta crítica.LCPFCPSin puntuar
 URL
 Tamaño de la transferencia
 Duración
 vercel.app Propio
-9,8 KiB	170 ms
-…css/c42d675d1e3c9be2.css(zarya-ibiza.vercel.app)
+9,8 KiB	160 ms
+…css/2977b76bb5fbdcc1.css(zarya-ibiza.vercel.app)
 9,8 KiB
-170 ms
-Google Fonts cdn 
-1,5 KiB	750 ms
-/css2?family=…(fonts.googleapis.com)
-1,5 KiB
-750 ms
+160 ms
+Redistribución forzada
+Se produce un reflow forzado cuando JavaScript consulta propiedades geométricas (como offsetWidth) después de que los estilos hayan sido invalidados por un cambio en el estado del DOM. Esto puede provocar un rendimiento deficiente. Consulta más información sobre los reflows forzados y las posibles mitigaciones.Sin puntuar
+Llamada a función principal
+Tiempo total de redistribución
+…chunks/vendors-cee198f2f09928d3.js:2:410698(zarya-ibiza.vercel.app)
+60 ms
+Fuente
+Tiempo total de redistribución
+…app/page-4052d615…e3.js:1:13680(zarya-ibiza.vercel.app)
+60 ms
+[sin asignación]
+8 ms
 Árbol de dependencia de red
 Evita encadenar solicitudes críticas reduciendo la longitud de las cadenas, disminuyendo el tamaño de los recursos o posponiendo la descarga de recursos innecesarios para mejorar la carga de la página.LCPSin puntuar
-Latencia de ruta crítica máxima: 149 ms
+Latencia de ruta crítica máxima: 1013 ms
 Navegación inicial
-https://zarya-ibiza.vercel.app - 85 ms, 10,39 KiB
-/css2?family=…(fonts.googleapis.com) - 86 ms, 1,45 KiB
-…v31/JTUSjIg1_….woff2(fonts.gstatic.com) - 149 ms, 35,47 KiB
-…v40/nuFiD-vYS….woff2(fonts.gstatic.com) - 148 ms, 38,35 KiB
-…css/c42d675d1e3c9be2.css(zarya-ibiza.vercel.app) - 138 ms, 9,80 KiB
+https://zarya-ibiza.vercel.app - 691 ms, 10,22 KiB
+…css/2977b76bb5fbdcc1.css(zarya-ibiza.vercel.app) - 1013 ms, 9,78 KiB
 Orígenes preconectados
 Las sugerencias para establecer conexión previamente ayudan al navegador a establecer una conexión antes de que se cargue la página, lo que ahorra tiempo al hacer la primera solicitud a ese origen. A continuación se indican los orígenes con los que la página ha establecido conexión previamente.
 No hay orígenes con los que se haya establecido conexión previamente
@@ -102,80 +107,31 @@ JSDelivr CDN cdn
 17 KiB
 …4x3/es.svg(cdn.jsdelivr.net)
 7d
-15 KiB
+16 KiB
 …4x3/gb.svg(cdn.jsdelivr.net)
 7d
 1 KiB
-Mejorar la entrega de imágenes Ahorro estimado de 115 KiB
-Si se reduce el tiempo de descarga de las imágenes, se puede mejorar el tiempo de carga percibido de la página y el LCP. Más información sobre la optimización del tamaño de las imágenesLCPFCPSin puntuar
-URL
-Tamaño del recurso
-Ahorro estimado
-vercel.app Propio
-171,9 KiB	114,6 KiB
-Nuestro equipo - First Class Sensations
-<img alt="Nuestro equipo - First Class Sensations" loading="lazy" width="1200" height="800" decoding="async" data-nimg="1" class="rounded-2xl" srcset="/_next/image?url=%2Fteam.webp&amp;w=1200&amp;q=75 1x, /_next/image?url=%2Fteam.web…" src="/_next/image?url=%2Fteam.webp&amp;w=3840&amp;q=75" style="color: transparent;">
-/_next/image?url=%2Fteam.webp&w=3840&q=75(zarya-ibiza.vercel.app)
-72,6 KiB
-49,3 KiB
-Este archivo de imagen es más grande de lo necesario (670x893) para las dimensiones mostradas (380x506). Usa imágenes adaptables para reducir el tamaño de descarga de la imagen.
-49,3 KiB
-Villa Rentals
-<img alt="Villa Rentals" loading="lazy" decoding="async" data-nimg="fill" class="object-cover" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" srcset="/_next/image?url=%2Fvillas.webp&amp;w=256&amp;q=75 256w, /_next/image?url=%2Fvilla…" src="https://zarya-ibiza.vercel.app/_next/image?url=%2Fvillas.webp&amp;w=750&amp;q=75" style="position: absolute; height: 100%; width: 100%; inset: 0px;">
-/_next/image?url=%2Fvillas.webp&w=750&q=75(zarya-ibiza.vercel.app)
-23,4 KiB
-18,7 KiB
-Este archivo de imagen es más grande de lo necesario (750x449) para las dimensiones mostradas (320x213). Usa imágenes adaptables para reducir el tamaño de descarga de la imagen.
-18,7 KiB
-VIP Table Reservations
-<img alt="VIP Table Reservations" loading="lazy" decoding="async" data-nimg="fill" class="object-cover" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" srcset="/_next/image?url=%2Fmesas-vip.webp&amp;w=256&amp;q=75 256w, /_next/image?url=%2Fme…" src="https://zarya-ibiza.vercel.app/_next/image?url=%2Fmesas-vip.webp&amp;w=750&amp;q=75" style="position: absolute; height: 100%; width: 100%; inset: 0px;">
-/_next/image?url=%2Fmesas-vip.webp&w=750&q=75(zarya-ibiza.vercel.app)
-18,3 KiB
-12,8 KiB
-Este archivo de imagen es más grande de lo necesario (750x450) para las dimensiones mostradas (320x320). Usa imágenes adaptables para reducir el tamaño de descarga de la imagen.
-12,8 KiB
-V Class Vans with VTC License
-<img alt="V Class Vans with VTC License" loading="lazy" decoding="async" data-nimg="fill" class="object-cover" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" srcset="/_next/image?url=%2Ftransporte.webp&amp;w=256&amp;q=75 256w, /_next/image?url=%2Ft…" src="https://zarya-ibiza.vercel.app/_next/image?url=%2Ftransporte.webp&amp;w=750&amp;q=…" style="position: absolute; height: 100%; width: 100%; inset: 0px;">
-/_next/image?url=%2Ftransporte.webp&w=750&q=75(zarya-ibiza.vercel.app)
-18,2 KiB
-12,7 KiB
-Este archivo de imagen es más grande de lo necesario (750x450) para las dimensiones mostradas (320x320). Usa imágenes adaptables para reducir el tamaño de descarga de la imagen.
-12,7 KiB
-Security and Escort
-<img alt="Security and Escort" loading="lazy" decoding="async" data-nimg="fill" class="object-cover" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" srcset="/_next/image?url=%2Fseguridad.webp&amp;w=256&amp;q=75 256w, /_next/image?url=%2Fse…" src="https://zarya-ibiza.vercel.app/_next/image?url=%2Fseguridad.webp&amp;w=750&amp;q=75" style="position: absolute; height: 100%; width: 100%; inset: 0px;">
-/_next/image?url=%2Fseguridad.webp&w=750&q=75(zarya-ibiza.vercel.app)
-15,1 KiB
-12,1 KiB
-Este archivo de imagen es más grande de lo necesario (750x449) para las dimensiones mostradas (320x213). Usa imágenes adaptables para reducir el tamaño de descarga de la imagen.
-12,1 KiB
-Luxury waterfront view in Ibiza
-<img alt="Luxury waterfront view in Ibiza" loading="eager" decoding="async" data-nimg="fill" class="object-cover" sizes="100vw" srcset="/_next/image?url=%2Fhero.webp&amp;w=640&amp;q=75 640w, /_next/image?url=%2Fhero.we…" src="https://zarya-ibiza.vercel.app/_next/image?url=%2Fhero.webp&amp;w=750&amp;q=75" style="position: absolute; height: 100%; width: 100%; inset: 0px;">
-/_next/image?url=%2Fhero.webp&w=750&q=75(zarya-ibiza.vercel.app)
-24,2 KiB
-9,2 KiB
-Aumentar el factor de compresión de la imagen podría mejorar su tamaño de descarga.
-9,2 KiB
 JavaScript antiguo Ahorro estimado de 12 KiB
 Los polyfills y los transforms permiten que los navegadores antiguos utilicen las nuevas funciones de JavaScript. Sin embargo, muchos de estos polyfills y transforms no son necesarios para los navegadores modernos. Te recomendamos que modifiques tu proceso de compilación de JavaScript para que no transpile las funciones de Baseline, a menos que sepas que debes admitir navegadores antiguos. Descubre por qué la mayoría de los sitios pueden implementar código ES6+ sin transpilación.LCPFCPSin puntuar
 URL
 Bytes desperdiciados
 vercel.app Propio
 12,1 KiB
-…chunks/vendors-251f67e3bd2948f0.js(zarya-ibiza.vercel.app)
+…chunks/vendors-cee198f2f09928d3.js(zarya-ibiza.vercel.app)
 12,1 KiB
-…chunks/vendors-251f67e3bd2948f0.js:1:14817(zarya-ibiza.vercel.app)
+…chunks/vendors-cee198f2f09928d3.js:1:14817(zarya-ibiza.vercel.app)
 Array.prototype.at
-…chunks/vendors-251f67e3bd2948f0.js:1:14205(zarya-ibiza.vercel.app)
+…chunks/vendors-cee198f2f09928d3.js:1:14205(zarya-ibiza.vercel.app)
 Array.prototype.flat
-…chunks/vendors-251f67e3bd2948f0.js:1:14318(zarya-ibiza.vercel.app)
+…chunks/vendors-cee198f2f09928d3.js:1:14318(zarya-ibiza.vercel.app)
 Array.prototype.flatMap
-…chunks/vendors-251f67e3bd2948f0.js:1:14694(zarya-ibiza.vercel.app)
+…chunks/vendors-cee198f2f09928d3.js:1:14694(zarya-ibiza.vercel.app)
 Object.fromEntries
-…chunks/vendors-251f67e3bd2948f0.js:1:14952(zarya-ibiza.vercel.app)
+…chunks/vendors-cee198f2f09928d3.js:1:14952(zarya-ibiza.vercel.app)
 Object.hasOwn
-…chunks/vendors-251f67e3bd2948f0.js:1:13947(zarya-ibiza.vercel.app)
+…chunks/vendors-cee198f2f09928d3.js:1:13947(zarya-ibiza.vercel.app)
 String.prototype.trimEnd
-…chunks/vendors-251f67e3bd2948f0.js:1:13862(zarya-ibiza.vercel.app)
+…chunks/vendors-cee198f2f09928d3.js:1:13862(zarya-ibiza.vercel.app)
 String.prototype.trimStart
 Causantes de los cambios de diseño
 Los cambios de diseño se producen cuando los elementos se mueven sin que el usuario interactúe con ellos. Investiga las causas de los cambios de diseño, como la adición o eliminación de elementos o el cambio de fuentes a medida que se carga la página.CLSSin puntuar
@@ -186,6 +142,21 @@ Total
 EN
 <div class="lg:hidden flex items-center gap-3">
 0,000
+Optimizar tamaño del DOM
+Un DOM de gran tamaño puede aumentar la duración de los cálculos de estilo y redistribución del diseño, lo que afecta a la capacidad de respuesta de la página. Un DOM de gran tamaño también aumenta el uso de memoria. Consulta cómo evitar un tamaño de DOM excesivo.Sin puntuar
+Estadística
+Elemento
+Valor
+Total de elementos
+858
+Profundidad de DOM
+ul.space-y-2 > li.flex > svg.lucide > path
+<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14">
+11
+La mayoría de los elementos secundarios
+body.__variable_f367f3
+<body class="__variable_f367f3 __variable_0a80b4 __variable_069ab3 font-sans antialiased">
+25
 Desglose de LCP
 Cada subparte tiene estrategias de mejora específicas. Lo ideal es que la mayor parte del tiempo de LCP se dedique a cargar los recursos, no a los retrasos.LCPSin puntuar
 Subparte
@@ -193,7 +164,7 @@ Duración
 Time to First Byte
 0 ms
 Retraso de renderizado de elementos
-250 ms
+1060 ms
 First Class Sensations
 <span class="ml-2 md:ml-3 text-[10px] sm:text-xs md:text-xl font-bold transition-smooth…">
 Terceros
@@ -202,25 +173,14 @@ Tercero
 Tamaño de la transferencia
 Tiempo del hilo principal
 Google Tag Manager tag-manager 
-120 KiB	44 ms
+120 KiB	111 ms
 /gtag/js?id=G-XXXXXXXXXX(www.googletagmanager.com)
 120 KiB
-44 ms
-Google Fonts cdn 
-75 KiB	0 ms
-…v40/nuFiD-vYS….woff2(fonts.gstatic.com)
-38 KiB
-0 ms
-…v31/JTUSjIg1_….woff2(fonts.gstatic.com)
-35 KiB
-0 ms
-/css2?family=…(fonts.googleapis.com)
-1 KiB
-0 ms
+111 ms
 JSDelivr CDN cdn 
 17 KiB	0 ms
 …4x3/es.svg(cdn.jsdelivr.net)
-15 KiB
+16 KiB
 0 ms
 …4x3/gb.svg(cdn.jsdelivr.net)
 1 KiB
@@ -238,22 +198,34 @@ URL
 Tamaño de la transferencia
 Ahorro estimado
 vercel.app Propio
-185,9 KiB	110,8 KiB
-…chunks/vendors-251f67e3bd2948f0.js(zarya-ibiza.vercel.app)
+185,9 KiB	111,2 KiB
+…chunks/vendors-cee198f2f09928d3.js(zarya-ibiza.vercel.app)
 185,9 KiB
-110,8 KiB
+111,2 KiB
 Google Tag Manager tag-manager 
-119,3 KiB	53,9 KiB
+119,3 KiB	54,1 KiB
 /gtag/js?id=G-XXXXXXXXXX(www.googletagmanager.com)
 119,3 KiB
-53,9 KiB
-Evita tareas largas del hilo principal 1 tarea larga encontrada
+54,1 KiB
+Evita tareas largas del hilo principal 4 tareas largas encontradas
 Enumera las tareas más largas del hilo principal, lo que es útil para identificar las que más contribuyen a la latencia. Consulta cómo evitar tareas largas del hilo principalTBTSin puntuar
 URL
 Hora de inicio
 Duración
 vercel.app Propio
-64 ms
-…chunks/vendors-251f67e3bd2948f0.js(zarya-ibiza.vercel.app)
-6488 ms
-64 ms
+215 ms
+…chunks/vendors-cee198f2f09928d3.js(zarya-ibiza.vercel.app)
+4950 ms
+128 ms
+…chunks/vendors-cee198f2f09928d3.js(zarya-ibiza.vercel.app)
+5260 ms
+87 ms
+Google Tag Manager tag-manager 
+132 ms
+/gtag/js?id=G-XXXXXXXXXX(www.googletagmanager.com)
+6298 ms
+82 ms
+/gtag/js?id=G-XXXXXXXXXX(www.googletagmanager.com)
+6380 ms
+50 ms
+Consulta más información sobre el rendimiento de tu aplicación. Estos datos no afectan directamente a la puntuación del rendimiento.

@@ -156,40 +156,67 @@ export default function RootLayout({
          />
        </head>
        <body className={`${inter.variable} ${playfairDisplay.variable} ${montserrat.variable} font-sans antialiased`}>
-        {/* Google Analytics 4 Scripts */}
+        {/* Google Analytics 4 Scripts - Cargar solo después de interacción */}
         {GA_TRACKING_ID && (
           <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-              strategy="lazyOnload"
-            />
-            <Script id="google-analytics" strategy="lazyOnload">
+            <Script id="google-analytics-init" strategy="afterInteractive">
               {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${GA_TRACKING_ID}', {
-                  page_path: window.location.pathname,
-                });
+                // Cargar GA solo después de la primera interacción del usuario
+                let gaLoaded = false;
+                function loadGA() {
+                  if (gaLoaded) return;
+                  gaLoaded = true;
+                  
+                  var script = document.createElement('script');
+                  script.src = 'https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}';
+                  script.async = true;
+                  document.head.appendChild(script);
+                  
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${GA_TRACKING_ID}', {
+                    page_path: window.location.pathname,
+                    send_page_view: true
+                  });
+                }
+                
+                // Cargar en la primera interacción
+                document.addEventListener('click', loadGA, { once: true });
+                document.addEventListener('scroll', loadGA, { once: true });
+                document.addEventListener('touchstart', loadGA, { once: true });
+                
+                // Fallback: cargar después de 5 segundos
+                setTimeout(loadGA, 5000);
               `}
             </Script>
           </>
         )}
         
-        {/* Service Worker Registration */}
+        {/* Service Worker Registration - Cargar después de la interacción */}
         <Script id="sw-registration" strategy="afterInteractive">
           {`
-            if ('serviceWorker' in navigator) {
-              window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/sw.js')
-                  .then(function(registration) {
-                    console.log('✅ Service Worker registrado correctamente:', registration.scope);
-                  })
-                  .catch(function(error) {
-                    console.log('❌ Error al registrar Service Worker:', error);
-                  });
-              });
+            // Registrar service worker después de la primera interacción
+            let swRegistered = false;
+            function registerSW() {
+              if (swRegistered || !('serviceWorker' in navigator)) return;
+              swRegistered = true;
+              
+              navigator.serviceWorker.register('/sw.js')
+                .then(function(registration) {
+                  console.log('✅ Service Worker registrado correctamente:', registration.scope);
+                })
+                .catch(function(error) {
+                  console.log('❌ Error al registrar Service Worker:', error);
+                });
             }
+            
+            // Registrar en la primera interacción
+            document.addEventListener('click', registerSW, { once: true });
+            document.addEventListener('scroll', registerSW, { once: true });
+            
+            // Fallback: registrar después de 3 segundos
+            setTimeout(registerSW, 3000);
           `}
         </Script>
         

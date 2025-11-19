@@ -3,10 +3,22 @@
 import { useState, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Home, Calendar, Star, Car, Shield, Sparkles, CheckCircle, Phone, Mail, MapPin, Users, ChevronLeft, ChevronRight, Instagram, Anchor } from 'lucide-react'
-import ContactForm from '@/components/ContactForm'
-import FAQ from '@/components/FAQ'
-import Testimonials from '@/components/Testimonials'
+import dynamic from 'next/dynamic'
+import { Home, Star, Car, Shield, Sparkles, CheckCircle, Phone, Mail, MapPin, Users, Instagram, Anchor } from 'lucide-react'
+
+// Dynamic imports para componentes no críticos
+const ContactForm = dynamic(() => import('@/components/ContactForm'), { 
+  ssr: true,
+  loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg" />
+})
+const FAQ = dynamic(() => import('@/components/FAQ'), { 
+  ssr: true,
+  loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg" />
+})
+const Testimonials = dynamic(() => import('@/components/Testimonials'), { 
+  ssr: true,
+  loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg" />
+})
 import LanguageSelector from '@/components/LanguageSelectorOptimized'
 import { useLanguage } from '@/hooks/useLanguageOptimized'
 

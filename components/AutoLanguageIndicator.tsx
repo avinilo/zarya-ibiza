@@ -8,7 +8,7 @@ import { Language } from '@/lib/translations'
 const getLanguageName = (lang: string): string => {
   const names: { [key: string]: string } = {
     'es': 'Español',
-    'en': 'Inglés', 
+    'en': 'Inglés',
     'ru': 'Ruso'
   }
   return names[lang] || lang
@@ -52,16 +52,16 @@ export default function AutoLanguageIndicator() {
     if (dismissed === 'true') return
 
     const suggested = getSuggestedLanguage(currentLang, detectedLanguage)
-    
+
     if (suggested) {
       setSuggestedLang(suggested)
       setIsVisible(true)
-      
+
       // Ocultar automáticamente después de 4 segundos (antes eran 8)
       const timer = setTimeout(() => {
         setIsVisible(false)
       }, 4000)
-      
+
       return () => clearTimeout(timer)
     }
   }, [detectedLanguage, currentLang])
@@ -105,21 +105,21 @@ export default function AutoLanguageIndicator() {
   const closeButtonText = getCloseButtonText(suggestedLang)
 
   return (
-    <div className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 bg-black/80 backdrop-blur-sm rounded-full shadow-lg px-3 py-1.5 animate-fade-in">
+    <div className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 bg-firstclass-background/90 backdrop-blur-sm rounded-full shadow-lg px-3 py-1.5 animate-fade-in border border-firstclass-primary/20">
       <div className="flex items-center space-x-2">
-        <span className="text-xs font-medium text-white font-body">
+        <span className="text-xs font-medium text-firstclass-text font-body">
           {message}
         </span>
         <div className="flex items-center space-x-1">
           <button
             onClick={handleAccept}
-            className="text-[10px] bg-white text-black px-1.5 py-0.5 rounded-full hover:bg-gray-200 transition-colors duration-150 font-medium font-body"
+            className="text-[10px] bg-firstclass-primary text-firstclass-background px-1.5 py-0.5 rounded-full hover:bg-firstclass-secondary transition-colors duration-150 font-medium font-body"
           >
             {buttonText}
           </button>
           <button
             onClick={handleClose}
-            className="text-[10px] text-gray-300 hover:text-white transition-colors duration-150 px-1"
+            className="text-[10px] text-firstclass-text/60 hover:text-firstclass-text transition-colors duration-150 px-1"
             title={closeButtonText}
           >
             <X className="w-2.5 h-2.5" />

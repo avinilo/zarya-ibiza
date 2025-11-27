@@ -16,16 +16,15 @@ export default function WhatsAppBubble() {
       {isVisible && (
         <div className="fixed bottom-6 right-6 z-[998]">
           {/* Mensaje flotante */}
-          <div 
-            className={`absolute bottom-full right-0 mb-4 transition-all duration-300 ${
-              isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'
-            }`}
+          <div
+            className={`absolute bottom-full right-0 mb-4 transition-all duration-300 ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'
+              }`}
           >
-            <div className="bg-white rounded-lg shadow-lg p-3 max-w-xs border border-gray-200">
-              <div className="text-sm text-gray-800 font-medium font-body">
+            <div className="bg-firstclass-light rounded-lg shadow-lg p-3 max-w-xs border border-firstclass-primary/20">
+              <div className="text-sm text-firstclass-text font-medium font-body">
                 ¿Necesitas ayuda? ¡Escríbenos por WhatsApp!
               </div>
-              <div className="absolute top-full right-6 w-0 h-0 border-l-8 border-r-8 border-t-8 border-transparent border-t-white"></div>
+              <div className="absolute top-full right-6 w-0 h-0 border-l-8 border-r-8 border-t-8 border-transparent border-t-firstclass-light"></div>
             </div>
           </div>
 
@@ -34,18 +33,18 @@ export default function WhatsAppBubble() {
             onClick={handleClick}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="relative w-16 h-16 bg-yellow-500 hover:bg-yellow-600 text-white rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-110 group animate-bounce"
+            className="relative w-16 h-16 bg-firstclass-primary hover:bg-firstclass-secondary text-firstclass-background rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-110 group animate-bounce"
             aria-label="Contactar por WhatsApp"
             title="Contactar por WhatsApp"
           >
             <div className="relative">
               <MessageCircle className="w-8 h-8 mx-auto transition-transform duration-300 group-hover:scale-110" />
               <Phone className="w-4 h-4 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-300 rounded-full animate-pulse"></div>
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-firstclass-text rounded-full animate-pulse"></div>
             </div>
-            
+
             {/* Efecto de ondas */}
-            <div className="absolute inset-0 rounded-full bg-yellow-400 opacity-0 group-hover:opacity-30 animate-ping"></div>
+            <div className="absolute inset-0 rounded-full bg-firstclass-primary opacity-0 group-hover:opacity-30 animate-ping"></div>
           </button>
         </div>
       )}

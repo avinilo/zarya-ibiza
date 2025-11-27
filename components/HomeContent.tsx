@@ -135,7 +135,7 @@ export default function HomeContent() {
         t('service3.feature2'),
         t('service3.feature3')
       ],
-      image: '/villas.webp',
+      image: '/villas2.webp',
       priority: 3
     },
     {
@@ -149,7 +149,7 @@ export default function HomeContent() {
         t('service4.feature2'),
         t('service4.feature3')
       ],
-      image: '/transporte.webp',
+      image: '/mercedes.webp',
       priority: 4
     },
     {
@@ -205,7 +205,7 @@ export default function HomeContent() {
         t('service8.feature2'),
         t('service8.feature3')
       ],
-      image: '/yates.webp',
+      image: '/yates2.webp',
       priority: 8
     },
     {

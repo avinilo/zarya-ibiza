@@ -10,7 +10,7 @@ export default function Testimonials() {
   const [itemsPerView, setItemsPerView] = useState(3)
   const [isDesktop, setIsDesktop] = useState(false)
   const testimonialsContainerRef = useRef<HTMLDivElement>(null)
-  
+
   // Generate testimonials with useMemo to prevent re-creation on every render
   const testimonials = useMemo(() => [
     {
@@ -74,7 +74,7 @@ export default function Testimonials() {
       year: "2023"
     }
   ], [t]) // Only re-create when language changes
-  
+
   // Function to scroll to a specific testimonial card
   const scrollToTestimonial = useCallback((index: number) => {
     if (testimonialsContainerRef.current) {
@@ -104,7 +104,7 @@ export default function Testimonials() {
     const handleResize = () => {
       const width = window.innerWidth
       setIsDesktop(width >= 768)
-      
+
       if (width < 768) {
         setItemsPerView(1) // Mobile: 1 item
       } else if (width < 1024) {
@@ -124,9 +124,9 @@ export default function Testimonials() {
   }
 
   const maxIndex = Math.max(0, testimonials.length - itemsPerView)
-  
+
   // For mobile: use sliding logic, for PC: always show first 3 testimonials statically
-  const visibleTestimonials = isDesktop 
+  const visibleTestimonials = isDesktop
     ? testimonials.slice(0, 3) // Always show first 3 testimonials on PC
     : testimonials.slice(currentIndex, currentIndex + itemsPerView)
 
@@ -134,7 +134,7 @@ export default function Testimonials() {
   useEffect(() => {
     // Only auto-play on mobile devices (less than 768px)
     if (window.innerWidth >= 768) return // Don't auto-play on PC at all
-    
+
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => {
         const nextIndex = (prevIndex + 1) % testimonials.length
@@ -147,138 +147,137 @@ export default function Testimonials() {
   }, [testimonials.length, scrollToTestimonial])
 
   return (
-    <section className="py-12 bg-gray-50">
+    <section className="py-12 bg-firstclass-background">
       <div className="w-full px-4 sm:container-custom sm:mx-auto mb-8">
         <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-yellow-600 mb-4 font-hero">
+          <h2 className="text-4xl md:text-5xl font-bold text-firstclass-primary mb-4 font-hero">
             {t('testimonials.title')}
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-firstclass-text/80 max-w-3xl mx-auto">
             {t('testimonials.subtitle')}
           </p>
         </div>
       </div>
 
       <div className="w-full px-4 sm:container-custom sm:mx-auto mb-8">
-      {/* Testimonials Container */}
-      <div className="md:overflow-hidden">
-        {/* Mobile scrollable container */}
-        <div 
-          ref={testimonialsContainerRef}
-          className="flex md:hidden gap-8 overflow-x-auto pb-4 -mx-4 px-4 [&::-webkit-scrollbar]:hidden snap-x snap-mandatory"
-          onScroll={handleScroll}
-          style={{
-            scrollbarWidth: 'none', // Firefox
-            msOverflowStyle: 'none', // IE and Edge
-          }}
-        >
-          {testimonials.map((testimonial, index) => (
-            <div 
-              key={index}
-              className="bg-white p-4 sm:p-6 md:p-8 rounded-2xl shadow-lg border-l-4 border-yellow-500 hover-lift flex-shrink-0 w-80 snap-center"
-            >
-              {/* Quote Icon */}
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-4 sm:mb-6">
-                <Quote className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-700" />
-              </div>
-              
-              {/* Rating */}
-              <div className="flex items-center gap-1 mb-3 sm:mb-4">
-                {[...Array(testimonial.rating)].map((_, starIndex) => (
-                  <Star key={starIndex} className="w-3 h-3 sm:w-4 sm:h-4 fill-yellow-500 text-yellow-500" />
-                ))}
-                <span className="text-xs sm:text-sm text-gray-500 ml-2">({testimonial.rating}/5)</span>
-              </div>
-              
-              {/* Testimonial Text */}
-              <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6 leading-relaxed italic">
-                &ldquo;{testimonial.text}&rdquo;
-              </p>
-              
-              {/* Project Info */}
-              <div className="mb-3 sm:mb-4 p-2 sm:p-3 bg-yellow-100 rounded-lg">
-                <p className="text-xs sm:text-sm font-semibold text-yellow-700 mb-1">
-                  {t('testimonials.project')}: {testimonial.project}
-                </p>
-                <p className="text-xs text-gray-600">
-                  {testimonial.year} • {testimonial.location}
-                </p>
-              </div>
-              
-              {/* Author Info */}
-              <div className="border-t pt-3 sm:pt-4">
-                <h4 className="font-bold text-yellow-700 text-sm sm:text-base font-hero">{testimonial.name}</h4>
-                <p className="text-xs sm:text-sm text-gray-600">{testimonial.position}</p>
-                <p className="text-xs sm:text-sm font-semibold text-yellow-600 font-body">{testimonial.company}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Desktop grid container - ALWAYS STATIC */}
-        <div className="hidden md:block">
-          {/* Desktop static - no navigation, no transitions */}
-          <div className="flex gap-8">
-            {visibleTestimonials.map((testimonial, index) => (
-              <div 
+        {/* Testimonials Container */}
+        <div className="md:overflow-hidden">
+          {/* Mobile scrollable container */}
+          <div
+            ref={testimonialsContainerRef}
+            className="flex md:hidden gap-8 overflow-x-auto pb-4 -mx-4 px-4 [&::-webkit-scrollbar]:hidden snap-x snap-mandatory"
+            onScroll={handleScroll}
+            style={{
+              scrollbarWidth: 'none', // Firefox
+              msOverflowStyle: 'none', // IE and Edge
+            }}
+          >
+            {testimonials.map((testimonial, index) => (
+              <div
                 key={index}
-                className="bg-white p-4 sm:p-6 md:p-8 rounded-2xl shadow-lg border-l-4 border-yellow-500 hover-lift"
-                style={{ width: `calc(${100 / 3}% - ${4}rem / 3)` }} // Always 3 columns on PC
+                className="bg-firstclass-light p-4 sm:p-6 md:p-8 rounded-2xl shadow-lg border-l-4 border-firstclass-primary hover-lift flex-shrink-0 w-80 snap-center"
               >
                 {/* Quote Icon */}
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-4 sm:mb-6">
-                  <Quote className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-700" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-firstclass-primary/10 rounded-full flex items-center justify-center mb-4 sm:mb-6">
+                  <Quote className="w-5 h-5 sm:w-6 sm:h-6 text-firstclass-primary" />
                 </div>
-                
+
                 {/* Rating */}
                 <div className="flex items-center gap-1 mb-3 sm:mb-4">
                   {[...Array(testimonial.rating)].map((_, starIndex) => (
                     <Star key={starIndex} className="w-3 h-3 sm:w-4 sm:h-4 fill-firstclass-primary text-firstclass-primary" />
                   ))}
-                  <span className="text-xs sm:text-sm text-gray-500 ml-2">({testimonial.rating}/5)</span>
+                  <span className="text-xs sm:text-sm text-firstclass-text/60 ml-2">({testimonial.rating}/5)</span>
                 </div>
-                
+
                 {/* Testimonial Text */}
-                <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6 leading-relaxed italic">
+                <p className="text-sm sm:text-base text-firstclass-text/90 mb-4 sm:mb-6 leading-relaxed italic">
                   &ldquo;{testimonial.text}&rdquo;
                 </p>
-                
+
                 {/* Project Info */}
-                <div className="mb-3 sm:mb-4 p-2 sm:p-3 bg-yellow-100 rounded-lg">
-                  <p className="text-xs sm:text-sm font-semibold text-yellow-700 mb-1">
+                <div className="mb-3 sm:mb-4 p-2 sm:p-3 bg-firstclass-background/50 rounded-lg">
+                  <p className="text-xs sm:text-sm font-semibold text-firstclass-primary mb-1">
                     {t('testimonials.project')}: {testimonial.project}
                   </p>
-                  <p className="text-xs text-gray-600">
+                  <p className="text-xs text-firstclass-text/70">
                     {testimonial.year} • {testimonial.location}
                   </p>
                 </div>
-                
+
                 {/* Author Info */}
-                <div className="border-t pt-3 sm:pt-4">
-                  <h4 className="font-bold text-yellow-700 text-sm sm:text-base font-hero">{testimonial.name}</h4>
-                  <p className="text-xs sm:text-sm text-gray-600">{testimonial.position}</p>
-                  <p className="text-xs sm:text-sm font-semibold text-yellow-600 font-body">{testimonial.company}</p>
+                <div className="border-t border-firstclass-text/10 pt-3 sm:pt-4">
+                  <h4 className="font-bold text-firstclass-primary text-sm sm:text-base font-hero">{testimonial.name}</h4>
+                  <p className="text-xs sm:text-sm text-firstclass-text/70">{testimonial.position}</p>
+                  <p className="text-xs sm:text-sm font-semibold text-firstclass-secondary font-body">{testimonial.company}</p>
                 </div>
               </div>
             ))}
           </div>
+
+          {/* Desktop grid container - ALWAYS STATIC */}
+          <div className="hidden md:block">
+            {/* Desktop static - no navigation, no transitions */}
+            <div className="flex gap-8">
+              {visibleTestimonials.map((testimonial, index) => (
+                <div
+                  key={index}
+                  className="bg-firstclass-light p-4 sm:p-6 md:p-8 rounded-2xl shadow-lg border-l-4 border-firstclass-primary hover-lift"
+                  style={{ width: `calc(${100 / 3}% - ${4}rem / 3)` }} // Always 3 columns on PC
+                >
+                  {/* Quote Icon */}
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-firstclass-primary/10 rounded-full flex items-center justify-center mb-4 sm:mb-6">
+                    <Quote className="w-5 h-5 sm:w-6 sm:h-6 text-firstclass-primary" />
+                  </div>
+
+                  {/* Rating */}
+                  <div className="flex items-center gap-1 mb-3 sm:mb-4">
+                    {[...Array(testimonial.rating)].map((_, starIndex) => (
+                      <Star key={starIndex} className="w-3 h-3 sm:w-4 sm:h-4 fill-firstclass-primary text-firstclass-primary" />
+                    ))}
+                    <span className="text-xs sm:text-sm text-firstclass-text/60 ml-2">({testimonial.rating}/5)</span>
+                  </div>
+
+                  {/* Testimonial Text */}
+                  <p className="text-sm sm:text-base text-firstclass-text/90 mb-4 sm:mb-6 leading-relaxed italic">
+                    &ldquo;{testimonial.text}&rdquo;
+                  </p>
+
+                  {/* Project Info */}
+                  <div className="mb-3 sm:mb-4 p-2 sm:p-3 bg-firstclass-background/50 rounded-lg">
+                    <p className="text-xs sm:text-sm font-semibold text-firstclass-primary mb-1">
+                      {t('testimonials.project')}: {testimonial.project}
+                    </p>
+                    <p className="text-xs text-firstclass-text/70">
+                      {testimonial.year} • {testimonial.location}
+                    </p>
+                  </div>
+
+                  {/* Author Info */}
+                  <div className="border-t border-firstclass-text/10 pt-3 sm:pt-4">
+                    <h4 className="font-bold text-firstclass-primary text-sm sm:text-base font-hero">{testimonial.name}</h4>
+                    <p className="text-xs sm:text-sm text-firstclass-text/70">{testimonial.position}</p>
+                    <p className="text-xs sm:text-sm font-semibold text-firstclass-secondary font-body">{testimonial.company}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Dots Indicators - Mobile only (NEVER show on PC) */}
+        <div className="md:hidden flex justify-center mt-6 gap-2 mb-8">
+          {testimonials.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => scrollToTestimonial(index)}
+              className={`w-2 h-2 rounded-full transition-all duration-200 ${currentIndex === index ? 'bg-firstclass-primary w-6' : 'bg-firstclass-text/30 hover:bg-firstclass-text/50'
+                }`}
+              aria-label={`Go to testimonial ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
-
-      {/* Dots Indicators - Mobile only (NEVER show on PC) */}
-      <div className="md:hidden flex justify-center mt-6 gap-2 mb-8">
-        {testimonials.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => scrollToTestimonial(index)}
-            className={`w-2 h-2 rounded-full transition-all duration-200 ${
-              currentIndex === index ? 'bg-yellow-600 w-6' : 'bg-gray-300 hover:bg-gray-400'
-            }`}
-            aria-label={`Go to testimonial ${index + 1}`}
-          />
-        ))}
-      </div>
-    </div>
     </section>
   )
 }

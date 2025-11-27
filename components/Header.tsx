@@ -19,11 +19,11 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY
-      
+
       // Lógica existente para transparencia y borde
       setIsBorderVisible(scrollPosition > 80)
       setIsScrolled(scrollPosition > 100)
-      
+
       // Nueva lógica para mostrar/ocultar header basado en dirección de scroll
       // IMPORTANTE: Si el menú móvil está abierto, siempre mantener el header visible
       if (isMenuOpen) {
@@ -40,7 +40,7 @@ export default function Header() {
         // Siempre mostrar header en la parte superior
         setIsHeaderVisible(true)
       }
-      
+
       setLastScrollY(scrollPosition)
     }
 
@@ -49,25 +49,23 @@ export default function Header() {
   }, [lastScrollY, isMenuOpen])
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-500 ease-in-out ${
-       isHeaderVisible ? 'top-0' : '-top-20'
-     } ${
-       isScrolled || isMenuOpen
-        ? `bg-white shadow-lg ${isBorderVisible ? 'border-b border-firstclass-primary/20' : ''}` 
-         : 'bg-transparent'
-     }`}>
+    <header className={`fixed w-full z-50 transition-all duration-500 ease-in-out ${isHeaderVisible ? 'top-0' : '-top-20'
+      } ${isScrolled || isMenuOpen
+        ? `bg-firstclass-light shadow-lg ${isBorderVisible ? 'border-b border-firstclass-primary/20' : ''}`
+        : 'bg-transparent'
+      }`}>
       <nav className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center hover-scale" aria-label="First Class Sensations - Ir a página de inicio">
-            <Image 
-              src="/logo1.png" 
-              alt="First Class Sensations" 
+            <Image
+              src="/logo1.png"
+              alt="First Class Sensations"
               width={48}
               height={48}
               className="h-8 md:h-12 w-auto transition-smooth"
             />
-            <span className="ml-2 md:ml-3 text-[10px] sm:text-xs md:text-xl font-bold transition-smooth leading-tight font-brand text-yellow-500">
+            <span className="ml-2 md:ml-3 text-[10px] sm:text-xs md:text-xl font-bold transition-smooth leading-tight font-brand text-firstclass-primary">
               First Class Sensations
             </span>
           </Link>
@@ -76,74 +74,64 @@ export default function Header() {
           <nav className="hidden lg:flex items-center space-x-8" role="navigation" aria-label="Navegación principal">
             <Link
               href="/"
-              className={`font-medium transition-smooth relative group font-body ${
-                isScrolled 
-                  ? 'text-firstclass-secondary hover:text-firstclass-primary' 
-                  : 'text-white hover:text-white/80'
-              }`}
+              className={`font-medium transition-smooth relative group font-body ${isScrolled
+                  ? 'text-firstclass-text hover:text-firstclass-primary'
+                  : 'text-firstclass-text hover:text-firstclass-text/80'
+                }`}
             >
               {t('nav.home')}
-              <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-smooth group-hover:w-full ${
-                isScrolled ? 'bg-firstclass-primary' : 'bg-white'
-              }`}></span>
+              <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-smooth group-hover:w-full ${isScrolled ? 'bg-firstclass-primary' : 'bg-firstclass-text'
+                }`}></span>
             </Link>
 
             {/* Services Link */}
             <Link
               href="/#services"
-              className={`font-medium transition-smooth relative group font-body ${
-                isScrolled 
-                  ? 'text-firstclass-secondary hover:text-firstclass-primary' 
-                  : 'text-white hover:text-white/80'
-              }`}
+              className={`font-medium transition-smooth relative group font-body ${isScrolled
+                  ? 'text-firstclass-text hover:text-firstclass-primary'
+                  : 'text-firstclass-text hover:text-firstclass-text/80'
+                }`}
             >
               {t('nav.services')}
-              <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-smooth group-hover:w-full ${
-                isScrolled ? 'bg-firstclass-primary' : 'bg-white'
-              }`}></span>
+              <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-smooth group-hover:w-full ${isScrolled ? 'bg-firstclass-primary' : 'bg-firstclass-text'
+                }`}></span>
             </Link>
 
             {/* Nosotros Link */}
             <Link
               href="/#about"
-              className={`font-medium transition-smooth relative group font-body ${
-                isScrolled 
-                  ? 'text-firstclass-secondary hover:text-firstclass-primary' 
-                  : 'text-white hover:text-white/80'
-              }`}
+              className={`font-medium transition-smooth relative group font-body ${isScrolled
+                  ? 'text-firstclass-text hover:text-firstclass-primary'
+                  : 'text-firstclass-text hover:text-firstclass-text/80'
+                }`}
             >
               {t('nav.about')}
-              <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-smooth group-hover:w-full ${
-                isScrolled ? 'bg-firstclass-primary' : 'bg-white'
-              }`}></span>
+              <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-smooth group-hover:w-full ${isScrolled ? 'bg-firstclass-primary' : 'bg-firstclass-text'
+                }`}></span>
             </Link>
 
             <Link
               href="/#faq"
-              className={`font-medium transition-smooth relative group font-body ${
-                isScrolled 
-                  ? 'text-firstclass-secondary hover:text-firstclass-primary' 
-                  : 'text-white hover:text-white/80'
-              }`}
+              className={`font-medium transition-smooth relative group font-body ${isScrolled
+                  ? 'text-firstclass-text hover:text-firstclass-primary'
+                  : 'text-firstclass-text hover:text-firstclass-text/80'
+                }`}
             >
               {t('nav.faq')}
-              <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-smooth group-hover:w-full ${
-                isScrolled ? 'bg-firstclass-primary' : 'bg-white'
-              }`}></span>
+              <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-smooth group-hover:w-full ${isScrolled ? 'bg-firstclass-primary' : 'bg-firstclass-text'
+                }`}></span>
             </Link>
 
             <Link
               href="/#contact"
-              className={`font-medium transition-smooth relative group font-body ${
-                isScrolled 
-                  ? 'text-firstclass-secondary hover:text-firstclass-primary' 
-                  : 'text-white hover:text-white/80'
-              }`}
+              className={`font-medium transition-smooth relative group font-body ${isScrolled
+                  ? 'text-firstclass-text hover:text-firstclass-primary'
+                  : 'text-firstclass-text hover:text-firstclass-text/80'
+                }`}
             >
               {t('nav.contact')}
-              <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-smooth group-hover:w-full ${
-                isScrolled ? 'bg-firstclass-primary' : 'bg-white'
-              }`}></span>
+              <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-smooth group-hover:w-full ${isScrolled ? 'bg-firstclass-primary' : 'bg-firstclass-text'
+                }`}></span>
             </Link>
           </nav>
 
@@ -162,7 +150,7 @@ export default function Header() {
             <div className="flex items-center">
               <LanguageSelector isScrolled={isScrolled} isMenuOpen={isMenuOpen} />
             </div>
-            
+
             {/* Mobile menu button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -171,20 +159,20 @@ export default function Header() {
               aria-controls="mobile-menu"
               aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
             >
-            {isMenuOpen ? (
-              <X className={`h-6 w-6 transition-smooth ${isScrolled || isMenuOpen ? 'text-firstclass-secondary' : 'text-white'}`} />
-            ) : (
-              <Menu className={`h-6 w-6 transition-smooth ${isScrolled || isMenuOpen ? 'text-firstclass-secondary' : 'text-white'}`} />
-            )}
-          </button>
+              {isMenuOpen ? (
+                <X className={`h-6 w-6 transition-smooth ${isScrolled || isMenuOpen ? 'text-firstclass-primary' : 'text-firstclass-text'}`} />
+              ) : (
+                <Menu className={`h-6 w-6 transition-smooth ${isScrolled || isMenuOpen ? 'text-firstclass-primary' : 'text-firstclass-text'}`} />
+              )}
+            </button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div 
+          <div
             id="mobile-menu"
-            className="lg:hidden fixed top-20 left-0 w-full bg-white shadow-lg border-t border-firstclass-primary/20 z-40 animate-slide-up max-h-[calc(100vh-5rem)] overflow-y-auto"
+            className="lg:hidden fixed top-20 left-0 w-full bg-firstclass-light shadow-lg border-t border-firstclass-primary/20 z-40 animate-slide-up max-h-[calc(100vh-5rem)] overflow-y-auto"
             role="navigation"
             aria-label="Menú de navegación móvil"
           >
@@ -192,7 +180,7 @@ export default function Header() {
               <Link
                 href="/"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-firstclass-secondary hover:text-firstclass-primary font-medium transition-smooth px-4 py-2 rounded-lg hover:bg-firstclass-light/50 hover-lift font-body"
+                className="text-firstclass-text hover:text-firstclass-primary font-medium transition-smooth px-4 py-2 rounded-lg hover:bg-firstclass-background/50 hover-lift font-body"
               >
                 {t('nav.home')}
               </Link>
@@ -201,7 +189,7 @@ export default function Header() {
               <Link
                 href="/#services"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-firstclass-secondary hover:text-firstclass-primary font-medium transition-smooth px-4 py-2 rounded-lg hover:bg-firstclass-light/50 hover-lift"
+                className="text-firstclass-text hover:text-firstclass-primary font-medium transition-smooth px-4 py-2 rounded-lg hover:bg-firstclass-background/50 hover-lift"
               >
                 {t('nav.services')}
               </Link>
@@ -210,7 +198,7 @@ export default function Header() {
               <Link
                 href="/#about"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-firstclass-secondary hover:text-firstclass-primary font-medium transition-smooth px-4 py-2 rounded-lg hover:bg-firstclass-light/50 hover-lift"
+                className="text-firstclass-text hover:text-firstclass-primary font-medium transition-smooth px-4 py-2 rounded-lg hover:bg-firstclass-background/50 hover-lift"
               >
                 {t('nav.about')}
               </Link>
@@ -218,7 +206,7 @@ export default function Header() {
               <Link
                 href="/#services"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-firstclass-secondary hover:text-firstclass-primary font-medium transition-smooth px-4 py-2 rounded-lg hover:bg-firstclass-light/50 hover-lift"
+                className="text-firstclass-text hover:text-firstclass-primary font-medium transition-smooth px-4 py-2 rounded-lg hover:bg-firstclass-background/50 hover-lift"
               >
                 {t('nav.faq')}
               </Link>
@@ -226,7 +214,7 @@ export default function Header() {
               <Link
                 href="/#contact"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-firstclass-secondary hover:text-firstclass-primary font-medium transition-smooth px-4 py-2 rounded-lg hover:bg-firstclass-light/50 hover-lift"
+                className="text-firstclass-text hover:text-firstclass-primary font-medium transition-smooth px-4 py-2 rounded-lg hover:bg-firstclass-background/50 hover-lift"
               >
                 {t('nav.contact')}
               </Link>

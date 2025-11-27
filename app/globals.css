@@ -6,12 +6,14 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
-    --firstclass-primary: #d4af37;
-    --firstclass-secondary: #b8860b;
-    --firstclass-light: #fdf6e3;
-    --firstclass-primary-rgb: 212, 175, 55;
-    --gradient-hero: linear-gradient(135deg, #d4af37 0%, #FFFFFF 100%);
-    --gradient-overlay: linear-gradient(135deg, rgba(212, 175, 55, 0.8) 0%, rgba(255, 255, 255, 0.2) 100%);
+    --firstclass-primary: #FFAD75;
+    --firstclass-secondary: #F08A82;
+    --firstclass-light: #352830;
+    --firstclass-background: #2A1F27;
+    --firstclass-text: #FCEEE9;
+    --firstclass-primary-rgb: 255, 173, 117;
+    --gradient-hero: linear-gradient(135deg, #2A1F27 0%, #352830 100%);
+    --gradient-overlay: linear-gradient(135deg, rgba(42, 31, 39, 0.9) 0%, rgba(53, 40, 48, 0.8) 100%);
     
     /* Animation Variables */
     --animation-duration-fast: 0.2s;
@@ -34,7 +36,7 @@
   }
   
   body {
-    @apply bg-white text-gray-900;
+    @apply bg-firstclass-background text-firstclass-text;
     font-family: var(--font-montserrat), system-ui, sans-serif;
   }
   
@@ -45,6 +47,7 @@
   .section-title,
   .card-title {
     font-family: var(--font-playfair), serif;
+    @apply text-firstclass-text;
   }
   
   /* Estilos base para elementos de texto */
@@ -65,15 +68,15 @@
   }
 
   .btn-primary {
-    @apply bg-firstclass-primary text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 hover:bg-firstclass-secondary;
+    @apply bg-firstclass-primary text-firstclass-background font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 hover:bg-firstclass-secondary;
   }
 
   .btn-secondary {
-    @apply bg-firstclass-secondary text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 hover:bg-firstclass-primary;
+    @apply bg-firstclass-secondary text-firstclass-background font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 hover:bg-firstclass-primary;
   }
 
   .btn-firstclass-primary {
-    @apply bg-firstclass-primary text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 hover:bg-firstclass-secondary;
+    @apply bg-firstclass-primary text-firstclass-background font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 hover:bg-firstclass-secondary;
   }
 
   .section-padding {
@@ -81,24 +84,24 @@
   }
 
   .section-firstclass {
-    @apply py-16 md:py-24 relative;
+    @apply py-16 md:py-24 relative bg-firstclass-background;
   }
 
   .card-service {
-    @apply bg-white rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 border border-firstclass-light hover:border-firstclass-primary transform hover:-translate-y-1;
+    @apply bg-firstclass-light rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 border border-firstclass-secondary/20 hover:border-firstclass-primary transform hover:-translate-y-1;
   }
 
   .card-firstclass {
-    @apply bg-white rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 border border-firstclass-light hover:border-firstclass-primary transform hover:-translate-y-1;
+    @apply bg-firstclass-light rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 border border-firstclass-secondary/20 hover:border-firstclass-primary transform hover:-translate-y-1;
   }
 
   .hero-firstclass {
-    background: linear-gradient(135deg, #2563eb 0%, #FFFFFF 100%);
-    @apply text-white relative overflow-hidden;
+    background: linear-gradient(135deg, #2A1F27 0%, #352830 100%);
+    @apply text-firstclass-text relative overflow-hidden;
   }
 
   .firstclass-overlay {
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.8) 0%, rgba(255, 255, 255, 0.2) 100%);
+    background: linear-gradient(135deg, rgba(42, 31, 39, 0.9) 0%, rgba(53, 40, 48, 0.8) 100%);
   }
 
   /* Animation Classes */

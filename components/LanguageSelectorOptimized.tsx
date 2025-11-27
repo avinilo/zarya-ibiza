@@ -32,11 +32,10 @@ export default function LanguageSelectorOptimized({ isScrolled, isMenuOpen }: La
     // Renderizar versión simplificada durante SSR/hidratación
     return (
       <div className="relative">
-        <button className={`flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium rounded-lg w-full md:w-auto font-body ${
-          isScrolled || isMenuOpen 
-            ? 'text-firstclass-secondary' 
-            : 'text-white'
-        }`}>
+        <button className={`flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium rounded-lg w-full md:w-auto font-body ${isScrolled || isMenuOpen
+            ? 'text-firstclass-text'
+            : 'text-firstclass-text'
+          }`}>
           <ReactCountryFlag
             countryCode={currentLang.countryCode}
             svg
@@ -44,7 +43,7 @@ export default function LanguageSelectorOptimized({ isScrolled, isMenuOpen }: La
             title={currentLang.code.toUpperCase()}
           />
           <span>{currentLang.code.toUpperCase()}</span>
-          <ChevronDown className={`w-4 h-4 ${isScrolled || isMenuOpen ? 'text-firstclass-secondary' : 'text-white'}`} />
+          <ChevronDown className={`w-4 h-4 ${isScrolled || isMenuOpen ? 'text-firstclass-primary' : 'text-firstclass-text'}`} />
         </button>
       </div>
     )
@@ -54,11 +53,10 @@ export default function LanguageSelectorOptimized({ isScrolled, isMenuOpen }: La
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium transition-colors duration-200 rounded-lg w-full md:w-auto font-body ${
-          isScrolled || isMenuOpen 
-            ? 'text-firstclass-secondary hover:text-firstclass-primary hover:bg-firstclass-secondary/10' 
-            : 'text-white hover:text-white/80 hover:bg-white/10'
-        }`}
+        className={`flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium transition-colors duration-200 rounded-lg w-full md:w-auto font-body ${isScrolled || isMenuOpen
+            ? 'text-firstclass-text hover:text-firstclass-primary hover:bg-firstclass-background/10'
+            : 'text-firstclass-text hover:text-firstclass-text/80 hover:bg-firstclass-background/10'
+          }`}
         aria-label={`Select language - Current: ${languageInfo.name}`}
       >
         <ReactCountryFlag
@@ -71,19 +69,18 @@ export default function LanguageSelectorOptimized({ isScrolled, isMenuOpen }: La
           title={languageInfo.name}
         />
         <span>{currentLang.code.toUpperCase()}</span>
-        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''} ${
-          isScrolled || isMenuOpen ? 'text-firstclass-secondary' : 'text-white'
-        }`} />
+        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''} ${isScrolled || isMenuOpen ? 'text-firstclass-primary' : 'text-firstclass-text'
+          }`} />
       </button>
 
       {isOpen && (
         <>
-          <div 
-            className="fixed inset-0 z-40" 
+          <div
+            className="fixed inset-0 z-40"
             onClick={() => setIsOpen(false)}
           />
-          <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 z-50 overflow-hidden">
-            <div className="px-3 py-2 text-xs font-medium text-gray-500 border-b border-gray-100 font-body">
+          <div className="absolute right-0 mt-2 w-48 bg-firstclass-light rounded-lg shadow-lg border border-firstclass-primary/20 z-50 overflow-hidden">
+            <div className="px-3 py-2 text-xs font-medium text-firstclass-text/70 border-b border-firstclass-primary/10 font-body">
               Select Language
             </div>
             {languages.map((lang) => {
@@ -95,9 +92,8 @@ export default function LanguageSelectorOptimized({ isScrolled, isMenuOpen }: La
                     changeLanguage(lang.code as any)
                     setIsOpen(false)
                   }}
-                  className={`w-full flex items-center gap-3 px-4 py-3 text-sm text-left hover:bg-gray-50 transition-colors duration-200 ${
-                    currentLanguage === lang.code ? 'bg-yellow-50 text-yellow-600' : 'text-gray-700'
-                  }`}
+                  className={`w-full flex items-center gap-3 px-4 py-3 text-sm text-left hover:bg-firstclass-background transition-colors duration-200 ${currentLanguage === lang.code ? 'bg-firstclass-background text-firstclass-primary' : 'text-firstclass-text'
+                    }`}
                 >
                   <ReactCountryFlag
                     countryCode={lang.countryCode}
@@ -110,10 +106,10 @@ export default function LanguageSelectorOptimized({ isScrolled, isMenuOpen }: La
                   />
                   <div className="flex-1">
                     <div className="font-medium font-body">{lang.code.toUpperCase()}</div>
-                    <div className="text-xs text-gray-500">{langInfo.name}</div>
+                    <div className="text-xs text-firstclass-text/70">{langInfo.name}</div>
                   </div>
                   {currentLanguage === lang.code && (
-                    <div className="w-2 h-2 bg-yellow-600 rounded-full"></div>
+                    <div className="w-2 h-2 bg-firstclass-primary rounded-full"></div>
                   )}
                 </button>
               )

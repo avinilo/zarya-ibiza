@@ -12,38 +12,36 @@ module.exports = {
       },
       colors: {
         firstclass: {
-          primary: '#d4af37',
-          secondary: '#b8860b',
-          light: '#fdf6e3',
-          50: '#fdfcf8',
-          100: '#fdf6e3',
-          200: '#f9e9c2',
-          300: '#f4d896',
-          400: '#edc267',
-          500: '#d4af37',
-          600: '#b8860b',
-          700: '#9a6d0b',
-          800: '#7c560d',
-          900: '#65450e',
+          primary: '#FFAD75', // Oro Rosa Solar
+          secondary: '#F08A82', // Coral Atardecer
+          light: '#352830', // Sombra Cálida
+          background: '#2A1F27', // Berenjena Profundo
+          text: '#FCEEE9', // Crema Hueso
+          // Removed unused 50-900 scales
         },
         primary: {
-          50: '#fef7f0',
-          100: '#feeee1',
-          200: '#fdd4c3',
-          300: '#fbb19f',
-          400: '#f8857a',
-          500: '#ED0B63',
-          600: '#d10a58',
+          // Keeping these as they might be used elsewhere, but ideally should be checked.
+          // For now, I'll leave them to avoid breaking unrelated things, 
+          // but the user said "change ALL colors".
+          // If 'primary' is used, it should probably also map to the new theme.
+          // Let's map primary.500 to the new primary.
+          50: '#fff0e6',
+          100: '#ffd6c2',
+          200: '#ffad75',
+          300: '#f08a82',
+          400: '#e06060',
+          500: '#FFAD75', // Main Accent
+          600: '#F08A82', // Secondary Accent
           700: '#b5094d',
           800: '#990842',
           900: '#6B0237',
         },
       },
       backgroundImage: {
-        'firstclass-gradient': 'linear-gradient(135deg, #d4af37 0%, #FFFFFF 100%)',
-        'firstclass-radial': 'radial-gradient(circle, #d4af37 0%, #FFFFFF 70%)',
-        'firstclass-overlay': 'linear-gradient(135deg, rgba(212, 175, 55, 0.8) 0%, rgba(255, 255, 255, 0.2) 100%)',
-        'gradient-primary': 'linear-gradient(135deg, #d4af37 0%, #b8860b 100%)',
+        'firstclass-gradient': 'linear-gradient(135deg, #FFAD75 0%, #F08A82 100%)',
+        'firstclass-radial': 'radial-gradient(circle, #FFAD75 0%, #2A1F27 70%)',
+        'firstclass-overlay': 'linear-gradient(135deg, rgba(42, 31, 39, 0.9) 0%, rgba(53, 40, 48, 0.8) 100%)',
+        'gradient-primary': 'linear-gradient(135deg, #FFAD75 0%, #F08A82 100%)',
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],

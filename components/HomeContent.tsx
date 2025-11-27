@@ -376,16 +376,18 @@ export default function HomeContent() {
               <div className="text-firstclass-text/80 mt-6" dangerouslySetInnerHTML={{ __html: t('about.philosophy') }} />
             </div>
             <div className="flex justify-center lg:justify-end">
-              <VerticalImageCarousel
-                images={[
-                  '/carrousel sobre/WhatsApp-Image-2025-11-24-at-09.37.46.webp',
-                  '/carrousel sobre/WhatsApp-Image-2025-11-24-at-09.37.46-_1_.webp',
-                  '/carrousel sobre/WhatsApp-Image-2025-11-24-at-09.37.47.webp',
-                  '/carrousel sobre/info.webp'
-                ]}
-                alt="First Class Sensations - Imágenes del equipo y servicios"
-                className="w-full max-w-xs"
-              />
+              <div className="rounded-3xl overflow-hidden shadow-2xl border border-firstclass-primary/20 p-2 bg-gradient-to-br from-white/5 to-white/10">
+                <VerticalImageCarousel
+                  images={[
+                    '/carrousel sobre/WhatsApp-Image-2025-11-24-at-09.37.46.webp',
+                    '/carrousel sobre/WhatsApp-Image-2025-11-24-at-09.37.46-_1_.webp',
+                    '/carrousel sobre/WhatsApp-Image-2025-11-24-at-09.37.47.webp',
+                    '/carrousel sobre/info.webp'
+                  ]}
+                  alt="First Class Sensations - Imágenes del equipo y servicios"
+                  className="w-full max-w-md"
+                />
+              </div>
             </div>
           </div>
         </div>

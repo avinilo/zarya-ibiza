@@ -9,6 +9,7 @@ import FAQ from '@/components/FAQ'
 import Testimonials from '@/components/Testimonials'
 import ImageCarousel from '@/components/ImageCarousel'
 import VerticalImageCarousel from '@/components/VerticalImageCarousel'
+import ProfessionalVerticalCarousel from '@/components/ProfessionalVerticalCarousel'
 import LanguageSelector from '@/components/LanguageSelectorOptimized'
 import { useLanguage } from '@/hooks/useLanguageOptimized'
 
@@ -375,9 +376,9 @@ export default function HomeContent() {
               </div>
               <div className="text-firstclass-text/80 mt-6" dangerouslySetInnerHTML={{ __html: t('about.philosophy') }} />
             </div>
-            <div className="flex justify-center lg:justify-end">
-              <div className="rounded-3xl overflow-hidden shadow-2xl border border-firstclass-primary/20 p-2 bg-gradient-to-br from-white/5 to-white/10">
-                <VerticalImageCarousel
+            <div className="flex justify-center lg:justify-end lg:pl-8">
+              <div className="w-full max-w-md">
+                <ProfessionalVerticalCarousel
                   images={[
                     '/carrousel sobre/WhatsApp-Image-2025-11-24-at-09.37.46.webp',
                     '/carrousel sobre/WhatsApp-Image-2025-11-24-at-09.37.46-_1_.webp',
@@ -385,7 +386,7 @@ export default function HomeContent() {
                     '/carrousel sobre/info.webp'
                   ]}
                   alt="First Class Sensations - Imágenes del equipo y servicios"
-                  className="w-full max-w-md"
+                  className="w-full"
                 />
               </div>
             </div>

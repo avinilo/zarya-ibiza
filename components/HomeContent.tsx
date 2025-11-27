@@ -15,7 +15,17 @@ import { useLanguage } from '@/hooks/useLanguageOptimized'
 
 // Hero Section Component
 function HeroSection() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
+
+  // Clases responsivas para el título - tamaño normal para ES/EN, reducido para RU
+  const titleClasses = language === 'ru' 
+    ? "text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal mb-4 leading-tight animate-slide-up font-hero break-words"
+    : "text-6xl md:text-7xl lg:text-8xl font-normal mb-4 leading-tight animate-slide-up font-hero"
+
+  // Clases responsivas para el subtítulo - tamaño normal para ES/EN, reducido para RU  
+  const subtitleClasses = language === 'ru'
+    ? "text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-8 font-light animate-slide-up animation-delay-200 font-hero text-firstclass-primary break-words"
+    : "text-3xl md:text-4xl lg:text-5xl mb-8 font-light animate-slide-up animation-delay-200 font-hero text-firstclass-primary"
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-firstclass-background">
@@ -43,10 +53,10 @@ function HeroSection() {
         <div className="absolute top-1/2 right-1/4 w-1 h-1 bg-firstclass-primary/40 rounded-full animate-ping delay-500"></div>
       </div>
       <div className="relative z-20 container-custom mx-auto px-4 text-center text-firstclass-text pt-24 md:pt-32 lg:pt-40">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal mb-4 leading-tight animate-slide-up font-hero break-words" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
+        <h1 className={titleClasses} style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
           {t('hero.title')}
         </h1>
-        <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-8 font-light animate-slide-up animation-delay-200 font-hero text-firstclass-primary break-words" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
+        <p className={subtitleClasses} style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
           {t('hero.subtitle')}
         </p>
         <div className="flex justify-center animate-slide-up animation-delay-600 mb-8">

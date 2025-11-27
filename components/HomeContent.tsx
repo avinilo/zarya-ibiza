@@ -8,6 +8,7 @@ import ContactForm from '@/components/ContactForm'
 import FAQ from '@/components/FAQ'
 import Testimonials from '@/components/Testimonials'
 import ImageCarousel from '@/components/ImageCarousel'
+import VerticalImageCarousel from '@/components/VerticalImageCarousel'
 import LanguageSelector from '@/components/LanguageSelectorOptimized'
 import { useLanguage } from '@/hooks/useLanguageOptimized'
 
@@ -374,8 +375,8 @@ export default function HomeContent() {
               </div>
               <div className="text-firstclass-text/80 mt-6" dangerouslySetInnerHTML={{ __html: t('about.philosophy') }} />
             </div>
-            <div className="rounded-2xl overflow-hidden shadow-2xl border border-firstclass-primary/20 h-[400px]">
-              <ImageCarousel
+            <div className="rounded-2xl overflow-hidden shadow-2xl border border-firstclass-primary/20 h-[600px] md:h-[400px]">
+              <VerticalImageCarousel
                 images={[
                   '/carrousel sobre/WhatsApp-Image-2025-11-24-at-09.37.46.webp',
                   '/carrousel sobre/WhatsApp-Image-2025-11-24-at-09.37.46-_1_.webp',

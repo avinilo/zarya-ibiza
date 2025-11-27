@@ -390,10 +390,10 @@ export default function HomeContent() {
               <div className="w-full max-w-md">
                 <ProfessionalVerticalCarousel
                   images={[
-                    '/carrousel sobre/WhatsApp-Image-2025-11-24-at-09.37.46.webp',
-                    '/carrousel sobre/WhatsApp-Image-2025-11-24-at-09.37.46-_1_.webp',
                     '/carrousel sobre/WhatsApp-Image-2025-11-24-at-09.37.47.webp',
-                    '/carrousel sobre/info.webp'
+                    '/carrousel sobre/info.webp',
+                    '/carrousel sobre/WhatsApp-Image-2025-11-24-at-09.37.46.webp',
+                    '/carrousel sobre/WhatsApp-Image-2025-11-24-at-09.37.46-_1_.webp'
                   ]}
                   alt="First Class Sensations - Imágenes del equipo y servicios"
                   className="w-full"

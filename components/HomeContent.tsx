@@ -374,19 +374,21 @@ export default function HomeContent() {
               </div>
               <div className="text-firstclass-text/80 mt-6" dangerouslySetInnerHTML={{ __html: t('about.philosophy') }} />
             </div>
-            <div className="rounded-2xl overflow-hidden shadow-2xl border border-firstclass-primary/20 h-[500px]">
-              <ImageCarousel
-                images={[
-                  '/carrousel sobre/WhatsApp-Image-2025-11-24-at-09.37.46.webp',
-                  '/carrousel sobre/WhatsApp-Image-2025-11-24-at-09.37.46-_1_.webp',
-                  '/carrousel sobre/WhatsApp-Image-2025-11-24-at-09.37.47.webp',
-                  '/carrousel sobre/info.webp'
-                ]}
-                alt="First Class Sensations - Imágenes del equipo y servicios"
-                className="rounded-2xl w-full h-full"
-                height={500}
-                objectFit="contain"
-              />
+            <div className="flex justify-center lg:justify-end">
+              <div className="rounded-2xl overflow-hidden shadow-2xl border border-firstclass-primary/20 w-full max-w-xs">
+                <ImageCarousel
+                  images={[
+                    '/carrousel sobre/WhatsApp-Image-2025-11-24-at-09.37.46.webp',
+                    '/carrousel sobre/WhatsApp-Image-2025-11-24-at-09.37.46-_1_.webp',
+                    '/carrousel sobre/WhatsApp-Image-2025-11-24-at-09.37.47.webp',
+                    '/carrousel sobre/info.webp'
+                  ]}
+                  alt="First Class Sensations - Imágenes del equipo y servicios"
+                  className="rounded-2xl w-full"
+                  height={700}
+                  objectFit="contain"
+                />
+              </div>
             </div>
           </div>
         </div>

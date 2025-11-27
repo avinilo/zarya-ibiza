@@ -37,8 +37,8 @@ export default function ImageCarousel({
   if (images.length === 0) return null
 
   return (
-    <div className={`relative overflow-hidden rounded-2xl shadow-2xl ${className}`} style={{ height: `${height}px` }}>
-      <div className="relative w-full h-full">
+    <div className={`relative overflow-hidden rounded-2xl shadow-2xl ${className}`}>
+      <div className="relative w-full" style={{ height: `${height}px` }}>
         {images.map((image, index) => (
           <div 
             key={index} 

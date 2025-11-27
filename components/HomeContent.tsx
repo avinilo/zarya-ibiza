@@ -7,6 +7,7 @@ import { Home, Calendar, Star, Car, Shield, Sparkles, CheckCircle, Phone, Mail, 
 import ContactForm from '@/components/ContactForm'
 import FAQ from '@/components/FAQ'
 import Testimonials from '@/components/Testimonials'
+import ImageCarousel from '@/components/ImageCarousel'
 import LanguageSelector from '@/components/LanguageSelectorOptimized'
 import { useLanguage } from '@/hooks/useLanguageOptimized'
 
@@ -373,16 +374,16 @@ export default function HomeContent() {
               </div>
               <div className="text-firstclass-text/80 mt-6" dangerouslySetInnerHTML={{ __html: t('about.philosophy') }} />
             </div>
-            <div className="rounded-2xl overflow-hidden shadow-2xl border border-firstclass-primary/20">
-              <Image
-                src="/team.webp"
-                alt="Nuestro equipo - First Class Sensations"
-                width={600}
-                height={400}
-                className="rounded-2xl"
-                loading="lazy"
-                sizes="(min-width: 1024px) 600px, (min-width: 768px) 480px, 100vw"
-                quality={60}
+            <div className="rounded-2xl overflow-hidden shadow-2xl border border-firstclass-primary/20 h-[400px]">
+              <ImageCarousel
+                images={[
+                  '/carrousel sobre/WhatsApp-Image-2025-11-24-at-09.37.46.webp',
+                  '/carrousel sobre/WhatsApp-Image-2025-11-24-at-09.37.46-_1_.webp',
+                  '/carrousel sobre/WhatsApp-Image-2025-11-24-at-09.37.47.webp',
+                  '/carrousel sobre/info.webp'
+                ]}
+                alt="First Class Sensations - Imágenes del equipo y servicios"
+                className="rounded-2xl w-full h-full"
               />
             </div>
           </div>

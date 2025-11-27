@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
@@ -8,28 +8,36 @@ interface ImageCarouselProps {
   images: string[]
   alt: string
   className?: string
+  height?: number
+  objectFit?: 'cover' | 'contain'
 }
 
-export default function ImageCarousel({ images, alt, className = '' }: ImageCarouselProps) {
+export default function ImageCarousel({ 
+  images, 
+  alt, 
+  className = '', 
+  height = 400, 
+  objectFit = 'cover' 
+}: ImageCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  const nextImage = () => {
+  const nextImage = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
-  }
+  }, [images.length])
 
-  const prevImage = () => {
+  const prevImage = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)
-  }
+  }, [images.length])
 
   useEffect(() => {
     const interval = setInterval(nextImage, 5000) // Auto-advance every 5 seconds
     return () => clearInterval(interval)
-  }, [])
+  }, [nextImage])
 
   if (images.length === 0) return null
 
   return (
-    <div className={`relative overflow-hidden rounded-2xl shadow-2xl ${className}`}>
+    <div className={`relative overflow-hidden rounded-2xl shadow-2xl ${className}`} style={{ height: `${height}px` }}>
       <div className="relative w-full h-full">
         {images.map((image, index) => (
           <div 
@@ -42,7 +50,7 @@ export default function ImageCarousel({ images, alt, className = '' }: ImageCaro
               src={image}
               alt={`${alt} - ${index + 1}`}
               fill
-              className="object-cover"
+              className={`object-${objectFit}`}
               loading="lazy"
               quality={60}
             />

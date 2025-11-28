@@ -76,12 +76,12 @@ export const translations: Record<Language, Translation> = {
     'service8.feature2': 'Rutas personalizadas por calas secretas.',
     'service8.feature3': 'Catering a bordo y actividades acuáticas.',
     
-    // Service 9 - Personal Shopping & Styling
-    'service9.title': 'Personal Shopping & Styling',
-    'service9.subtitle': 'Asesoría de imagen y compras exclusivas en Ibiza.',
-    'service9.feature1': 'Personal shopper profesional y asesor de estilo.',
-    'service9.feature2': 'Acceso a boutiques de lujo y diseñadores exclusivos.',
-    'service9.feature3': 'Sesiones de styling para ocasiones especiales.',
+    // Service 9 - Real Estate
+    'service9.title': 'Real Estate',
+    'service9.subtitle': 'Ibiza & Formentera - Gestión de compra-venta de terrenos, villas y propiedades exclusivas.',
+    'service9.feature1': 'Acceso directo a oportunidades únicas, off-market y proyectos llave en mano.',
+    'service9.feature2': 'El mercado inmobiliario en Ibiza y Formentera es sólido, estable y altamente rentable.',
+    'service9.feature3': 'Te acompañamos en todo el proceso con total discreción, seguridad y asesoramiento personalizado.',
     
     // Service 5
     'service5.title': 'Seguridad y acompañamiento',
@@ -444,12 +444,12 @@ export const translations: Record<Language, Translation> = {
     'service8.feature2': 'Custom routes through secret coves.',
     'service8.feature3': 'Onboard catering and water activities.',
     
-    // Service 9 - Personal Shopping & Styling
-    'service9.title': 'Personal Shopping & Styling',
-    'service9.subtitle': 'Image consulting and exclusive shopping in Ibiza.',
-    'service9.feature1': 'Professional personal shopper and style advisor.',
-    'service9.feature2': 'Access to luxury boutiques and exclusive designers.',
-    'service9.feature3': 'Styling sessions for special occasions.',
+    // Service 9 - Real Estate
+    'service9.title': 'Real Estate',
+    'service9.subtitle': 'Ibiza & Formentera - Management of buying and selling land, villas and exclusive properties.',
+    'service9.feature1': 'Direct access to unique opportunities, off-market and turnkey projects.',
+    'service9.feature2': 'The real estate market in Ibiza and Formentera is solid, stable and highly profitable.',
+    'service9.feature3': 'We accompany you throughout the process with total discretion, security and personalized advice.',
     
     // Service 5
     'service5.title': 'Security and Escort',
@@ -806,11 +806,11 @@ export const translations: Record<Language, Translation> = {
     'service8.feature3': 'Кейтеринг на борту и водные развлечения.',
     
     // Service 9 - Personal Shopping & Styling
-    'service9.title': 'Персональный шопинг и стайлинг',
-    'service9.subtitle': 'Консультации по имиджу и эксклюзивный шопинг в Ибице.',
-    'service9.feature1': 'Профессиональный персональный шопер и стилист.',
-    'service9.feature2': 'Доступ к люксовым бутикам и эксклюзивным дизайнерам.',
-    'service9.feature3': 'Сессии стайлинга для особых случаев.',
+    'service9.title': 'Недвижимость',
+    'service9.subtitle': 'Ибица и Форментера - Управление покупкой и продажей земель, вилл и эксклюзивной недвижимости.',
+    'service9.feature1': 'Прямой доступ к уникальным возможностям, off-market и проектам под ключ.',
+    'service9.feature2': 'Рынок недвижимости на Ибице и Форментере стабилен, надежен и высокодоходен.',
+    'service9.feature3': 'Сопровождаем вас на всем протяжении процесса с полной конфиденциальностью и персональным подходом.',
     
     // Service 5
     'service5.title': 'Безопасность и сопровождение',

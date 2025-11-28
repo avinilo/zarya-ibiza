@@ -35,7 +35,7 @@ function HeroSection() {
           src="/hero.webp"
           alt="Luxury waterfront view in Ibiza"
           fill
-          className="object-cover opacity-60"
+          className="object-cover opacity-70"
           priority
           loading="eager"
           sizes="100vw"
@@ -219,17 +219,17 @@ export default function HomeContent() {
       priority: 8
     },
     {
-      id: 'personal-shopping',
+      id: 'real-estate',
       title: t('service9.title'),
       subtitle: t('service9.subtitle'),
-      icon: Sparkles,
       description: t('service9.feature1'),
       features: [
         t('service9.feature1'),
         t('service9.feature2'),
         t('service9.feature3')
       ],
-      image: '/shopping.webp',
+      image: '/realstate.webp',
+      icon: Home,
       priority: 9
     }
   ]

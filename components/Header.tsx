@@ -61,9 +61,9 @@ export default function Header() {
             <Image
               src="/logo1.png"
               alt="First Class Sensations"
-              width={48}
-              height={48}
-              className="h-8 md:h-12 w-auto transition-smooth"
+              width={64}
+              height={64}
+              className="h-12 md:h-16 w-auto transition-smooth"
             />
             <span className="ml-2 md:ml-3 text-[10px] sm:text-xs md:text-xl font-bold transition-smooth leading-tight font-brand text-firstclass-primary">
               First Class Sensations

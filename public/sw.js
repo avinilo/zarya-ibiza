@@ -1,9 +1,9 @@
 // Service Worker para First Class Sensations - Cache estratégico
 // Implementación cuidadosa para mejorar performance sin romper funcionalidad
 
-const CACHE_NAME = 'firstclass-v4'
-const STATIC_CACHE = 'firstclass-static-v4'
-const RUNTIME_CACHE = 'firstclass-runtime-v4'
+const CACHE_NAME = 'firstclass-v5'
+const STATIC_CACHE = 'firstclass-static-v5'
+const RUNTIME_CACHE = 'firstclass-runtime-v5'
 
 // URLs críticas para cachear
 const CRITICAL_URLS = [

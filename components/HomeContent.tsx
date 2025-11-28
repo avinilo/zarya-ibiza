@@ -60,8 +60,8 @@ function HeroSection() {
           {t('hero.subtitle')}
         </p>
         <div className="flex justify-center animate-slide-up animation-delay-600 mb-8">
-          <a href="https://wa.me/34600887755" target="_blank" rel="noopener noreferrer" className="border-2 border-firstclass-text text-firstclass-text px-8 py-3 rounded-lg font-medium text-lg tracking-wider hover:bg-firstclass-text hover:text-firstclass-background transition-all duration-300 hover:scale-105 font-body" style={{ letterSpacing: '0.1em' }}>
-            {t('hero.cta.plan')}
+          <a href="#contact" className="border-2 border-firstclass-text text-firstclass-text px-8 py-3 rounded-lg font-medium text-lg tracking-wider hover:bg-firstclass-text hover:text-firstclass-background transition-all duration-300 hover:scale-105 font-body" style={{ letterSpacing: '0.1em' }}>
+            {t('cta.services.button')}
           </a>
         </div>
       </div>
@@ -311,6 +311,21 @@ export default function HomeContent() {
         </div>
       </section>
 
+      {/* CTA after Services */}
+      <section className="py-16 bg-firstclass-primary/5">
+        <div className="container-custom mx-auto px-4 text-center">
+          <h3 className="text-3xl md:text-4xl font-bold mb-6 text-firstclass-primary font-hero">
+            {t('cta.services.title')}
+          </h3>
+          <p className="text-xl text-firstclass-text/80 mb-8 max-w-2xl mx-auto">
+            {t('cta.services.subtitle')}
+          </p>
+          <a href="#contact" className="inline-block bg-firstclass-primary text-firstclass-background px-8 py-4 rounded-lg font-medium text-lg tracking-wider hover:bg-firstclass-primary/90 transition-all duration-300 hover:scale-105 font-body shadow-lg shadow-firstclass-primary/20" style={{ letterSpacing: '0.1em' }}>
+            {t('cta.services.button')}
+          </a>
+        </div>
+      </section>
+
       {/* Process Section */}
       <section id="process" className="py-20 bg-firstclass-light">
         <div className="container-custom mx-auto px-4">
@@ -401,6 +416,21 @@ export default function HomeContent() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* CTA after About */}
+      <section className="py-16 bg-firstclass-background">
+        <div className="container-custom mx-auto px-4 text-center">
+          <h3 className="text-3xl md:text-4xl font-bold mb-6 text-firstclass-primary font-hero">
+            {t('cta.about.title')}
+          </h3>
+          <p className="text-xl text-firstclass-text/80 mb-8 max-w-2xl mx-auto">
+            {t('cta.about.subtitle')}
+          </p>
+          <a href="#contact" className="inline-block bg-firstclass-primary text-firstclass-background px-8 py-4 rounded-lg font-medium text-lg tracking-wider hover:bg-firstclass-primary/90 transition-all duration-300 hover:scale-105 font-body shadow-lg shadow-firstclass-primary/20" style={{ letterSpacing: '0.1em' }}>
+            {t('cta.about.button')}
+          </a>
         </div>
       </section>
 

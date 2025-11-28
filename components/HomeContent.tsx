@@ -32,10 +32,10 @@ function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/hero.webp"
+          src="/hero.webp?v=2"
           alt="Luxury waterfront view in Ibiza"
           fill
-          className="object-cover opacity-90"
+          className="object-cover opacity-95"
           priority
           loading="eager"
           sizes="100vw"

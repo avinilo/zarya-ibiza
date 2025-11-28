@@ -45,7 +45,7 @@ export default function ProfessionalVerticalCarousel({ images, alt, className = 
                 alt={`${alt} - ${index + 1}`}
                 fill
                 className="object-cover"
-                loading="lazy"
+                loading={index === 0 ? undefined : "lazy"}
                 quality={90}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 600px"
                 priority={index === 0}

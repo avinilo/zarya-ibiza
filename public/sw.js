@@ -1,9 +1,9 @@
 // Service Worker para First Class Sensations - Cache estratégico
 // Implementación cuidadosa para mejorar performance sin romper funcionalidad
 
-const CACHE_NAME = 'firstclass-v2'
-const STATIC_CACHE = 'firstclass-static-v2'
-const RUNTIME_CACHE = 'firstclass-runtime-v2'
+const CACHE_NAME = 'firstclass-v3'
+const STATIC_CACHE = 'firstclass-static-v3'
+const RUNTIME_CACHE = 'firstclass-runtime-v3'
 
 // URLs críticas para cachear
 const CRITICAL_URLS = [
@@ -101,6 +101,11 @@ self.addEventListener('fetch', event => {
     // Network First para páginas HTML
     event.respondWith(networkFirstStrategy(request))
   } else if (request.destination === 'image') {
+    // Hero debe refrescarse con prioridad cuando se actualiza
+    if (url.pathname === '/hero.webp') {
+      event.respondWith(networkFirstStrategy(request))
+      return
+    }
     // Cache First para imágenes
     event.respondWith(cacheFirstStrategy(request, STATIC_CACHE))
   } else if (request.url.includes('/_next/static/')) {

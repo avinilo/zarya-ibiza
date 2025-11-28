@@ -35,7 +35,7 @@ function HeroSection() {
           src="/hero.webp"
           alt="Luxury waterfront view in Ibiza"
           fill
-          className="object-cover opacity-70"
+          className="object-cover opacity-90"
           priority
           loading="eager"
           sizes="100vw"
@@ -61,7 +61,7 @@ function HeroSection() {
         </p>
         <div className="flex justify-center animate-slide-up animation-delay-600 mb-8">
           <a href="#contact" className="border-2 border-firstclass-text text-firstclass-text px-8 py-3 rounded-lg font-medium text-lg tracking-wider hover:bg-firstclass-text hover:text-firstclass-background transition-all duration-300 hover:scale-105 font-body" style={{ letterSpacing: '0.1em' }}>
-            Contrata tu servicio de lujo
+            {t('hero.cta.main')}
           </a>
         </div>
       </div>

@@ -37,7 +37,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="mb-4 flex items-center">
               <Image
-                src="/logo1.png"
+                src="/logo2.webp"
                 alt="First Class Sensations"
                 width={48}
                 height={48}

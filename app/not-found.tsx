@@ -59,7 +59,7 @@ export default function NotFound() {
             {/* Logo */}
             <div className="mb-8">
               <Image
-                src="/logo1.png"
+                src="/logo2.webp"
                 alt="First Class Sensations"
                 width={200}
                 height={67}

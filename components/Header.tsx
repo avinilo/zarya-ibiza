@@ -59,7 +59,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center hover-scale" aria-label="First Class Sensations - Ir a página de inicio">
             <Image
-              src="/logo1.png"
+              src="/logo2.webp"
               alt="First Class Sensations"
               width={64}
               height={64}

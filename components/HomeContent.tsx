@@ -61,7 +61,7 @@ function HeroSection() {
         </p>
         <div className="flex justify-center animate-slide-up animation-delay-600 mb-8">
           <a href="#contact" className="border-2 border-firstclass-text text-firstclass-text px-8 py-3 rounded-lg font-medium text-lg tracking-wider hover:bg-firstclass-text hover:text-firstclass-background transition-all duration-300 hover:scale-105 font-body" style={{ letterSpacing: '0.1em' }}>
-            {t('cta.services.button')}
+            Contrata tu servicio de lujo
           </a>
         </div>
       </div>

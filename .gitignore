@@ -6,6 +6,7 @@ Thumbs.db
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+/credenciales.txt
 
 # Unused legacy public assets and folders
 /public/imagenes que no/

@@ -201,7 +201,7 @@ export default function HomeContent() {
         t('service6.feature2'),
         t('service6.feature3')
       ],
-      image: '/fiestaprivada.webp',
+      image: '/fiestasvillas.jpeg',
       priority: 6
     },
     {
@@ -384,22 +384,7 @@ export default function HomeContent() {
                 <strong>{t('about.subtitle')}</strong>
               </p>
               <div className="text-firstclass-text/80 mb-6" dangerouslySetInnerHTML={{ __html: t('about.description') }} />
-              <div className="text-firstclass-text/80 mb-6" dangerouslySetInnerHTML={{ __html: t('about.feature1') }} />
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <MapPin className="w-5 h-5 text-firstclass-primary" />
-                  <span className="text-firstclass-text/80" dangerouslySetInnerHTML={{ __html: t('about.location') }} />
-                </div>
-                <div className="flex items-center gap-3">
-                  <Users className="w-5 h-5 text-firstclass-primary" />
-                  <span className="text-firstclass-text/80">{t('about.clients')}</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Sparkles className="w-5 h-5 text-firstclass-primary" />
-                  <span className="text-firstclass-text/80" dangerouslySetInnerHTML={{ __html: t('about.style') }} />
-                </div>
-              </div>
-              <div className="text-firstclass-text/80 mt-6" dangerouslySetInnerHTML={{ __html: t('about.philosophy') }} />
+              
             </div>
             <div className="flex justify-center lg:justify-end lg:pl-8">
               <div className="w-full max-w-md">

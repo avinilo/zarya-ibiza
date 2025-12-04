@@ -40,16 +40,28 @@ export default function ProfessionalVerticalCarousel({ images, alt, className = 
             }`}
           >
             <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src={image}
-                alt={`${alt} - ${index + 1}`}
-                fill
-                className="object-cover"
-                loading={index === 0 ? undefined : "lazy"}
-                quality={90}
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 600px"
-                priority={index === 0}
-              />
+              {image.toLowerCase().endsWith('.mp4') ? (
+                <video
+                  src={image}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload={index === 0 ? 'auto' : 'metadata'}
+                />
+              ) : (
+                <Image
+                  src={image}
+                  alt={`${alt} - ${index + 1}`}
+                  fill
+                  className="object-cover"
+                  loading={index === 0 ? undefined : "lazy"}
+                  quality={90}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 600px"
+                  priority={index === 0}
+                />
+              )}
               {/* Subtle gradient overlay for better button visibility */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
             </div>

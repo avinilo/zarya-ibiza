@@ -405,12 +405,30 @@ export default function HomeContent() {
               <div className="w-full max-w-md">
                 <ProfessionalVerticalCarousel
                   images={[
-                    '/carrousel sobre/WhatsApp-Image-2025-11-24-at-09.37.47.webp',
-                    '/carrousel sobre/info.webp',
-                    '/carrousel sobre/WhatsApp-Image-2025-11-24-at-09.37.46.webp',
-                    '/carrousel sobre/WhatsApp-Image-2025-11-24-at-09.37.46-_1_.webp'
+                    '/carrousel sobre/nuevas/WhatsApp Image 2025-12-03 at 09.31.10 (1).jpeg',
+                    '/carrousel sobre/nuevas/WhatsApp Image 2025-12-03 at 09.31.10 (2).jpeg',
+                    '/carrousel sobre/nuevas/WhatsApp Image 2025-12-03 at 09.31.10.jpeg',
+                    '/carrousel sobre/nuevas/WhatsApp Image 2025-12-03 at 09.31.11 (1).jpeg',
+                    '/carrousel sobre/nuevas/WhatsApp Image 2025-12-03 at 09.31.11 (2).jpeg',
+                    '/carrousel sobre/nuevas/WhatsApp Image 2025-12-03 at 09.31.11 (3).jpeg',
+                    '/carrousel sobre/nuevas/WhatsApp Image 2025-12-03 at 09.31.11 (4).jpeg',
+                    '/carrousel sobre/nuevas/WhatsApp Image 2025-12-03 at 09.31.11 (5).jpeg',
+                    '/carrousel sobre/nuevas/WhatsApp Image 2025-12-03 at 09.31.11 (6).jpeg',
+                    '/carrousel sobre/nuevas/WhatsApp Image 2025-12-03 at 09.31.11 (7).jpeg',
+                    '/carrousel sobre/nuevas/WhatsApp Image 2025-12-03 at 09.31.11 (8).jpeg',
+                    '/carrousel sobre/nuevas/WhatsApp Image 2025-12-03 at 09.31.11 (9).jpeg',
+                    '/carrousel sobre/nuevas/WhatsApp Image 2025-12-03 at 09.31.11 (10).jpeg',
+                    '/carrousel sobre/nuevas/WhatsApp Image 2025-12-03 at 09.31.11 (11).jpeg',
+                    '/carrousel sobre/nuevas/WhatsApp Image 2025-12-03 at 09.31.11 (12).jpeg',
+                    '/carrousel sobre/nuevas/WhatsApp Image 2025-12-03 at 09.31.11.jpeg',
+                    '/carrousel sobre/nuevas/WhatsApp Image 2025-12-03 at 09.31.12 (1).jpeg',
+                    '/carrousel sobre/nuevas/WhatsApp Image 2025-12-03 at 09.31.12 (2).jpeg',
+                    '/carrousel sobre/nuevas/WhatsApp Image 2025-12-03 at 09.31.12.jpeg',
+                    '/carrousel sobre/nuevas/WhatsApp Video 2025-12-03 at 09.31.11.mp4',
+                    '/carrousel sobre/nuevas/WhatsApp Video 2025-12-03 at 09.31.12 (1).mp4',
+                    '/carrousel sobre/nuevas/WhatsApp Video 2025-12-03 at 09.31.12.mp4'
                   ]}
-                  alt="First Class Sensations - Imágenes del equipo y servicios"
+                  alt="Sobre mí - Imágenes y videos"
                   className="w-full"
                 />
               </div>

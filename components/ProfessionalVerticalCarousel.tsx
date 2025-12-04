@@ -60,6 +60,7 @@ export default function ProfessionalVerticalCarousel({ images, alt, className = 
                   quality={90}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 600px"
                   priority={index === 0}
+                  unoptimized
                 />
               )}
               {/* Subtle gradient overlay for better button visibility */}

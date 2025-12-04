@@ -273,6 +273,7 @@ export default function HomeContent() {
                       loading="lazy"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       quality={60}
+                      unoptimized
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-firstclass-background/90 to-transparent"></div>
                     <div className="absolute bottom-4 left-4 text-firstclass-text">

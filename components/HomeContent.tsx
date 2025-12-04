@@ -201,7 +201,7 @@ export default function HomeContent() {
         t('service6.feature2'),
         t('service6.feature3')
       ],
-      image: '/fiestasvillas.jpeg',
+      image: '/eventos-villas.jpeg',
       priority: 6
     },
     {
